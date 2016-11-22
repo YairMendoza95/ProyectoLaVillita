@@ -4,9 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoLaVillita.COMMON
+namespace ProyectoLaVillita.COMMON.Entidades
 {
-    class BaseDTO
+    public class BaseDTO : IDisposable
     {
+        private bool _isDisposed;
+        public void Dispose()
+        {
+            if (!_isDisposed)
+            {
+                this._isDisposed = true;
+                GC.SuppressFinalize(this);
+            }
+        }
     }
 }
