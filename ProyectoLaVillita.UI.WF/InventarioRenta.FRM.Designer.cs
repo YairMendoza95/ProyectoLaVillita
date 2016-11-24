@@ -32,18 +32,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtIngresarNombre = new System.Windows.Forms.TextBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rbtnDescendente = new System.Windows.Forms.RadioButton();
-            this.rbtnAscendente = new System.Windows.Forms.RadioButton();
-            this.dgvInventario = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tiendaDeAbarrotesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -61,11 +49,23 @@
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeNuevoUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cambiarDeUsuariioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtIngresarNombre = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rbtnDescendente = new System.Windows.Forms.RadioButton();
+            this.rbtnAscendente = new System.Windows.Forms.RadioButton();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvInventario = new System.Windows.Forms.DataGridView();
             this.groupBox1.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).BeginInit();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -117,115 +117,6 @@
             this.btnSalir.TabIndex = 8;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.txtIngresarNombre);
-            this.groupBox3.Controls.Add(this.btnBuscar);
-            this.groupBox3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(10, 85);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(419, 59);
-            this.groupBox3.TabIndex = 7;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Busqueda";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(130, 20);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "Ingresar nombre";
-            // 
-            // txtIngresarNombre
-            // 
-            this.txtIngresarNombre.Location = new System.Drawing.Point(137, 23);
-            this.txtIngresarNombre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtIngresarNombre.Name = "txtIngresarNombre";
-            this.txtIngresarNombre.Size = new System.Drawing.Size(162, 23);
-            this.txtIngresarNombre.TabIndex = 4;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.Location = new System.Drawing.Point(310, 15);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(105, 35);
-            this.btnBuscar.TabIndex = 5;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.rbtnDescendente);
-            this.groupBox2.Controls.Add(this.rbtnAscendente);
-            this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(436, 85);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(218, 59);
-            this.groupBox2.TabIndex = 6;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Ordenar";
-            // 
-            // rbtnDescendente
-            // 
-            this.rbtnDescendente.AutoSize = true;
-            this.rbtnDescendente.Location = new System.Drawing.Point(107, 25);
-            this.rbtnDescendente.Name = "rbtnDescendente";
-            this.rbtnDescendente.Size = new System.Drawing.Size(103, 21);
-            this.rbtnDescendente.TabIndex = 7;
-            this.rbtnDescendente.TabStop = true;
-            this.rbtnDescendente.Text = "Descedente";
-            this.rbtnDescendente.UseVisualStyleBackColor = true;
-            // 
-            // rbtnAscendente
-            // 
-            this.rbtnAscendente.AutoSize = true;
-            this.rbtnAscendente.Location = new System.Drawing.Point(6, 25);
-            this.rbtnAscendente.Name = "rbtnAscendente";
-            this.rbtnAscendente.Size = new System.Drawing.Size(94, 21);
-            this.rbtnAscendente.TabIndex = 0;
-            this.rbtnAscendente.TabStop = true;
-            this.rbtnAscendente.Text = "Ascedente";
-            this.rbtnAscendente.UseVisualStyleBackColor = true;
-            // 
-            // dgvInventario
-            // 
-            this.dgvInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvInventario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.Column1,
-            this.Column3,
-            this.Column4});
-            this.dgvInventario.Location = new System.Drawing.Point(133, 159);
-            this.dgvInventario.Name = "dgvInventario";
-            this.dgvInventario.Size = new System.Drawing.Size(476, 65);
-            this.dgvInventario.TabIndex = 1;
-            // 
-            // ID
-            // 
-            this.ID.HeaderText = "Codigo";
-            this.ID.Name = "ID";
-            this.ID.Width = 130;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Nombre";
-            this.Column1.Name = "Column1";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Tipo";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Total en Inventario";
-            this.Column4.Name = "Column4";
             // 
             // menuStrip1
             // 
@@ -357,6 +248,115 @@
             this.cambiarDeUsuariioToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.cambiarDeUsuariioToolStripMenuItem.Text = "Cambiar de Usuario";
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.Location = new System.Drawing.Point(310, 15);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(105, 35);
+            this.btnBuscar.TabIndex = 5;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            // 
+            // txtIngresarNombre
+            // 
+            this.txtIngresarNombre.Location = new System.Drawing.Point(137, 23);
+            this.txtIngresarNombre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtIngresarNombre.Name = "txtIngresarNombre";
+            this.txtIngresarNombre.Size = new System.Drawing.Size(162, 23);
+            this.txtIngresarNombre.TabIndex = 4;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(130, 20);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Ingresar nombre";
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.txtIngresarNombre);
+            this.groupBox3.Controls.Add(this.btnBuscar);
+            this.groupBox3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox3.Location = new System.Drawing.Point(10, 85);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(419, 59);
+            this.groupBox3.TabIndex = 7;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Busqueda";
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rbtnDescendente);
+            this.groupBox2.Controls.Add(this.rbtnAscendente);
+            this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(436, 85);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(218, 59);
+            this.groupBox2.TabIndex = 6;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Ordenar";
+            // 
+            // rbtnDescendente
+            // 
+            this.rbtnDescendente.AutoSize = true;
+            this.rbtnDescendente.Location = new System.Drawing.Point(107, 25);
+            this.rbtnDescendente.Name = "rbtnDescendente";
+            this.rbtnDescendente.Size = new System.Drawing.Size(103, 21);
+            this.rbtnDescendente.TabIndex = 7;
+            this.rbtnDescendente.TabStop = true;
+            this.rbtnDescendente.Text = "Descedente";
+            this.rbtnDescendente.UseVisualStyleBackColor = true;
+            // 
+            // rbtnAscendente
+            // 
+            this.rbtnAscendente.AutoSize = true;
+            this.rbtnAscendente.Location = new System.Drawing.Point(6, 25);
+            this.rbtnAscendente.Name = "rbtnAscendente";
+            this.rbtnAscendente.Size = new System.Drawing.Size(94, 21);
+            this.rbtnAscendente.TabIndex = 0;
+            this.rbtnAscendente.TabStop = true;
+            this.rbtnAscendente.Text = "Ascedente";
+            this.rbtnAscendente.UseVisualStyleBackColor = true;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Total en Inventario";
+            this.Column4.Name = "Column4";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Tipo";
+            this.Column3.Name = "Column3";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Nombre";
+            this.Column1.Name = "Column1";
+            // 
+            // ID
+            // 
+            this.ID.HeaderText = "Codigo";
+            this.ID.Name = "ID";
+            this.ID.Width = 130;
+            // 
+            // dgvInventario
+            // 
+            this.dgvInventario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInventario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ID,
+            this.Column1,
+            this.Column3,
+            this.Column4});
+            this.dgvInventario.Location = new System.Drawing.Point(133, 159);
+            this.dgvInventario.Name = "dgvInventario";
+            this.dgvInventario.Size = new System.Drawing.Size(476, 65);
+            this.dgvInventario.TabIndex = 1;
+            // 
             // InventarioRenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -367,13 +367,13 @@
             this.Text = "InventarioRenta";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventario)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -384,18 +384,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnRegresar;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtIngresarNombre;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton rbtnDescendente;
-        private System.Windows.Forms.RadioButton rbtnAscendente;
-        private System.Windows.Forms.DataGridView dgvInventario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tiendaDeAbarrotesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
@@ -413,5 +401,17 @@
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroDeNuevoUsuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cambiarDeUsuariioToolStripMenuItem;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtIngresarNombre;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RadioButton rbtnDescendente;
+        private System.Windows.Forms.RadioButton rbtnAscendente;
+        private System.Windows.Forms.DataGridView dgvInventario;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
     }
 }

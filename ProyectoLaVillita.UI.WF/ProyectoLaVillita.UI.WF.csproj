@@ -52,10 +52,70 @@
     <Compile Include="AgregarProducto.FRM.Designer.cs">
       <DependentUpon>AgregarProducto.FRM.cs</DependentUpon>
     </Compile>
+    <Compile Include="AgregarProveedor.FRM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarProveedor.FRM.Designer.cs">
+      <DependentUpon>AgregarProveedor.FRM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AgregarUsuario.FRM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AgregarUsuario.FRM.Designer.cs">
+      <DependentUpon>AgregarUsuario.FRM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Entrada.FRM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Entrada.FRM.Designer.cs">
+      <DependentUpon>Entrada.FRM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio.FRM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inicio.FRM.Designer.cs">
+      <DependentUpon>Inicio.FRM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InventarioRenta.FRM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InventarioRenta.FRM.Designer.cs">
+      <DependentUpon>InventarioRenta.FRM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InventarioVentas.FRM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InventarioVentas.FRM.Designer.cs">
+      <DependentUpon>InventarioVentas.FRM.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VentaFRM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VentaFRM.Designer.cs">
+      <DependentUpon>VentaFRM.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AgregarProducto.FRM.resx">
       <DependentUpon>AgregarProducto.FRM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgregarProveedor.FRM.resx">
+      <DependentUpon>AgregarProveedor.FRM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AgregarUsuario.FRM.resx">
+      <DependentUpon>AgregarUsuario.FRM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Entrada.FRM.resx">
+      <DependentUpon>Entrada.FRM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inicio.FRM.resx">
+      <DependentUpon>Inicio.FRM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventarioRenta.FRM.resx">
+      <DependentUpon>InventarioRenta.FRM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventarioVentas.FRM.resx">
+      <DependentUpon>InventarioVentas.FRM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -65,7 +125,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="VentaFRM.resx">
+      <DependentUpon>VentaFRM.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -88,6 +152,15 @@
       <Project>{c998126e-50d7-4a36-a858-eaa4fc96de01}</Project>
       <Name>ProyectoLaVillita.COMMON</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usuarios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Nuevo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

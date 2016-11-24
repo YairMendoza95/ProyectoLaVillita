@@ -46,7 +46,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProveedorManager.cs" />
     <Compile Include="RentaManager.cs" />
-    <Compile Include="TipoProductoManager.cs" />
     <Compile Include="UsuarioManager.cs" />
     <Compile Include="VentaManager.cs" />
   </ItemGroup>

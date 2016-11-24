@@ -55,7 +55,6 @@
     </Compile>
     <Compile Include="ProveedorRepository.cs" />
     <Compile Include="RentaRepository.cs" />
-    <Compile Include="TipoProductoRepository.cs" />
     <Compile Include="UsuarioRepository.cs" />
     <Compile Include="VentaRepository.cs" />
   </ItemGroup>

@@ -48,7 +48,6 @@
     <Compile Include="Entidades\ProductoDTO.cs" />
     <Compile Include="Entidades\ProveedorDTO.cs" />
     <Compile Include="Entidades\RentaDTO.cs" />
-    <Compile Include="Entidades\TipoProductoDTO.cs" />
     <Compile Include="Entidades\UsuarioDTO.cs" />
     <Compile Include="Entidades\VentaDTO.cs" />
     <Compile Include="Herremientas\RecolectorDeErrorescs.cs" />
@@ -59,7 +58,6 @@
     <Compile Include="Interfaces\IProveedorManager.cs" />
     <Compile Include="Interfaces\IRentaManager.cs" />
     <Compile Include="Interfaces\IRepositorioGenerico.cs" />
-    <Compile Include="Interfaces\ITipoProductoManager.cs" />
     <Compile Include="Interfaces\IUsuarioManager.cs" />
     <Compile Include="Interfaces\IVentaManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

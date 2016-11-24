@@ -16,7 +16,7 @@ namespace ProyectoLaVillita.UI.WF
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Inicio());
+            Application.Run(new AgregarProveedor());
         }
     }
 }

@@ -43,7 +43,6 @@ namespace ProyectoLaVillita.DAL
                             stockMax = Convert.ToInt32(ds.Tables[0].Rows[i]["stockMax"]),
                             stockMin = Convert.ToInt32(ds.Tables[0].Rows[i]["stockMin"]),
                             stockActual = Convert.ToInt32(ds.Tables[0].Rows[i]["stockActual"]),
-                            idTipoProducto = Convert.ToInt32(ds.Tables[0].Rows[i]["idTipoProducto"])
                         };
                         productos.Add(prod);
                     }
@@ -88,7 +87,7 @@ namespace ProyectoLaVillita.DAL
             try
             {
                 conexion.Open();
-                da.InsertCommand = new MySqlCommand("Insert into producto (nombre, idProveedor, precioUnitario, stockMax, stockMax, stockActual, idTipoProducto) values(nombre = '" + entidad.nombre + "', Proveedor = " + entidad.idProveedor + ", precioUnitario = " + entidad.precioUnitario + ", stockMax = " + entidad.stockMax + ", stockMin = " + entidad.stockMin + ", stockActual = " + entidad.stockActual + ", idTipoProducto = " + entidad.idTipoProducto + ")", conexion);
+                da.InsertCommand = new MySqlCommand("Insert into producto (nombre, idProveedor, precioUnitario, stockMax, stockMax, stockActual, idTipoProducto) values(nombre = '" + entidad.nombre + "', Proveedor = " + entidad.idProveedor + ", precioUnitario = " + entidad.precioUnitario + ", stockMax = " + entidad.stockMax + ", stockMin = " + entidad.stockMin + ", stockActual = " + entidad.stockActual + ")", conexion);
                 int afectados = da.InsertCommand.ExecuteNonQuery();
                 conexion.Close();
                 if (afectados > 0)
@@ -109,7 +108,7 @@ namespace ProyectoLaVillita.DAL
             try
             {
                 conexion.Open();
-                da.UpdateCommand = new MySqlCommand("Update producto set nombre = '" + entidad.nombre + "', idProveedor = " + entidad.idProveedor + ", precioUnitario = " + entidad.precioUnitario + ", stockMax = " + entidad.stockMax + ", stockMin = " + entidad.stockMin + ", stockActual = " + entidad.stockActual + ", idTipoProdcuto = " + entidad.idTipoProducto + " where idProducto", conexion);
+                da.UpdateCommand = new MySqlCommand("Update producto set nombre = '" + entidad.nombre + "', idProveedor = " + entidad.idProveedor + ", precioUnitario = " + entidad.precioUnitario + ", stockMax = " + entidad.stockMax + ", stockMin = " + entidad.stockMin + ", stockActual = " + entidad.stockActual + " where idProducto", conexion);
                 int afectados = da.UpdateCommand.ExecuteNonQuery();
                 conexion.Close();
                 if (afectados > 0)

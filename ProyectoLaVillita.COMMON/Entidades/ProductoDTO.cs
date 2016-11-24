@@ -15,6 +15,5 @@ namespace ProyectoLaVillita.COMMON.Entidades
         public int stockMax { get; set; }
         public int stockMin { get; set; }
         public int stockActual { get; set; }
-        public int idTipoProducto { get; set; }
     }
 }
