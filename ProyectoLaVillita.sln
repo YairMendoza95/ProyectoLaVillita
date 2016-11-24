@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoLaVillita.DAL", "Pr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoLaVillita.BIZ", "ProyectoLaVillita.BIZ\ProyectoLaVillita.BIZ.csproj", "{7068654B-E8FE-4669-A5CE-D9169ECF69FF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectoLaVillita.UI.WF", "ProyectoLaVillita.UI.WF\ProyectoLaVillita.UI.WF.csproj", "{668F8403-B750-4672-A1E7-53624E2BA300}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{7068654B-E8FE-4669-A5CE-D9169ECF69FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7068654B-E8FE-4669-A5CE-D9169ECF69FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7068654B-E8FE-4669-A5CE-D9169ECF69FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{668F8403-B750-4672-A1E7-53624E2BA300}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{668F8403-B750-4672-A1E7-53624E2BA300}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{668F8403-B750-4672-A1E7-53624E2BA300}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{668F8403-B750-4672-A1E7-53624E2BA300}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

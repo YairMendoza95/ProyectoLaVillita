@@ -46,14 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="AgregarProducto.FRM.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="AgregarProducto.FRM.Designer.cs">
+      <DependentUpon>AgregarProducto.FRM.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AgregarProducto.FRM.resx">
+      <DependentUpon>AgregarProducto.FRM.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -75,6 +78,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ProyectoLaVillita.BIZ\ProyectoLaVillita.BIZ.csproj">
+      <Project>{7068654b-e8fe-4669-a5ce-d9169ecf69ff}</Project>
+      <Name>ProyectoLaVillita.BIZ</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ProyectoLaVillita.COMMON\ProyectoLaVillita.COMMON.csproj">
+      <Project>{c998126e-50d7-4a36-a858-eaa4fc96de01}</Project>
+      <Name>ProyectoLaVillita.COMMON</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
