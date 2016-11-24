@@ -107,6 +107,7 @@
             this.tiendaDeAbarrotesToolStripMenuItem.Name = "tiendaDeAbarrotesToolStripMenuItem";
             this.tiendaDeAbarrotesToolStripMenuItem.Size = new System.Drawing.Size(139, 21);
             this.tiendaDeAbarrotesToolStripMenuItem.Text = "Tienda de abarrotes";
+            this.tiendaDeAbarrotesToolStripMenuItem.Click += new System.EventHandler(this.tiendaDeAbarrotesToolStripMenuItem_Click);
             // 
             // productosToolStripMenuItem
             // 

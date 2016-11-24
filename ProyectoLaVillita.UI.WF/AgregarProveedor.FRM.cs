@@ -58,21 +58,25 @@ namespace ProyectoLaVillita.UI.WF
         private void registroDeProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new AgregarProveedor().Show();
+            this.Hide();
         }
 
         private void entradasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new Entrada().Show();
+            this.Hide();
         }
 
         private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new VentaFRM().Show();
+            this.Hide();
         }
 
         private void inventarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new InventarioVentas().Show();
+            this.Hide();
         }
 
         private void nuevaRentaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -83,16 +87,19 @@ namespace ProyectoLaVillita.UI.WF
         private void datosDelClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new Renta().Show();
+            this.Hide();
         }
 
         private void inventarioToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             new InventarioRenta().Show();
+            this.Hide();
         }
 
         private void registroDeNuevoUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new AgregarUsuario().Show();
+            this.Hide();
         }
     }
 }

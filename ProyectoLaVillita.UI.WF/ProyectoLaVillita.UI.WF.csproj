@@ -133,6 +133,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Renta.FRM.resx">
+      <DependentUpon>Renta.FRM.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="VentaFRM.resx">
       <DependentUpon>VentaFRM.cs</DependentUpon>
     </EmbeddedResource>

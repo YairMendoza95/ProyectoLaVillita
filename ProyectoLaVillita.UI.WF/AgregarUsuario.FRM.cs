@@ -51,6 +51,7 @@ namespace ProyectoLaVillita.UI.WF
         private void toolStripMenuItem3_Click(object sender, EventArgs e)
         {
             new AgregarProducto().Show();
+            this.Hide();
         }
 
         private void btnRegresar_Click(object sender, EventArgs e)
@@ -61,6 +62,7 @@ namespace ProyectoLaVillita.UI.WF
         private void toolStripMenuItem5_Click(object sender, EventArgs e)
         {
             new AgregarProveedor().Show();
+            this.Hide();
         }
 
         private void toolStripMenuItem6_Click(object sender, EventArgs e)
@@ -71,31 +73,37 @@ namespace ProyectoLaVillita.UI.WF
         private void toolStripMenuItem9_Click(object sender, EventArgs e)
         {
             new InventarioVentas().Show();
+            this.Hide();
         }
 
         private void toolStripMenuItem7_Click(object sender, EventArgs e)
         {
             new Entrada().Show();
+            this.Hide();
         }
 
         private void toolStripMenuItem8_Click(object sender, EventArgs e)
         {
             new VentaFRM().Show();
+            this.Hide();
         }
 
         private void toolStripMenuItem12_Click(object sender, EventArgs e)
         {
             new Renta().Show();
+            this.Hide();
         }
 
         private void toolStripMenuItem13_Click(object sender, EventArgs e)
         {
             new InventarioRenta().Show();
+            this.Hide();
         }
 
         private void toolStripMenuItem15_Click(object sender, EventArgs e)
         {
             new AgregarUsuario().Show();
+            this.Hide();
         }
     }
 }
