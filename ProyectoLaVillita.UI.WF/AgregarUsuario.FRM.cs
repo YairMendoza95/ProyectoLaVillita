@@ -57,5 +57,45 @@ namespace ProyectoLaVillita.UI.WF
         {
 
         }
+
+        private void toolStripMenuItem5_Click(object sender, EventArgs e)
+        {
+            new AgregarProveedor().Show();
+        }
+
+        private void toolStripMenuItem6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem9_Click(object sender, EventArgs e)
+        {
+            new InventarioVentas().Show();
+        }
+
+        private void toolStripMenuItem7_Click(object sender, EventArgs e)
+        {
+            new Entrada().Show();
+        }
+
+        private void toolStripMenuItem8_Click(object sender, EventArgs e)
+        {
+            new VentaFRM().Show();
+        }
+
+        private void toolStripMenuItem12_Click(object sender, EventArgs e)
+        {
+            new Renta().Show();
+        }
+
+        private void toolStripMenuItem13_Click(object sender, EventArgs e)
+        {
+            new InventarioRenta().Show();
+        }
+
+        private void toolStripMenuItem15_Click(object sender, EventArgs e)
+        {
+            new AgregarUsuario().Show();
+        }
     }
 }

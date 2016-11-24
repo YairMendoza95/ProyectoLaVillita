@@ -7,26 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ProyectoLaVillita.COMMON.Entidades;
-using ProyectoLaVillita.BIZ;
 
 namespace ProyectoLaVillita.UI.WF
 {
-    public partial class VentaFRM : Form
+    public partial class Renta : Form
     {
-        public VentaFRM()
+        public Renta()
         {
             InitializeComponent();
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
 
         private void entradasToolStripMenuItem_Click(object sender, EventArgs e)
@@ -39,12 +27,12 @@ namespace ProyectoLaVillita.UI.WF
             new AgregarProveedor().Show();
         }
 
-        private void entradaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void entradasToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             new Entrada().Show();
         }
 
-        private void ventaToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new VentaFRM().Show();
         }
@@ -67,6 +55,16 @@ namespace ProyectoLaVillita.UI.WF
         private void registroDeNuevoUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new AgregarUsuario().Show();
+        }
+
+        private void eliminarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

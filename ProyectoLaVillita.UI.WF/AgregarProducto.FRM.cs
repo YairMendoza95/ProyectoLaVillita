@@ -57,5 +57,55 @@ namespace ProyectoLaVillita.UI.WF
             _producto.stockMin = Convert.ToInt32(txtStockMinimo.Text);
             //switch(cmbProveedor.)
         }
+
+        private void btnRegresar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void registroDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new AgregarProducto().Show();
+        }
+
+        private void registroDeNuevoUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new AgregarUsuario().Show();
+        }
+
+        private void cambiarDeUsuariioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void registroDeProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new AgregarProveedor().Show();
+        }
+
+        private void entradasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Entrada().Show();
+        }
+
+        private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new VentaFRM().Show();
+        }
+
+        private void inventarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new InventarioVentas().Show();
+        }
+
+        private void datosDelClienteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new Renta().Show();
+        }
+
+        private void inventarioToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            new InventarioRenta().Show();
+        }
     }
 }

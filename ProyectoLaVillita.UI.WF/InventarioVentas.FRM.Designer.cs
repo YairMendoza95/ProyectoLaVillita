@@ -53,9 +53,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtIngresarNombre = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.rbtnDescendente = new System.Windows.Forms.RadioButton();
-            this.rbtnAscendente = new System.Windows.Forms.RadioButton();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,7 +63,6 @@
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,7 +74,6 @@
             this.groupBox1.Controls.Add(this.btnRegresar);
             this.groupBox1.Controls.Add(this.btnSalir);
             this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Controls.Add(this.groupBox2);
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(1, 0);
@@ -126,6 +121,7 @@
             this.registroDeProductosToolStripMenuItem.Name = "registroDeProductosToolStripMenuItem";
             this.registroDeProductosToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.registroDeProductosToolStripMenuItem.Text = "Registro de productos";
+            this.registroDeProductosToolStripMenuItem.Click += new System.EventHandler(this.registroDeProductosToolStripMenuItem_Click);
             // 
             // proveedoresToolStripMenuItem
             // 
@@ -140,6 +136,7 @@
             this.registroDeProveedoresToolStripMenuItem.Name = "registroDeProveedoresToolStripMenuItem";
             this.registroDeProveedoresToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
             this.registroDeProveedoresToolStripMenuItem.Text = "Registro de proveedores";
+            this.registroDeProveedoresToolStripMenuItem.Click += new System.EventHandler(this.registroDeProveedoresToolStripMenuItem_Click);
             // 
             // registrosToolStripMenuItem
             // 
@@ -155,18 +152,21 @@
             this.entradasToolStripMenuItem.Name = "entradasToolStripMenuItem";
             this.entradasToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.entradasToolStripMenuItem.Text = "Entradas";
+            this.entradasToolStripMenuItem.Click += new System.EventHandler(this.entradasToolStripMenuItem_Click);
             // 
             // ventasToolStripMenuItem
             // 
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
             this.ventasToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.ventasToolStripMenuItem.Text = "Ventas";
+            this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
             // 
             // inventarioToolStripMenuItem
             // 
             this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
             this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.inventarioToolStripMenuItem.Text = "Inventario";
+            this.inventarioToolStripMenuItem.Click += new System.EventHandler(this.inventarioToolStripMenuItem_Click);
             // 
             // rentaDeSillasYMesasToolStripMenuItem1
             // 
@@ -190,12 +190,14 @@
             this.datosDelClienteToolStripMenuItem.Name = "datosDelClienteToolStripMenuItem";
             this.datosDelClienteToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.datosDelClienteToolStripMenuItem.Text = "Datos del Cliente";
+            this.datosDelClienteToolStripMenuItem.Click += new System.EventHandler(this.datosDelClienteToolStripMenuItem_Click);
             // 
             // inventarioToolStripMenuItem1
             // 
             this.inventarioToolStripMenuItem1.Name = "inventarioToolStripMenuItem1";
             this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(154, 22);
             this.inventarioToolStripMenuItem1.Text = "Inventario";
+            this.inventarioToolStripMenuItem1.Click += new System.EventHandler(this.inventarioToolStripMenuItem1_Click);
             // 
             // usuariosToolStripMenuItem
             // 
@@ -211,6 +213,7 @@
             this.registroDeNuevoUsuarioToolStripMenuItem.Name = "registroDeNuevoUsuarioToolStripMenuItem";
             this.registroDeNuevoUsuarioToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.registroDeNuevoUsuarioToolStripMenuItem.Text = "Registro de nuevo usuario";
+            this.registroDeNuevoUsuarioToolStripMenuItem.Click += new System.EventHandler(this.registroDeNuevoUsuarioToolStripMenuItem_Click);
             // 
             // cambiarDeUsuariioToolStripMenuItem
             // 
@@ -249,6 +252,7 @@
             this.btnSalir.TabIndex = 8;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // groupBox3
             // 
@@ -290,40 +294,6 @@
             this.btnBuscar.TabIndex = 5;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.Controls.Add(this.rbtnDescendente);
-            this.groupBox2.Controls.Add(this.rbtnAscendente);
-            this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(436, 85);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(218, 59);
-            this.groupBox2.TabIndex = 6;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Ordenar";
-            // 
-            // rbtnDescendente
-            // 
-            this.rbtnDescendente.AutoSize = true;
-            this.rbtnDescendente.Location = new System.Drawing.Point(107, 25);
-            this.rbtnDescendente.Name = "rbtnDescendente";
-            this.rbtnDescendente.Size = new System.Drawing.Size(103, 21);
-            this.rbtnDescendente.TabIndex = 7;
-            this.rbtnDescendente.TabStop = true;
-            this.rbtnDescendente.Text = "Descedente";
-            this.rbtnDescendente.UseVisualStyleBackColor = true;
-            // 
-            // rbtnAscendente
-            // 
-            this.rbtnAscendente.AutoSize = true;
-            this.rbtnAscendente.Location = new System.Drawing.Point(6, 25);
-            this.rbtnAscendente.Name = "rbtnAscendente";
-            this.rbtnAscendente.Size = new System.Drawing.Size(94, 21);
-            this.rbtnAscendente.TabIndex = 0;
-            this.rbtnAscendente.TabStop = true;
-            this.rbtnAscendente.Text = "Ascedente";
-            this.rbtnAscendente.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -385,8 +355,6 @@
             this.menuStrip1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
@@ -419,9 +387,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtIngresarNombre;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton rbtnDescendente;
-        private System.Windows.Forms.RadioButton rbtnAscendente;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;

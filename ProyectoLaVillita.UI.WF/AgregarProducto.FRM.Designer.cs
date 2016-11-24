@@ -30,7 +30,6 @@
         {
             this.label6 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnRegresar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.cmbProveedor = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -39,6 +38,10 @@
             this.txtNombreProducto = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtStockMinimo = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtStockMaximo = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tiendaDeAbarrotesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,10 +59,6 @@
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeNuevoUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cambiarDeUsuariioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.txtStockMaximo = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtStockMinimo = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -85,17 +84,6 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnRegresar
-            // 
-            this.btnRegresar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresar.Location = new System.Drawing.Point(104, 256);
-            this.btnRegresar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(127, 39);
-            this.btnRegresar.TabIndex = 11;
-            this.btnRegresar.Text = "Regresar";
-            this.btnRegresar.UseVisualStyleBackColor = true;
             // 
             // btnSalir
             // 
@@ -170,7 +158,6 @@
             this.groupBox1.Controls.Add(this.menuStrip1);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.btnGuardar);
-            this.groupBox1.Controls.Add(this.btnRegresar);
             this.groupBox1.Controls.Add(this.btnSalir);
             this.groupBox1.Controls.Add(this.cmbProveedor);
             this.groupBox1.Controls.Add(this.label5);
@@ -186,6 +173,43 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Producto";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // txtStockMinimo
+            // 
+            this.txtStockMinimo.Location = new System.Drawing.Point(310, 207);
+            this.txtStockMinimo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtStockMinimo.Name = "txtStockMinimo";
+            this.txtStockMinimo.Size = new System.Drawing.Size(162, 23);
+            this.txtStockMinimo.TabIndex = 19;
+            this.txtStockMinimo.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(206, 210);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(94, 16);
+            this.label4.TabIndex = 18;
+            this.label4.Text = "Stock Mínimo";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // txtStockMaximo
+            // 
+            this.txtStockMaximo.Location = new System.Drawing.Point(310, 176);
+            this.txtStockMaximo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtStockMaximo.Name = "txtStockMaximo";
+            this.txtStockMaximo.Size = new System.Drawing.Size(162, 23);
+            this.txtStockMaximo.TabIndex = 17;
+            this.txtStockMaximo.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(206, 179);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 16);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "Stock Máximo";
             // 
             // menuStrip1
             // 
@@ -225,6 +249,7 @@
             this.registroDeProductosToolStripMenuItem.Name = "registroDeProductosToolStripMenuItem";
             this.registroDeProductosToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.registroDeProductosToolStripMenuItem.Text = "Registro de productos";
+            this.registroDeProductosToolStripMenuItem.Click += new System.EventHandler(this.registroDeProductosToolStripMenuItem_Click);
             // 
             // proveedoresToolStripMenuItem
             // 
@@ -239,6 +264,7 @@
             this.registroDeProveedoresToolStripMenuItem.Name = "registroDeProveedoresToolStripMenuItem";
             this.registroDeProveedoresToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
             this.registroDeProveedoresToolStripMenuItem.Text = "Registro de proveedores";
+            this.registroDeProveedoresToolStripMenuItem.Click += new System.EventHandler(this.registroDeProveedoresToolStripMenuItem_Click);
             // 
             // registrosToolStripMenuItem
             // 
@@ -252,20 +278,23 @@
             // entradasToolStripMenuItem
             // 
             this.entradasToolStripMenuItem.Name = "entradasToolStripMenuItem";
-            this.entradasToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.entradasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.entradasToolStripMenuItem.Text = "Entradas";
+            this.entradasToolStripMenuItem.Click += new System.EventHandler(this.entradasToolStripMenuItem_Click);
             // 
             // ventasToolStripMenuItem
             // 
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ventasToolStripMenuItem.Text = "Ventas";
+            this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
             // 
             // inventarioToolStripMenuItem
             // 
             this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
             this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.inventarioToolStripMenuItem.Text = "Inventario";
+            this.inventarioToolStripMenuItem.Click += new System.EventHandler(this.inventarioToolStripMenuItem_Click);
             // 
             // rentaDeSillasYMesasToolStripMenuItem1
             // 
@@ -289,12 +318,14 @@
             this.datosDelClienteToolStripMenuItem.Name = "datosDelClienteToolStripMenuItem";
             this.datosDelClienteToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.datosDelClienteToolStripMenuItem.Text = "Datos del Cliente";
+            this.datosDelClienteToolStripMenuItem.Click += new System.EventHandler(this.datosDelClienteToolStripMenuItem_Click);
             // 
             // inventarioToolStripMenuItem1
             // 
             this.inventarioToolStripMenuItem1.Name = "inventarioToolStripMenuItem1";
             this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(154, 22);
             this.inventarioToolStripMenuItem1.Text = "Inventario";
+            this.inventarioToolStripMenuItem1.Click += new System.EventHandler(this.inventarioToolStripMenuItem1_Click);
             // 
             // usuariosToolStripMenuItem
             // 
@@ -310,49 +341,14 @@
             this.registroDeNuevoUsuarioToolStripMenuItem.Name = "registroDeNuevoUsuarioToolStripMenuItem";
             this.registroDeNuevoUsuarioToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.registroDeNuevoUsuarioToolStripMenuItem.Text = "Registro de nuevo usuario";
+            this.registroDeNuevoUsuarioToolStripMenuItem.Click += new System.EventHandler(this.registroDeNuevoUsuarioToolStripMenuItem_Click);
             // 
             // cambiarDeUsuariioToolStripMenuItem
             // 
             this.cambiarDeUsuariioToolStripMenuItem.Name = "cambiarDeUsuariioToolStripMenuItem";
             this.cambiarDeUsuariioToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.cambiarDeUsuariioToolStripMenuItem.Text = "Cambiar de Usuario";
-            // 
-            // txtStockMaximo
-            // 
-            this.txtStockMaximo.Location = new System.Drawing.Point(310, 176);
-            this.txtStockMaximo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtStockMaximo.Name = "txtStockMaximo";
-            this.txtStockMaximo.Size = new System.Drawing.Size(162, 23);
-            this.txtStockMaximo.TabIndex = 17;
-            this.txtStockMaximo.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(206, 179);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 16);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Stock Máximo";
-            // 
-            // txtStockMinimo
-            // 
-            this.txtStockMinimo.Location = new System.Drawing.Point(310, 207);
-            this.txtStockMinimo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtStockMinimo.Name = "txtStockMinimo";
-            this.txtStockMinimo.Size = new System.Drawing.Size(162, 23);
-            this.txtStockMinimo.TabIndex = 19;
-            this.txtStockMinimo.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(206, 210);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(94, 16);
-            this.label4.TabIndex = 18;
-            this.label4.Text = "Stock Mínimo";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
+            this.cambiarDeUsuariioToolStripMenuItem.Click += new System.EventHandler(this.cambiarDeUsuariioToolStripMenuItem_Click);
             // 
             // AgregarProducto
             // 
@@ -374,7 +370,6 @@
 
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnRegresar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.ComboBox cmbProveedor;
         private System.Windows.Forms.Label label5;

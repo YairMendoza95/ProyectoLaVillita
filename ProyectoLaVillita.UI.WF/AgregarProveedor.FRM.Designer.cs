@@ -48,7 +48,6 @@
             this.cambiarDeUsuariioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label6 = new System.Windows.Forms.Label();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnRegresar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.txtTelefono = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -64,7 +63,6 @@
             this.groupBox1.Controls.Add(this.menuStrip1);
             this.groupBox1.Controls.Add(this.label6);
             this.groupBox1.Controls.Add(this.btnGuardar);
-            this.groupBox1.Controls.Add(this.btnRegresar);
             this.groupBox1.Controls.Add(this.btnSalir);
             this.groupBox1.Controls.Add(this.txtTelefono);
             this.groupBox1.Controls.Add(this.label3);
@@ -116,6 +114,7 @@
             this.registroDeProductosToolStripMenuItem.Name = "registroDeProductosToolStripMenuItem";
             this.registroDeProductosToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
             this.registroDeProductosToolStripMenuItem.Text = "Registro de productos";
+            this.registroDeProductosToolStripMenuItem.Click += new System.EventHandler(this.registroDeProductosToolStripMenuItem_Click);
             // 
             // proveedoresToolStripMenuItem
             // 
@@ -130,6 +129,7 @@
             this.registroDeProveedoresToolStripMenuItem.Name = "registroDeProveedoresToolStripMenuItem";
             this.registroDeProveedoresToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
             this.registroDeProveedoresToolStripMenuItem.Text = "Registro de proveedores";
+            this.registroDeProveedoresToolStripMenuItem.Click += new System.EventHandler(this.registroDeProveedoresToolStripMenuItem_Click);
             // 
             // registrosToolStripMenuItem
             // 
@@ -143,20 +143,23 @@
             // entradasToolStripMenuItem
             // 
             this.entradasToolStripMenuItem.Name = "entradasToolStripMenuItem";
-            this.entradasToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.entradasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.entradasToolStripMenuItem.Text = "Entradas";
+            this.entradasToolStripMenuItem.Click += new System.EventHandler(this.entradasToolStripMenuItem_Click);
             // 
             // ventasToolStripMenuItem
             // 
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.ventasToolStripMenuItem.Text = "Ventas";
+            this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
             // 
             // inventarioToolStripMenuItem
             // 
             this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
             this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.inventarioToolStripMenuItem.Text = "Inventario";
+            this.inventarioToolStripMenuItem.Click += new System.EventHandler(this.inventarioToolStripMenuItem_Click);
             // 
             // rentaDeSillasYMesasToolStripMenuItem1
             // 
@@ -174,18 +177,21 @@
             this.nuevaRentaToolStripMenuItem.Name = "nuevaRentaToolStripMenuItem";
             this.nuevaRentaToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
             this.nuevaRentaToolStripMenuItem.Text = "Nueva Renta";
+            this.nuevaRentaToolStripMenuItem.Click += new System.EventHandler(this.nuevaRentaToolStripMenuItem_Click);
             // 
             // datosDelClienteToolStripMenuItem
             // 
             this.datosDelClienteToolStripMenuItem.Name = "datosDelClienteToolStripMenuItem";
             this.datosDelClienteToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
             this.datosDelClienteToolStripMenuItem.Text = "Datos del Cliente";
+            this.datosDelClienteToolStripMenuItem.Click += new System.EventHandler(this.datosDelClienteToolStripMenuItem_Click);
             // 
             // inventarioToolStripMenuItem1
             // 
             this.inventarioToolStripMenuItem1.Name = "inventarioToolStripMenuItem1";
             this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(154, 22);
             this.inventarioToolStripMenuItem1.Text = "Inventario";
+            this.inventarioToolStripMenuItem1.Click += new System.EventHandler(this.inventarioToolStripMenuItem1_Click);
             // 
             // usuariosToolStripMenuItem
             // 
@@ -201,6 +207,7 @@
             this.registroDeNuevoUsuarioToolStripMenuItem.Name = "registroDeNuevoUsuarioToolStripMenuItem";
             this.registroDeNuevoUsuarioToolStripMenuItem.Size = new System.Drawing.Size(229, 22);
             this.registroDeNuevoUsuarioToolStripMenuItem.Text = "Registro de nuevo usuario";
+            this.registroDeNuevoUsuarioToolStripMenuItem.Click += new System.EventHandler(this.registroDeNuevoUsuarioToolStripMenuItem_Click);
             // 
             // cambiarDeUsuariioToolStripMenuItem
             // 
@@ -229,17 +236,6 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // btnRegresar
-            // 
-            this.btnRegresar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegresar.Location = new System.Drawing.Point(63, 153);
-            this.btnRegresar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(127, 39);
-            this.btnRegresar.TabIndex = 11;
-            this.btnRegresar.Text = "Regresar";
-            this.btnRegresar.UseVisualStyleBackColor = true;
             // 
             // btnSalir
             // 
@@ -325,7 +321,6 @@
         private System.Windows.Forms.ToolStripMenuItem cambiarDeUsuariioToolStripMenuItem;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnRegresar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.TextBox txtTelefono;
         private System.Windows.Forms.Label label3;
