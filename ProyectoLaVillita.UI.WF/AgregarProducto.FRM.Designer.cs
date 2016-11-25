@@ -59,6 +59,8 @@
             this.usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeNuevoUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cambiarDeUsuariioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.txtActual = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -76,7 +78,7 @@
             // btnGuardar
             // 
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(297, 256);
+            this.btnGuardar.Location = new System.Drawing.Point(162, 276);
             this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(127, 39);
@@ -88,7 +90,7 @@
             // btnSalir
             // 
             this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(486, 256);
+            this.btnSalir.Location = new System.Drawing.Point(452, 276);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(127, 39);
@@ -151,6 +153,8 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.SkyBlue;
+            this.groupBox1.Controls.Add(this.txtActual);
+            this.groupBox1.Controls.Add(this.label7);
             this.groupBox1.Controls.Add(this.txtStockMinimo);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.txtStockMaximo);
@@ -278,14 +282,14 @@
             // entradasToolStripMenuItem
             // 
             this.entradasToolStripMenuItem.Name = "entradasToolStripMenuItem";
-            this.entradasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.entradasToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.entradasToolStripMenuItem.Text = "Entradas";
             this.entradasToolStripMenuItem.Click += new System.EventHandler(this.entradasToolStripMenuItem_Click);
             // 
             // ventasToolStripMenuItem
             // 
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.ventasToolStripMenuItem.Text = "Ventas";
             this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
             // 
@@ -350,11 +354,28 @@
             this.cambiarDeUsuariioToolStripMenuItem.Text = "Cambiar de Usuario";
             this.cambiarDeUsuariioToolStripMenuItem.Click += new System.EventHandler(this.cambiarDeUsuariioToolStripMenuItem_Click);
             // 
+            // txtActual
+            // 
+            this.txtActual.Location = new System.Drawing.Point(310, 238);
+            this.txtActual.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtActual.Name = "txtActual";
+            this.txtActual.Size = new System.Drawing.Size(162, 23);
+            this.txtActual.TabIndex = 21;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(206, 241);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(94, 16);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "Stock Mínimo";
+            // 
             // AgregarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(709, 320);
+            this.ClientSize = new System.Drawing.Size(709, 323);
             this.Controls.Add(this.groupBox1);
             this.Name = "AgregarProducto";
             this.Text = "AgregarProducto";
@@ -399,5 +420,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtStockMaximo;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtActual;
+        private System.Windows.Forms.Label label7;
     }
 }

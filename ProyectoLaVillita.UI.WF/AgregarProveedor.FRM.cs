@@ -53,6 +53,7 @@ namespace ProyectoLaVillita.UI.WF
         private void registroDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             new AgregarProducto().Show();
+            this.Hide();
         }
 
         private void registroDeProveedoresToolStripMenuItem_Click(object sender, EventArgs e)

@@ -14,5 +14,6 @@ namespace ProyectoLaVillita.COMMON.Interfaces
         bool InsertarUsuario(UsuarioDTO usuario);
         bool ModificarUsuario(UsuarioDTO usuario);
         bool EliminarUsuario(UsuarioDTO usuario);
+        IQueryable<UsuarioDTO> Login(string nombreUsuario, string contraseña);
     }
 }

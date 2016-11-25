@@ -49,12 +49,16 @@ namespace ProyectoLaVillita.UI.WF
         {
             if (_producto == null)
             {
-                _producto = new ProductoDTO();
+                _producto = new ProductoDTO()
+                {
+                    nombre = txtNombreProducto.Text,
+                    precioUnitario = Convert.ToInt32(txtNombreProducto.Text),
+                    stockMax = Convert.ToInt32(txtStockMaximo.Text),
+                    stockActual = Convert.ToInt32(txtActual.Text),
+                    stockMin = Convert.ToInt32(txtStockMinimo.Text)
+                };
             }
-            _producto.nombre = txtNombreProducto.Text;
-            _producto.precioUnitario = Convert.ToInt32(txtNombreProducto.Text);
-            _producto.stockMax = Convert.ToInt32(txtStockMaximo.Text);
-            _producto.stockMin = Convert.ToInt32(txtStockMinimo.Text);
+            
             //switch(cmbProveedor.)
         }
 

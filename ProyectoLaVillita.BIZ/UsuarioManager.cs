@@ -12,6 +12,7 @@ namespace ProyectoLaVillita.BIZ
     public class UsuarioManager : IUsuarioManager
     {
         UsuarioRepository usuarioRepository;
+        ConsultaRepository consultaRepository;
         public UsuarioManager()
         {
             usuarioRepository = new UsuarioRepository();
@@ -35,6 +36,12 @@ namespace ProyectoLaVillita.BIZ
         public bool InsertarUsuario(UsuarioDTO usuario)
         {
             return usuarioRepository.Insertar(usuario);
+        }
+
+        public IQueryable<UsuarioDTO> Login(string nombreUsuario, string contraseña)
+        {
+            //return consultaRepository.Login()
+            return consultaRepository.Login(nombreUsuario, contraseña);
         }
 
         public bool ModificarUsuario(UsuarioDTO usuario)
