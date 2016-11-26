@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProyectoLaVillita.BIZ;
-using ProyectoLaVillita.COMMON.Entidades;
 
 namespace ProyectoLaVillita.UI.WF
 {
@@ -35,7 +34,11 @@ namespace ProyectoLaVillita.UI.WF
                 this.Hide();
             }
             else
+            {
                 MessageBox.Show("El usuario no existe");
+                txtUsuario.Clear();
+                txtContraseña.Clear();
+            }
         }
     }
 }

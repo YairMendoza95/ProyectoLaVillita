@@ -28,21 +28,22 @@ namespace ProyectoLaVillita.UI.WF
             {
                 if (_proveedor == null)
                 {
-                    _proveedor = new ProveedorDTO()
-                    {
-                        nombreProveedor = txtNombre.Text,
-                        telefono = txtTelefono.Text
-                    };
+                    _proveedor = new ProveedorDTO();
+                    _proveedor.nombreProveedor = txtNombre.Text;
+                    _proveedor.telefono = txtTelefono.Text;
                 }
-                _proveedorManager.InsertarProveedor(_proveedor);
-                MessageBox.Show("Proveedor Registrado exitosamente");
+                if (_proveedorManager.InsertarProveedor(_proveedor))
+                    MessageBox.Show("Proveedor Registrado exitosamente");
+                else
+                    MessageBox.Show("Proveedor no guardado");
+
+                txtNombre.Clear();
+                txtTelefono.Clear();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Erro: {0}", ex.Message);
             }
-           
-
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

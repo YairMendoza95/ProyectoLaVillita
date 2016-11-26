@@ -32,12 +32,18 @@ namespace ProyectoLaVillita.DAL
             {
                 conexion.Open();
                 da.SelectCommand = new MySqlCommand("Select * from usuario where nombreUsuario='" + nombreUsuario + "' and contraseña='" + contraseña + "'", conexion);
-                conexion.Close();
                 MySqlDataReader leer = da.SelectCommand.ExecuteReader();
+
                 if (leer.Read())
+                {
                     return true;
+
+                }
                 else
+                {
+                    conexion.Close();
                     return false;
+                }
             }
             catch (Exception)
             {
