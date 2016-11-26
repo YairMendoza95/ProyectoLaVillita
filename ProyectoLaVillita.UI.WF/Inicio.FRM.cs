@@ -29,16 +29,13 @@ namespace ProyectoLaVillita.UI.WF
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            try
+            if (_userManage.Login(txtUsuario.Text, txtContraseña.Text))
             {
-                _userManage.Login(txtUsuario.Text, txtContraseña.Text);
                 new VentaFRM().Show();
                 this.Hide();
             }
-            catch (Exception)
-            {
+            else
                 MessageBox.Show("El usuario no existe");
-            }
         }
     }
 }

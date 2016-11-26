@@ -7,6 +7,7 @@ using ProyectoLaVillita.COMMON.Entidades;
 using ProyectoLaVillita.COMMON.Interfaces;
 using MySql.Data.MySqlClient;
 using System.Data;
+using MySql.Data;
 
 namespace ProyectoLaVillita.DAL
 {
@@ -30,12 +31,19 @@ namespace ProyectoLaVillita.DAL
             try
             {
                 conexion.Open();
-                da.SelectCommand = new MySqlCommand("Select * from usuario where nombreUsuario='" + nombreUsuario + "', contraseña='" + contraseña + "'", conexion);
+                da.SelectCommand = new MySqlCommand("Select * from usuario where nombreUsuario='" + nombreUsuario + "' and contraseña='" + contraseña + "'", conexion);
+                conexion.Close();
+                MySqlDataReader leer = da.SelectCommand.ExecuteReader();
+                if (leer.Read())
+                    return true;
+                else
+                    return false;
             }
             catch (Exception)
             {
-
-                throw;
+                if (conexion.State == ConnectionState.Open)
+                    conexion.Close();
+                return false;
             }
         }
 
