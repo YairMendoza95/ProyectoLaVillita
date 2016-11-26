@@ -25,32 +25,17 @@ namespace ProyectoLaVillita.DAL
             throw new NotImplementedException();
         }
 
-        public IQueryable<UsuarioDTO> Login(string nombreUsuario, string contraseña)
+        public bool Login(string nombreUsuario, string contraseña)
         {
             try
             {
                 conexion.Open();
-                da.SelectCommand = new MySqlCommand("Select * from usuario where nombreUsuario='" + nombreUsuario + "' and contraseña='" + contraseña + "'", conexion);
-                DataSet ds = new DataSet();
-                da.Fill(ds);
-                conexion.Close();
-                List<UsuarioDTO> usuario = new List<UsuarioDTO>();
-                for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
-                {
-                    UsuarioDTO user = new UsuarioDTO()
-                    {
-                        nombreUsuario = ds.Tables[0].Rows[i]["nombreUsuario"].ToString(),
-                        contraseña = ds.Tables[0].Rows[i]["contraseña"].ToString()
-                    };
-                    usuario.Add(user);
-                }
-                return usuario.AsQueryable();
+                da.SelectCommand = new MySqlCommand("Select * from usuario where nombreUsuario='" + nombreUsuario + "', contraseña='" + contraseña + "'", conexion);
             }
             catch (Exception)
             {
-                if (conexion.State == ConnectionState.Open)
-                    conexion.Close();
-                return null;
+
+                throw;
             }
         }
 

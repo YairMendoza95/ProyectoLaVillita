@@ -14,6 +14,6 @@ namespace ProyectoLaVillita.COMMON.Interfaces
         IEnumerable<ProductoDTO> ProductosDeUnProveedor(int idProveedor);
         IEnumerable<EntradaDTO> EntradasPorProducto(int idProducto);
         IEnumerable<ProductoDTO> ProductosDeUnaVenta(int idVenta);
-        IQueryable<UsuarioDTO> Login(string nombreUsuario, string contraseña);
+        bool Login(string nombreUsuario, string contraseña);
     }
 }

@@ -16,6 +16,7 @@ namespace ProyectoLaVillita.BIZ
         public UsuarioManager()
         {
             usuarioRepository = new UsuarioRepository();
+            consultaRepository = new ConsultaRepository();
         }
 
         public IQueryable<UsuarioDTO> Usuarios
@@ -38,15 +39,14 @@ namespace ProyectoLaVillita.BIZ
             return usuarioRepository.Insertar(usuario);
         }
 
-        public IQueryable<UsuarioDTO> Login(string nombreUsuario, string contraseña)
-        {
-            //return consultaRepository.Login()
-            return consultaRepository.Login(nombreUsuario, contraseña);
-        }
-
         public bool ModificarUsuario(UsuarioDTO usuario)
         {
             return usuarioRepository.Modificar(usuario);
+        }
+
+        bool Login(string nombreUsuario, string contraseña)
+        {
+            return consultaRepository.Login(nombreUsuario, contraseña);
         }
     }
 }

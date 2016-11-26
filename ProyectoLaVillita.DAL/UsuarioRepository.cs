@@ -10,7 +10,7 @@ using ProyectoLaVillita.COMMON.Interfaces;
 
 namespace ProyectoLaVillita.DAL
 {
-    public class UsuarioRepository:IRepositorioGenerico<UsuarioDTO>
+    public class UsuarioRepository : IRepositorioGenerico<UsuarioDTO>
     {
         MySqlConnection conexion;
         MySqlDataAdapter da;

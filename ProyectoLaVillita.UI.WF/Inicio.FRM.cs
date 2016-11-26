@@ -37,8 +37,7 @@ namespace ProyectoLaVillita.UI.WF
             }
             catch (Exception)
             {
-
-                throw;
+                MessageBox.Show("El usuario no existe");
             }
         }
     }
