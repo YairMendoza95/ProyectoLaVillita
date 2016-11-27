@@ -26,12 +26,10 @@ namespace ProyectoLaVillita.UI.WF
         {
             try
             {
-                if (_proveedor == null)
-                {
-                    _proveedor = new ProveedorDTO();
-                    _proveedor.nombreProveedor = txtNombre.Text;
-                    _proveedor.telefono = txtTelefono.Text;
-                }
+                _proveedor = new ProveedorDTO();
+                _proveedor.nombreProveedor = txtNombre.Text;
+                _proveedor.telefono = txtTelefono.Text;
+
                 if (_proveedorManager.InsertarProveedor(_proveedor))
                     MessageBox.Show("Proveedor Registrado exitosamente");
                 else
