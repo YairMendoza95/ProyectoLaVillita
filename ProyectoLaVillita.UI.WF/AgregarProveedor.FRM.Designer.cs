@@ -33,8 +33,12 @@
             this.tiendaDeAbarrotesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.proveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registroDeProveedoresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificarProveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarProveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.entradasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ventasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -53,10 +57,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.modificarProveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarProveedorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.modificarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarRentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificarREntaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -122,6 +124,20 @@
             this.registroDeProductosToolStripMenuItem.Text = "Registro de productos";
             this.registroDeProductosToolStripMenuItem.Click += new System.EventHandler(this.registroDeProductosToolStripMenuItem_Click);
             // 
+            // modificarToolStripMenuItem
+            // 
+            this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
+            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.modificarToolStripMenuItem.Text = "Eliminar producto";
+            this.modificarToolStripMenuItem.Click += new System.EventHandler(this.modificarToolStripMenuItem_Click);
+            // 
+            // eliminarProductoToolStripMenuItem
+            // 
+            this.eliminarProductoToolStripMenuItem.Name = "eliminarProductoToolStripMenuItem";
+            this.eliminarProductoToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
+            this.eliminarProductoToolStripMenuItem.Text = "Modificar producto";
+            this.eliminarProductoToolStripMenuItem.Click += new System.EventHandler(this.eliminarProductoToolStripMenuItem_Click);
+            // 
             // proveedoresToolStripMenuItem
             // 
             this.proveedoresToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -139,6 +155,20 @@
             this.registroDeProveedoresToolStripMenuItem.Text = "Registro de proveedores";
             this.registroDeProveedoresToolStripMenuItem.Click += new System.EventHandler(this.registroDeProveedoresToolStripMenuItem_Click);
             // 
+            // modificarProveedorToolStripMenuItem
+            // 
+            this.modificarProveedorToolStripMenuItem.Name = "modificarProveedorToolStripMenuItem";
+            this.modificarProveedorToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.modificarProveedorToolStripMenuItem.Text = "Eliminar proveedor";
+            this.modificarProveedorToolStripMenuItem.Click += new System.EventHandler(this.modificarProveedorToolStripMenuItem_Click);
+            // 
+            // eliminarProveedorToolStripMenuItem
+            // 
+            this.eliminarProveedorToolStripMenuItem.Name = "eliminarProveedorToolStripMenuItem";
+            this.eliminarProveedorToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
+            this.eliminarProveedorToolStripMenuItem.Text = "Modificar proveedor";
+            this.eliminarProveedorToolStripMenuItem.Click += new System.EventHandler(this.eliminarProveedorToolStripMenuItem_Click);
+            // 
             // registrosToolStripMenuItem
             // 
             this.registrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -151,14 +181,14 @@
             // entradasToolStripMenuItem
             // 
             this.entradasToolStripMenuItem.Name = "entradasToolStripMenuItem";
-            this.entradasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.entradasToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.entradasToolStripMenuItem.Text = "Entradas";
             this.entradasToolStripMenuItem.Click += new System.EventHandler(this.entradasToolStripMenuItem_Click);
             // 
             // ventasToolStripMenuItem
             // 
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.ventasToolStripMenuItem.Text = "Ventas";
             this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
             // 
@@ -181,23 +211,25 @@
             // nuevaRentaToolStripMenuItem
             // 
             this.nuevaRentaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.datosDelClienteToolStripMenuItem});
+            this.datosDelClienteToolStripMenuItem,
+            this.eliminarRentaToolStripMenuItem,
+            this.modificarREntaToolStripMenuItem});
             this.nuevaRentaToolStripMenuItem.Name = "nuevaRentaToolStripMenuItem";
-            this.nuevaRentaToolStripMenuItem.Size = new System.Drawing.Size(154, 22);
-            this.nuevaRentaToolStripMenuItem.Text = "Nueva Renta";
+            this.nuevaRentaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nuevaRentaToolStripMenuItem.Text = "Renta";
             this.nuevaRentaToolStripMenuItem.Click += new System.EventHandler(this.nuevaRentaToolStripMenuItem_Click);
             // 
             // datosDelClienteToolStripMenuItem
             // 
             this.datosDelClienteToolStripMenuItem.Name = "datosDelClienteToolStripMenuItem";
-            this.datosDelClienteToolStripMenuItem.Size = new System.Drawing.Size(179, 22);
-            this.datosDelClienteToolStripMenuItem.Text = "Datos del Cliente";
+            this.datosDelClienteToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.datosDelClienteToolStripMenuItem.Text = "Registrar nueva renta";
             this.datosDelClienteToolStripMenuItem.Click += new System.EventHandler(this.datosDelClienteToolStripMenuItem_Click);
             // 
             // inventarioToolStripMenuItem1
             // 
             this.inventarioToolStripMenuItem1.Name = "inventarioToolStripMenuItem1";
-            this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(154, 22);
+            this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.inventarioToolStripMenuItem1.Text = "Inventario";
             this.inventarioToolStripMenuItem1.Click += new System.EventHandler(this.inventarioToolStripMenuItem1_Click);
             // 
@@ -291,29 +323,19 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Nombre";
             // 
-            // modificarProveedorToolStripMenuItem
+            // eliminarRentaToolStripMenuItem
             // 
-            this.modificarProveedorToolStripMenuItem.Name = "modificarProveedorToolStripMenuItem";
-            this.modificarProveedorToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
-            this.modificarProveedorToolStripMenuItem.Text = "Modificar proveedor";
+            this.eliminarRentaToolStripMenuItem.Name = "eliminarRentaToolStripMenuItem";
+            this.eliminarRentaToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.eliminarRentaToolStripMenuItem.Text = "Eliminar renta";
+            this.eliminarRentaToolStripMenuItem.Click += new System.EventHandler(this.eliminarRentaToolStripMenuItem_Click);
             // 
-            // eliminarProveedorToolStripMenuItem
+            // modificarREntaToolStripMenuItem
             // 
-            this.eliminarProveedorToolStripMenuItem.Name = "eliminarProveedorToolStripMenuItem";
-            this.eliminarProveedorToolStripMenuItem.Size = new System.Drawing.Size(223, 22);
-            this.eliminarProveedorToolStripMenuItem.Text = "Eliminar proveedor";
-            // 
-            // modificarToolStripMenuItem
-            // 
-            this.modificarToolStripMenuItem.Name = "modificarToolStripMenuItem";
-            this.modificarToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.modificarToolStripMenuItem.Text = "Modificar producto";
-            // 
-            // eliminarProductoToolStripMenuItem
-            // 
-            this.eliminarProductoToolStripMenuItem.Name = "eliminarProductoToolStripMenuItem";
-            this.eliminarProductoToolStripMenuItem.Size = new System.Drawing.Size(207, 22);
-            this.eliminarProductoToolStripMenuItem.Text = "Eliminar producto";
+            this.modificarREntaToolStripMenuItem.Name = "modificarREntaToolStripMenuItem";
+            this.modificarREntaToolStripMenuItem.Size = new System.Drawing.Size(204, 22);
+            this.modificarREntaToolStripMenuItem.Text = "Modificar Renta";
+            this.modificarREntaToolStripMenuItem.Click += new System.EventHandler(this.modificarREntaToolStripMenuItem_Click);
             // 
             // AgregarProveedor
             // 
@@ -362,5 +384,7 @@
         private System.Windows.Forms.ToolStripMenuItem eliminarProductoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarProveedorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarProveedorToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eliminarRentaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modificarREntaToolStripMenuItem;
     }
 }

@@ -64,6 +64,24 @@
     <Compile Include="AgregarUsuario.FRM.Designer.cs">
       <DependentUpon>AgregarUsuario.FRM.cs</DependentUpon>
     </Compile>
+    <Compile Include="EliminarProducto.FRM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EliminarProducto.FRM.Designer.cs">
+      <DependentUpon>EliminarProducto.FRM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EliminarProveedor.FRM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EliminarProveedor.FRM.Designer.cs">
+      <DependentUpon>EliminarProveedor.FRM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EliminarRenta.FRM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EliminarRenta.FRM.Designer.cs">
+      <DependentUpon>EliminarRenta.FRM.cs</DependentUpon>
+    </Compile>
     <Compile Include="Entrada.FRM.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +106,24 @@
     <Compile Include="InventarioVentas.FRM.Designer.cs">
       <DependentUpon>InventarioVentas.FRM.cs</DependentUpon>
     </Compile>
+    <Compile Include="ModificarProducto.FRM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarProducto.FRM.Designer.cs">
+      <DependentUpon>ModificarProducto.FRM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarProveedor.FRM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarProveedor.FRM.Designer.cs">
+      <DependentUpon>ModificarProveedor.FRM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModificarRenta.FRM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModificarRenta.FRM.Designer.cs">
+      <DependentUpon>ModificarRenta.FRM.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Renta.FRM.cs">
@@ -110,6 +146,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="AgregarUsuario.FRM.resx">
       <DependentUpon>AgregarUsuario.FRM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EliminarProducto.FRM.resx">
+      <DependentUpon>EliminarProducto.FRM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Entrada.FRM.resx">
       <DependentUpon>Entrada.FRM.cs</DependentUpon>

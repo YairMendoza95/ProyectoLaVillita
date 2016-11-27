@@ -16,5 +16,22 @@ namespace ProyectoLaVillita.UI.WF
         {
             InitializeComponent();
         }
+
+        private void modificaProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new EliminarProducto().Show();
+            this.Hide();
+        }
+
+        private void eliminarProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void modificarProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ModificarProducto().Show();
+            this.Hide();
+        }
     }
 }

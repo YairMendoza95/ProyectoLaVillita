@@ -101,5 +101,41 @@ namespace ProyectoLaVillita.UI.WF
             new AgregarUsuario().Show();
             this.Hide();
         }
+
+        private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new EliminarProducto().Show();
+            this.Hide();
+        }
+
+        private void eliminarProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ModificarProducto().Show();
+            this.Hide();
+        }
+
+        private void modificarProveedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new EliminarProveedor().Show();
+            this.Hide();
+        }
+
+        private void eliminarProveedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ModificarProveedor().Show();
+            this.Hide();
+        }
+
+        private void eliminarRentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new EliminarRenta().Show();
+            this.Hide();
+        }
+
+        private void modificarREntaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new ModificarRenta().Show();
+            this.Hide();
+        }
     }
 }
