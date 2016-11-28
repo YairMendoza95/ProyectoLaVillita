@@ -10,7 +10,7 @@ using System.Data;
 
 namespace ProyectoLaVillita.DAL
 {
-    public class RentaRepository:IRepositorioGenerico<RentaDTO>
+    public class RentaRepository : IRepositorioGenerico<RentaDTO>
     {
         MySqlConnection conexion;
         MySqlDataAdapter da;
@@ -51,6 +51,11 @@ namespace ProyectoLaVillita.DAL
                     return null;
                 }
             }
+        }
+
+        public IQueryable<RentaDTO> Nombre
+        {
+            get{ throw new NotImplementedException(); }
         }
 
         public bool Eliminar(RentaDTO entidad)

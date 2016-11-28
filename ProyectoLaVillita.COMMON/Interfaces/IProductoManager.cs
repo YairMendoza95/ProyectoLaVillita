@@ -10,12 +10,13 @@ namespace ProyectoLaVillita.COMMON.Interfaces
     public interface IProductoManager
     {
         IQueryable<ProductoDTO> Productos { get; }
+        IQueryable<ProductoDTO> Nombre { get; }
         ProductoDTO BuscarProductosPorId(int idProducto);
+        ProductoDTO BuscarProductoPorNombre(string nombre);
         bool AgregarProducto(ProductoDTO producto);
         bool ModificarProducto(ProductoDTO producto);
         bool EliminarProducto(ProductoDTO producto);
         IEnumerable<ProductoDTO> ProductosDeUnProveedor(int idProveedor);
-        IEnumerable<ProductoDTO> ProductosPorTipo(int idTipoProducto);
         IEnumerable<ProductoDTO> ProductosDeUnaVenta(int idVenta);
     }
 }

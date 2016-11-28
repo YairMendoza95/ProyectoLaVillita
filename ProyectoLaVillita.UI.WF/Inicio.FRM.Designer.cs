@@ -98,6 +98,7 @@
             this.txtContraseña.Location = new System.Drawing.Point(211, 148);
             this.txtContraseña.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(170, 23);
             this.txtContraseña.TabIndex = 3;
             // 
@@ -148,7 +149,7 @@
             this.ClientSize = new System.Drawing.Size(394, 327);
             this.Controls.Add(this.groupBox1);
             this.Name = "Inicio";
-            this.Text = "Inicio";
+            this.Text = "Sistema de inventario \"La Villita\"";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -57,6 +57,37 @@ namespace ProyectoLaVillita.DAL
             }
         }
 
+        public IQueryable<ProductoDTO> Nombre
+        {
+            get
+            {
+                try
+                {
+                    conexion.Open();
+                    da.SelectCommand = new MySqlCommand("Select nombre from producto", conexion);
+                    DataSet dc = new DataSet();
+                    da.Fill(dc);
+                    conexion.Close();
+                    List<ProductoDTO> producto = new List<ProductoDTO>();
+                    for (int i = 0; i < dc.Tables[0].Rows.Count; i++)
+                    {
+                        ProductoDTO prod = new ProductoDTO()
+                        {
+                            nombre = dc.Tables[0].Rows[i].ToString()
+                        };
+                        producto.Add(prod);
+                    }
+                    return producto.AsQueryable();
+                }
+                catch (Exception)
+                {
+                    if (conexion.State == ConnectionState.Open)
+                        conexion.Close();
+                    return null;
+                }
+            }
+        }
+
         public bool Eliminar(ProductoDTO entidad)
         {
             try

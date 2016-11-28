@@ -39,5 +39,10 @@ namespace ProyectoLaVillita.BIZ
         {
             throw new NotImplementedException();
         }
+
+        public EntradaDTO BuscarEntradaPorId(int idEntrada)
+        {
+            return entradaRepository.Elementos.FirstOrDefault(e => e.idEntrada == idEntrada);
+        }
     }
 }

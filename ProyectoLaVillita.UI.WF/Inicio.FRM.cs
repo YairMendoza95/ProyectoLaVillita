@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProyectoLaVillita.BIZ;
+using ProyectoLaVillita.UI.WF.Productos;
+using ProyectoLaVillita.UI.WF.Proveedores;
 
 namespace ProyectoLaVillita.UI.WF
 {
@@ -30,7 +32,7 @@ namespace ProyectoLaVillita.UI.WF
         {
             if (_userManage.Login(txtUsuario.Text, txtContraseña.Text))
             {
-                new VentaFRM().Show();
+                new Venta().Show();
                 this.Hide();
             }
             else

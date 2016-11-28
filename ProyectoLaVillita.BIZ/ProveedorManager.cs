@@ -17,6 +17,11 @@ namespace ProyectoLaVillita.BIZ
             proveedorRepository = new ProveedorRepository();
         }
 
+        public IQueryable<ProveedorDTO> Nombre
+        {
+            get { return proveedorRepository.Nombre; }
+        }
+
         public IQueryable<ProveedorDTO> Proveedores
         {
             get { return proveedorRepository.Elementos; }
@@ -25,6 +30,11 @@ namespace ProyectoLaVillita.BIZ
         public ProveedorDTO BuscarProveedorPorId(int idProveedor)
         {
             return proveedorRepository.Elementos.FirstOrDefault(p => p.idProveedor == idProveedor);
+        }
+
+        public ProveedorDTO BuscarProveedorPorNombre(string nombre)
+        {
+            return proveedorRepository.Elementos.FirstOrDefault(p => p.nombreProveedor == nombre);
         }
 
         public bool EliminarProveedor(ProveedorDTO proveedor)

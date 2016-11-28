@@ -19,6 +19,11 @@ namespace ProyectoLaVillita.BIZ
             get { return productoRepository.Elementos; }
         }
 
+        public IQueryable<ProductoDTO> Nombre
+        {
+            get { return productoRepository.Nombre; }
+        }
+
         public ProductoManager()
         {
             productoRepository = new ProductoRepository();
@@ -50,14 +55,14 @@ namespace ProyectoLaVillita.BIZ
             throw new NotImplementedException();
         }
 
-        public IEnumerable<ProductoDTO> ProductosPorTipo(int idTipoProducto)
+        public IEnumerable<ProductoDTO> ProductosDeUnaVenta(int idVenta)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<ProductoDTO> ProductosDeUnaVenta(int idVenta)
+        public ProductoDTO BuscarProductoPorNombre(string nombre)
         {
-            throw new NotImplementedException();
+            return productoRepository.Elementos.FirstOrDefault(p => p.nombre == nombre);
         }
     }
 }
