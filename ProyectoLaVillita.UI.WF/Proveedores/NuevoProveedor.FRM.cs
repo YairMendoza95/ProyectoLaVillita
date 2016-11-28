@@ -128,11 +128,16 @@ namespace ProyectoLaVillita.UI.WF.Proveedores
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            char c = '"';
+            string titulo = "Sistema de inventario " + c + "La Villita" + c;
+            if (MessageBox.Show("¿Está seguro que quiere salir?", titulo, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                Application.Exit();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            char c = '"';
+            string titulo = "Sistema de inventario " + c + "La Villita" + c;
             try
             {
                 if (_prov == null)
@@ -145,16 +150,16 @@ namespace ProyectoLaVillita.UI.WF.Proveedores
                     //_provManager.InsertarProveedor(_prov);
 
                     if (_provManager.InsertarProveedor(_prov))
-                        MessageBox.Show("Proveedor registrado corectamente");
+                        MessageBox.Show("Proveedor registrado corectamente", titulo, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     else
-                        MessageBox.Show("Proveedor no registrado");
+                        MessageBox.Show("Proveedor no registrado", titulo, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 txtNombre.Clear();
                 txtTelefono.Clear();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Error: {0}", ex.Message);
+                MessageBox.Show("Error: "+ex.Message, titulo, MessageBoxButtons.OK, MessageBoxIcon.Error );
             }
         }
     }

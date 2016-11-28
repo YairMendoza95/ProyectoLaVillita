@@ -37,7 +37,10 @@ namespace ProyectoLaVillita.UI.WF.Productos
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            char c = '"';
+            string titulo = "Sistema de inventario " + c + "La Villita" + c;
+            if (MessageBox.Show("¿Está seguro que quiere salir?", titulo, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                Application.Exit();
         }
 
         private void entradasToolStripMenuItem_Click(object sender, EventArgs e)

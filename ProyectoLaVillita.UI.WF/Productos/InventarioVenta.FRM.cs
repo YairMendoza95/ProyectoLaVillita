@@ -12,6 +12,7 @@ using ProyectoLaVillita.UI.WF.Rentas;
 using ProyectoLaVillita.UI.WF.Usuarios;
 using ProyectoLaVillita.BIZ;
 using ProyectoLaVillita.COMMON.Entidades;
+using DevComponents.DotNetBar;
 
 namespace ProyectoLaVillita.UI.WF.Productos
 {
@@ -30,7 +31,10 @@ namespace ProyectoLaVillita.UI.WF.Productos
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            char c = '"';
+            string titulo = "Sistema de inventario " + c + "La Villita" + c;
+            if (MessageBox.Show("¿Está seguro que quiere salir?", titulo, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                Application.Exit();
         }
 
         private void registroDeProductosToolStripMenuItem_Click(object sender, EventArgs e)

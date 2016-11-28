@@ -32,7 +32,6 @@
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dtpFecheEntrada = new System.Windows.Forms.DateTimePicker();
-            this.cmbProveedores = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbProductos = new System.Windows.Forms.ComboBox();
@@ -68,6 +67,7 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
+            this.txtProveedor = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -75,10 +75,10 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.SkyBlue;
+            this.groupBox1.Controls.Add(this.txtProveedor);
             this.groupBox1.Controls.Add(this.txtTotal);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.dtpFecheEntrada);
-            this.groupBox1.Controls.Add(this.cmbProveedores);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.cmbProductos);
@@ -121,14 +121,6 @@
             this.dtpFecheEntrada.Name = "dtpFecheEntrada";
             this.dtpFecheEntrada.Size = new System.Drawing.Size(121, 23);
             this.dtpFecheEntrada.TabIndex = 23;
-            // 
-            // cmbProveedores
-            // 
-            this.cmbProveedores.FormattingEnabled = true;
-            this.cmbProveedores.Location = new System.Drawing.Point(267, 118);
-            this.cmbProveedores.Name = "cmbProveedores";
-            this.cmbProveedores.Size = new System.Drawing.Size(121, 24);
-            this.cmbProveedores.TabIndex = 22;
             // 
             // label2
             // 
@@ -426,6 +418,16 @@
             this.label3.TabIndex = 6;
             this.label3.Text = "Fecha";
             // 
+            // txtProveedor
+            // 
+            this.txtProveedor.Location = new System.Drawing.Point(267, 118);
+            this.txtProveedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtProveedor.Name = "txtProveedor";
+            this.txtProveedor.ReadOnly = true;
+            this.txtProveedor.Size = new System.Drawing.Size(121, 23);
+            this.txtProveedor.TabIndex = 26;
+            this.txtProveedor.UseSystemPasswordChar = true;
+            // 
             // Entrada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -447,7 +449,6 @@
 
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DateTimePicker dtpFecheEntrada;
-        private System.Windows.Forms.ComboBox cmbProveedores;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cmbProductos;
@@ -485,5 +486,6 @@
         private System.Windows.Forms.ToolStripMenuItem nuevoUsuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarUsuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarUsuarioToolStripMenuItem;
+        private System.Windows.Forms.TextBox txtProveedor;
     }
 }

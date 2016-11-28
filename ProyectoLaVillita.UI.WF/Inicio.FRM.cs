@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProyectoLaVillita.BIZ;
 using ProyectoLaVillita.UI.WF.Productos;
-using ProyectoLaVillita.UI.WF.Proveedores;
 
 namespace ProyectoLaVillita.UI.WF
 {
@@ -25,21 +24,30 @@ namespace ProyectoLaVillita.UI.WF
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            char c = '"';
+            string titulo = "Sistema de inventario " + c + "La Villita" + c;
+            if (MessageBox.Show("¿Está seguro que quiere salir?", titulo, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                Application.Exit();
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
+            char c = '"';
+            string titulo = "Sistema de inventario " + c + "La Villita" + c;
             if (_userManage.Login(txtUsuario.Text, txtContraseña.Text))
             {
-                new Venta().Show();
-                this.Hide();
+                if (MessageBox.Show("¡Bienvenido!", titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk) == DialogResult.OK)
+                {
+                    new Venta().Show();
+                    this.Hide();
+                }
             }
             else
             {
-                MessageBox.Show("El usuario no existe");
-                txtUsuario.Clear();
+                MessageBox.Show("El usuario no existe",titulo, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //txtUsuario.Clear();
                 txtContraseña.Clear();
+                txtContraseña.Focus();
             }
         }
     }

@@ -12,6 +12,7 @@ using ProyectoLaVillita.BIZ;
 using ProyectoLaVillita.UI.WF.Proveedores;
 using ProyectoLaVillita.UI.WF.Rentas;
 using ProyectoLaVillita.UI.WF.Usuarios;
+using DevComponents.DotNetBar;
 
 namespace ProyectoLaVillita.UI.WF.Productos
 {
@@ -32,17 +33,22 @@ namespace ProyectoLaVillita.UI.WF.Productos
 
         private void Entrada_Load(object sender, EventArgs e)
         {
-            cmbProductos.DataSource = _prodManager.Productos;
-            cmbProveedores.DataSource = _provManager.Proveedores;
+            //cmbProductos.DataSource = 
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            char c = '"';
+            string titulo = "Sistema de inventario " + c + "La Villita" + c;
+            if (MessageBox.Show("¿Está seguro que quiere salir?", titulo, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                Application.Exit();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            txtProveedor.Text = _provManager.BuscarProveedorPorId(
+                _prodManager.BuscarProductoPorNombre(cmbProductos.SelectedIndex.ToString()).idProveedor)
+                .nombreProveedor;
             try
             {
                 if(_ent==null)
@@ -50,7 +56,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
                     _ent = new EntradaDTO()
                     {
                         idProducto = Convert.ToInt32(cmbProductos.SelectedIndex),
-                        idProveedor = Convert.ToInt32(cmbProveedores.SelectedIndex),
+                        idProveedor = Convert.ToInt32(txtProveedor.Text),
                         fechaEntrada = Convert.ToDateTime(dtpFecheEntrada),
                         cantidad = Convert.ToInt32(txtCantidad.Text),
                         montoPagar = Convert.ToInt32(txtTotal.Text)

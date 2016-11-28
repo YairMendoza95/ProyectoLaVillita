@@ -33,6 +33,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevComponents.DotNetBar2, Version=10.0.0.3, Culture=neutral, PublicKeyToken=c39c3242a43eee2b, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevComponents.DotNetBar2.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.Instrumentation, Version=10.0.0.3, Culture=neutral, PublicKeyToken=bc4a9d761ea44ef0, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevComponents.Instrumentation.dll</HintPath>
+    </Reference>
+    <Reference Include="DevComponents.TreeGX, Version=10.0.0.3, Culture=neutral, PublicKeyToken=cfcbd7476b2389d1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\DevComponents.TreeGX.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -153,11 +165,17 @@
     <EmbeddedResource Include="Inicio.FRM.resx">
       <DependentUpon>Inicio.FRM.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Productos\EliminarProducto.FRM.resx">
+      <DependentUpon>EliminarProducto.FRM.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Productos\Entrada.FRM.resx">
       <DependentUpon>Entrada.FRM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\InventarioVenta.FRM.resx">
       <DependentUpon>InventarioVenta.FRM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\ModificarProducto.FRM.resx">
+      <DependentUpon>ModificarProducto.FRM.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\NuevoProducto.FRM.resx">
       <DependentUpon>NuevoProducto.FRM.cs</DependentUpon>
@@ -175,8 +193,35 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Proveedores\EliminarProveedor.FRM.resx">
+      <DependentUpon>EliminarProveedor.FRM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Proveedores\ModificarProveedor.FRM.resx">
+      <DependentUpon>ModificarProveedor.FRM.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Proveedores\NuevoProveedor.FRM.resx">
       <DependentUpon>NuevoProveedor.FRM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rentas\EliminarRenta.FRM.resx">
+      <DependentUpon>EliminarRenta.FRM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rentas\InventarioRenta.FRM.resx">
+      <DependentUpon>InventarioRenta.FRM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rentas\ModificarRenta.FRM.resx">
+      <DependentUpon>ModificarRenta.FRM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rentas\NuevaRenta.FRM.resx">
+      <DependentUpon>NuevaRenta.FRM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\AgregarUsuario.FRM.resx">
+      <DependentUpon>AgregarUsuario.FRM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\EliminarUsuario.FRM.resx">
+      <DependentUpon>EliminarUsuario.FRM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Usuarios\ModificarUsuario.FRM.resx">
+      <DependentUpon>ModificarUsuario.FRM.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
