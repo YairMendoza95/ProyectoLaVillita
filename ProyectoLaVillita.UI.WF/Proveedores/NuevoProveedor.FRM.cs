@@ -19,10 +19,13 @@ namespace ProyectoLaVillita.UI.WF.Proveedores
     {
         private ProveedorDTO _prov;
         private ProveedorManager _provManager;
+        public char c = '"';
+        public string titulo;
         public NuevoProveedor()
         {
             InitializeComponent();
             _provManager = new ProveedorManager();
+            titulo = "Sistema de inventario " + c + "La Villita" + c;
         }
 
         private void registroDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -128,8 +131,6 @@ namespace ProyectoLaVillita.UI.WF.Proveedores
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            char c = '"';
-            string titulo = "Sistema de inventario " + c + "La Villita" + c;
             if (MessageBox.Show("¿Está seguro que quiere salir?", titulo, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 Application.Exit();
         }
@@ -160,6 +161,15 @@ namespace ProyectoLaVillita.UI.WF.Proveedores
             catch (Exception ex)
             {
                 MessageBox.Show("Error: "+ex.Message, titulo, MessageBoxButtons.OK, MessageBoxIcon.Error );
+            }
+        }
+
+        private void cambiarDeUsuariioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Está seguro que quiere cerrar sesión?", titulo, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                new Inicio().Show();
+                this.Hide();
             }
         }
     }

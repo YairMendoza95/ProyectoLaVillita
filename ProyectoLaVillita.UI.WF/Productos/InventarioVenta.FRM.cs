@@ -12,17 +12,19 @@ using ProyectoLaVillita.UI.WF.Rentas;
 using ProyectoLaVillita.UI.WF.Usuarios;
 using ProyectoLaVillita.BIZ;
 using ProyectoLaVillita.COMMON.Entidades;
-using DevComponents.DotNetBar;
 
 namespace ProyectoLaVillita.UI.WF.Productos
 {
     public partial class InventarioVenta : Form
     {
         private ProductoManager _prodManager;
+        public char c = '"';
+        public string titulo;
         public InventarioVenta()
         {
             InitializeComponent();
             _prodManager = new ProductoManager();
+            titulo = "Sistema de inventario " + c + "La Villita" + c;
         }
         private void InventarioVenta_Load(object sender, EventArgs e)
         {
@@ -31,9 +33,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            char c = '"';
-            string titulo = "Sistema de inventario " + c + "La Villita" + c;
-            if (MessageBox.Show("¿Está seguro que quiere salir?", titulo, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("¿Está seguro que quiere salir?", titulo, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 Application.Exit();
         }
 
@@ -143,6 +143,15 @@ namespace ProyectoLaVillita.UI.WF.Productos
             {
 
                 throw;
+            }
+        }
+
+        private void cambiarDeUsuariioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Está seguro que quiere salir?", titulo, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                new Inicio().Show();
+                this.Hide();
             }
         }
     }

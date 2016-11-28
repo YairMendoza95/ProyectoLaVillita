@@ -22,13 +22,15 @@ namespace ProyectoLaVillita.UI.WF.Productos
         private ProductoManager _prodManager;
         private ProveedorManager _provManager;
         private EntradaManager _entManager;
-
+        public string titulo;
+        public char c = '"';
         public Entrada()
         {
             InitializeComponent();
             _prodManager = new ProductoManager();
             _provManager = new ProveedorManager();
             _entManager = new EntradaManager();
+            titulo = "Sistema de inventario " + c + "La Villita" + c;
         }
 
         private void Entrada_Load(object sender, EventArgs e)
@@ -38,9 +40,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            char c = '"';
-            string titulo = "Sistema de inventario " + c + "La Villita" + c;
-            if (MessageBox.Show("¿Está seguro que quiere salir?", titulo, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("¿Está seguro que quiere salir?", titulo, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 Application.Exit();
         }
 
@@ -165,6 +165,15 @@ namespace ProyectoLaVillita.UI.WF.Productos
         {
             new ModificarUsuario().Show();
             this.Hide();
+        }
+
+        private void cambiarDeUsuariioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Está seguro que quiere cerrar sesión?", titulo, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                new Inicio().Show();
+                this.Hide();
+            }
         }
     }
 }

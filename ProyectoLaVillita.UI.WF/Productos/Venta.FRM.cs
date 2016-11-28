@@ -21,6 +21,10 @@ namespace ProyectoLaVillita.UI.WF.Productos
         private ProductoManager _prodManager;
         private DetalleVentaDTO _dv;
         private DetalleVentaManger _dvManager;
+        private VentaDTO _venta;
+        private VentaManager _ventaManager;
+        public char c = '"';
+        public string titulo;
         //private 
         public Venta()
         {
@@ -28,6 +32,8 @@ namespace ProyectoLaVillita.UI.WF.Productos
             _prod = new ProductoDTO();
             _prodManager = new ProductoManager();
             _dvManager = new DetalleVentaManger();
+            _ventaManager = new VentaManager();
+            titulo = "Sistema de inventario " + c + "La Villita" + c;
         }
 
         private void Venta_Load(object sender, EventArgs e)
@@ -37,8 +43,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            char c = '"';
-            string titulo = "Sistema de inventario " + c + "La Villita" + c;
+            
             if (MessageBox.Show("¿Está seguro que quiere salir?", titulo, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 Application.Exit();
         }
@@ -141,13 +146,15 @@ namespace ProyectoLaVillita.UI.WF.Productos
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+           
             double cant = Convert.ToDouble(txtCantidad.Text);
             double sub = cant * _prod.precioUnitario;
             
             try
             {
-                if (_dv == null)
+                if (_dv == null && _venta == null)
                 {
+                    _ventaManager.InsertarVenta(_venta);
                     _dv = new DetalleVentaDTO()
                     {
                         idProducto = cmbProductos.SelectedIndex,
@@ -177,6 +184,27 @@ namespace ProyectoLaVillita.UI.WF.Productos
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+            }
+            catch(Exception)
+            {
+                throw;
+            }
+        }
+
+        private void eliminarUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Está seguro que quiere salir?", titulo, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                new Inicio().Show();
+                this.Hide();
+            }
         }
     }
 }

@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtProveedor = new System.Windows.Forms.TextBox();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dtpFecheEntrada = new System.Windows.Forms.DateTimePicker();
@@ -67,7 +68,6 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtProveedor = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -96,6 +96,16 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Entradas";
+            // 
+            // txtProveedor
+            // 
+            this.txtProveedor.Location = new System.Drawing.Point(267, 118);
+            this.txtProveedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtProveedor.Name = "txtProveedor";
+            this.txtProveedor.ReadOnly = true;
+            this.txtProveedor.Size = new System.Drawing.Size(121, 23);
+            this.txtProveedor.TabIndex = 26;
+            this.txtProveedor.UseSystemPasswordChar = true;
             // 
             // txtTotal
             // 
@@ -357,6 +367,7 @@
             this.cambiarDeUsuariioToolStripMenuItem.Name = "cambiarDeUsuariioToolStripMenuItem";
             this.cambiarDeUsuariioToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.cambiarDeUsuariioToolStripMenuItem.Text = "Cambiar de Usuario";
+            this.cambiarDeUsuariioToolStripMenuItem.Click += new System.EventHandler(this.cambiarDeUsuariioToolStripMenuItem_Click);
             // 
             // txtCantidad
             // 
@@ -417,16 +428,6 @@
             this.label3.Size = new System.Drawing.Size(47, 16);
             this.label3.TabIndex = 6;
             this.label3.Text = "Fecha";
-            // 
-            // txtProveedor
-            // 
-            this.txtProveedor.Location = new System.Drawing.Point(267, 118);
-            this.txtProveedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtProveedor.Name = "txtProveedor";
-            this.txtProveedor.ReadOnly = true;
-            this.txtProveedor.Size = new System.Drawing.Size(121, 23);
-            this.txtProveedor.TabIndex = 26;
-            this.txtProveedor.UseSystemPasswordChar = true;
             // 
             // Entrada
             // 
