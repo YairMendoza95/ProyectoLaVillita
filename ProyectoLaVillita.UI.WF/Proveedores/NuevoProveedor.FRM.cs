@@ -19,13 +19,11 @@ namespace ProyectoLaVillita.UI.WF.Proveedores
     {
         private ProveedorDTO _prov;
         private ProveedorManager _provManager;
-        public char c = '"';
-        public string titulo;
+        public string titulo = "Sistema de inventario \"La Villita\"";
         public NuevoProveedor()
         {
             InitializeComponent();
             _provManager = new ProveedorManager();
-            titulo = "Sistema de inventario " + c + "La Villita" + c;
         }
 
         private void registroDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -137,8 +135,6 @@ namespace ProyectoLaVillita.UI.WF.Proveedores
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            char c = '"';
-            string titulo = "Sistema de inventario " + c + "La Villita" + c;
             try
             {
                 if (_prov == null)

@@ -113,7 +113,7 @@ namespace ProyectoLaVillita.DAL
             try
             {
                 conexion.Open();
-                da.InsertCommand = new MySqlCommand("Insert into cliente (nombre, apPaterno, apMaterno, telefono) values (nombre = '" + entidad.nombre + "', apPaterno = '" + entidad.apPaterno + "', apMaterno = '" + entidad.apMaterno + "', telefono = '" + entidad.telefono + "')", conexion);
+                da.InsertCommand = new MySqlCommand("Insert into cliente (nombre, apPaterno, apMaterno, telefono) values ('" + entidad.nombre + "', '" + entidad.apPaterno + "', '" + entidad.apMaterno + "', '" + entidad.telefono + "')", conexion);
                 int afectados = da.InsertCommand.ExecuteNonQuery();
                 conexion.Close();
                 if (afectados > 0)

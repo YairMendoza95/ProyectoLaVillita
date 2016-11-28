@@ -92,7 +92,7 @@ namespace ProyectoLaVillita.DAL
             try
             {
                 conexion.Open();
-                da.InsertCommand = new MySqlCommand("Insert into detallerenta (idRenta, idProdcucto, idProveedor, cantidad, total, fechaInicio, FehcaVencimiento) values (idRenta = " + entidad.idRenta + ", idProducto = " + entidad.idProducto + ", idProveedor = " + entidad.idProveedor + ", cantidad = " + entidad.cantidad + ", total = " + entidad.total + ", fechaInicio = '" + entidad.fechaInicio + "', fechaVencimiento = '" + entidad.fechaVencimiento + "')", conexion);
+                da.InsertCommand = new MySqlCommand("Insert into detallerenta (idRenta, idProdcucto, idProveedor, cantidad, total, fechaInicio, FehcaVencimiento) values (" + entidad.idRenta + ", " + entidad.idProducto + ", " + entidad.idProveedor + ", " + entidad.cantidad + ", " + entidad.total + ", '" + entidad.fechaInicio + "', '" + entidad.fechaVencimiento + "')", conexion);
                 int afectados = da.InsertCommand.ExecuteNonQuery();
                 conexion.Close();
                 if (afectados > 0)

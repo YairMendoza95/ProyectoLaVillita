@@ -87,7 +87,7 @@ namespace ProyectoLaVillita.DAL
             try
             {
                 conexion.Open();
-                da.InsertCommand = new MySqlCommand("Insert into usuario (nombreUsuario, contraseña) values (nombreUsuario = '" + entidad.nombreUsuario + "', contraseña = '" + entidad.contraseña + "')", conexion);
+                da.InsertCommand = new MySqlCommand("Insert into usuario (nombreUsuario, contraseña) values ('" + entidad.nombreUsuario + "', '" + entidad.contraseña + "')", conexion);
                 int afectados = da.InsertCommand.ExecuteNonQuery();
                 conexion.Close();
                 if (afectados > 0)
