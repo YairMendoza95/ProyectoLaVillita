@@ -66,8 +66,8 @@
             this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockActual = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockMaximo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stockMinimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
@@ -79,12 +79,12 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.SkyBlue;
+            this.groupBox1.Controls.Add(this.dgvProductos);
             this.groupBox1.Controls.Add(this.btnGuardar);
             this.groupBox1.Controls.Add(this.menuStrip1);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.btnSalir);
             this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Controls.Add(this.dgvProductos);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(1, 0);
             this.groupBox1.Name = "groupBox1";
@@ -204,14 +204,14 @@
             // entradasToolStripMenuItem
             // 
             this.entradasToolStripMenuItem.Name = "entradasToolStripMenuItem";
-            this.entradasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.entradasToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.entradasToolStripMenuItem.Text = "Entradas";
             this.entradasToolStripMenuItem.Click += new System.EventHandler(this.entradasToolStripMenuItem_Click);
             // 
             // ventasToolStripMenuItem
             // 
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.ventasToolStripMenuItem.Text = "Ventas";
             this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
             // 
@@ -238,7 +238,7 @@
             this.eliminarRentaToolStripMenuItem,
             this.modificarRentaToolStripMenuItem});
             this.nuevaRentaToolStripMenuItem.Name = "nuevaRentaToolStripMenuItem";
-            this.nuevaRentaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nuevaRentaToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.nuevaRentaToolStripMenuItem.Text = "Renta";
             // 
             // datosDelClienteToolStripMenuItem
@@ -265,7 +265,7 @@
             // inventarioToolStripMenuItem1
             // 
             this.inventarioToolStripMenuItem1.Name = "inventarioToolStripMenuItem1";
-            this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
             this.inventarioToolStripMenuItem1.Text = "Inventario";
             this.inventarioToolStripMenuItem1.Click += new System.EventHandler(this.inventarioToolStripMenuItem1_Click);
             // 
@@ -387,14 +387,14 @@
             this.idProducto,
             this.nombre,
             this.idProveedor,
-            this.precioUnitario,
-            this.stockActual,
+            this.Column2,
+            this.Column4,
             this.stockMaximo,
             this.stockMinimo});
-            this.dgvProductos.Location = new System.Drawing.Point(10, 150);
+            this.dgvProductos.Location = new System.Drawing.Point(10, 158);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.Size = new System.Drawing.Size(676, 255);
-            this.dgvProductos.TabIndex = 1;
+            this.dgvProductos.TabIndex = 13;
             // 
             // idProducto
             // 
@@ -415,15 +415,15 @@
             this.idProveedor.HeaderText = "Proveedor";
             this.idProveedor.Name = "idProveedor";
             // 
-            // precioUnitario
+            // Column2
             // 
-            this.precioUnitario.HeaderText = "Costo Unitario";
-            this.precioUnitario.Name = "precioUnitario";
+            this.Column2.HeaderText = "Costo Unitario";
+            this.Column2.Name = "Column2";
             // 
-            // stockActual
+            // Column4
             // 
-            this.stockActual.HeaderText = "Total en Inventario";
-            this.stockActual.Name = "stockActual";
+            this.Column4.HeaderText = "Total en Inventario";
+            this.Column4.Name = "Column4";
             // 
             // stockMaximo
             // 
@@ -489,13 +489,13 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtIngresarNombre;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProveedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precioUnitario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stockActual;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn stockMaximo;
         private System.Windows.Forms.DataGridViewTextBoxColumn stockMinimo;
     }

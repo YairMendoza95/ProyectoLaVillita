@@ -63,13 +63,10 @@
             this.txtIngresarNombre = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockActual = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockMaximo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockMinimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idRenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.notas = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -86,7 +83,7 @@
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.dgvProductos);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(71, -12);
+            this.groupBox1.Location = new System.Drawing.Point(1, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(701, 474);
             this.groupBox1.TabIndex = 9;
@@ -364,62 +361,46 @@
             // 
             this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idProducto,
-            this.nombre,
-            this.idProveedor,
-            this.precioUnitario,
-            this.stockActual,
-            this.stockMaximo,
-            this.stockMinimo});
+            this.idRenta,
+            this.idCliente,
+            this.total,
+            this.notas});
             this.dgvProductos.Location = new System.Drawing.Point(10, 150);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.Size = new System.Drawing.Size(676, 255);
             this.dgvProductos.TabIndex = 1;
             // 
-            // idProducto
+            // idRenta
             // 
-            this.idProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.idProducto.HeaderText = "Id";
-            this.idProducto.Name = "idProducto";
-            this.idProducto.Width = 46;
+            this.idRenta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.idRenta.HeaderText = "Id";
+            this.idRenta.Name = "idRenta";
+            this.idRenta.Width = 46;
             // 
-            // nombre
+            // idCliente
             // 
-            this.nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
+            this.idCliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idCliente.HeaderText = "Cliente";
+            this.idCliente.Name = "idCliente";
             // 
-            // idProveedor
+            // total
             // 
-            this.idProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idProveedor.HeaderText = "Proveedor";
-            this.idProveedor.Name = "idProveedor";
+            this.total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.total.HeaderText = "Total";
+            this.total.Name = "total";
+            this.total.Width = 64;
             // 
-            // precioUnitario
+            // notas
             // 
-            this.precioUnitario.HeaderText = "Costo Unitario";
-            this.precioUnitario.Name = "precioUnitario";
-            // 
-            // stockActual
-            // 
-            this.stockActual.HeaderText = "Total en Inventario";
-            this.stockActual.Name = "stockActual";
-            // 
-            // stockMaximo
-            // 
-            this.stockMaximo.HeaderText = "Stock Máximo";
-            this.stockMaximo.Name = "stockMaximo";
-            // 
-            // stockMinimo
-            // 
-            this.stockMinimo.HeaderText = "Stock Mínimo";
-            this.stockMinimo.Name = "stockMinimo";
+            this.notas.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.notas.HeaderText = "Notas";
+            this.notas.Name = "notas";
             // 
             // EliminarRenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(843, 450);
+            this.ClientSize = new System.Drawing.Size(701, 464);
             this.Controls.Add(this.groupBox1);
             this.Name = "EliminarRenta";
             this.Text = "Sistema de inventario \"La Villita\"";
@@ -471,12 +452,9 @@
         private System.Windows.Forms.TextBox txtIngresarNombre;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridView dgvProductos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idProveedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precioUnitario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stockActual;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stockMaximo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stockMinimo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idRenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn notas;
     }
 }

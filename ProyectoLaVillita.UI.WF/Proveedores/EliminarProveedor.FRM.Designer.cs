@@ -65,11 +65,7 @@
             this.dgvProductos = new System.Windows.Forms.DataGridView();
             this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioUnitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockActual = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockMaximo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockMinimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -86,10 +82,10 @@
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.dgvProductos);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(53, -4);
+            this.groupBox1.Location = new System.Drawing.Point(-1, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(701, 474);
-            this.groupBox1.TabIndex = 9;
+            this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sistema de inventario \"La Villita\"";
             // 
@@ -144,21 +140,18 @@
             this.registroDeProductosToolStripMenuItem.Name = "registroDeProductosToolStripMenuItem";
             this.registroDeProductosToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.registroDeProductosToolStripMenuItem.Text = "Nuevo producto";
-            this.registroDeProductosToolStripMenuItem.Click += new System.EventHandler(this.registroDeProductosToolStripMenuItem_Click);
             // 
             // eliminarProductoToolStripMenuItem
             // 
             this.eliminarProductoToolStripMenuItem.Name = "eliminarProductoToolStripMenuItem";
             this.eliminarProductoToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.eliminarProductoToolStripMenuItem.Text = "Eliminar producto";
-            this.eliminarProductoToolStripMenuItem.Click += new System.EventHandler(this.eliminarProductoToolStripMenuItem_Click);
             // 
             // modificarProductoToolStripMenuItem
             // 
             this.modificarProductoToolStripMenuItem.Name = "modificarProductoToolStripMenuItem";
             this.modificarProductoToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.modificarProductoToolStripMenuItem.Text = "Modificar producto";
-            this.modificarProductoToolStripMenuItem.Click += new System.EventHandler(this.modificarProductoToolStripMenuItem_Click);
             // 
             // proveedoresToolStripMenuItem
             // 
@@ -175,21 +168,18 @@
             this.registroDeProveedoresToolStripMenuItem.Name = "registroDeProveedoresToolStripMenuItem";
             this.registroDeProveedoresToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.registroDeProveedoresToolStripMenuItem.Text = "Nuevo proveedor";
-            this.registroDeProveedoresToolStripMenuItem.Click += new System.EventHandler(this.registroDeProveedoresToolStripMenuItem_Click);
             // 
             // eliminarProveedorToolStripMenuItem
             // 
             this.eliminarProveedorToolStripMenuItem.Name = "eliminarProveedorToolStripMenuItem";
             this.eliminarProveedorToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.eliminarProveedorToolStripMenuItem.Text = "Eliminar proveedor";
-            this.eliminarProveedorToolStripMenuItem.Click += new System.EventHandler(this.eliminarProveedorToolStripMenuItem_Click);
             // 
             // modificarProveedorToolStripMenuItem
             // 
             this.modificarProveedorToolStripMenuItem.Name = "modificarProveedorToolStripMenuItem";
             this.modificarProveedorToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.modificarProveedorToolStripMenuItem.Text = "Modificar proveedor";
-            this.modificarProveedorToolStripMenuItem.Click += new System.EventHandler(this.modificarProveedorToolStripMenuItem_Click);
             // 
             // registrosToolStripMenuItem
             // 
@@ -203,23 +193,20 @@
             // entradasToolStripMenuItem
             // 
             this.entradasToolStripMenuItem.Name = "entradasToolStripMenuItem";
-            this.entradasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.entradasToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.entradasToolStripMenuItem.Text = "Entradas";
-            this.entradasToolStripMenuItem.Click += new System.EventHandler(this.entradasToolStripMenuItem_Click);
             // 
             // ventasToolStripMenuItem
             // 
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.ventasToolStripMenuItem.Text = "Ventas";
-            this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
             // 
             // inventarioToolStripMenuItem
             // 
             this.inventarioToolStripMenuItem.Name = "inventarioToolStripMenuItem";
             this.inventarioToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.inventarioToolStripMenuItem.Text = "Inventario";
-            this.inventarioToolStripMenuItem.Click += new System.EventHandler(this.inventarioToolStripMenuItem_Click);
             // 
             // rentaDeSillasYMesasToolStripMenuItem1
             // 
@@ -237,7 +224,7 @@
             this.eliminarRentaToolStripMenuItem,
             this.modificarRentaToolStripMenuItem});
             this.nuevaRentaToolStripMenuItem.Name = "nuevaRentaToolStripMenuItem";
-            this.nuevaRentaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nuevaRentaToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.nuevaRentaToolStripMenuItem.Text = "Renta";
             // 
             // datosDelClienteToolStripMenuItem
@@ -245,28 +232,24 @@
             this.datosDelClienteToolStripMenuItem.Name = "datosDelClienteToolStripMenuItem";
             this.datosDelClienteToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.datosDelClienteToolStripMenuItem.Text = "Nueva renta";
-            this.datosDelClienteToolStripMenuItem.Click += new System.EventHandler(this.datosDelClienteToolStripMenuItem_Click);
             // 
             // eliminarRentaToolStripMenuItem
             // 
             this.eliminarRentaToolStripMenuItem.Name = "eliminarRentaToolStripMenuItem";
             this.eliminarRentaToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.eliminarRentaToolStripMenuItem.Text = "Eliminar renta";
-            this.eliminarRentaToolStripMenuItem.Click += new System.EventHandler(this.eliminarRentaToolStripMenuItem_Click);
             // 
             // modificarRentaToolStripMenuItem
             // 
             this.modificarRentaToolStripMenuItem.Name = "modificarRentaToolStripMenuItem";
             this.modificarRentaToolStripMenuItem.Size = new System.Drawing.Size(168, 22);
             this.modificarRentaToolStripMenuItem.Text = "Modificar renta";
-            this.modificarRentaToolStripMenuItem.Click += new System.EventHandler(this.modificarRentaToolStripMenuItem_Click);
             // 
             // inventarioToolStripMenuItem1
             // 
             this.inventarioToolStripMenuItem1.Name = "inventarioToolStripMenuItem1";
-            this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
             this.inventarioToolStripMenuItem1.Text = "Inventario";
-            this.inventarioToolStripMenuItem1.Click += new System.EventHandler(this.inventarioToolStripMenuItem1_Click);
             // 
             // usuariosToolStripMenuItem
             // 
@@ -292,28 +275,24 @@
             this.nuevoUsuarioToolStripMenuItem.Name = "nuevoUsuarioToolStripMenuItem";
             this.nuevoUsuarioToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.nuevoUsuarioToolStripMenuItem.Text = "Nuevo usuario";
-            this.nuevoUsuarioToolStripMenuItem.Click += new System.EventHandler(this.nuevoUsuarioToolStripMenuItem_Click);
             // 
             // eliminarUsuarioToolStripMenuItem
             // 
             this.eliminarUsuarioToolStripMenuItem.Name = "eliminarUsuarioToolStripMenuItem";
             this.eliminarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.eliminarUsuarioToolStripMenuItem.Text = "Eliminar usuario";
-            this.eliminarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.eliminarUsuarioToolStripMenuItem_Click);
             // 
             // modificarUsuarioToolStripMenuItem
             // 
             this.modificarUsuarioToolStripMenuItem.Name = "modificarUsuarioToolStripMenuItem";
             this.modificarUsuarioToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.modificarUsuarioToolStripMenuItem.Text = "Modificar usuario";
-            this.modificarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.modificarUsuarioToolStripMenuItem_Click);
             // 
             // cambiarDeUsuariioToolStripMenuItem
             // 
             this.cambiarDeUsuariioToolStripMenuItem.Name = "cambiarDeUsuariioToolStripMenuItem";
             this.cambiarDeUsuariioToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.cambiarDeUsuariioToolStripMenuItem.Text = "Cambiar de Usuario";
-            this.cambiarDeUsuariioToolStripMenuItem.Click += new System.EventHandler(this.cambiarDeUsuariioToolStripMenuItem_Click);
             // 
             // label3
             // 
@@ -335,7 +314,6 @@
             this.btnSalir.TabIndex = 8;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // groupBox3
             // 
@@ -384,11 +362,7 @@
             this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProducto,
             this.nombre,
-            this.idProveedor,
-            this.precioUnitario,
-            this.stockActual,
-            this.stockMaximo,
-            this.stockMinimo});
+            this.telefono});
             this.dgvProductos.Location = new System.Drawing.Point(10, 150);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.Size = new System.Drawing.Size(676, 255);
@@ -407,37 +381,17 @@
             this.nombre.HeaderText = "Nombre";
             this.nombre.Name = "nombre";
             // 
-            // idProveedor
+            // telefono
             // 
-            this.idProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idProveedor.HeaderText = "Proveedor";
-            this.idProveedor.Name = "idProveedor";
-            // 
-            // precioUnitario
-            // 
-            this.precioUnitario.HeaderText = "Costo Unitario";
-            this.precioUnitario.Name = "precioUnitario";
-            // 
-            // stockActual
-            // 
-            this.stockActual.HeaderText = "Total en Inventario";
-            this.stockActual.Name = "stockActual";
-            // 
-            // stockMaximo
-            // 
-            this.stockMaximo.HeaderText = "Stock Máximo";
-            this.stockMaximo.Name = "stockMaximo";
-            // 
-            // stockMinimo
-            // 
-            this.stockMinimo.HeaderText = "Stock Mínimo";
-            this.stockMinimo.Name = "stockMinimo";
+            this.telefono.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.telefono.HeaderText = "Teléfono";
+            this.telefono.Name = "telefono";
             // 
             // EliminarProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(807, 466);
+            this.ClientSize = new System.Drawing.Size(699, 466);
             this.Controls.Add(this.groupBox1);
             this.Name = "EliminarProveedor";
             this.Text = "Sistema de inventario \"La Villita\"";
@@ -491,10 +445,6 @@
         private System.Windows.Forms.DataGridView dgvProductos;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idProveedor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precioUnitario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stockActual;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stockMaximo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stockMinimo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
     }
 }
