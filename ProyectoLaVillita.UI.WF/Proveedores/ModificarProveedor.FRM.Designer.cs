@@ -28,9 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // ModificarProveedor
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Text = "ModificarProveedor";
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Name = "ModificarProveedor";
+            this.Text = "Sistema de inventario \"La Villita\"";
+            this.ResumeLayout(false);
+
         }
 
         #endregion

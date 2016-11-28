@@ -433,7 +433,7 @@
             this.ClientSize = new System.Drawing.Size(664, 317);
             this.Controls.Add(this.groupBox1);
             this.Name = "NuevoProducto";
-            this.Text = "NuevoProducto";
+            this.Text = "Sistema de inventario \"La Villita\"";
             this.Load += new System.EventHandler(this.NuevoProducto_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

@@ -17,13 +17,15 @@ namespace ProyectoLaVillita.UI.WF.Productos
 {
     public partial class InventarioVenta : Form
     {
+        private ProductoManager _prodManager;
         public InventarioVenta()
         {
             InitializeComponent();
+            _prodManager = new ProductoManager();
         }
         private void InventarioVenta_Load(object sender, EventArgs e)
         {
-
+            dgvProductos.DataSource = _prodManager.Productos;
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -127,6 +129,17 @@ namespace ProyectoLaVillita.UI.WF.Productos
             this.Hide();
         }
 
-        
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                _prodManager.BuscarProductoPorNombre(txtIngresarNombre.Text);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
 }

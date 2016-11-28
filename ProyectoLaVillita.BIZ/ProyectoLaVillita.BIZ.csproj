@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ClienteManager.cs" />
+    <Compile Include="DetalleVentaManger.cs" />
     <Compile Include="EntradaManager.cs" />
     <Compile Include="ProductoManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
