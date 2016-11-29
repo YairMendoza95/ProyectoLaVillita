@@ -28,20 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.dgvDetalleVenta = new System.Windows.Forms.DataGridView();
-            this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.Cantidad = new System.Windows.Forms.Label();
-            this.cmbProductos = new System.Windows.Forms.ComboBox();
-            this.txtCantidad = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.btnAgregar = new System.Windows.Forms.Button();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tiendaDeAbarrotesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -68,149 +55,36 @@
             this.eliminarUsuarioToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleVenta)).BeginInit();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.cmbProductos = new System.Windows.Forms.ComboBox();
+            this.Cantidad = new System.Windows.Forms.Label();
+            this.dgvDetalleVenta = new System.Windows.Forms.DataGridView();
+            this.colEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.colSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleVenta)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupBox1
+            // btnSalir
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.SkyBlue;
-            this.groupBox1.Controls.Add(this.btnGuardar);
-            this.groupBox1.Controls.Add(this.dgvDetalleVenta);
-            this.groupBox1.Controls.Add(this.Cantidad);
-            this.groupBox1.Controls.Add(this.cmbProductos);
-            this.groupBox1.Controls.Add(this.txtCantidad);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.btnAgregar);
-            this.groupBox1.Controls.Add(this.menuStrip1);
-            this.groupBox1.Controls.Add(this.btnSalir);
-            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(0, 0);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(664, 343);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Ventas";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(73, 258);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(111, 39);
-            this.btnGuardar.TabIndex = 29;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // dgvDetalleVenta
-            // 
-            this.dgvDetalleVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDetalleVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colProducto,
-            this.colProveedor,
-            this.colCantidad,
-            this.colSubtotal,
-            this.colEliminar});
-            this.dgvDetalleVenta.Location = new System.Drawing.Point(263, 75);
-            this.dgvDetalleVenta.Name = "dgvDetalleVenta";
-            this.dgvDetalleVenta.Size = new System.Drawing.Size(387, 256);
-            this.dgvDetalleVenta.TabIndex = 28;
-            this.dgvDetalleVenta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalleVenta_CellContentClick);
-            // 
-            // colProducto
-            // 
-            this.colProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colProducto.HeaderText = "Producto";
-            this.colProducto.Name = "colProducto";
-            // 
-            // colProveedor
-            // 
-            this.colProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colProveedor.HeaderText = "Proveedor";
-            this.colProveedor.Name = "colProveedor";
-            // 
-            // colCantidad
-            // 
-            this.colCantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colCantidad.HeaderText = "Cantidad";
-            this.colCantidad.Name = "colCantidad";
-            // 
-            // colSubtotal
-            // 
-            this.colSubtotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colSubtotal.HeaderText = "Subtotal";
-            this.colSubtotal.Name = "colSubtotal";
-            // 
-            // colEliminar
-            // 
-            this.colEliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.colEliminar.HeaderText = "";
-            this.colEliminar.Name = "colEliminar";
-            this.colEliminar.Text = "Eliminar";
-            this.colEliminar.UseColumnTextForButtonValue = true;
-            // 
-            // Cantidad
-            // 
-            this.Cantidad.AutoSize = true;
-            this.Cantidad.Location = new System.Drawing.Point(12, 126);
-            this.Cantidad.Name = "Cantidad";
-            this.Cantidad.Size = new System.Drawing.Size(70, 16);
-            this.Cantidad.TabIndex = 27;
-            this.Cantidad.Text = "Cantidad";
-            // 
-            // cmbProductos
-            // 
-            this.cmbProductos.FormattingEnabled = true;
-            this.cmbProductos.Location = new System.Drawing.Point(88, 92);
-            this.cmbProductos.Name = "cmbProductos";
-            this.cmbProductos.Size = new System.Drawing.Size(169, 24);
-            this.cmbProductos.TabIndex = 26;
-            this.cmbProductos.Text = "--Elige un producto--";
-            // 
-            // txtCantidad
-            // 
-            this.txtCantidad.Location = new System.Drawing.Point(88, 123);
-            this.txtCantidad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(169, 23);
-            this.txtCantidad.TabIndex = 16;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 95);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 16);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Producto";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(273, 44);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(110, 28);
-            this.label6.TabIndex = 14;
-            this.label6.Text = "La Villita";
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(6, 196);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(111, 39);
-            this.btnAgregar.TabIndex = 13;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(139, 196);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(118, 39);
+            this.btnSalir.TabIndex = 10;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // menuStrip1
             // 
@@ -423,17 +297,143 @@
             this.eliminarUsuarioToolStripMenuItem.Text = "Cambiar de usuario";
             this.eliminarUsuarioToolStripMenuItem.Click += new System.EventHandler(this.eliminarUsuarioToolStripMenuItem_Click);
             // 
-            // btnSalir
+            // btnAgregar
             // 
-            this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(139, 196);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(118, 39);
-            this.btnSalir.TabIndex = 10;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Location = new System.Drawing.Point(6, 196);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(111, 39);
+            this.btnAgregar.TabIndex = 13;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(273, 44);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(110, 28);
+            this.label6.TabIndex = 14;
+            this.label6.Text = "La Villita";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(12, 95);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 16);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Producto";
+            // 
+            // txtCantidad
+            // 
+            this.txtCantidad.Location = new System.Drawing.Point(88, 123);
+            this.txtCantidad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(169, 23);
+            this.txtCantidad.TabIndex = 16;
+            // 
+            // cmbProductos
+            // 
+            this.cmbProductos.FormattingEnabled = true;
+            this.cmbProductos.Location = new System.Drawing.Point(88, 92);
+            this.cmbProductos.Name = "cmbProductos";
+            this.cmbProductos.Size = new System.Drawing.Size(169, 24);
+            this.cmbProductos.TabIndex = 26;
+            this.cmbProductos.Text = "--Elige un producto--";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.AutoSize = true;
+            this.Cantidad.Location = new System.Drawing.Point(12, 126);
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.Size = new System.Drawing.Size(70, 16);
+            this.Cantidad.TabIndex = 27;
+            this.Cantidad.Text = "Cantidad";
+            // 
+            // dgvDetalleVenta
+            // 
+            this.dgvDetalleVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetalleVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colProducto,
+            this.colProveedor,
+            this.colCantidad,
+            this.colSubtotal,
+            this.colEliminar});
+            this.dgvDetalleVenta.Location = new System.Drawing.Point(263, 75);
+            this.dgvDetalleVenta.Name = "dgvDetalleVenta";
+            this.dgvDetalleVenta.Size = new System.Drawing.Size(387, 256);
+            this.dgvDetalleVenta.TabIndex = 28;
+            this.dgvDetalleVenta.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalleVenta_CellContentClick);
+            // 
+            // colEliminar
+            // 
+            this.colEliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colEliminar.HeaderText = "";
+            this.colEliminar.Name = "colEliminar";
+            this.colEliminar.Text = "Eliminar";
+            this.colEliminar.UseColumnTextForButtonValue = true;
+            // 
+            // colSubtotal
+            // 
+            this.colSubtotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colSubtotal.HeaderText = "Subtotal";
+            this.colSubtotal.Name = "colSubtotal";
+            // 
+            // colCantidad
+            // 
+            this.colCantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colCantidad.HeaderText = "Cantidad";
+            this.colCantidad.Name = "colCantidad";
+            // 
+            // colProveedor
+            // 
+            this.colProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colProveedor.HeaderText = "Proveedor";
+            this.colProveedor.Name = "colProveedor";
+            // 
+            // colProducto
+            // 
+            this.colProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.colProducto.HeaderText = "Producto";
+            this.colProducto.Name = "colProducto";
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Location = new System.Drawing.Point(73, 258);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(111, 39);
+            this.btnGuardar.TabIndex = 29;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.SkyBlue;
+            this.groupBox1.Controls.Add(this.btnGuardar);
+            this.groupBox1.Controls.Add(this.dgvDetalleVenta);
+            this.groupBox1.Controls.Add(this.Cantidad);
+            this.groupBox1.Controls.Add(this.cmbProductos);
+            this.groupBox1.Controls.Add(this.txtCantidad);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label6);
+            this.groupBox1.Controls.Add(this.btnAgregar);
+            this.groupBox1.Controls.Add(this.menuStrip1);
+            this.groupBox1.Controls.Add(this.btnSalir);
+            this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(664, 343);
+            this.groupBox1.TabIndex = 5;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Ventas";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // Venta
             // 
@@ -444,57 +444,57 @@
             this.Name = "Venta";
             this.Text = "Sistema de inventario \"La Villita\"";
             this.Load += new System.EventHandler(this.Venta_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleVenta)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleVenta)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtCantidad;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem tiendaDeAbarrotesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem entradasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salidasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modificarProductoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem proveedoresToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem datosDelProveedorToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem rentaDeSillasYMesasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem prToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem detalleRentaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem registroDeNuevoUsuarioToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eliminarUsuarioToolStripMenuItem;
-        private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.ToolStripMenuItem modificarProductoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarProveedorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarProveedorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem registroToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem entradaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ventasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem inventarioToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem rentaDeSillasYMesasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem prToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevaRentaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarRentaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarRentaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem detalleRentaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registroDeNuevoUsuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevoUsuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarUsuarioToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem modificarUsuarioToolStripMenuItem;
-        private System.Windows.Forms.Label Cantidad;
+        private System.Windows.Forms.ToolStripMenuItem eliminarUsuarioToolStripMenuItem;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.ComboBox cmbProductos;
+        private System.Windows.Forms.Label Cantidad;
         private System.Windows.Forms.DataGridView dgvDetalleVenta;
-        private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn colProveedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn colSubtotal;
         private System.Windows.Forms.DataGridViewButtonColumn colEliminar;
+        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }

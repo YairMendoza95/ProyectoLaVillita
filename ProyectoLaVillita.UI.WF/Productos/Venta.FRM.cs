@@ -23,8 +23,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
         private DetalleVentaManger _dvManager;
         private VentaDTO _venta;
         private VentaManager _ventaManager;
-        public char c = '"';
-        public string titulo;
+        public string titulo="Sistema de inventario \"La Villita\"";
         //private 
         public Venta()
         {
@@ -33,7 +32,6 @@ namespace ProyectoLaVillita.UI.WF.Productos
             _prodManager = new ProductoManager();
             _dvManager = new DetalleVentaManger();
             _ventaManager = new VentaManager();
-            titulo = "Sistema de inventario " + c + "La Villita" + c;
         }
 
         private void Venta_Load(object sender, EventArgs e)

@@ -22,15 +22,13 @@ namespace ProyectoLaVillita.UI.WF.Productos
         private ProductoManager _prodManager;
         private ProveedorManager _provManager;
         private EntradaManager _entManager;
-        public string titulo;
-        public char c = '"';
+        public string titulo = "Sistema de inventario \"La VIllita\"";
         public Entrada()
         {
             InitializeComponent();
             _prodManager = new ProductoManager();
             _provManager = new ProveedorManager();
             _entManager = new EntradaManager();
-            titulo = "Sistema de inventario " + c + "La Villita" + c;
         }
 
         private void Entrada_Load(object sender, EventArgs e)

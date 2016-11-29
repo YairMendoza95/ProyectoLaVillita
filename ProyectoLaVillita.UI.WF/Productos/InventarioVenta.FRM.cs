@@ -18,13 +18,11 @@ namespace ProyectoLaVillita.UI.WF.Productos
     public partial class InventarioVenta : Form
     {
         private ProductoManager _prodManager;
-        public char c = '"';
-        public string titulo;
+        public string titulo="Sistema de inventario \"La VIllita\"";
         public InventarioVenta()
         {
             InitializeComponent();
             _prodManager = new ProductoManager();
-            titulo = "Sistema de inventario " + c + "La Villita" + c;
         }
         private void InventarioVenta_Load(object sender, EventArgs e)
         {

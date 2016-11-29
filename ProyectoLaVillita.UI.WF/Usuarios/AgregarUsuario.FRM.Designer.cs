@@ -29,16 +29,6 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txtConfirmarContraseña = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.txtContraseña = new System.Windows.Forms.TextBox();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tiendaDeAbarrotesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,9 +55,19 @@
             this.eliminarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cambiarDeUsuariioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtConfirmarContraseña = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnGuardar = new System.Windows.Forms.Button();
+            this.txtContraseña = new System.Windows.Forms.TextBox();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -92,104 +92,6 @@
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Agregar Usuario";
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::ProyectoLaVillita.UI.WF.Properties.Resources.Nuevo;
-            this.pictureBox1.Location = new System.Drawing.Point(7, 94);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(127, 130);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
-            // 
-            // txtConfirmarContraseña
-            // 
-            this.txtConfirmarContraseña.Location = new System.Drawing.Point(313, 201);
-            this.txtConfirmarContraseña.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtConfirmarContraseña.Name = "txtConfirmarContraseña";
-            this.txtConfirmarContraseña.Size = new System.Drawing.Size(170, 23);
-            this.txtConfirmarContraseña.TabIndex = 5;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(140, 201);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(171, 20);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Confirmar Contraseña";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(194, 48);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(110, 28);
-            this.label3.TabIndex = 4;
-            this.label3.Text = "La Villita";
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(108, 273);
-            this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(127, 39);
-            this.btnGuardar.TabIndex = 3;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // txtContraseña
-            // 
-            this.txtContraseña.Location = new System.Drawing.Point(313, 159);
-            this.txtContraseña.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(170, 23);
-            this.txtContraseña.TabIndex = 3;
-            // 
-            // txtUsuario
-            // 
-            this.txtUsuario.Location = new System.Drawing.Point(313, 116);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(170, 23);
-            this.txtUsuario.TabIndex = 2;
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(284, 273);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(127, 39);
-            this.btnSalir.TabIndex = 0;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(140, 161);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(95, 20);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Contraseña";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(139, 118);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(63, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Usuario";
             // 
             // menuStrip1
             // 
@@ -290,14 +192,14 @@
             // entradasToolStripMenuItem
             // 
             this.entradasToolStripMenuItem.Name = "entradasToolStripMenuItem";
-            this.entradasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.entradasToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.entradasToolStripMenuItem.Text = "Entradas";
             this.entradasToolStripMenuItem.Click += new System.EventHandler(this.entradasToolStripMenuItem_Click);
             // 
             // ventasToolStripMenuItem
             // 
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.ventasToolStripMenuItem.Text = "Ventas";
             this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
             // 
@@ -324,7 +226,7 @@
             this.eliminarRentaToolStripMenuItem,
             this.modificarRentaToolStripMenuItem});
             this.nuevaRentaToolStripMenuItem.Name = "nuevaRentaToolStripMenuItem";
-            this.nuevaRentaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nuevaRentaToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.nuevaRentaToolStripMenuItem.Text = "Renta";
             // 
             // datosDelClienteToolStripMenuItem
@@ -351,7 +253,7 @@
             // inventarioToolStripMenuItem1
             // 
             this.inventarioToolStripMenuItem1.Name = "inventarioToolStripMenuItem1";
-            this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
             this.inventarioToolStripMenuItem1.Text = "Inventario";
             this.inventarioToolStripMenuItem1.Click += new System.EventHandler(this.inventarioToolStripMenuItem1_Click);
             // 
@@ -402,6 +304,106 @@
             this.cambiarDeUsuariioToolStripMenuItem.Text = "Cambiar de Usuario";
             this.cambiarDeUsuariioToolStripMenuItem.Click += new System.EventHandler(this.cambiarDeUsuariioToolStripMenuItem_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ProyectoLaVillita.UI.WF.Properties.Resources.Nuevo;
+            this.pictureBox1.Location = new System.Drawing.Point(7, 94);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(127, 130);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 7;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txtConfirmarContraseña
+            // 
+            this.txtConfirmarContraseña.Location = new System.Drawing.Point(313, 201);
+            this.txtConfirmarContraseña.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtConfirmarContraseña.Name = "txtConfirmarContraseña";
+            this.txtConfirmarContraseña.PasswordChar = '*';
+            this.txtConfirmarContraseña.Size = new System.Drawing.Size(170, 23);
+            this.txtConfirmarContraseña.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(140, 201);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(171, 20);
+            this.label4.TabIndex = 4;
+            this.label4.Text = "Confirmar Contraseña";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(194, 48);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(110, 28);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "La Villita";
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardar.Location = new System.Drawing.Point(108, 273);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Size = new System.Drawing.Size(127, 39);
+            this.btnGuardar.TabIndex = 3;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
+            // 
+            // txtContraseña
+            // 
+            this.txtContraseña.Location = new System.Drawing.Point(313, 159);
+            this.txtContraseña.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtContraseña.Name = "txtContraseña";
+            this.txtContraseña.PasswordChar = '*';
+            this.txtContraseña.Size = new System.Drawing.Size(170, 23);
+            this.txtContraseña.TabIndex = 3;
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Location = new System.Drawing.Point(313, 116);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(170, 23);
+            this.txtUsuario.TabIndex = 2;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalir.Location = new System.Drawing.Point(284, 273);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(127, 39);
+            this.btnSalir.TabIndex = 0;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(140, 161);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(95, 20);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Contraseña";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(139, 118);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(63, 20);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Usuario";
+            // 
             // AgregarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -412,9 +414,9 @@
             this.Text = "Sistema de inventario \"La Villita\"";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

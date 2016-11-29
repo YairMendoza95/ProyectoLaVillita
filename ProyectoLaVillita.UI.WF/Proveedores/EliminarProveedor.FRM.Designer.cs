@@ -87,7 +87,7 @@
             this.groupBox1.Size = new System.Drawing.Size(701, 474);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Sistema de inventario \"La Villita\"";
+            this.groupBox1.Text = "Eliminar proveedor";
             // 
             // btnEliminar
             // 
@@ -140,6 +140,7 @@
             this.registroDeProductosToolStripMenuItem.Name = "registroDeProductosToolStripMenuItem";
             this.registroDeProductosToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
             this.registroDeProductosToolStripMenuItem.Text = "Nuevo producto";
+            this.registroDeProductosToolStripMenuItem.Click += new System.EventHandler(this.registroDeProductosToolStripMenuItem_Click);
             // 
             // eliminarProductoToolStripMenuItem
             // 
@@ -250,6 +251,7 @@
             this.inventarioToolStripMenuItem1.Name = "inventarioToolStripMenuItem1";
             this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
             this.inventarioToolStripMenuItem1.Text = "Inventario";
+            this.inventarioToolStripMenuItem1.Click += new System.EventHandler(this.inventarioToolStripMenuItem1_Click_1);
             // 
             // usuariosToolStripMenuItem
             // 
@@ -314,6 +316,7 @@
             this.btnSalir.TabIndex = 8;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // groupBox3
             // 

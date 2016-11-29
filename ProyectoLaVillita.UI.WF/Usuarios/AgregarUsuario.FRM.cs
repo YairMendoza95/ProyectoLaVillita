@@ -35,6 +35,7 @@ namespace ProyectoLaVillita.UI.WF.Usuarios
             string titulo = "Sistema de inventario " + c + "La Villita" + c;
             try
             {
+                
                 if (_user == null)
                 {
                     _user = new UsuarioDTO()
@@ -48,6 +49,10 @@ namespace ProyectoLaVillita.UI.WF.Usuarios
                         txtContraseña.Clear();
                         txtContraseña.Focus();
                         txtConfirmarContraseña.Clear();
+                    }
+                    else if (!_userManager.Usuarios.Contains(_user.nombreUsuario))
+                    {
+
                     }
                     else
                     {

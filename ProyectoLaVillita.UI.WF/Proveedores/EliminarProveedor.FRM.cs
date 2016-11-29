@@ -130,8 +130,14 @@ namespace ProyectoLaVillita.UI.WF.Proveedores
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("¿Está seguro que quiere salir?", titulo, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("¿Está seguro que quiere salir?", titulo, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 Application.Exit();
+        }
+
+        private void inventarioToolStripMenuItem1_Click_1(object sender, EventArgs e)
+        {
+            new InventarioRenta().Show();
+            this.Hide();
         }
     }
 }

@@ -83,12 +83,12 @@
             this.groupBox1.Controls.Add(this.groupBox3);
             this.groupBox1.Controls.Add(this.dgvProductos);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(2, 0);
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(701, 474);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Sistema de inventario \"La Villita\"";
+            this.groupBox1.Text = "Modificar renta";
             // 
             // btnGuardar
             // 

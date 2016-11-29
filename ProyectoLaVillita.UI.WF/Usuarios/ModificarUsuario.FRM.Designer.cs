@@ -87,7 +87,7 @@
             this.groupBox1.Size = new System.Drawing.Size(701, 474);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Sistema de inventario \"La Villita\"";
+            this.groupBox1.Text = "Modificar usuario";
             // 
             // btnGuardar
             // 

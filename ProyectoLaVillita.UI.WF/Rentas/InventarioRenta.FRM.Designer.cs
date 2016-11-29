@@ -57,11 +57,11 @@
             this.cambiarDeUsuariioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label3 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.txtMesas = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.txtSillas = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtMesas = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -80,7 +80,7 @@
             this.groupBox1.Size = new System.Drawing.Size(701, 260);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Inventario";
+            this.groupBox1.Text = "Inventario de mesas y sillas";
             // 
             // menuStrip1
             // 
@@ -181,14 +181,14 @@
             // entradasToolStripMenuItem
             // 
             this.entradasToolStripMenuItem.Name = "entradasToolStripMenuItem";
-            this.entradasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.entradasToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.entradasToolStripMenuItem.Text = "Entradas";
             this.entradasToolStripMenuItem.Click += new System.EventHandler(this.entradasToolStripMenuItem_Click);
             // 
             // ventasToolStripMenuItem
             // 
             this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.ventasToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
             this.ventasToolStripMenuItem.Text = "Ventas";
             this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
             // 
@@ -215,7 +215,7 @@
             this.eliminarRentaToolStripMenuItem,
             this.modificarRentaToolStripMenuItem});
             this.nuevaRentaToolStripMenuItem.Name = "nuevaRentaToolStripMenuItem";
-            this.nuevaRentaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nuevaRentaToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
             this.nuevaRentaToolStripMenuItem.Text = "Renta";
             // 
             // datosDelClienteToolStripMenuItem
@@ -242,7 +242,7 @@
             // inventarioToolStripMenuItem1
             // 
             this.inventarioToolStripMenuItem1.Name = "inventarioToolStripMenuItem1";
-            this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
             this.inventarioToolStripMenuItem1.Text = "Inventario";
             this.inventarioToolStripMenuItem1.Click += new System.EventHandler(this.inventarioToolStripMenuItem1_Click);
             // 
@@ -314,25 +314,6 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // txtMesas
-            // 
-            this.txtMesas.Location = new System.Drawing.Point(137, 23);
-            this.txtMesas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtMesas.Name = "txtMesas";
-            this.txtMesas.ReadOnly = true;
-            this.txtMesas.Size = new System.Drawing.Size(162, 23);
-            this.txtMesas.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 23);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(99, 20);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "N° de mesas";
-            // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.txtSillas);
@@ -346,6 +327,15 @@
             this.groupBox3.TabIndex = 7;
             this.groupBox3.TabStop = false;
             // 
+            // txtSillas
+            // 
+            this.txtSillas.Location = new System.Drawing.Point(502, 23);
+            this.txtSillas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtSillas.Name = "txtSillas";
+            this.txtSillas.ReadOnly = true;
+            this.txtSillas.Size = new System.Drawing.Size(162, 23);
+            this.txtSillas.TabIndex = 6;
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -356,14 +346,24 @@
             this.label2.TabIndex = 5;
             this.label2.Text = "N° de sillas";
             // 
-            // txtSillas
+            // label1
             // 
-            this.txtSillas.Location = new System.Drawing.Point(502, 23);
-            this.txtSillas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.txtSillas.Name = "txtSillas";
-            this.txtSillas.ReadOnly = true;
-            this.txtSillas.Size = new System.Drawing.Size(162, 23);
-            this.txtSillas.TabIndex = 6;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(6, 23);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(99, 20);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "N° de mesas";
+            // 
+            // txtMesas
+            // 
+            this.txtMesas.Location = new System.Drawing.Point(137, 23);
+            this.txtMesas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtMesas.Name = "txtMesas";
+            this.txtMesas.ReadOnly = true;
+            this.txtMesas.Size = new System.Drawing.Size(162, 23);
+            this.txtMesas.TabIndex = 4;
             // 
             // InventarioRenta
             // 

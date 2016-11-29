@@ -15,12 +15,10 @@ namespace ProyectoLaVillita.UI.WF.Productos
 {
     public partial class EliminarProducto : Form
     {
-        public char c = '"';
-        public string titulo;
+        public string titulo = "Sistema de inventario \"La Villita\"";
         public EliminarProducto()
         {
             InitializeComponent();
-            titulo = "Sistema de inventario " + c + "La Villita" + c;
         }
 
         private void registroDeProductosToolStripMenuItem_Click(object sender, EventArgs e)

@@ -29,6 +29,14 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.dgvProductos = new System.Windows.Forms.DataGridView();
+            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockMaximo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockMinimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.tiendaDeAbarrotesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -62,18 +70,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtIngresarNombre = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.dgvProductos = new System.Windows.Forms.DataGridView();
-            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockMaximo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockMinimo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -91,7 +91,62 @@
             this.groupBox1.Size = new System.Drawing.Size(701, 474);
             this.groupBox1.TabIndex = 7;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Sistema de inventario \"La Villita\"";
+            this.groupBox1.Text = "Modificar producto";
+            // 
+            // dgvProductos
+            // 
+            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idProducto,
+            this.nombre,
+            this.idProveedor,
+            this.Column2,
+            this.Column4,
+            this.stockMaximo,
+            this.stockMinimo});
+            this.dgvProductos.Location = new System.Drawing.Point(10, 158);
+            this.dgvProductos.Name = "dgvProductos";
+            this.dgvProductos.Size = new System.Drawing.Size(676, 255);
+            this.dgvProductos.TabIndex = 13;
+            // 
+            // idProducto
+            // 
+            this.idProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
+            this.idProducto.HeaderText = "Id";
+            this.idProducto.Name = "idProducto";
+            this.idProducto.Width = 46;
+            // 
+            // nombre
+            // 
+            this.nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            // 
+            // idProveedor
+            // 
+            this.idProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.idProveedor.HeaderText = "Proveedor";
+            this.idProveedor.Name = "idProveedor";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Costo Unitario";
+            this.Column2.Name = "Column2";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Total en Inventario";
+            this.Column4.Name = "Column4";
+            // 
+            // stockMaximo
+            // 
+            this.stockMaximo.HeaderText = "Stock Máximo";
+            this.stockMaximo.Name = "stockMaximo";
+            // 
+            // stockMinimo
+            // 
+            this.stockMinimo.HeaderText = "Stock Mínimo";
+            this.stockMinimo.Name = "stockMinimo";
             // 
             // btnGuardar
             // 
@@ -380,61 +435,6 @@
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // dgvProductos
-            // 
-            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idProducto,
-            this.nombre,
-            this.idProveedor,
-            this.Column2,
-            this.Column4,
-            this.stockMaximo,
-            this.stockMinimo});
-            this.dgvProductos.Location = new System.Drawing.Point(10, 158);
-            this.dgvProductos.Name = "dgvProductos";
-            this.dgvProductos.Size = new System.Drawing.Size(676, 255);
-            this.dgvProductos.TabIndex = 13;
-            // 
-            // idProducto
-            // 
-            this.idProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.idProducto.HeaderText = "Id";
-            this.idProducto.Name = "idProducto";
-            this.idProducto.Width = 46;
-            // 
-            // nombre
-            // 
-            this.nombre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            // 
-            // idProveedor
-            // 
-            this.idProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idProveedor.HeaderText = "Proveedor";
-            this.idProveedor.Name = "idProveedor";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Costo Unitario";
-            this.Column2.Name = "Column2";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Total en Inventario";
-            this.Column4.Name = "Column4";
-            // 
-            // stockMaximo
-            // 
-            this.stockMaximo.HeaderText = "Stock Máximo";
-            this.stockMaximo.Name = "stockMaximo";
-            // 
-            // stockMinimo
-            // 
-            this.stockMinimo.HeaderText = "Stock Mínimo";
-            this.stockMinimo.Name = "stockMinimo";
-            // 
             // ModificarProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -445,11 +445,11 @@
             this.Text = "Sistema de inventario \"La Villita\"";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
             this.ResumeLayout(false);
 
         }

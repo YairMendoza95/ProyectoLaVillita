@@ -19,7 +19,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
     {
         private ProductoDTO _prod;
         private ProductoManager _prodManager;
-        public string titulo;
+        public string titulo="Sistema de inventario \"La Villita\"";
         public char c = '"';
         public ModificarProducto()
         {
@@ -38,7 +38,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
         {
 
             _prod.nombre = nombre.ToString();
-            _prod.precioUnitario = Convert.ToDouble(precioUnitario);
+            //_prod.precioUnitario = Convert.ToDouble();
             _prodManager.ModificarProducto(_prod);
         }
 
