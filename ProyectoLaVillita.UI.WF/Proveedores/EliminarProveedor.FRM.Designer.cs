@@ -62,14 +62,14 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtIngresarNombre = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.dgvProductos = new System.Windows.Forms.DataGridView();
+            this.dvgProveedor = new System.Windows.Forms.DataGridView();
             this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgProveedor)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -80,7 +80,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.btnSalir);
             this.groupBox1.Controls.Add(this.groupBox3);
-            this.groupBox1.Controls.Add(this.dgvProductos);
+            this.groupBox1.Controls.Add(this.dvgProveedor);
             this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(-1, 0);
             this.groupBox1.Name = "groupBox1";
@@ -99,6 +99,7 @@
             this.btnEliminar.TabIndex = 12;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // menuStrip1
             // 
@@ -359,17 +360,17 @@
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
             // 
-            // dgvProductos
+            // dvgProveedor
             // 
-            this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dvgProveedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dvgProveedor.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idProducto,
             this.nombre,
             this.telefono});
-            this.dgvProductos.Location = new System.Drawing.Point(10, 150);
-            this.dgvProductos.Name = "dgvProductos";
-            this.dgvProductos.Size = new System.Drawing.Size(676, 255);
-            this.dgvProductos.TabIndex = 1;
+            this.dvgProveedor.Location = new System.Drawing.Point(10, 150);
+            this.dvgProveedor.Name = "dvgProveedor";
+            this.dvgProveedor.Size = new System.Drawing.Size(676, 255);
+            this.dvgProveedor.TabIndex = 1;
             // 
             // idProducto
             // 
@@ -398,13 +399,14 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "EliminarProveedor";
             this.Text = "Sistema de inventario \"La Villita\"";
+            this.Load += new System.EventHandler(this.EliminarProveedor_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dvgProveedor)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -445,7 +447,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtIngresarNombre;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.DataGridView dgvProductos;
+        private System.Windows.Forms.DataGridView dvgProveedor;
         private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;

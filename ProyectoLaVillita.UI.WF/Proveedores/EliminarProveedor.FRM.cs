@@ -10,17 +10,20 @@ using System.Windows.Forms;
 using ProyectoLaVillita.UI.WF.Productos;
 using ProyectoLaVillita.UI.WF.Rentas;
 using ProyectoLaVillita.UI.WF.Usuarios;
+using ProyectoLaVillita.COMMON.Entidades;
+using ProyectoLaVillita.BIZ;
 
 namespace ProyectoLaVillita.UI.WF.Proveedores
 {
     public partial class EliminarProveedor : Form
     {
-        public char c = '"';
-        public string titulo;
+        private ProveedorDTO _prov;
+        private ProveedorManager _proveedorManager;
+        public string titulo ="Sistema de inventario \"La Villita\"";
         public EliminarProveedor()
         {
             InitializeComponent();
-            titulo = "Sistema de inventario " + c + "La Villita" + c;
+            _proveedorManager = new ProveedorManager();
         }
 
         private void registroDeProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
@@ -138,6 +141,16 @@ namespace ProyectoLaVillita.UI.WF.Proveedores
         {
             new InventarioRenta().Show();
             this.Hide();
+        }
+
+        private void EliminarProveedor_Load(object sender, EventArgs e)
+        {
+            dvgProveedor.DataSource = _proveedorManager.Proveedores;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            _proveedorManager.EliminarProveedor(_proveedorManager.BuscarProveedorPorId(Convert.ToInt32(dvgProveedor.SelectedRows.GetEnumerator())));
         }
     }
 }

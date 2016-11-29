@@ -50,10 +50,6 @@ namespace ProyectoLaVillita.UI.WF.Usuarios
                         txtContraseña.Focus();
                         txtConfirmarContraseña.Clear();
                     }
-                    else if (!_userManager.Usuarios.Contains(_user.nombreUsuario))
-                    {
-
-                    }
                     else
                     {
                         _userManager.InsertarUsuario(_user);

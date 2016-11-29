@@ -10,15 +10,21 @@ using System.Windows.Forms;
 using ProyectoLaVillita.UI.WF.Productos;
 using ProyectoLaVillita.UI.WF.Rentas;
 using ProyectoLaVillita.UI.WF.Usuarios;
+using ProyectoLaVillita.COMMON.Entidades;
+using ProyectoLaVillita.BIZ;
 
 namespace ProyectoLaVillita.UI.WF.Proveedores
 {
     public partial class ModificarProveedor : Form
     {
         public string titulo = "Sistema de inventario \"La Villita\"";
+        private ProveedorDTO _prov;
+        private ProveedorManager _provManager;
+
         public ModificarProveedor()
         {
             InitializeComponent();
+            _provManager = new ProveedorManager();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -130,6 +136,11 @@ namespace ProyectoLaVillita.UI.WF.Proveedores
                 new Inicio().Show();
                 this.Hide();
             }
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            _provManager.ModificarProveedor(_prov);
         }
     }
 }
