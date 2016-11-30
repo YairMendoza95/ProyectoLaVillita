@@ -165,7 +165,7 @@ namespace ProyectoLaVillita.UI.WF.Proveedores
 
         private void ModificarProveedor_Load(object sender, EventArgs e)
         {
-            listar();
+           dgvProveedor.DataSource= _provManager.Proveedores.ToList();
         }
     }
 }

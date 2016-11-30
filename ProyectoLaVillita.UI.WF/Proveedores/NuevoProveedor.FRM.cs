@@ -20,6 +20,7 @@ namespace ProyectoLaVillita.UI.WF.Proveedores
         private ProveedorDTO _prov;
         private ProveedorManager _provManager;
         public string titulo = "Sistema de inventario \"La Villita\"";
+        public string numeros = "1234567890";
         public NuevoProveedor()
         {
             InitializeComponent();
@@ -137,22 +138,27 @@ namespace ProyectoLaVillita.UI.WF.Proveedores
         {
             try
             {
-                if (_prov == null)
+                if (_prov == null && txtTelefono.Text.Length == 10)
                 {
                     _prov = new ProveedorDTO()
                     {
                         nombreProveedor = txtNombre.Text,
                         telefono = txtTelefono.Text
                     };
-                    //_provManager.InsertarProveedor(_prov);
-
                     if (_provManager.InsertarProveedor(_prov))
                         MessageBox.Show("Proveedor registrado corectamente", titulo, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     else
                         MessageBox.Show("Proveedor no registrado", titulo, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    txtNombre.Clear();
+                    txtTelefono.Clear();
                 }
-                txtNombre.Clear();
-                txtTelefono.Clear();
+                else if (txtTelefono.Text.Length > 0 || txtTelefono.Text.Length > 0)
+                {
+                    MessageBox.Show("El teléfono debe contener 10 digitos", titulo, MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    txtTelefono.Clear();
+                    txtTelefono.Focus();
+                }
             }
             catch (Exception ex)
             {
