@@ -109,6 +109,7 @@
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(170, 23);
             this.txtUsuario.TabIndex = 2;
+            this.txtUsuario.Enter += new System.EventHandler(this.Inicio_Load);
             // 
             // btnSalir
             // 
@@ -150,6 +151,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "Inicio";
             this.Text = "Sistema de inventario \"La Villita\"";
+            this.Load += new System.EventHandler(this.Inicio_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

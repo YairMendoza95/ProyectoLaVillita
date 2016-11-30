@@ -20,11 +20,20 @@ namespace ProyectoLaVillita.UI.WF.Proveedores
         public string titulo = "Sistema de inventario \"La Villita\"";
         private ProveedorDTO _prov;
         private ProveedorManager _provManager;
+        public IQueryable<ProveedorDTO> proveedor;
 
         public ModificarProveedor()
         {
             InitializeComponent();
             _provManager = new ProveedorManager();
+        }
+        public void listar()
+        {
+            proveedor = _provManager.Proveedores;
+            if (proveedor.Count() > 0)
+            {
+                dgvProveedor.DataSource = proveedor;
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -140,7 +149,21 @@ namespace ProyectoLaVillita.UI.WF.Proveedores
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            if (_prov == null)
+            {
+                _prov = new ProveedorDTO()
+                {
+                    nombreProveedor = dgvProveedor.SelectedColumns.ToString(),
+                    telefono = dgvProveedor.SelectedColumns.ToString()
+                };
+            }
             _provManager.ModificarProveedor(_prov);
+        }
+
+        private void ModificarProveedor_Load(object sender, EventArgs e)
+        {
+
+            listar();
         }
     }
 }

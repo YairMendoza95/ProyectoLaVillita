@@ -14,29 +14,30 @@ namespace ProyectoLaVillita.UI.WF
 {
     public partial class Inicio : Form
     {
-        //private UsuarioDTO _user;
         private readonly UsuarioManager _userManage;
+        public string titulo = "Sistema de inventario \"La VIllita\"";
         public Inicio()
         {
             InitializeComponent();
             _userManage = new UsuarioManager();
+            txtUsuario.Focus();
+        }
+        private void Inicio_Load(object sender, EventArgs e)
+        {
+            
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            char c = '"';
-            string titulo = "Sistema de inventario " + c + "La Villita" + c;
             if (MessageBox.Show("¿Está seguro que quiere salir?", titulo, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 Application.Exit();
         }
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            char c = '"';
-            string titulo = "Sistema de inventario " + c + "La Villita" + c;
             if (_userManage.Login(txtUsuario.Text, txtContraseña.Text))
             {
-                if (MessageBox.Show("¡Bienvenido!", titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk) == DialogResult.OK)
+                if (MessageBox.Show("¡Bienvenido! " + txtUsuario.Text, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk) == DialogResult.OK)
                 {
                     new Venta().Show();
                     this.Hide();
@@ -45,7 +46,6 @@ namespace ProyectoLaVillita.UI.WF
             else
             {
                 MessageBox.Show("El usuario no existe",titulo, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //txtUsuario.Clear();
                 txtContraseña.Clear();
                 txtContraseña.Focus();
             }

@@ -156,7 +156,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
                 }
                 txtNombre.Clear();
                 txtCostoUnitario.Clear();
-                //cmbProveedor
+                //cmbProveedor.d
                 txtMaximo.Clear();
                 txtMinimo.Clear();
             }
