@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtMinimo = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -68,8 +69,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.proveedorManagerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedorManagerBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -378,6 +381,7 @@
             // 
             // cmbProveedor
             // 
+            this.cmbProveedor.DataSource = this.proveedorManagerBindingSource;
             this.cmbProveedor.FormattingEnabled = true;
             this.cmbProveedor.Location = new System.Drawing.Point(310, 145);
             this.cmbProveedor.Name = "cmbProveedor";
@@ -427,6 +431,10 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Nombre";
             // 
+            // proveedorManagerBindingSource
+            // 
+            this.proveedorManagerBindingSource.DataSource = typeof(ProyectoLaVillita.BIZ.ProveedorManager);
+            // 
             // NuevoProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -440,6 +448,7 @@
             this.groupBox1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedorManagerBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -486,5 +495,6 @@
         private System.Windows.Forms.ToolStripMenuItem nuevoUsuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarUsuarioToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarUsuarioToolStripMenuItem;
+        private System.Windows.Forms.BindingSource proveedorManagerBindingSource;
     }
 }

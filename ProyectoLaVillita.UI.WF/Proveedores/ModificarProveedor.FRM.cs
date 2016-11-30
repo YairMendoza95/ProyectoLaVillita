@@ -149,20 +149,22 @@ namespace ProyectoLaVillita.UI.WF.Proveedores
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            if (_prov == null)
+            for (int i = 0; i < dgvProveedor.RowCount; i++)
             {
-                _prov = new ProveedorDTO()
+                if (_prov == null)
                 {
-                    nombreProveedor = dgvProveedor.SelectedColumns.ToString(),
-                    telefono = dgvProveedor.SelectedColumns.ToString()
-                };
+                    _prov = new ProveedorDTO()
+                    {
+                        nombreProveedor = dgvProveedor.SelectedColumns.ToString(),
+                        telefono = dgvProveedor.SelectedColumns.ToString()
+                    };
+                }
+                _provManager.ModificarProveedor(_prov);
             }
-            _provManager.ModificarProveedor(_prov);
         }
 
         private void ModificarProveedor_Load(object sender, EventArgs e)
         {
-
             listar();
         }
     }
