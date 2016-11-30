@@ -24,6 +24,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
         private VentaDTO _venta;
         private VentaManager _ventaManager;
         public string titulo="Sistema de inventario \"La Villita\"";
+        public double cant, sub, total = 0;
         //private 
         public Venta()
         {
@@ -145,12 +146,12 @@ namespace ProyectoLaVillita.UI.WF.Productos
         private void btnAgregar_Click(object sender, EventArgs e)
         {
            
-            double cant = Convert.ToDouble(txtCantidad.Text);
-            double sub = cant * _prod.precioUnitario;
-            
+            cant = Convert.ToDouble(txtCantidad.Text);
+            sub = cant * _prod.precioUnitario;
+            //if(this.WindowState==FormClosed)
             try
             {
-                if (_dv == null && _venta == null)
+                if (_dv == null)
                 {
                     _ventaManager.InsertarVenta(_venta);
                     _dv = new DetalleVentaDTO()
@@ -164,7 +165,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
                     _dvManager.InsertarDetalleVenta(_dv);
                     dgvDetalleVenta.Rows.Add(_dv.idProducto, _dv.idProveedor, _dv.cantidad, _dv.total);
                 }
-                //cmbProductos
+                cmbProductos.ResetText();
                 txtCantidad.Clear();
             }
             catch (Exception)
@@ -186,9 +187,14 @@ namespace ProyectoLaVillita.UI.WF.Productos
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            total += sub;
             try
             {
-
+                _venta = new VentaDTO()
+                {
+                    total = total,
+                    notas = txtNotas.Text,
+                };
             }
             catch(Exception)
             {

@@ -10,15 +10,20 @@ using System.Windows.Forms;
 using ProyectoLaVillita.UI.WF.Proveedores;
 using ProyectoLaVillita.UI.WF.Rentas;
 using ProyectoLaVillita.UI.WF.Usuarios;
+using ProyectoLaVillita.BIZ;
+using ProyectoLaVillita.COMMON.Entidades;
 
 namespace ProyectoLaVillita.UI.WF.Productos
 {
     public partial class EliminarProducto : Form
     {
+        private ProductoManager _prodManager;
+        private ProductoDTO _prod;
         public string titulo = "Sistema de inventario \"La Villita\"";
         public EliminarProducto()
         {
             InitializeComponent();
+            _prodManager = new ProductoManager();
         }
 
         private void registroDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -130,6 +135,48 @@ namespace ProyectoLaVillita.UI.WF.Productos
         {
             if (MessageBox.Show("¿Está seguro que quiere salir?", titulo, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 Application.Exit();
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (_prod==null)
+                {
+                    _prod = new ProductoDTO()
+                    {
+                        idProducto = idProducto.Index
+                    };
+                    if (MessageBox.Show("¿Desea eliminar este producto?", titulo, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+                    {
+                        if (_prodManager.EliminarProducto(_prod))
+                        {
+                            MessageBox.Show("El producto fue eliminado correctamente", titulo, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            dgvProductos.Refresh();
+                        }
+                        else
+                            MessageBox.Show("El producto no ha sido eliminado", titulo, MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
+                        
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(("Error: " + ex.Message), titulo, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                dgvProductos.DataSource = _prodManager.BuscarProductoPorNombre(txtIngresarNombre.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, titulo, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

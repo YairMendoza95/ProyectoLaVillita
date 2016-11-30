@@ -33,7 +33,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
 
         private void Entrada_Load(object sender, EventArgs e)
         {
-            //cmbProductos.DataSource = 
+            cmbProductos.DataSource = _prodManager.Nombre;
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -59,13 +59,25 @@ namespace ProyectoLaVillita.UI.WF.Productos
                         cantidad = Convert.ToInt32(txtCantidad.Text),
                         montoPagar = Convert.ToInt32(txtTotal.Text)
                     };
-                    _entManager.InsertarEntrada(_ent);
+                    if(_entManager.InsertarEntrada(_ent))
+                    {
+                        MessageBox.Show("El producto fue actualizado corectamente", titulo, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        cmbProductos.ResetText();
+                        txtProveedor.Clear();
+                        dtpFecheEntrada.ResetText();
+                        txtCantidad.Clear();
+                        txtTotal.Clear();
+                        cmbProductos.Focus();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Entrada no registrada", titulo, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
+                MessageBox.Show("Error: " + ex.Message, titulo, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
