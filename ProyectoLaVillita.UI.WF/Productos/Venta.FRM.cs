@@ -177,7 +177,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
 
         private void dgvDetalleVenta_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //colEliminar.DataGridView.Click;
+            //colEliminar.UseColumnTextForButtonValue = _dvManager.EliminarDetalleVenta();
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
@@ -195,6 +195,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
                     total = total,
                     notas = txtNotas.Text,
                 };
+                _ventaManager.InsertarVenta(_venta);
             }
             catch(Exception)
             {
