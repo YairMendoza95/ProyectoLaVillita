@@ -14,7 +14,7 @@ namespace ProyectoLaVillita.BIZ
         RentaRepository rentaRepository;
         ConsultaRepository consultaRepository;
 
-        public IQueryable<RentaDTO> Rentas
+        public List<RentaDTO> Rentas
         {
             get { return rentaRepository.Elementos; }
         }

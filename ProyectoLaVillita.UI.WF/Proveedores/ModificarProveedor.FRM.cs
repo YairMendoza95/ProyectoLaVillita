@@ -20,7 +20,7 @@ namespace ProyectoLaVillita.UI.WF.Proveedores
         public string titulo = "Sistema de inventario \"La Villita\"";
         private ProveedorDTO _prov;
         private ProveedorManager _provManager;
-        public IQueryable<ProveedorDTO> proveedor;
+        public List<ProveedorDTO> proveedor;
 
         public ModificarProveedor()
         {
@@ -165,7 +165,7 @@ namespace ProyectoLaVillita.UI.WF.Proveedores
 
         private void ModificarProveedor_Load(object sender, EventArgs e)
         {
-           dgvProveedor.DataSource= _provManager.Proveedores.ToList();
+           dgvProveedor.DataSource= _provManager.Proveedores;
         }
     }
 }

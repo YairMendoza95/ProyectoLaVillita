@@ -20,7 +20,7 @@ namespace ProyectoLaVillita.DAL
             da = new MySqlDataAdapter();
         }
 
-        public IQueryable<ProductoDTO> Elementos
+        public List<ProductoDTO> Elementos
         {
             get
             {
@@ -57,7 +57,7 @@ namespace ProyectoLaVillita.DAL
             }
         }
 
-        public IQueryable<ProductoDTO> Nombre
+        public List<ProductoDTO> Nombre
         {
             get
             {

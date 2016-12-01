@@ -20,7 +20,7 @@ namespace ProyectoLaVillita.DAL
             da = new MySqlDataAdapter();
         }
 
-        public IQueryable<DetalleRentaDTO> Elementos
+        public List<DetalleRentaDTO> Elementos
         {
             get
             {
@@ -47,7 +47,7 @@ namespace ProyectoLaVillita.DAL
                         };
                         detallesRentas.Add(dr);
                     }
-                    return detallesRentas.AsQueryable();
+                    return detallesRentas.ToList();
                 }
                 catch (Exception)
                 {
@@ -58,7 +58,7 @@ namespace ProyectoLaVillita.DAL
             }
         }
 
-        public IQueryable<DetalleRentaDTO> Nombre
+        public List<DetalleRentaDTO> Nombre
         {
             get
             {

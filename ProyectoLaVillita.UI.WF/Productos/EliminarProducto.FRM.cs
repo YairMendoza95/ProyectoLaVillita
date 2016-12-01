@@ -156,9 +156,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
                         }
                         else
                             MessageBox.Show("El producto no ha sido eliminado", titulo, MessageBoxButtons.OK, MessageBoxIcon.Error);
-
                     }
-                        
                 }
             }
             catch (Exception ex)
@@ -178,5 +176,14 @@ namespace ProyectoLaVillita.UI.WF.Productos
                 MessageBox.Show("Error: " + ex.Message, titulo, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-    }
+
+		private void EliminarProducto_Load(object sender, EventArgs e)
+		{
+		}
+
+		private void groupBox1_Enter(object sender, EventArgs e)
+		{
+
+		}
+	}
 }

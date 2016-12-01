@@ -14,12 +14,12 @@ namespace ProyectoLaVillita.BIZ
         ProductoRepository productoRepository;
         ConsultaRepository consultaRepository;
 
-        public IQueryable<ProductoDTO> Productos
+        public List<ProductoDTO> Productos
         {
             get { return productoRepository.Elementos; }
         }
 
-        public IQueryable<ProductoDTO> Nombre
+        public List<ProductoDTO> Nombre
         {
             get { return productoRepository.Nombre; }
         }

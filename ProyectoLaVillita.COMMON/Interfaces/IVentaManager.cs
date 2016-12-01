@@ -9,7 +9,7 @@ namespace ProyectoLaVillita.COMMON.Interfaces
 {
     public interface IVentaManager
     {
-        IQueryable<VentaDTO> Ventas { get; }
+        List<VentaDTO> Ventas { get; }
         bool InsertarVenta(VentaDTO venta);
         bool ModificarVenta(VentaDTO venta);
         bool EliminarVenta(VentaDTO venta);

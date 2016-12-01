@@ -20,7 +20,7 @@ namespace ProyectoLaVillita.DAL
             da = new MySqlDataAdapter();
         }
 
-        public IQueryable<UsuarioDTO> Elementos
+        public List<UsuarioDTO> Elementos
         {
             get
             {
@@ -42,7 +42,7 @@ namespace ProyectoLaVillita.DAL
                         };
                         usuarios.Add(usua);
                     }
-                    return usuarios.AsQueryable();
+                    return usuarios.ToList();
                 }
                 catch (Exception)
                 {
@@ -53,7 +53,7 @@ namespace ProyectoLaVillita.DAL
             }
         }
 
-        public IQueryable<UsuarioDTO> Nombre
+        public List<UsuarioDTO> Nombre
         {
             get
             {

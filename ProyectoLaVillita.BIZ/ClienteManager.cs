@@ -19,12 +19,12 @@ namespace ProyectoLaVillita.BIZ
             consultaRepository = new ConsultaRepository();
         }
 
-        public IQueryable<ClienteDTO> Clientes
+        public List<ClienteDTO> Clientes
         {
             get { return clienteRepository.Elementos; }
         }
 
-        public IQueryable<ClienteDTO> Nombres
+        public List<ClienteDTO> Nombres
         {
             get { return clienteRepository.Nombre; }
         }

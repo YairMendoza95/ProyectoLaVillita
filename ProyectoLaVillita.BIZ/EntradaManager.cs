@@ -14,7 +14,7 @@ namespace ProyectoLaVillita.BIZ
         EntradaRepository entradaRepository;
         ConsultaRepository consultaRepository;
 
-        public IQueryable<EntradaDTO> Entradas
+        public List<EntradaDTO> Entradas
         {
             get { return entradaRepository.Elementos; }
         }
@@ -35,7 +35,7 @@ namespace ProyectoLaVillita.BIZ
             return entradaRepository.Modificar(entrada);
         }
 
-        public IQueryable<EntradaDTO> EntradasPorProducto(int idProducto)
+        public List<EntradaDTO> EntradasPorProducto(int idProducto)
         {
             throw new NotImplementedException();
         }

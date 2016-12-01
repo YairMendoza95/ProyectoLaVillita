@@ -16,7 +16,7 @@ namespace ProyectoLaVillita.BIZ
         {
             detalleRepository = new DetalleVentaRepository();
         }
-        public IQueryable<DetalleVentaDTO> DetalleVenta
+        public List<DetalleVentaDTO> DetalleVenta
         {
             get { return detalleRepository.Elementos; }
         }

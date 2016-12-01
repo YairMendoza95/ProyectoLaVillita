@@ -9,7 +9,7 @@ namespace ProyectoLaVillita.COMMON.Interfaces
 {
     public interface IDetalleVentaManager
     {
-        IQueryable<DetalleVentaDTO> DetalleVenta { get; }
+        List<DetalleVentaDTO> DetalleVenta { get; }
         bool InsertarDetalleVenta(DetalleVentaDTO detalle);
         bool ModificarDetalleVenta(DetalleVentaDTO detalle);
         bool EliminarDetalleVenta(DetalleVentaDTO detalle);

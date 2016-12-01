@@ -20,7 +20,7 @@ namespace ProyectoLaVillita.DAL
             da = new MySqlDataAdapter();
         }
 
-        public IQueryable<ProveedorDTO> Elementos
+        public List<ProveedorDTO> Elementos
         {
             get
             {
@@ -32,17 +32,17 @@ namespace ProyectoLaVillita.DAL
                     da.Fill(ds);
                     conexion.Close();
                     List<ProveedorDTO> proveedores = new List<ProveedorDTO>();
-                    for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
-                    {
-                        ProveedorDTO prov = new ProveedorDTO()
-                        {
-                            idProveedor = Convert.ToInt32(ds.Tables[0].Rows[i]["idProveedor"]),
-                            nombreProveedor = ds.Tables[0].Rows[i]["nombreProveedor"].ToString(),
-                            telefono = ds.Tables[0].Rows[i]["telefono"].ToString()
-                        };
-                        proveedores.Add(prov);
-                    }
-                    return proveedores.AsQueryable();
+					for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
+					{
+						ProveedorDTO prov = new ProveedorDTO()
+						{
+							idProveedor = Convert.ToInt32(ds.Tables[0].Rows[i]["idProveedor"]),
+							nombreProveedor = ds.Tables[0].Rows[i]["nombreProveedor"].ToString(),
+							telefono = ds.Tables[0].Rows[i]["telefono"].ToString()
+						};
+						proveedores.Add(prov);
+					}
+                    return proveedores.ToList();
                 }
                 catch (Exception)
                 {
@@ -53,7 +53,7 @@ namespace ProyectoLaVillita.DAL
             }
         }
 
-        public IQueryable<ProveedorDTO> Nombre
+        public List<ProveedorDTO> Nombre
         {
             get
             {
@@ -73,7 +73,7 @@ namespace ProyectoLaVillita.DAL
                         };
                         proveedor.Add(prov);
                     }
-                    return proveedor.AsQueryable();
+                    return proveedor.ToList();
                 }
                 catch (Exception)
                 {
