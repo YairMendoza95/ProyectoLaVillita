@@ -21,7 +21,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
         private ProductoManager _prodManager;
         private ProveedorManager _provManager;
         private EntradaDTO _ent;
-        public string titulo="Sistema de inventario \"La Villita\"";
+        public string titulo = "Sistema de inventario \"La Villita\"";
         public NuevoProducto()
         {
             InitializeComponent();

@@ -19,6 +19,7 @@ namespace ProyectoLaVillita.UI.WF.Rentas
     {
         //private ProductoDTO _prod;
         private ProductoManager _prodManager;
+        public string titulo = "Sistema de inventario \"La Villita\"";
         public InventarioRenta()
         {
             InitializeComponent();
@@ -123,8 +124,6 @@ namespace ProyectoLaVillita.UI.WF.Rentas
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            char c = '"';
-            string titulo = "Sistema de inventario " + c + "La Villita" + c;
             if (MessageBox.Show("¿Está seguro que quiere salir?", titulo, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 Application.Exit();
         }
@@ -133,6 +132,15 @@ namespace ProyectoLaVillita.UI.WF.Rentas
         {
             txtMesas.Text = _prodManager.BuscarProductoPorNombre("Mesa").stockActual.ToString();
             txtSillas.Text = _prodManager.BuscarProductoPorNombre("Silla").stockActual.ToString();
+        }
+
+        private void cambiarDeUsuariioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("¿Está seguro que quiere cerrar sesión?", titulo, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+            {
+                new Inicio().Show();
+                this.Hide();
+            }
         }
     }
 }

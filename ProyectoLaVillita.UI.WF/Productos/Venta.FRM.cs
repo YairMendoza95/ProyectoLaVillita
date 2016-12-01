@@ -158,6 +158,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
                     {
                         idProducto = cmbProductos.SelectedIndex,
                         //idProveedor
+                        idVenta = _venta.idVenta,
                         fechaVenta = DateTime.Today,
                         cantidad = cant,
                         total = sub,

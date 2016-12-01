@@ -18,21 +18,17 @@ namespace ProyectoLaVillita.UI.WF.Usuarios
 {
     public partial class AgregarUsuario : Form
     {
-        public char c = '"';
-        public string titulo;
+        public string titulo = "Sistema de inventario \"La Villita\"";
         private UsuarioDTO _user;
         private UsuarioManager _userManager;
         public AgregarUsuario()
         {
             InitializeComponent();
             _userManager = new UsuarioManager();
-            titulo = "Sistema de inventario " + c + "La Villita" + c;
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            char c = '"';
-            string titulo = "Sistema de inventario " + c + "La Villita" + c;
             try
             {
                 

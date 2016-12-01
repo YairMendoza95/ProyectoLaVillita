@@ -152,5 +152,10 @@ namespace ProyectoLaVillita.UI.WF.Proveedores
         {
             _proveedorManager.EliminarProveedor(_proveedorManager.BuscarProveedorPorId(Convert.ToInt32(dvgProveedor.SelectedRows.GetEnumerator())));
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

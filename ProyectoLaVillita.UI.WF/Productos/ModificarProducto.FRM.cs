@@ -20,12 +20,10 @@ namespace ProyectoLaVillita.UI.WF.Productos
         private ProductoDTO _prod;
         private ProductoManager _prodManager;
         public string titulo="Sistema de inventario \"La Villita\"";
-        public char c = '"';
         public ModificarProducto()
         {
             InitializeComponent();
             _prodManager = new ProductoManager();
-            titulo = "Sistema de invemntario " + c + "La Villita" + c;
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
