@@ -41,5 +41,65 @@ namespace ProyectoLaVillita.UI.WF.Usuarios
             if (MessageBox.Show("¿Está seguro que quiere salir?", titulo, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
                 Application.Exit();
         }
-    }
+
+		private void registroDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			new NuevoProducto().Show();
+			this.Hide();
+		}
+
+		private void inventarioToolStripMenuItem2_Click(object sender, EventArgs e)
+		{
+			new InventarioVenta().Show();
+			this.Hide();
+		}
+
+		private void registroDeProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			new NuevoProveedor().Show();
+			this.Hide();
+		}
+
+		private void modificarProveedorToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			new ModificarProveedor().Show();
+			this.Hide();
+		}
+
+		private void entradasToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			new Entrada().Show();
+			this.Hide();
+		}
+
+		private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			new Venta().Show();
+			this.Hide();
+		}
+
+		private void datosDelClienteToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			new NuevaRenta().Show();
+			this.Hide();
+		}
+
+		private void modificarRentaToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			new ModificarRenta().Show();
+			this.Hide();
+		}
+
+		private void inventarioToolStripMenuItem1_Click(object sender, EventArgs e)
+		{
+			new InventarioRenta().Show();
+			this.Hide();
+		}
+
+		private void nuevoUsuarioToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			new AgregarUsuario().Show();
+			this.Hide();
+		}
+	}
 }
