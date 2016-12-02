@@ -33,7 +33,52 @@ namespace ProyectoLaVillita.UI.WF.Usuarios
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-
+			bool bandera;
+			do
+			{
+				try
+				{
+					if (txtConfirmarContraseña.Text != "" && txtContraseña.Text != "" && txtNombre.Text != "" && txtId.Text != "")
+					{
+						if (_user == null)
+						{
+							_user = new UsuarioDTO()
+							{
+								idUsuario = Convert.ToInt32(txtId.Text),
+								nombreUsuario = txtNombre.Text,
+								contraseña = txtContraseña.Text
+							};
+							if (!txtConfirmarContraseña.Text.Equals(txtContraseña.Text))
+							{
+								MessageBox.Show("Las contraseña no coinciden", titulo, MessageBoxButtons.OK, MessageBoxIcon.Error);
+							}
+							else if (_userManager.BuscarUsuarioPorNombre(_user.nombreUsuario).Equals(txtNombre.Text))
+							{
+								MessageBox.Show("Ya existe el usuario", titulo, MessageBoxButtons.OK, MessageBoxIcon.Error);
+							}
+							else if (MessageBox.Show("¿Está seguro que quiere eliminar el usuario seleccionado?", titulo, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+							{
+								_userManager.ModificarUsuario(_user);
+								txtId.Clear();
+								txtNombre.Clear();
+								txtContraseña.Clear();
+								dgvUsuarios.ClearSelection();
+								dgvUsuarios.DataSource = _userManager.Usuarios.ToList();
+								btnEliminar.Visible = true;
+								txtConfirmarContraseña.Clear();
+								txtConfirmarContraseña.Visible = false;
+								label6.Visible = false;
+							}
+						}
+					}
+					bandera = true;
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show("Error: " + ex.Message, titulo, MessageBoxButtons.OK, MessageBoxIcon.Error);
+					bandera = false;
+				}
+			} while (bandera);
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -100,6 +145,72 @@ namespace ProyectoLaVillita.UI.WF.Usuarios
 		{
 			new AgregarUsuario().Show();
 			this.Hide();
+		}
+
+		private void ModificarUsuario_Load(object sender, EventArgs e)
+		{
+			List<UsuarioDTO> usuarios = _userManager.Usuarios.ToList();
+			if(usuarios.Count>0)
+			{
+				dgvUsuarios.DataSource = usuarios;
+				dgvUsuarios.Columns[0].HeaderText = "Id";
+				dgvUsuarios.Columns[1].HeaderText = "Nombre de usuario";
+				dgvUsuarios.Columns[2].HeaderText = "Contraseña";
+			}
+			else
+			{
+				StringBuilder strb = new StringBuilder();
+				strb.Append("No existen registros");
+			}
+			btnGuardar.Visible = false;
+			txtId.ReadOnly = true;
+			txtNombre.ReadOnly = true;
+			txtContraseña.ReadOnly = true;
+			label6.Visible = false;
+			txtConfirmarContraseña.Visible = false;
+		}
+
+		private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			txtId.Text = dgvUsuarios.SelectedRows[0].Cells[0].Value.ToString();
+			txtNombre.Text = dgvUsuarios.SelectedRows[0].Cells[1].Value.ToString();
+			txtContraseña.Text = dgvUsuarios.SelectedRows[0].Cells[2].Value.ToString();
+		}
+
+		private void btnModificar_Click(object sender, EventArgs e)
+		{
+			btnGuardar.Visible = true;
+			btnEliminar.Visible = true;
+			txtConfirmarContraseña.Visible = true;
+			label6.Visible = true;
+			txtConfirmarContraseña.Visible = true;
+			txtContraseña.ReadOnly = false;
+			txtNombre.ReadOnly = false;
+			txtConfirmarContraseña.Text = dgvUsuarios.SelectedRows[0].Cells[2].Value.ToString();
+		}
+
+		private void btnEliminar_Click(object sender, EventArgs e)
+		{
+			try
+			{
+				if (_user == null)
+				{
+					_user = new UsuarioDTO();
+					_user.idUsuario = Convert.ToInt32(txtId.Text);
+					if (MessageBox.Show("¿Está seguro de eliminar este proveedor?", titulo, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+					{
+						_userManager.EliminarUsuario(_user);
+						txtId.Clear();
+						txtNombre.Clear();
+						txtContraseña.Clear();
+						dgvUsuarios.DataSource = _userManager.Usuarios.ToList();
+					}
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show("Error: " + ex.Message, titulo, MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
 		}
 	}
 }

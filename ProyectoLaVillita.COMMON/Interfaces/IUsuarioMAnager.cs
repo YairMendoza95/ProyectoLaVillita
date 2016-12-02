@@ -11,6 +11,7 @@ namespace ProyectoLaVillita.COMMON.Interfaces
     {
         IQueryable<UsuarioDTO> Usuarios { get; }
         UsuarioDTO BuscarUsuarioPorId(int idUsuario);
+		UsuarioDTO BuscarUsuarioPorNombre(string nombre);
         bool InsertarUsuario(UsuarioDTO usuario);
         bool ModificarUsuario(UsuarioDTO usuario);
         bool EliminarUsuario(UsuarioDTO usuario);

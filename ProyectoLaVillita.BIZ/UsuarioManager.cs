@@ -48,5 +48,10 @@ namespace ProyectoLaVillita.BIZ
         {
             return consultaRepository.Login(nombreUsuario, contraseña);
         }
-    }
+
+		public UsuarioDTO BuscarUsuarioPorNombre(string nombre)
+		{
+			return usuarioRepository.Elementos.FirstOrDefault(u => u.nombreUsuario == nombre);
+		}
+	}
 }
