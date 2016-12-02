@@ -21,6 +21,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
         private ProductoManager _prodManager;
         private ProveedorManager _provManager;
         private EntradaDTO _ent;
+		private ProveedorDTO _pro = new ProveedorDTO();
         public string titulo = "Sistema de inventario \"La Villita\"";
         public NuevoProducto()
         {
@@ -70,10 +71,12 @@ namespace ProyectoLaVillita.UI.WF.Productos
             }
         }
 
-        private void NuevoProducto_Load(object sender, EventArgs e)
-        {
-			cmbProveedor.DataSource = _provManager.Proveedores.ToList();
-        }
+		private void NuevoProducto_Load(object sender, EventArgs e)
+		{
+			var datos = _provManager.Proveedores.ToList();
+			cmbProveedor.DataSource = datos;
+			cmbProveedor.DisplayMember = "nombre";
+		}
 
 		private void inventarioToolStripMenuItem2_Click(object sender, EventArgs e)
 		{

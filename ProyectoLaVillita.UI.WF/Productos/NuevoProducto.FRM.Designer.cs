@@ -59,12 +59,12 @@
 			this.btnGuardar = new System.Windows.Forms.Button();
 			this.btnSalir = new System.Windows.Forms.Button();
 			this.cmbProveedor = new System.Windows.Forms.ComboBox();
-			this.proveedorManagerBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.label5 = new System.Windows.Forms.Label();
 			this.txtCostoUnitario = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.txtNombre = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
+			this.proveedorManagerBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.groupBox1.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.proveedorManagerBindingSource)).BeginInit();
@@ -336,15 +336,13 @@
 			// cmbProveedor
 			// 
 			this.cmbProveedor.DataSource = this.proveedorManagerBindingSource;
+			this.cmbProveedor.DisplayMember = "nombre";
 			this.cmbProveedor.FormattingEnabled = true;
 			this.cmbProveedor.Location = new System.Drawing.Point(310, 145);
 			this.cmbProveedor.Name = "cmbProveedor";
 			this.cmbProveedor.Size = new System.Drawing.Size(162, 24);
 			this.cmbProveedor.TabIndex = 11;
-			// 
-			// proveedorManagerBindingSource
-			// 
-			this.proveedorManagerBindingSource.DataSource = typeof(ProyectoLaVillita.BIZ.ProveedorManager);
+			this.cmbProveedor.ValueMember = "idProveedor";
 			// 
 			// label5
 			// 
@@ -389,6 +387,11 @@
 			this.label2.TabIndex = 6;
 			this.label2.Text = "Nombre";
 			// 
+			// proveedorManagerBindingSource
+			// 
+			this.proveedorManagerBindingSource.DataMember = "nombre";
+			this.proveedorManagerBindingSource.DataSource = typeof(ProyectoLaVillita.BIZ.ProveedorManager);
+			// 
 			// NuevoProducto
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -423,7 +426,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.BindingSource proveedorManagerBindingSource;
 		private System.Windows.Forms.MenuStrip menuStrip1;
 		private System.Windows.Forms.ToolStripMenuItem tiendaDeAbarrotesToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
@@ -445,5 +447,6 @@
 		private System.Windows.Forms.ToolStripMenuItem nuevoUsuarioToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem modificarUsuarioToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem cambiarDeUsuariioToolStripMenuItem;
+		private System.Windows.Forms.BindingSource proveedorManagerBindingSource;
 	}
 }
