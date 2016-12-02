@@ -8,8 +8,8 @@ namespace ProyectoLaVillita.COMMON.Interfaces
 {
     public interface IRepositorioGenerico<T> where T : class
     {
-        List<T> Elementos { get; }
-        List<T> Nombre { get; }
+        IQueryable<T> Elementos { get; }
+        IQueryable<T> Nombre { get; }
         bool Insertar(T entidad);
         bool Modificar(T entidad);
         bool Eliminar(T entidad);

@@ -19,7 +19,7 @@ namespace ProyectoLaVillita.DAL
             conexion = new MySqlConnection(Properties.Settings.Default.CadenaDeConexion);
             da = new MySqlDataAdapter();
         }
-        public List<ClienteDTO> Elementos
+        public IQueryable<ClienteDTO> Elementos
         {
             get
             {
@@ -43,7 +43,7 @@ namespace ProyectoLaVillita.DAL
                         };
                         clientes.Add(cli);
                     }
-                    return clientes.ToList();
+                    return clientes.AsQueryable();
                 }
                 catch (Exception)
                 {
@@ -54,7 +54,7 @@ namespace ProyectoLaVillita.DAL
             }
         }
 
-        public List<ClienteDTO> Nombre
+        public IQueryable<ClienteDTO> Nombre
         {
             get
             {
@@ -76,7 +76,7 @@ namespace ProyectoLaVillita.DAL
                         };
                         cliente.Add(cli);
                     }
-                    return cliente.ToList();
+                    return cliente.AsQueryable();
                 }
                 catch (Exception)
                 {

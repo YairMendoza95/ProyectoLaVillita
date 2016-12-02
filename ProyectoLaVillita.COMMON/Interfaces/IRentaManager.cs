@@ -9,7 +9,7 @@ namespace ProyectoLaVillita.COMMON.Interfaces
 {
     public interface IRentaManager
     {
-        List<RentaDTO> Rentas { get; }
+        IQueryable<RentaDTO> Rentas { get; }
         bool InsertarRenta(RentaDTO renta);
         bool ModificarRenta(RentaDTO renta);
         bool EliminarRenta(RentaDTO renta);

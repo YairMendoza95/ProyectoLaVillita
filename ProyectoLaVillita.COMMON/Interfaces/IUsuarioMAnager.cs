@@ -9,7 +9,7 @@ namespace ProyectoLaVillita.COMMON.Interfaces
 {
     public interface IUsuarioManager
     {
-        List<UsuarioDTO> Usuarios { get; }
+        IQueryable<UsuarioDTO> Usuarios { get; }
         UsuarioDTO BuscarUsuarioPorId(int idUsuario);
         bool InsertarUsuario(UsuarioDTO usuario);
         bool ModificarUsuario(UsuarioDTO usuario);

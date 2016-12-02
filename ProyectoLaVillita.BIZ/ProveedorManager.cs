@@ -17,12 +17,12 @@ namespace ProyectoLaVillita.BIZ
             proveedorRepository = new ProveedorRepository();
         }
 
-        public List<ProveedorDTO> Nombre
+        public IQueryable<ProveedorDTO> Nombre
         {
             get { return proveedorRepository.Nombre; }
         }
 
-        public List<ProveedorDTO> Proveedores
+        public IQueryable<ProveedorDTO> Proveedores
         {
             get { return proveedorRepository.Elementos; }
         }

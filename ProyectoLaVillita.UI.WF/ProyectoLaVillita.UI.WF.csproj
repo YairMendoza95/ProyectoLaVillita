@@ -92,12 +92,6 @@
     <Compile Include="Inicio.FRM.Designer.cs">
       <DependentUpon>Inicio.FRM.cs</DependentUpon>
     </Compile>
-    <Compile Include="Productos\EliminarProducto.FRM.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Productos\EliminarProducto.FRM.Designer.cs">
-      <DependentUpon>EliminarProducto.FRM.cs</DependentUpon>
-    </Compile>
     <Compile Include="Productos\Entrada.FRM.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -109,12 +103,6 @@
     </Compile>
     <Compile Include="Productos\InventarioVenta.FRM.Designer.cs">
       <DependentUpon>InventarioVenta.FRM.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Productos\ModificarProducto.FRM.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Productos\ModificarProducto.FRM.Designer.cs">
-      <DependentUpon>ModificarProducto.FRM.cs</DependentUpon>
     </Compile>
     <Compile Include="Productos\NuevoProducto.FRM.cs">
       <SubType>Form</SubType>
@@ -130,17 +118,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Proveedores\EliminarProveedor.FRM.cs">
+    <Compile Include="Proveedores\ListarProveedores.FRM.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Proveedores\EliminarProveedor.FRM.Designer.cs">
-      <DependentUpon>EliminarProveedor.FRM.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Proveedores\ModificarProveedor.FRM.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Proveedores\ModificarProveedor.FRM.Designer.cs">
-      <DependentUpon>ModificarProveedor.FRM.cs</DependentUpon>
+    <Compile Include="Proveedores\ListarProveedores.FRM.Designer.cs">
+      <DependentUpon>ListarProveedores.FRM.cs</DependentUpon>
     </Compile>
     <Compile Include="Proveedores\NuevoProveedor.FRM.cs">
       <SubType>Form</SubType>
@@ -148,23 +130,17 @@
     <Compile Include="Proveedores\NuevoProveedor.FRM.Designer.cs">
       <DependentUpon>NuevoProveedor.FRM.cs</DependentUpon>
     </Compile>
-    <Compile Include="Rentas\EliminarRenta.FRM.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Rentas\EliminarRenta.FRM.Designer.cs">
-      <DependentUpon>EliminarRenta.FRM.cs</DependentUpon>
-    </Compile>
     <Compile Include="Rentas\InventarioRenta.FRM.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Rentas\InventarioRenta.FRM.Designer.cs">
       <DependentUpon>InventarioRenta.FRM.cs</DependentUpon>
     </Compile>
-    <Compile Include="Rentas\ModificarRenta.FRM.cs">
+    <Compile Include="Rentas\ListarRentas.FRM.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Rentas\ModificarRenta.FRM.Designer.cs">
-      <DependentUpon>ModificarRenta.FRM.cs</DependentUpon>
+    <Compile Include="Rentas\ListarRentas.FRM.Designer.cs">
+      <DependentUpon>ListarRentas.FRM.cs</DependentUpon>
     </Compile>
     <Compile Include="Rentas\NuevaRenta.FRM.cs">
       <SubType>Form</SubType>
@@ -178,38 +154,31 @@
     <Compile Include="Usuarios\AgregarUsuario.FRM.Designer.cs">
       <DependentUpon>AgregarUsuario.FRM.cs</DependentUpon>
     </Compile>
-    <Compile Include="Usuarios\EliminarUsuario.FRM.cs">
+    <Compile Include="Usuarios\ListarUsuario.FRM.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Usuarios\EliminarUsuario.FRM.Designer.cs">
-      <DependentUpon>EliminarUsuario.FRM.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Usuarios\ModificarUsuario.FRM.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Usuarios\ModificarUsuario.FRM.Designer.cs">
-      <DependentUpon>ModificarUsuario.FRM.cs</DependentUpon>
+    <Compile Include="Usuarios\ListarUsuario.FRM.Designer.cs">
+      <DependentUpon>ListarUsuario.FRM.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Inicio.FRM.resx">
       <DependentUpon>Inicio.FRM.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Productos\EliminarProducto.FRM.resx">
-      <DependentUpon>EliminarProducto.FRM.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\Entrada.FRM.resx">
       <DependentUpon>Entrada.FRM.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\InventarioVenta.FRM.resx">
       <DependentUpon>InventarioVenta.FRM.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Productos\ModificarProducto.FRM.resx">
-      <DependentUpon>ModificarProducto.FRM.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\NuevoProducto.FRM.resx">
       <DependentUpon>NuevoProducto.FRM.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Productos\Venta.FRM.resx">
       <DependentUpon>Venta.FRM.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -221,35 +190,33 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Proveedores\EliminarProveedor.FRM.resx">
-      <DependentUpon>EliminarProveedor.FRM.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Proveedores\ModificarProveedor.FRM.resx">
-      <DependentUpon>ModificarProveedor.FRM.cs</DependentUpon>
+    <EmbeddedResource Include="Proveedores\ListarProveedores.FRM.resx">
+      <DependentUpon>ListarProveedores.FRM.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Proveedores\NuevoProveedor.FRM.resx">
       <DependentUpon>NuevoProveedor.FRM.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Rentas\EliminarRenta.FRM.resx">
-      <DependentUpon>EliminarRenta.FRM.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Rentas\InventarioRenta.FRM.resx">
       <DependentUpon>InventarioRenta.FRM.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Rentas\ModificarRenta.FRM.resx">
-      <DependentUpon>ModificarRenta.FRM.cs</DependentUpon>
+    <EmbeddedResource Include="Rentas\ListarRentas.FRM.resx">
+      <DependentUpon>ListarRentas.FRM.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Rentas\NuevaRenta.FRM.resx">
       <DependentUpon>NuevaRenta.FRM.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Usuarios\AgregarUsuario.FRM.resx">
       <DependentUpon>AgregarUsuario.FRM.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Usuarios\EliminarUsuario.FRM.resx">
-      <DependentUpon>EliminarUsuario.FRM.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Usuarios\ModificarUsuario.FRM.resx">
-      <DependentUpon>ModificarUsuario.FRM.cs</DependentUpon>
+    <EmbeddedResource Include="Usuarios\ListarUsuario.FRM.resx">
+      <DependentUpon>ListarUsuario.FRM.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

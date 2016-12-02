@@ -9,10 +9,10 @@ namespace ProyectoLaVillita.COMMON.Interfaces
 {
     public interface IEntradaManager
     {
-        List<EntradaDTO> Entradas { get; }
+        IQueryable<EntradaDTO> Entradas { get; }
         EntradaDTO BuscarEntradaPorId(int idEntrada);
         bool InsertarEntrada(EntradaDTO entrada);
         bool ModificarEntrada(EntradaDTO entrada);
-        List<EntradaDTO> EntradasPorProducto(int idProducto);
+        IQueryable<EntradaDTO> EntradasPorProducto(int idProducto);
     }
 }

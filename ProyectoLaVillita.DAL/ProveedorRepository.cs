@@ -20,7 +20,7 @@ namespace ProyectoLaVillita.DAL
             da = new MySqlDataAdapter();
         }
 
-        public List<ProveedorDTO> Elementos
+        public IQueryable<ProveedorDTO> Elementos
         {
             get
             {
@@ -37,12 +37,12 @@ namespace ProyectoLaVillita.DAL
 						ProveedorDTO prov = new ProveedorDTO()
 						{
 							idProveedor = Convert.ToInt32(ds.Tables[0].Rows[i]["idProveedor"]),
-							nombreProveedor = ds.Tables[0].Rows[i]["nombreProveedor"].ToString(),
+							nombreProveedor = ds.Tables[0].Rows[i]["nombre"].ToString(),
 							telefono = ds.Tables[0].Rows[i]["telefono"].ToString()
 						};
 						proveedores.Add(prov);
 					}
-                    return proveedores.ToList();
+                    return proveedores.AsQueryable();
                 }
                 catch (Exception)
                 {
@@ -53,7 +53,7 @@ namespace ProyectoLaVillita.DAL
             }
         }
 
-        public List<ProveedorDTO> Nombre
+        public IQueryable<ProveedorDTO> Nombre
         {
             get
             {
@@ -69,11 +69,11 @@ namespace ProyectoLaVillita.DAL
                     {
                         ProveedorDTO prov = new ProveedorDTO()
                         {
-                            nombreProveedor = dc.Tables[0].Rows[i]["nombreProveedor"].ToString()
+                            nombreProveedor = dc.Tables[0].Rows[i]["nombre"].ToString()
                         };
                         proveedor.Add(prov);
                     }
-                    return proveedor.ToList();
+                    return proveedor.AsQueryable();
                 }
                 catch (Exception)
                 {

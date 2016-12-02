@@ -9,8 +9,8 @@ namespace ProyectoLaVillita.COMMON.Interfaces
 {
     public interface IClienteManager
     {
-        List<ClienteDTO> Clientes { get; }
-        List<ClienteDTO> Nombres { get; }
+        IQueryable<ClienteDTO> Clientes { get; }
+        IQueryable<ClienteDTO> Nombres { get; }
         ClienteDTO BuscarClientePorId(int idCliente);
         ClienteDTO BuscarClientePorNombre(string nombre);
         bool InsertarCliente(ClienteDTO cliente);
