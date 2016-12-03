@@ -33,7 +33,17 @@ namespace ProyectoLaVillita.UI.WF.Productos
 
         private void Entrada_Load(object sender, EventArgs e)
         {
-            cmbProductos.DataSource = _prodManager.Nombre.ToList();
+			if (Program.idUsuario != 1)
+			{
+				usuariosToolStripMenuItem.Visible = false;
+				cerrarSesiónToolStripMenuItem.Visible = true;
+			}
+			else
+			{
+				usuariosToolStripMenuItem.Visible = true;
+				cerrarSesiónToolStripMenuItem.Visible = false;
+			}
+			cmbProductos.DataSource = _prodManager.Nombre.ToList();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -148,6 +158,26 @@ namespace ProyectoLaVillita.UI.WF.Productos
 		{
 			new ModificarUsuario().Show();
 			this.Hide();
+		}
+
+		private void cambiarDeUsuariioToolStripMenuItem_Click_1(object sender, EventArgs e)
+		{
+			if(MessageBox.Show("¿Está seguro quq quiere cerrar sesión?", titulo, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+			{
+				this.Hide();
+				Program.idUsuario = 0;
+				new Inicio().Show();
+			}
+		}
+
+		private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if (MessageBox.Show("¿Está seguro quq quiere cerrar sesión?", titulo, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+			{
+				this.Hide();
+				Program.idUsuario = 0;
+				new Inicio().Show();
+			}
 		}
 	}
 }

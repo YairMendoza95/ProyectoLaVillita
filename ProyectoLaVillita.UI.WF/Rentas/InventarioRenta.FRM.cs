@@ -34,7 +34,17 @@ namespace ProyectoLaVillita.UI.WF.Rentas
 
         private void InventarioRenta_Load(object sender, EventArgs e)
         {
-            txtMesas.Text = _prodManager.BuscarProductoPorNombre("Mesa").stockActual.ToString();
+			if (Program.idUsuario != 1)
+			{
+				usuariosToolStripMenuItem.Visible = false;
+				cerrarSesiónToolStripMenuItem.Visible = true;
+			}
+			else
+			{
+				usuariosToolStripMenuItem.Visible = true;
+				cerrarSesiónToolStripMenuItem.Visible = false;
+			}
+			txtMesas.Text = _prodManager.BuscarProductoPorNombre("Mesa").stockActual.ToString();
             txtSillas.Text = _prodManager.BuscarProductoPorNombre("Silla").stockActual.ToString();
         }
 
@@ -96,6 +106,26 @@ namespace ProyectoLaVillita.UI.WF.Rentas
 		{
 			new ModificarUsuario().Show();
 			this.Hide();
+		}
+
+		private void cambiarDeUsuariioToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if (MessageBox.Show("¿Está seguro quq quiere cerrar sesión?", titulo, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+			{
+				this.Hide();
+				Program.idUsuario = 0;
+				new Inicio().Show();
+			}
+		}
+
+		private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if (MessageBox.Show("¿Está seguro quq quiere cerrar sesión?", titulo, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+			{
+				this.Hide();
+				Program.idUsuario = 0;
+				new Inicio().Show();
+			}
 		}
 	}
 }

@@ -37,7 +37,7 @@ namespace ProyectoLaVillita.DAL
 						ProveedorDTO prov = new ProveedorDTO()
 						{
 							idProveedor = Convert.ToInt32(ds.Tables[0].Rows[i]["idProveedor"]),
-							nombreProveedor = ds.Tables[0].Rows[i]["nombre"].ToString(),
+							nombreProveedor = ds.Tables[0].Rows[i]["nombreProveedor"].ToString(),
 							telefono = ds.Tables[0].Rows[i]["telefono"].ToString()
 						};
 						proveedores.Add(prov);
@@ -60,7 +60,7 @@ namespace ProyectoLaVillita.DAL
                 try
                 {
                     conexion.Open();
-                    da.SelectCommand = new MySqlCommand("Select nombre from proveedor", conexion);
+                    da.SelectCommand = new MySqlCommand("Select nombreProveedor from proveedor", conexion);
                     DataSet dc = new DataSet();
                     da.Fill(dc);
                     conexion.Close();
@@ -69,7 +69,7 @@ namespace ProyectoLaVillita.DAL
                     {
                         ProveedorDTO prov = new ProveedorDTO()
                         {
-                            nombreProveedor = dc.Tables[0].Rows[i]["nombre"].ToString()
+                            nombreProveedor = dc.Tables[0].Rows[i]["nombreProveedor"].ToString()
                         };
                         proveedor.Add(prov);
                     }
@@ -110,7 +110,7 @@ namespace ProyectoLaVillita.DAL
             try
             {
                 conexion.Open();
-                da.InsertCommand = new MySqlCommand("Insert into proveedor (nombre, telefono) values ('" + entidad.nombreProveedor + "','" + entidad.telefono + "')", conexion);
+                da.InsertCommand = new MySqlCommand("Insert into proveedor (nombreProveedor, telefono) values ('" + entidad.nombreProveedor + "','" + entidad.telefono + "')", conexion);
                 int afectados = da.InsertCommand.ExecuteNonQuery();
                 conexion.Close();
                 if (afectados > 0)
@@ -131,7 +131,7 @@ namespace ProyectoLaVillita.DAL
             try
             {
                 conexion.Open();
-                da.UpdateCommand = new MySqlCommand("Update proveedor set nombre = '" + entidad.nombreProveedor + "', telefono = '" + entidad.telefono + "' where idProveedor = " + entidad.idProveedor, conexion);
+                da.UpdateCommand = new MySqlCommand("Update proveedor set nombreProveedor = '" + entidad.nombreProveedor + "', telefono = '" + entidad.telefono + "' where idProveedor = " + entidad.idProveedor, conexion);
                 int afectados = da.UpdateCommand.ExecuteNonQuery();
                 conexion.Close();
                 if (afectados > 0)

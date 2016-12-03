@@ -50,6 +50,7 @@
 			this.nuevoUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.modificarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.cambiarDeUsuariioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.textBox1 = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.btnGuardar = new System.Windows.Forms.Button();
@@ -100,7 +101,8 @@
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tiendaDeAbarrotesToolStripMenuItem,
             this.rentaDeSillasYMesasToolStripMenuItem1,
-            this.usuariosToolStripMenuItem});
+            this.usuariosToolStripMenuItem,
+            this.cerrarSesiónToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(3, 19);
 			this.menuStrip1.Name = "menuStrip1";
 			this.menuStrip1.Size = new System.Drawing.Size(658, 25);
@@ -175,14 +177,14 @@
 			// entradasToolStripMenuItem
 			// 
 			this.entradasToolStripMenuItem.Name = "entradasToolStripMenuItem";
-			this.entradasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.entradasToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
 			this.entradasToolStripMenuItem.Text = "Entradas";
 			this.entradasToolStripMenuItem.Click += new System.EventHandler(this.entradasToolStripMenuItem_Click);
 			// 
 			// ventasToolStripMenuItem
 			// 
 			this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-			this.ventasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.ventasToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
 			this.ventasToolStripMenuItem.Text = "Ventas";
 			this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
 			// 
@@ -201,7 +203,7 @@
             this.datosDelClienteToolStripMenuItem,
             this.modificarRentaToolStripMenuItem});
 			this.nuevaRentaToolStripMenuItem.Name = "nuevaRentaToolStripMenuItem";
-			this.nuevaRentaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.nuevaRentaToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
 			this.nuevaRentaToolStripMenuItem.Text = "Renta";
 			// 
 			// datosDelClienteToolStripMenuItem
@@ -221,7 +223,7 @@
 			// inventarioToolStripMenuItem1
 			// 
 			this.inventarioToolStripMenuItem1.Name = "inventarioToolStripMenuItem1";
-			this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+			this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
 			this.inventarioToolStripMenuItem1.Text = "Inventario";
 			this.inventarioToolStripMenuItem1.Click += new System.EventHandler(this.inventarioToolStripMenuItem1_Click);
 			// 
@@ -262,6 +264,14 @@
 			this.cambiarDeUsuariioToolStripMenuItem.Name = "cambiarDeUsuariioToolStripMenuItem";
 			this.cambiarDeUsuariioToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
 			this.cambiarDeUsuariioToolStripMenuItem.Text = "Cambiar de Usuario";
+			this.cambiarDeUsuariioToolStripMenuItem.Click += new System.EventHandler(this.cambiarDeUsuariioToolStripMenuItem_Click);
+			// 
+			// cerrarSesiónToolStripMenuItem
+			// 
+			this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
+			this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(96, 21);
+			this.cerrarSesiónToolStripMenuItem.Text = "Cerrar sesión";
+			this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
 			// 
 			// textBox1
 			// 
@@ -409,6 +419,7 @@
 			this.Controls.Add(this.groupBox1);
 			this.Name = "NuevaRenta";
 			this.Text = "Sistema de inventario \"La Villita\"";
+			this.Load += new System.EventHandler(this.NuevaRenta_Load);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			this.menuStrip1.ResumeLayout(false);
@@ -457,5 +468,6 @@
 		private System.Windows.Forms.ToolStripMenuItem nuevoUsuarioToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem modificarUsuarioToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem cambiarDeUsuariioToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
 	}
 }

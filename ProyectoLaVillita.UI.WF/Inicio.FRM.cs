@@ -35,20 +35,21 @@ namespace ProyectoLaVillita.UI.WF
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            if (_userManage.Login(txtUsuario.Text, txtContraseña.Text))
-            {
-                if (MessageBox.Show("¡Bienvenido! " + txtUsuario.Text, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk) == DialogResult.OK)
-                {
-                    new Venta().Show();
-                    this.Hide();
-                }
-            }
-            else
-            {
-                MessageBox.Show("El usuario no existe",titulo, MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtContraseña.Clear();
-                txtContraseña.Focus();
-            }
+			if (_userManage.Login(txtUsuario.Text, txtContraseña.Text) && Program.idUsuario == 0)
+			{
+				Program.idUsuario = _userManage.BuscarUsuarioPorNombre(txtUsuario.Text).idUsuario;
+				if (MessageBox.Show("¡Bienvenido! " + txtUsuario.Text, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk) == DialogResult.OK)
+				{
+					new Venta().Show();
+					this.Hide();
+				}
+			}
+			else
+			{
+				MessageBox.Show("El usuario no existe", titulo, MessageBoxButtons.OK, MessageBoxIcon.Error);
+				txtContraseña.Clear();
+				txtContraseña.Focus();
+			}
         }
-    }
+	}
 }

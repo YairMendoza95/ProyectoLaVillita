@@ -51,6 +51,7 @@
 			this.nuevoUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.modificarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.cambiarDeUsuariioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.btnModificar = new System.Windows.Forms.Button();
 			this.btnEliminar = new System.Windows.Forms.Button();
 			this.txtTelefono = new System.Windows.Forms.TextBox();
@@ -107,7 +108,8 @@
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tiendaDeAbarrotesToolStripMenuItem,
             this.rentaDeSillasYMesasToolStripMenuItem1,
-            this.usuariosToolStripMenuItem});
+            this.usuariosToolStripMenuItem,
+            this.cerrarSesiónToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(3, 19);
 			this.menuStrip1.Name = "menuStrip1";
 			this.menuStrip1.Size = new System.Drawing.Size(695, 25);
@@ -208,7 +210,7 @@
             this.datosDelClienteToolStripMenuItem,
             this.modificarRentaToolStripMenuItem});
 			this.nuevaRentaToolStripMenuItem.Name = "nuevaRentaToolStripMenuItem";
-			this.nuevaRentaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.nuevaRentaToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
 			this.nuevaRentaToolStripMenuItem.Text = "Renta";
 			// 
 			// datosDelClienteToolStripMenuItem
@@ -228,7 +230,7 @@
 			// inventarioToolStripMenuItem1
 			// 
 			this.inventarioToolStripMenuItem1.Name = "inventarioToolStripMenuItem1";
-			this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+			this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
 			this.inventarioToolStripMenuItem1.Text = "Inventario";
 			this.inventarioToolStripMenuItem1.Click += new System.EventHandler(this.inventarioToolStripMenuItem1_Click);
 			// 
@@ -269,6 +271,14 @@
 			this.cambiarDeUsuariioToolStripMenuItem.Name = "cambiarDeUsuariioToolStripMenuItem";
 			this.cambiarDeUsuariioToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
 			this.cambiarDeUsuariioToolStripMenuItem.Text = "Cambiar de Usuario";
+			this.cambiarDeUsuariioToolStripMenuItem.Click += new System.EventHandler(this.cambiarDeUsuariioToolStripMenuItem_Click);
+			// 
+			// cerrarSesiónToolStripMenuItem
+			// 
+			this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
+			this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(96, 21);
+			this.cerrarSesiónToolStripMenuItem.Text = "Cerrar sesión";
+			this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
 			// 
 			// btnModificar
 			// 
@@ -499,5 +509,6 @@
 		private System.Windows.Forms.ToolStripMenuItem nuevoUsuarioToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem modificarUsuarioToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem cambiarDeUsuariioToolStripMenuItem;
+		private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
 	}
 }

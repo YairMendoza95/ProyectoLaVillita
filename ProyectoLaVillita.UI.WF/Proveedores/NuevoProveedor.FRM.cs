@@ -52,7 +52,7 @@ namespace ProyectoLaVillita.UI.WF.Proveedores
                     txtNombre.Clear();
                     txtTelefono.Clear();
                 }
-                else if (txtTelefono.Text.Length > 0 || txtTelefono.Text.Length > 0)
+                else if (txtTelefono.Text.Length > 0 || txtTelefono.Text.Length < 0)
                 {
                     MessageBox.Show("El teléfono debe contener 10 digitos", titulo, MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     txtTelefono.Clear();
@@ -123,6 +123,40 @@ namespace ProyectoLaVillita.UI.WF.Proveedores
 		{
 			new ModificarUsuario().Show();
 			this.Hide();
+		}
+
+		private void NuevoProveedor_Load(object sender, EventArgs e)
+		{
+			if (Program.idUsuario != 1)
+			{
+				usuariosToolStripMenuItem.Visible = false;
+				cerrarSesiónToolStripMenuItem.Visible = true;
+			}
+			else
+			{
+				usuariosToolStripMenuItem.Visible = true;
+				cerrarSesiónToolStripMenuItem.Visible = false;
+			}
+		}
+
+		private void cambiarDeUsuariioToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if (MessageBox.Show("¿Está seguro quq quiere cerrar sesión?", titulo, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+			{
+				this.Hide();
+				Program.idUsuario = 0;
+				new Inicio().Show();
+			}
+		}
+
+		private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if (MessageBox.Show("¿Está seguro quq quiere cerrar sesión?", titulo, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+			{
+				this.Hide();
+				Program.idUsuario = 0;
+				new Inicio().Show();
+			}
 		}
 	}
 }

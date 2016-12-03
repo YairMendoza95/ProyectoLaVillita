@@ -170,14 +170,14 @@
 			// entradasToolStripMenuItem
 			// 
 			this.entradasToolStripMenuItem.Name = "entradasToolStripMenuItem";
-			this.entradasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.entradasToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
 			this.entradasToolStripMenuItem.Text = "Entradas";
 			this.entradasToolStripMenuItem.Click += new System.EventHandler(this.entradasToolStripMenuItem_Click);
 			// 
 			// ventasToolStripMenuItem
 			// 
 			this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-			this.ventasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.ventasToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
 			this.ventasToolStripMenuItem.Text = "Ventas";
 			this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
 			// 
@@ -196,7 +196,7 @@
             this.datosDelClienteToolStripMenuItem,
             this.modificarRentaToolStripMenuItem});
 			this.nuevaRentaToolStripMenuItem.Name = "nuevaRentaToolStripMenuItem";
-			this.nuevaRentaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.nuevaRentaToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
 			this.nuevaRentaToolStripMenuItem.Text = "Renta";
 			// 
 			// datosDelClienteToolStripMenuItem
@@ -216,7 +216,7 @@
 			// inventarioToolStripMenuItem1
 			// 
 			this.inventarioToolStripMenuItem1.Name = "inventarioToolStripMenuItem1";
-			this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+			this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
 			this.inventarioToolStripMenuItem1.Text = "Inventario";
 			this.inventarioToolStripMenuItem1.Click += new System.EventHandler(this.inventarioToolStripMenuItem1_Click);
 			// 
@@ -257,6 +257,7 @@
 			this.cambiarDeUsuariioToolStripMenuItem.Name = "cambiarDeUsuariioToolStripMenuItem";
 			this.cambiarDeUsuariioToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
 			this.cambiarDeUsuariioToolStripMenuItem.Text = "Cambiar de Usuario";
+			this.cambiarDeUsuariioToolStripMenuItem.Click += new System.EventHandler(this.cambiarDeUsuariioToolStripMenuItem_Click);
 			// 
 			// pictureBox1
 			// 

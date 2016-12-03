@@ -35,10 +35,27 @@ namespace ProyectoLaVillita.UI.WF.Productos
             _ventaManager = new VentaManager();
         }
 
-        private void Venta_Load(object sender, EventArgs e)
-        {
-            cmbProductos.GetItemText(_prodManager.Nombre);
-        }
+		private void Venta_Load(object sender, EventArgs e)
+		{
+			//cmbProductos.GetItemText(_prodManager.Nombre);
+			if (Program.idUsuario != 1)
+			{
+				usuariosToolStripMenuItem.Visible = false;
+				cerrarSesiónToolStripMenuItem.Visible = true;
+			}
+			else
+			{
+				usuariosToolStripMenuItem.Visible = true;
+				cerrarSesiónToolStripMenuItem.Visible = false;
+			}
+			var datos = _prodManager.Productos.ToList();
+			if (datos.Count > 0)
+			{
+				cmbProductos.DisplayMember = "nombre";
+				cmbProductos.DataSource = datos;
+				cmbProductos.ValueMember = "1dProducto";
+			}
+		}
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -107,11 +124,31 @@ namespace ProyectoLaVillita.UI.WF.Productos
 			this.Hide();
 		}
 
+		private void cambiarDeUsuariioToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if (MessageBox.Show("¿Está seguro quq quiere cerrar sesión?", titulo, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+			{
+				this.Hide();
+				Program.idUsuario = 0;
+				new Inicio().Show();
+			}
+		}
+
+		private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if (MessageBox.Show("¿Está seguro quq quiere cerrar sesión?", titulo, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+			{
+				this.Hide();
+				Program.idUsuario = 0;
+				new Inicio().Show();
+			}
+		}
+
 		private void btnAgregar_Click(object sender, EventArgs e)
         {
            
             cant = Convert.ToDouble(txtCantidad.Text);
-            sub = cant * _prod.precioUnitario;
+            sub = cant * _prod.precioVenta;
             //if(this.WindowState==FormClosed)
             try
             {

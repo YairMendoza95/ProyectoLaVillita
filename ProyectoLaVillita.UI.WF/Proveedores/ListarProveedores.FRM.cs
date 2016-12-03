@@ -68,7 +68,17 @@ namespace ProyectoLaVillita.UI.WF.Proveedores
         }
 
         private void ModificarProveedor_Load(object sender, EventArgs e)
-		{ 
+		{
+			if (Program.idUsuario != 1)
+			{
+				usuariosToolStripMenuItem.Visible = false;
+				cerrarSesiónToolStripMenuItem.Visible = true;
+			}
+			else
+			{
+				usuariosToolStripMenuItem.Visible = true;
+				cerrarSesiónToolStripMenuItem.Visible = false;
+			}
 			List<ProveedorDTO> datos = _provManager.Proveedores.ToList();
 			if (datos.Count > 0)
 			{
@@ -80,7 +90,8 @@ namespace ProyectoLaVillita.UI.WF.Proveedores
 			else
 			{
 				StringBuilder strb = new StringBuilder();
-				strb.Append("NO existen registros disponibles");
+				strb.Append("No existen registros disponibles");
+				//lbl
 			}
 			btnGuardar.Visible = false;
         }
@@ -126,7 +137,7 @@ namespace ProyectoLaVillita.UI.WF.Proveedores
 
 		private void registroDeProductosToolStripMenuItem_Click(object sender, EventArgs e)
 		{
-			new ModificarProveedor().Show();
+			new NuevoProducto().Show();
 			this.Hide();
 		}
 
@@ -176,6 +187,26 @@ namespace ProyectoLaVillita.UI.WF.Proveedores
 		{
 			new ModificarUsuario().Show();
 			this.Hide();
+		}
+
+		private void cambiarDeUsuariioToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if (MessageBox.Show("¿Está seguro quq quiere cerrar sesión?", titulo, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+			{
+				this.Hide();
+				Program.idUsuario = 0;
+				new Inicio().Show();
+			}
+		}
+
+		private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if (MessageBox.Show("¿Está seguro quq quiere cerrar sesión?", titulo, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+			{
+				this.Hide();
+				Program.idUsuario = 0;
+				new Inicio().Show();
+			}
 		}
 	}
 }

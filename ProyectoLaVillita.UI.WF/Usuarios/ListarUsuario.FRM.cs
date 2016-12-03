@@ -52,10 +52,6 @@ namespace ProyectoLaVillita.UI.WF.Usuarios
 							{
 								MessageBox.Show("Las contraseña no coinciden", titulo, MessageBoxButtons.OK, MessageBoxIcon.Error);
 							}
-							else if (_userManager.BuscarUsuarioPorNombre(_user.nombreUsuario).Equals(txtNombre.Text))
-							{
-								MessageBox.Show("Ya existe el usuario", titulo, MessageBoxButtons.OK, MessageBoxIcon.Error);
-							}
 							else if (MessageBox.Show("¿Está seguro que quiere eliminar el usuario seleccionado?", titulo, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
 							{
 								_userManager.ModificarUsuario(_user);
@@ -210,6 +206,16 @@ namespace ProyectoLaVillita.UI.WF.Usuarios
 			catch (Exception ex)
 			{
 				MessageBox.Show("Error: " + ex.Message, titulo, MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+
+		private void cambiarDeUsuariioToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if (MessageBox.Show("¿Está seguro quq quiere cerrar sesión?", titulo, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+			{
+				this.Hide();
+				Program.idUsuario = 0;
+				new Inicio().Show();
 			}
 		}
 	}

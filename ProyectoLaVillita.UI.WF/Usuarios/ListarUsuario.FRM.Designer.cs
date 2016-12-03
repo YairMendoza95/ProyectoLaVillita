@@ -373,6 +373,7 @@
 			this.cambiarDeUsuariioToolStripMenuItem.Name = "cambiarDeUsuariioToolStripMenuItem";
 			this.cambiarDeUsuariioToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
 			this.cambiarDeUsuariioToolStripMenuItem.Text = "Cambiar de Usuario";
+			this.cambiarDeUsuariioToolStripMenuItem.Click += new System.EventHandler(this.cambiarDeUsuariioToolStripMenuItem_Click);
 			// 
 			// btnGuardar
 			// 

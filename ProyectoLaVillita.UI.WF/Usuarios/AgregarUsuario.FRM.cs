@@ -10,7 +10,6 @@ using System.Windows.Forms;
 using ProyectoLaVillita.BIZ;
 using ProyectoLaVillita.COMMON.Entidades;
 using ProyectoLaVillita.UI.WF.Productos;
-using ProyectoLaVillita.UI.WF;
 using ProyectoLaVillita.UI.WF.Proveedores;
 using ProyectoLaVillita.UI.WF.Rentas;
 
@@ -55,13 +54,9 @@ namespace ProyectoLaVillita.UI.WF.Usuarios
                         txtUsuario.Clear();
                         if (MessageBox.Show("¿Desea iniciar sesión con el nuevo usuario?", titulo, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
-                            new Inicio().Show();
-                            this.Hide();
-                        }
-                        else
-                        {
-                            new Venta().Show();
-                            this.Hide();
+							this.Hide();
+							Program.idUsuario = 0;
+							new Inicio().Show();
                         }
                     }
                 }
@@ -136,6 +131,16 @@ namespace ProyectoLaVillita.UI.WF.Usuarios
 		{
 			new ModificarUsuario().Show();
 			this.Hide();
+		}
+
+		private void cambiarDeUsuariioToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if (MessageBox.Show("¿Está seguro quq quiere cerrar sesión?", titulo, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+			{
+				this.Hide();
+				Program.idUsuario = 0;
+				new Inicio().Show();
+			}
 		}
 	}
 }

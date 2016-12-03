@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-			this.components = new System.ComponentModel.Container();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.txtVenta = new System.Windows.Forms.TextBox();
+			this.label1 = new System.Windows.Forms.Label();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.tiendaDeAbarrotesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -51,6 +52,7 @@
 			this.nuevoUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.modificarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.cambiarDeUsuariioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+			this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.txtMinimo = new System.Windows.Forms.TextBox();
 			this.label8 = new System.Windows.Forms.Label();
 			this.txtMaximo = new System.Windows.Forms.TextBox();
@@ -60,19 +62,19 @@
 			this.btnSalir = new System.Windows.Forms.Button();
 			this.cmbProveedor = new System.Windows.Forms.ComboBox();
 			this.label5 = new System.Windows.Forms.Label();
-			this.txtCostoUnitario = new System.Windows.Forms.TextBox();
+			this.txtCompra = new System.Windows.Forms.TextBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.txtNombre = new System.Windows.Forms.TextBox();
 			this.label2 = new System.Windows.Forms.Label();
-			this.proveedorManagerBindingSource = new System.Windows.Forms.BindingSource(this.components);
 			this.groupBox1.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.proveedorManagerBindingSource)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// groupBox1
 			// 
 			this.groupBox1.BackColor = System.Drawing.Color.SkyBlue;
+			this.groupBox1.Controls.Add(this.txtVenta);
+			this.groupBox1.Controls.Add(this.label1);
 			this.groupBox1.Controls.Add(this.menuStrip1);
 			this.groupBox1.Controls.Add(this.txtMinimo);
 			this.groupBox1.Controls.Add(this.label8);
@@ -83,17 +85,34 @@
 			this.groupBox1.Controls.Add(this.btnSalir);
 			this.groupBox1.Controls.Add(this.cmbProveedor);
 			this.groupBox1.Controls.Add(this.label5);
-			this.groupBox1.Controls.Add(this.txtCostoUnitario);
+			this.groupBox1.Controls.Add(this.txtCompra);
 			this.groupBox1.Controls.Add(this.label3);
 			this.groupBox1.Controls.Add(this.txtNombre);
 			this.groupBox1.Controls.Add(this.label2);
 			this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.groupBox1.Location = new System.Drawing.Point(0, 0);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(664, 319);
+			this.groupBox1.Size = new System.Drawing.Size(664, 354);
 			this.groupBox1.TabIndex = 2;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Nuevo producto";
+			// 
+			// txtVenta
+			// 
+			this.txtVenta.Location = new System.Drawing.Point(313, 178);
+			this.txtVenta.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.txtVenta.Name = "txtVenta";
+			this.txtVenta.Size = new System.Drawing.Size(162, 23);
+			this.txtVenta.TabIndex = 24;
+			// 
+			// label1
+			// 
+			this.label1.AutoSize = true;
+			this.label1.Location = new System.Drawing.Point(184, 181);
+			this.label1.Name = "label1";
+			this.label1.Size = new System.Drawing.Size(111, 16);
+			this.label1.TabIndex = 23;
+			this.label1.Text = "Precio de Venta";
 			// 
 			// menuStrip1
 			// 
@@ -102,7 +121,8 @@
 			this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tiendaDeAbarrotesToolStripMenuItem,
             this.rentaDeSillasYMesasToolStripMenuItem1,
-            this.usuariosToolStripMenuItem});
+            this.usuariosToolStripMenuItem,
+            this.cerrarSesiónToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(3, 19);
 			this.menuStrip1.Name = "menuStrip1";
 			this.menuStrip1.Size = new System.Drawing.Size(658, 25);
@@ -177,14 +197,14 @@
 			// entradasToolStripMenuItem
 			// 
 			this.entradasToolStripMenuItem.Name = "entradasToolStripMenuItem";
-			this.entradasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.entradasToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
 			this.entradasToolStripMenuItem.Text = "Entradas";
 			this.entradasToolStripMenuItem.Click += new System.EventHandler(this.entradasToolStripMenuItem_Click);
 			// 
 			// ventasToolStripMenuItem
 			// 
 			this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-			this.ventasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.ventasToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
 			this.ventasToolStripMenuItem.Text = "Ventas";
 			this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
 			// 
@@ -203,7 +223,7 @@
             this.datosDelClienteToolStripMenuItem,
             this.modificarRentaToolStripMenuItem});
 			this.nuevaRentaToolStripMenuItem.Name = "nuevaRentaToolStripMenuItem";
-			this.nuevaRentaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.nuevaRentaToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
 			this.nuevaRentaToolStripMenuItem.Text = "Renta";
 			// 
 			// datosDelClienteToolStripMenuItem
@@ -223,7 +243,7 @@
 			// inventarioToolStripMenuItem1
 			// 
 			this.inventarioToolStripMenuItem1.Name = "inventarioToolStripMenuItem1";
-			this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+			this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
 			this.inventarioToolStripMenuItem1.Text = "Inventario";
 			this.inventarioToolStripMenuItem1.Click += new System.EventHandler(this.inventarioToolStripMenuItem1_Click);
 			// 
@@ -264,10 +284,18 @@
 			this.cambiarDeUsuariioToolStripMenuItem.Name = "cambiarDeUsuariioToolStripMenuItem";
 			this.cambiarDeUsuariioToolStripMenuItem.Size = new System.Drawing.Size(192, 22);
 			this.cambiarDeUsuariioToolStripMenuItem.Text = "Cambiar de Usuario";
+			this.cambiarDeUsuariioToolStripMenuItem.Click += new System.EventHandler(this.cambiarDeUsuariioToolStripMenuItem_Click);
+			// 
+			// cerrarSesiónToolStripMenuItem
+			// 
+			this.cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
+			this.cerrarSesiónToolStripMenuItem.Size = new System.Drawing.Size(96, 21);
+			this.cerrarSesiónToolStripMenuItem.Text = "Cerrar sesión";
+			this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
 			// 
 			// txtMinimo
 			// 
-			this.txtMinimo.Location = new System.Drawing.Point(310, 207);
+			this.txtMinimo.Location = new System.Drawing.Point(313, 240);
 			this.txtMinimo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.txtMinimo.Name = "txtMinimo";
 			this.txtMinimo.Size = new System.Drawing.Size(162, 23);
@@ -276,7 +304,7 @@
 			// label8
 			// 
 			this.label8.AutoSize = true;
-			this.label8.Location = new System.Drawing.Point(206, 210);
+			this.label8.Location = new System.Drawing.Point(184, 243);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(94, 16);
 			this.label8.TabIndex = 20;
@@ -284,7 +312,7 @@
 			// 
 			// txtMaximo
 			// 
-			this.txtMaximo.Location = new System.Drawing.Point(310, 176);
+			this.txtMaximo.Location = new System.Drawing.Point(313, 209);
 			this.txtMaximo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.txtMaximo.Name = "txtMaximo";
 			this.txtMaximo.Size = new System.Drawing.Size(162, 23);
@@ -293,7 +321,7 @@
 			// label7
 			// 
 			this.label7.AutoSize = true;
-			this.label7.Location = new System.Drawing.Point(206, 179);
+			this.label7.Location = new System.Drawing.Point(184, 212);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(99, 16);
 			this.label7.TabIndex = 18;
@@ -312,7 +340,7 @@
 			// btnGuardar
 			// 
 			this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnGuardar.Location = new System.Drawing.Point(152, 254);
+			this.btnGuardar.Location = new System.Drawing.Point(156, 294);
 			this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.btnGuardar.Name = "btnGuardar";
 			this.btnGuardar.Size = new System.Drawing.Size(127, 39);
@@ -324,7 +352,7 @@
 			// btnSalir
 			// 
 			this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnSalir.Location = new System.Drawing.Point(434, 254);
+			this.btnSalir.Location = new System.Drawing.Point(420, 294);
 			this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.btnSalir.Name = "btnSalir";
 			this.btnSalir.Size = new System.Drawing.Size(127, 39);
@@ -335,44 +363,46 @@
 			// 
 			// cmbProveedor
 			// 
-			this.cmbProveedor.DataSource = this.proveedorManagerBindingSource;
-			this.cmbProveedor.DisplayMember = "nombre";
+			this.cmbProveedor.DisplayMember = "idProveedor";
+			this.cmbProveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cmbProveedor.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.cmbProveedor.FormattingEnabled = true;
-			this.cmbProveedor.Location = new System.Drawing.Point(310, 145);
+			this.cmbProveedor.ItemHeight = 17;
+			this.cmbProveedor.Location = new System.Drawing.Point(313, 116);
 			this.cmbProveedor.Name = "cmbProveedor";
-			this.cmbProveedor.Size = new System.Drawing.Size(162, 24);
-			this.cmbProveedor.TabIndex = 11;
+			this.cmbProveedor.Size = new System.Drawing.Size(162, 25);
+			this.cmbProveedor.TabIndex = 15;
 			this.cmbProveedor.ValueMember = "idProveedor";
 			// 
 			// label5
 			// 
 			this.label5.AutoSize = true;
-			this.label5.Location = new System.Drawing.Point(206, 148);
+			this.label5.Location = new System.Drawing.Point(184, 119);
 			this.label5.Name = "label5";
 			this.label5.Size = new System.Drawing.Size(73, 16);
 			this.label5.TabIndex = 10;
 			this.label5.Text = "Proveedor";
 			// 
-			// txtCostoUnitario
+			// txtCompra
 			// 
-			this.txtCostoUnitario.Location = new System.Drawing.Point(310, 115);
-			this.txtCostoUnitario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.txtCostoUnitario.Name = "txtCostoUnitario";
-			this.txtCostoUnitario.Size = new System.Drawing.Size(162, 23);
-			this.txtCostoUnitario.TabIndex = 7;
+			this.txtCompra.Location = new System.Drawing.Point(313, 147);
+			this.txtCompra.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.txtCompra.Name = "txtCompra";
+			this.txtCompra.Size = new System.Drawing.Size(162, 23);
+			this.txtCompra.TabIndex = 7;
 			// 
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(206, 118);
+			this.label3.Location = new System.Drawing.Point(184, 150);
 			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(98, 16);
+			this.label3.Size = new System.Drawing.Size(126, 16);
 			this.label3.TabIndex = 6;
-			this.label3.Text = "Costo Unitario";
+			this.label3.Text = "Precio de Compra";
 			// 
 			// txtNombre
 			// 
-			this.txtNombre.Location = new System.Drawing.Point(310, 84);
+			this.txtNombre.Location = new System.Drawing.Point(313, 86);
 			this.txtNombre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.txtNombre.Name = "txtNombre";
 			this.txtNombre.Size = new System.Drawing.Size(162, 23);
@@ -381,22 +411,17 @@
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(206, 87);
+			this.label2.Location = new System.Drawing.Point(184, 89);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(60, 16);
 			this.label2.TabIndex = 6;
 			this.label2.Text = "Nombre";
 			// 
-			// proveedorManagerBindingSource
-			// 
-			this.proveedorManagerBindingSource.DataMember = "nombre";
-			this.proveedorManagerBindingSource.DataSource = typeof(ProyectoLaVillita.BIZ.ProveedorManager);
-			// 
 			// NuevoProducto
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(664, 317);
+			this.ClientSize = new System.Drawing.Size(664, 353);
 			this.Controls.Add(this.groupBox1);
 			this.Name = "NuevoProducto";
 			this.Text = "Sistema de inventario \"La Villita\"";
@@ -405,7 +430,6 @@
 			this.groupBox1.PerformLayout();
 			this.menuStrip1.ResumeLayout(false);
 			this.menuStrip1.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.proveedorManagerBindingSource)).EndInit();
 			this.ResumeLayout(false);
 
         }
@@ -420,9 +444,8 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.ComboBox cmbProveedor;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtCostoUnitario;
+        private System.Windows.Forms.TextBox txtCompra;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label2;
@@ -447,6 +470,9 @@
 		private System.Windows.Forms.ToolStripMenuItem nuevoUsuarioToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem modificarUsuarioToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem cambiarDeUsuariioToolStripMenuItem;
-		private System.Windows.Forms.BindingSource proveedorManagerBindingSource;
+		private System.Windows.Forms.TextBox txtVenta;
+		private System.Windows.Forms.Label label1;
+		public System.Windows.Forms.ComboBox cmbProveedor;
+		private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
 	}
 }

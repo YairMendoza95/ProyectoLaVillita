@@ -29,7 +29,6 @@ namespace ProyectoLaVillita.UI.WF.Productos
             _prodManager = new ProductoManager();
             _provManager = new ProveedorManager();
             _ent = new EntradaDTO();
-
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -44,38 +43,59 @@ namespace ProyectoLaVillita.UI.WF.Productos
             sta += _ent.cantidad;
             try
             {
-                if (_prod == null)
-                {
-                    _prod = new ProductoDTO()
-                    {
-                        nombre = txtNombre.Text,
-                        precioUnitario = Convert.ToDouble(txtCostoUnitario.Text),
-                        idProveedor = cmbProveedor.SelectedIndex,
-                        stockActual = sta,
-                        stockMax = Convert.ToInt32(txtMaximo.Text),
-                        stockMin = Convert.ToInt32(txtMinimo.Text)
-                    };
-
-                    _prodManager.AgregarProducto(_prod);
-                }
-                txtNombre.Clear();
-                txtCostoUnitario.Clear();
-                //cmbProveedor.d
-                txtMaximo.Clear();
-                txtMinimo.Clear();
+				if (txtCompra.Text != "" && txtNombre.Text != "" && txtVenta.Text != "" && txtMinimo.Text != "" && txtMaximo.Text != "")
+				{
+					if (_prod == null)
+					{
+						_prod = new ProductoDTO()
+						{
+							nombre = txtNombre.Text,
+							idProveedor = Convert.ToInt32(cmbProveedor.SelectedValue),
+							precioCompra = Convert.ToDouble(txtCompra.Text),
+							precioVenta = Convert.ToDouble(txtVenta.Text),
+							stockActual = sta,
+							stockMax = Convert.ToInt32(txtMaximo.Text),
+							stockMin = Convert.ToInt32(txtMinimo.Text)
+						};
+						if (_prodManager.AgregarProducto(_prod))
+						{
+							txtNombre.Clear();
+							txtCompra.Clear();
+							cmbProveedor.ResetText();
+							txtMaximo.Clear();
+							txtVenta.Clear();
+							txtMinimo.Clear();
+							MessageBox.Show("Producto registrado exitosamente", titulo, MessageBoxButtons.OK, MessageBoxIcon.Information);
+						}
+						else
+							MessageBox.Show("Producto no registrado", titulo, MessageBoxButtons.OK, MessageBoxIcon.Information);
+					}
+				}
+                
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-
-                throw;
-            }
+				MessageBox.Show("Error: " + ex.Message, titulo, MessageBoxButtons.OK, MessageBoxIcon.Information);
+			}
         }
 
 		private void NuevoProducto_Load(object sender, EventArgs e)
 		{
+			if (Program.idUsuario != 1)
+			{
+				usuariosToolStripMenuItem.Visible = false;
+				cerrarSesiónToolStripMenuItem.Visible = true;
+			}
+			else
+			{
+				usuariosToolStripMenuItem.Visible = true; 
+				cerrarSesiónToolStripMenuItem.Visible = false;
+			}
 			var datos = _provManager.Proveedores.ToList();
+			cmbProveedor.DisplayMember = "nombreProveedor";
 			cmbProveedor.DataSource = datos;
-			cmbProveedor.DisplayMember = "nombre";
+			cmbProveedor.ValueMember = "idProveedor";
+			//cmbProveedor.SelectedValue
 		}
 
 		private void inventarioToolStripMenuItem2_Click(object sender, EventArgs e)
@@ -136,6 +156,26 @@ namespace ProyectoLaVillita.UI.WF.Productos
 		{
 			new ModificarUsuario().Show();
 			this.Hide();
+		}
+
+		private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if (MessageBox.Show("¿Está seguro quq quiere cerrar sesión?", titulo, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+			{
+				this.Hide();
+				Program.idUsuario = 0;
+				new Inicio().Show();
+			}
+		}
+
+		private void cambiarDeUsuariioToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			if (MessageBox.Show("¿Está seguro quq quiere cerrar sesión?", titulo, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
+			{
+				this.Hide();
+				Program.idUsuario = 0;
+				new Inicio().Show();
+			}
 		}
 	}
 }
