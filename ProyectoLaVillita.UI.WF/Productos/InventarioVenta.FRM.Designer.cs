@@ -81,6 +81,7 @@
 			this.txtIngresarNombre = new System.Windows.Forms.TextBox();
 			this.btnBuscar = new System.Windows.Forms.Button();
 			this.dgvProductos = new System.Windows.Forms.DataGridView();
+			this.cmbProveedores = new System.Windows.Forms.ComboBox();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
@@ -120,6 +121,7 @@
 			// 
 			// groupBox2
 			// 
+			this.groupBox2.Controls.Add(this.cmbProveedores);
 			this.groupBox2.Controls.Add(this.txtMaximo);
 			this.groupBox2.Controls.Add(this.label12);
 			this.groupBox2.Controls.Add(this.btnGuardar);
@@ -585,6 +587,17 @@
 			this.dgvProductos.TabIndex = 1;
 			this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
 			// 
+			// cmbProveedores
+			// 
+			this.cmbProveedores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cmbProveedores.FormattingEnabled = true;
+			this.cmbProveedores.ItemHeight = 16;
+			this.cmbProveedores.Location = new System.Drawing.Point(145, 88);
+			this.cmbProveedores.Name = "cmbProveedores";
+			this.cmbProveedores.Size = new System.Drawing.Size(100, 24);
+			this.cmbProveedores.TabIndex = 19;
+			this.cmbProveedores.Visible = false;
+			// 
 			// InventarioVenta
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -661,5 +674,6 @@
 		private System.Windows.Forms.TextBox txtMaximo;
 		private System.Windows.Forms.Label label12;
 		private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
+		public System.Windows.Forms.ComboBox cmbProveedores;
 	}
 }

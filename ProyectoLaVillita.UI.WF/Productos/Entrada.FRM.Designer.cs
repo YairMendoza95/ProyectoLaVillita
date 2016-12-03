@@ -51,18 +51,18 @@
 			this.modificarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.cambiarDeUsuariioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.txtProveedor = new System.Windows.Forms.TextBox();
-			this.txtTotal = new System.Windows.Forms.TextBox();
 			this.label5 = new System.Windows.Forms.Label();
-			this.dtpFecheEntrada = new System.Windows.Forms.DateTimePicker();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
-			this.cmbProductos = new System.Windows.Forms.ComboBox();
-			this.txtCantidad = new System.Windows.Forms.TextBox();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label6 = new System.Windows.Forms.Label();
 			this.btnGuardar = new System.Windows.Forms.Button();
 			this.btnSalir = new System.Windows.Forms.Button();
+			this.txtTotal = new System.Windows.Forms.TextBox();
+			this.txtCantidad = new System.Windows.Forms.TextBox();
+			this.dtpFecheEntrada = new System.Windows.Forms.DateTimePicker();
+			this.txtProveedor = new System.Windows.Forms.TextBox();
+			this.cmbProductos = new System.Windows.Forms.ComboBox();
 			this.label3 = new System.Windows.Forms.Label();
 			this.groupBox1.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
@@ -72,18 +72,18 @@
 			// 
 			this.groupBox1.BackColor = System.Drawing.Color.SkyBlue;
 			this.groupBox1.Controls.Add(this.menuStrip1);
-			this.groupBox1.Controls.Add(this.txtProveedor);
-			this.groupBox1.Controls.Add(this.txtTotal);
 			this.groupBox1.Controls.Add(this.label5);
-			this.groupBox1.Controls.Add(this.dtpFecheEntrada);
 			this.groupBox1.Controls.Add(this.label2);
 			this.groupBox1.Controls.Add(this.label1);
-			this.groupBox1.Controls.Add(this.cmbProductos);
-			this.groupBox1.Controls.Add(this.txtCantidad);
 			this.groupBox1.Controls.Add(this.label4);
 			this.groupBox1.Controls.Add(this.label6);
 			this.groupBox1.Controls.Add(this.btnGuardar);
 			this.groupBox1.Controls.Add(this.btnSalir);
+			this.groupBox1.Controls.Add(this.txtTotal);
+			this.groupBox1.Controls.Add(this.txtCantidad);
+			this.groupBox1.Controls.Add(this.dtpFecheEntrada);
+			this.groupBox1.Controls.Add(this.txtProveedor);
+			this.groupBox1.Controls.Add(this.cmbProductos);
 			this.groupBox1.Controls.Add(this.label3);
 			this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.groupBox1.Location = new System.Drawing.Point(-1, 0);
@@ -279,7 +279,7 @@
 			this.txtProveedor.Name = "txtProveedor";
 			this.txtProveedor.ReadOnly = true;
 			this.txtProveedor.Size = new System.Drawing.Size(121, 23);
-			this.txtProveedor.TabIndex = 26;
+			this.txtProveedor.TabIndex = 7;
 			this.txtProveedor.UseSystemPasswordChar = true;
 			// 
 			// txtTotal
@@ -288,7 +288,7 @@
 			this.txtTotal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.txtTotal.Name = "txtTotal";
 			this.txtTotal.Size = new System.Drawing.Size(121, 23);
-			this.txtTotal.TabIndex = 25;
+			this.txtTotal.TabIndex = 10;
 			// 
 			// label5
 			// 
@@ -305,7 +305,7 @@
 			this.dtpFecheEntrada.Location = new System.Drawing.Point(267, 149);
 			this.dtpFecheEntrada.Name = "dtpFecheEntrada";
 			this.dtpFecheEntrada.Size = new System.Drawing.Size(121, 23);
-			this.dtpFecheEntrada.TabIndex = 23;
+			this.dtpFecheEntrada.TabIndex = 8;
 			// 
 			// label2
 			// 
@@ -331,7 +331,7 @@
 			this.cmbProductos.Location = new System.Drawing.Point(267, 86);
 			this.cmbProductos.Name = "cmbProductos";
 			this.cmbProductos.Size = new System.Drawing.Size(121, 24);
-			this.cmbProductos.TabIndex = 19;
+			this.cmbProductos.TabIndex = 6;
 			// 
 			// txtCantidad
 			// 
@@ -339,7 +339,7 @@
 			this.txtCantidad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.txtCantidad.Name = "txtCantidad";
 			this.txtCantidad.Size = new System.Drawing.Size(121, 23);
-			this.txtCantidad.TabIndex = 16;
+			this.txtCantidad.TabIndex = 9;
 			// 
 			// label4
 			// 
@@ -379,7 +379,7 @@
 			this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.btnSalir.Name = "btnSalir";
 			this.btnSalir.Size = new System.Drawing.Size(127, 39);
-			this.btnSalir.TabIndex = 10;
+			this.btnSalir.TabIndex = 11;
 			this.btnSalir.Text = "Salir";
 			this.btnSalir.UseVisualStyleBackColor = true;
 			this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -390,7 +390,7 @@
 			this.label3.Location = new System.Drawing.Point(158, 154);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(47, 16);
-			this.label3.TabIndex = 6;
+			this.label3.TabIndex = 19;
 			this.label3.Text = "Fecha";
 			// 
 			// Entrada

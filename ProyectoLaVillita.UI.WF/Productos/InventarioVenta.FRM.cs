@@ -45,13 +45,22 @@ namespace ProyectoLaVillita.UI.WF.Productos
 			{
 				dgvProductos.DataSource = productos;
 				dgvProductos.Columns[0].HeaderText = "Id";
+				dgvProductos.Columns[0].DataPropertyName = "idProducto";
+				//dgvProductos.Columns[0].AutoSizeMode;
 				dgvProductos.Columns[1].HeaderText = "Nombre";
+				dgvProductos.Columns[1].DataPropertyName = "nombre";
 				dgvProductos.Columns[2].HeaderText = "Proveedor";
+				dgvProductos.Columns[2].DataPropertyName = "idProveedor";
 				dgvProductos.Columns[3].HeaderText = "Precio Compra";
+				dgvProductos.Columns[3].DataPropertyName = "precioCompra";
 				dgvProductos.Columns[4].HeaderText = "Precio Venta";
+				dgvProductos.Columns[4].DataPropertyName = "precioVenta";
 				dgvProductos.Columns[5].HeaderText = "Stock Actual";
-				dgvProductos.Columns[7].HeaderText = "Stock Máximo";
-				dgvProductos.Columns[6].HeaderText = "Stock Mínimo";
+				dgvProductos.Columns[5].DataPropertyName = "stockActual";
+				dgvProductos.Columns[6].HeaderText = "Stock Máximo";
+				dgvProductos.Columns[6].DataPropertyName = "stockMax";
+				dgvProductos.Columns[7].HeaderText = "Stock Mínimo";
+				dgvProductos.Columns[7].DataPropertyName = "stockMin";
 				label11.Visible = false;
 			}
 			else
@@ -135,7 +144,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
 		{
 			txtId.Text = dgvProductos.SelectedRows[0].Cells[0].Value.ToString();
 			txtNombre.Text = dgvProductos.SelectedRows[0].Cells[1].Value.ToString();
-			txtProveedor.Text = dgvProductos.SelectedRows[0].Cells[2].Value.ToString();
+			txtProveedor.Text = _provManager.BuscarProveedorPorId(Convert.ToInt32(dgvProductos.SelectedRows[0].Cells[2].Value)).nombreProveedor;
 			txtCompra.Text = dgvProductos.SelectedRows[0].Cells[3].Value.ToString();
 			txtVenta.Text = dgvProductos.SelectedRows[0].Cells[4].Value.ToString();
 			txtActual.Text = dgvProductos.SelectedRows[0].Cells[5].Value.ToString();
@@ -145,15 +154,23 @@ namespace ProyectoLaVillita.UI.WF.Productos
 
 		private void btnModificar_Click(object sender, EventArgs e)
 		{
-			btnEliminar.Visible = false;
-			txtNombre.Visible = true;
-			txtProveedor.Visible = true;
-			txtCompra.Visible = true;
-			txtVenta.Visible = true;
-			txtActual.Visible = true;
-			txtMaximo.Visible = true;
-			txtMinimo.Visible = true;
+			List<ProveedorDTO> proveedores = _provManager.Proveedores.ToList();
+			txtProveedor.Visible = false;
 			btnGuardar.Visible = true;
+			txtNombre.ReadOnly = false;
+			txtProveedor.ReadOnly = false;
+			txtCompra.ReadOnly = false;
+			txtVenta.ReadOnly = false;
+			txtActual.ReadOnly = false;
+			txtMaximo.ReadOnly = false;
+			txtMinimo.ReadOnly = false;
+			cmbProveedores.Visible = true;
+			if (proveedores.Count > 0)
+			{
+				cmbProveedores.DataSource = proveedores;
+				cmbProveedores.DisplayMember = "nombreProveedor";
+				cmbProveedores.ValueMember = "idProveedor";
+			}
 		}
 
 		private void btnGuardar_Click(object sender, EventArgs e)
@@ -168,7 +185,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
 						{
 							idProducto = Convert.ToInt32(txtId.Text),
 							nombre = txtNombre.Text,
-							idProveedor = Convert.ToInt32(txtProveedor.Text),
+							idProveedor = Convert.ToInt32(cmbProveedores.SelectedValue),
 							precioCompra = Convert.ToDouble(txtCompra.Text),
 							precioVenta = Convert.ToDouble(txtVenta.Text),
 							stockActual = Convert.ToInt32(txtActual.Text),
@@ -177,7 +194,11 @@ namespace ProyectoLaVillita.UI.WF.Productos
 						};
 						if (MessageBox.Show("¿Desea guardar cambios?", titulo, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
 						{
-							_prodManager.ModificarProducto(_prod);
+							if (_prodManager.ModificarProducto(_prod))
+							{
+								MessageBox.Show("Producto actualizado satisfactoriamente", titulo, MessageBoxButtons.OK, MessageBoxIcon.Information);
+							}
+							dgvProductos.DataSource = _prodManager.Productos.ToList();
 							btnEliminar.Visible = true;
 							txtActual.Clear();
 							txtCompra.Clear();
@@ -194,6 +215,10 @@ namespace ProyectoLaVillita.UI.WF.Productos
 							txtActual.ReadOnly = true;
 							txtMaximo.ReadOnly = true;
 							txtMinimo.ReadOnly = true;
+							txtProveedor.Visible = true;
+							cmbProveedores.ResetText();
+							cmbProveedores.Visible = false;
+							btnGuardar.Visible = false;
 						}
 					}
 				}
@@ -217,6 +242,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
 						if (MessageBox.Show("¿Desea eliminar este producto?", titulo, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
 						{
 							_prodManager.EliminarProducto(_prod);
+							dgvProductos.DataSource = _prodManager.Productos.ToList();
 							MessageBox.Show("Producto eliminado satisfactoriamente", titulo, MessageBoxButtons.OK, MessageBoxIcon.Information);
 							txtActual.Clear();
 							txtCompra.Clear();

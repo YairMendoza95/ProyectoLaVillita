@@ -10,7 +10,6 @@ namespace ProyectoLaVillita.COMMON.Interfaces
     public interface IProveedorManager
     {
         IQueryable<ProveedorDTO> Proveedores { get; }
-        IQueryable<ProveedorDTO> Nombre { get; }
         ProveedorDTO BuscarProveedorPorId(int idProveedor);
         ProveedorDTO BuscarProveedorPorNombre(string nombre);
         bool InsertarProveedor(ProveedorDTO proveedor);

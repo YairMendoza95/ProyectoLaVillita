@@ -53,14 +53,6 @@ namespace ProyectoLaVillita.DAL
             }
         }
 
-        public IQueryable<VentaDTO> Nombre
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-        }
-
         public bool Eliminar(VentaDTO entidad)
         {
             try

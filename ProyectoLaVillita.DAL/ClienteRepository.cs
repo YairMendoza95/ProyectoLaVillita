@@ -54,39 +54,6 @@ namespace ProyectoLaVillita.DAL
             }
         }
 
-        public IQueryable<ClienteDTO> Nombre
-        {
-            get
-            {
-                try
-                {
-                    conexion.Open();
-                    da.SelectCommand = new MySqlCommand("Select nombre, apPaterno, apMaterno from cliente", conexion);
-                    DataSet ds = new DataSet();
-                    da.Fill(ds);
-                    conexion.Close();
-                    List<ClienteDTO> cliente = new List<ClienteDTO>();
-                    for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
-                    {
-                        ClienteDTO cli = new ClienteDTO()
-                        {
-                            nombre = ds.Tables[0].Rows[i]["nombre"].ToString(),
-                            apPaterno = ds.Tables[0].Rows[i]["apPaterno"].ToString(),
-                            apMaterno = ds.Tables[0].Rows[i]["apMaterno"].ToString()
-                        };
-                        cliente.Add(cli);
-                    }
-                    return cliente.AsQueryable();
-                }
-                catch (Exception)
-                {
-                    if (conexion.State == ConnectionState.Open)
-                        conexion.Close();
-                    return null;
-                }
-            }
-        }
-
         public bool Eliminar(ClienteDTO entidad)
         {
             try

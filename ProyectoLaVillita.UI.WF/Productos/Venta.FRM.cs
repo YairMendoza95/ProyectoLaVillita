@@ -53,7 +53,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
 			{
 				cmbProductos.DisplayMember = "nombre";
 				cmbProductos.DataSource = datos;
-				cmbProductos.ValueMember = "1dProducto";
+				cmbProductos.ValueMember = "idProducto";
 			}
 		}
 

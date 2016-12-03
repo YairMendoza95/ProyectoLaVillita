@@ -19,11 +19,6 @@ namespace ProyectoLaVillita.BIZ
             get { return productoRepository.Elementos; }
         }
 
-        public IQueryable<ProductoDTO> Nombre
-        {
-            get { return productoRepository.Nombre; }
-        }
-
         public ProductoManager()
         {
             productoRepository = new ProductoRepository();

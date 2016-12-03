@@ -58,37 +58,6 @@ namespace ProyectoLaVillita.DAL
             }
         }
 
-        public IQueryable<ProductoDTO> Nombre
-        {
-            get
-            {
-                try
-                {
-                    conexion.Open();
-                    da.SelectCommand = new MySqlCommand("Select nombre from producto", conexion);
-                    DataSet dc = new DataSet();
-                    da.Fill(dc);
-                    conexion.Close();
-                    List<ProductoDTO> producto = new List<ProductoDTO>();
-                    for (int i = 0; i < dc.Tables[0].Rows.Count; i++)
-                    {
-                        ProductoDTO prod = new ProductoDTO()
-                        {
-                            nombre = dc.Tables[0].Rows[i].ToString()
-                        };
-                        producto.Add(prod);
-                    }
-                    return producto.AsQueryable();
-                }
-                catch (Exception)
-                {
-                    if (conexion.State == ConnectionState.Open)
-                        conexion.Close();
-                    return null;
-                }
-            }
-        }
-
         public bool Eliminar(ProductoDTO entidad)
         {
             try
@@ -119,7 +88,7 @@ namespace ProyectoLaVillita.DAL
             try
             {
                 conexion.Open();
-				da.InsertCommand = new MySqlCommand("Insert into producto (nombre, idProveedor, precioCompra, precioVenta, stockMax, stockMax, stockActual, idTipoProducto) values('" + entidad.nombre + "', " + entidad.idProveedor + ", " + entidad.precioCompra + ", " + entidad.precioVenta + ", " + entidad.stockMax + ", " + entidad.stockMin + ", " + entidad.stockActual + ")", conexion);
+				da.InsertCommand = new MySqlCommand("Insert into producto (nombre, idProveedor, precioCompra, precioVenta, stockActual, stockMax, stockMin) values ('" + entidad.nombre + "', " + entidad.idProveedor + ", " + entidad.precioCompra + ", " + entidad.precioVenta + ", " + entidad.stockActual + ", " + entidad.stockMax + ", " + entidad.stockMin + ")", conexion);
                 int afectados = da.InsertCommand.ExecuteNonQuery();
                 conexion.Close();
                 if (afectados > 0)
@@ -140,7 +109,7 @@ namespace ProyectoLaVillita.DAL
             try
             {
                 conexion.Open();
-				da.UpdateCommand = new MySqlCommand("Update producto set nombre = '" + entidad.nombre + "', idProveedor = " + entidad.idProveedor + ", precioUnitario = " + entidad.precioCompra + "," + entidad.precioVenta + ", stockMax = " + entidad.stockMax + ", stockMin = " + entidad.stockMin + ", stockActual = " + entidad.stockActual + " where idProducto", conexion);
+				da.UpdateCommand = new MySqlCommand("Update producto set nombre = '" + entidad.nombre + "', idProveedor = " + entidad.idProveedor + ", precioCompra = " + entidad.precioCompra + ", precioVenta = " + entidad.precioVenta + ", stockMax = " + entidad.stockMax + ", stockMin = " + entidad.stockMin + ", stockActual = " + entidad.stockActual + " where idProducto = " + entidad.idProducto, conexion);
                 int afectados = da.UpdateCommand.ExecuteNonQuery();
                 conexion.Close();
                 if (afectados > 0)

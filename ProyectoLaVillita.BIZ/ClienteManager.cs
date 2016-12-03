@@ -24,11 +24,6 @@ namespace ProyectoLaVillita.BIZ
             get { return clienteRepository.Elementos; }
         }
 
-        public IQueryable<ClienteDTO> Nombres
-        {
-            get { return clienteRepository.Nombre; }
-        }
-
         public ClienteDTO BuscarClientePorId(int idCliente)
         {
             return clienteRepository.Elementos.FirstOrDefault(c => c.idCliente == idCliente);

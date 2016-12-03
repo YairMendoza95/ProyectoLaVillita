@@ -100,7 +100,7 @@
 			this.txtContraseña.Name = "txtContraseña";
 			this.txtContraseña.PasswordChar = '*';
 			this.txtContraseña.Size = new System.Drawing.Size(170, 23);
-			this.txtContraseña.TabIndex = 3;
+			this.txtContraseña.TabIndex = 2;
 			// 
 			// txtUsuario
 			// 
@@ -108,7 +108,7 @@
 			this.txtUsuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.txtUsuario.Name = "txtUsuario";
 			this.txtUsuario.Size = new System.Drawing.Size(170, 23);
-			this.txtUsuario.TabIndex = 2;
+			this.txtUsuario.TabIndex = 1;
 			this.txtUsuario.Enter += new System.EventHandler(this.Inicio_Load);
 			// 
 			// btnSalir
@@ -118,7 +118,7 @@
 			this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.btnSalir.Name = "btnSalir";
 			this.btnSalir.Size = new System.Drawing.Size(127, 39);
-			this.btnSalir.TabIndex = 0;
+			this.btnSalir.TabIndex = 45;
 			this.btnSalir.Text = "Salir";
 			this.btnSalir.UseVisualStyleBackColor = true;
 			this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);

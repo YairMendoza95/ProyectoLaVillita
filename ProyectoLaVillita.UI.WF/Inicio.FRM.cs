@@ -35,9 +35,10 @@ namespace ProyectoLaVillita.UI.WF
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-			if (_userManage.Login(txtUsuario.Text, txtContraseña.Text) && Program.idUsuario == 0)
+			if (_userManage.Login(txtUsuario.Text, txtContraseña.Text) && Program.idUsuario == 0 && Program.nombreUsuario == "")
 			{
 				Program.idUsuario = _userManage.BuscarUsuarioPorNombre(txtUsuario.Text).idUsuario;
+				Program.nombreUsuario = txtUsuario.Text;
 				if (MessageBox.Show("¡Bienvenido! " + txtUsuario.Text, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk) == DialogResult.OK)
 				{
 					new Venta().Show();

@@ -9,7 +9,6 @@ namespace ProyectoLaVillita.COMMON.Interfaces
     public interface IRepositorioGenerico<T> where T : class
     {
         IQueryable<T> Elementos { get; }
-        IQueryable<T> Nombre { get; }
         bool Insertar(T entidad);
         bool Modificar(T entidad);
         bool Eliminar(T entidad);
