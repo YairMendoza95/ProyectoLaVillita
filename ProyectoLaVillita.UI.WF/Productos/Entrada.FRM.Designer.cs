@@ -272,24 +272,6 @@
 			this.cerrarSesiónToolStripMenuItem.Text = "Cerrar sesión";
 			this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
 			// 
-			// txtProveedor
-			// 
-			this.txtProveedor.Location = new System.Drawing.Point(267, 118);
-			this.txtProveedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.txtProveedor.Name = "txtProveedor";
-			this.txtProveedor.ReadOnly = true;
-			this.txtProveedor.Size = new System.Drawing.Size(121, 23);
-			this.txtProveedor.TabIndex = 7;
-			this.txtProveedor.UseSystemPasswordChar = true;
-			// 
-			// txtTotal
-			// 
-			this.txtTotal.Location = new System.Drawing.Point(267, 210);
-			this.txtTotal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.txtTotal.Name = "txtTotal";
-			this.txtTotal.Size = new System.Drawing.Size(121, 23);
-			this.txtTotal.TabIndex = 10;
-			// 
 			// label5
 			// 
 			this.label5.AutoSize = true;
@@ -298,14 +280,6 @@
 			this.label5.Size = new System.Drawing.Size(39, 16);
 			this.label5.TabIndex = 24;
 			this.label5.Text = "Total";
-			// 
-			// dtpFecheEntrada
-			// 
-			this.dtpFecheEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-			this.dtpFecheEntrada.Location = new System.Drawing.Point(267, 149);
-			this.dtpFecheEntrada.Name = "dtpFecheEntrada";
-			this.dtpFecheEntrada.Size = new System.Drawing.Size(121, 23);
-			this.dtpFecheEntrada.TabIndex = 8;
 			// 
 			// label2
 			// 
@@ -324,22 +298,6 @@
 			this.label1.Size = new System.Drawing.Size(65, 16);
 			this.label1.TabIndex = 20;
 			this.label1.Text = "Producto";
-			// 
-			// cmbProductos
-			// 
-			this.cmbProductos.FormattingEnabled = true;
-			this.cmbProductos.Location = new System.Drawing.Point(267, 86);
-			this.cmbProductos.Name = "cmbProductos";
-			this.cmbProductos.Size = new System.Drawing.Size(121, 24);
-			this.cmbProductos.TabIndex = 6;
-			// 
-			// txtCantidad
-			// 
-			this.txtCantidad.Location = new System.Drawing.Point(267, 179);
-			this.txtCantidad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.txtCantidad.Name = "txtCantidad";
-			this.txtCantidad.Size = new System.Drawing.Size(121, 23);
-			this.txtCantidad.TabIndex = 9;
 			// 
 			// label4
 			// 
@@ -383,6 +341,51 @@
 			this.btnSalir.Text = "Salir";
 			this.btnSalir.UseVisualStyleBackColor = true;
 			this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+			// 
+			// txtTotal
+			// 
+			this.txtTotal.Location = new System.Drawing.Point(267, 210);
+			this.txtTotal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.txtTotal.Name = "txtTotal";
+			this.txtTotal.Size = new System.Drawing.Size(121, 23);
+			this.txtTotal.TabIndex = 10;
+			// 
+			// txtCantidad
+			// 
+			this.txtCantidad.Location = new System.Drawing.Point(267, 179);
+			this.txtCantidad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.txtCantidad.Name = "txtCantidad";
+			this.txtCantidad.Size = new System.Drawing.Size(121, 23);
+			this.txtCantidad.TabIndex = 9;
+			// 
+			// dtpFecheEntrada
+			// 
+			this.dtpFecheEntrada.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+			this.dtpFecheEntrada.Location = new System.Drawing.Point(267, 149);
+			this.dtpFecheEntrada.Name = "dtpFecheEntrada";
+			this.dtpFecheEntrada.Size = new System.Drawing.Size(121, 23);
+			this.dtpFecheEntrada.TabIndex = 8;
+			this.dtpFecheEntrada.Value = new System.DateTime(2016, 12, 3, 22, 46, 9, 0);
+			// 
+			// txtProveedor
+			// 
+			this.txtProveedor.Location = new System.Drawing.Point(267, 118);
+			this.txtProveedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.txtProveedor.Name = "txtProveedor";
+			this.txtProveedor.ReadOnly = true;
+			this.txtProveedor.Size = new System.Drawing.Size(121, 23);
+			this.txtProveedor.TabIndex = 7;
+			// 
+			// cmbProductos
+			// 
+			this.cmbProductos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cmbProductos.FormattingEnabled = true;
+			this.cmbProductos.Location = new System.Drawing.Point(267, 86);
+			this.cmbProductos.Name = "cmbProductos";
+			this.cmbProductos.Size = new System.Drawing.Size(121, 24);
+			this.cmbProductos.TabIndex = 6;
+			this.cmbProductos.SelectionChangeCommitted += new System.EventHandler(this.cmbProductos_SelectionChangeCommitted);
+			this.cmbProductos.Click += new System.EventHandler(this.cmbProductos_Click);
 			// 
 			// label3
 			// 

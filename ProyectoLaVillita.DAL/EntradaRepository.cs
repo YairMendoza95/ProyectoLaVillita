@@ -39,7 +39,7 @@ namespace ProyectoLaVillita.DAL
                             idEntrada = Convert.ToInt32(ds.Tables[0].Rows[i]["idEntrada"]),
                             idProducto = Convert.ToInt32(ds.Tables[0].Rows[i]["idProducto"]),
                             idProveedor = Convert.ToInt32(ds.Tables[0].Rows[i]["idProveedor"]),
-                            fechaEntrada = Convert.ToDateTime(ds.Tables[0].Rows[i]["fechaEntrada"]).Date,
+                            fechaEntrada = ds.Tables[0].Rows[i]["fechaEntrada"].ToString(),
                             cantidad = Convert.ToInt32(ds.Tables[0].Rows[i]["cantidad"]),
                             montoPagar = Convert.ToInt32(ds.Tables[0].Rows[i]["montóPagar"])
                         };
@@ -82,7 +82,7 @@ namespace ProyectoLaVillita.DAL
             try
             {
                 conexion.Open();
-                da.InsertCommand = new MySqlCommand("Insert into entrada (idprodducto, idProveedor, fechaEntrada, cantidad, montoPagar) values (" + entidad.idProducto + ", " + entidad.idProveedor + ", '" + entidad.fechaEntrada + "', " + entidad.cantidad + ", " + entidad.montoPagar + ")", conexion);
+                da.InsertCommand = new MySqlCommand("Insert into entrada (idProducto, idProveedor, fechaEntrada, cantidad, montoPagar) values (" + entidad.idProducto + ", " + entidad.idProveedor + ", '" + entidad.fechaEntrada + "', " + entidad.cantidad + ", " + entidad.montoPagar + ")", conexion);
                 int afectados = da.DeleteCommand.ExecuteNonQuery();
                 conexion.Close();
                 if (afectados > 0)

@@ -368,7 +368,7 @@
 			this.cmbProveedor.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.cmbProveedor.FormattingEnabled = true;
 			this.cmbProveedor.ItemHeight = 17;
-			this.cmbProveedor.Location = new System.Drawing.Point(313, 116);
+			this.cmbProveedor.Location = new System.Drawing.Point(313, 117);
 			this.cmbProveedor.Name = "cmbProveedor";
 			this.cmbProveedor.Size = new System.Drawing.Size(162, 25);
 			this.cmbProveedor.TabIndex = 15;

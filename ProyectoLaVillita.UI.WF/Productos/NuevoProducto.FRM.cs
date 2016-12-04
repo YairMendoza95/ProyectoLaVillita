@@ -40,7 +40,6 @@ namespace ProyectoLaVillita.UI.WF.Productos
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             int sta = 0;
-            sta += _ent.cantidad;
             try
             {
 				if (txtCompra.Text != "" && txtNombre.Text != "" && txtVenta.Text != "" && txtMinimo.Text != "" && txtMaximo.Text != "")
@@ -88,14 +87,17 @@ namespace ProyectoLaVillita.UI.WF.Productos
 			}
 			else
 			{
-				usuariosToolStripMenuItem.Visible = true; 
+				usuariosToolStripMenuItem.Visible = true;
 				cerrarSesiónToolStripMenuItem.Visible = false;
 			}
 			var datos = _provManager.Proveedores.ToList();
-			cmbProveedor.DisplayMember = "nombreProveedor";
-			cmbProveedor.DataSource = datos;
-			cmbProveedor.ValueMember = "idProveedor";
-			//cmbProveedor.SelectedValue
+			if (datos.Count > 0)
+			{
+				cmbProveedor.DisplayMember = "nombreProveedor";
+				cmbProveedor.DataSource = datos;
+				cmbProveedor.ValueMember = "idProveedor";
+			}
+			
 		}
 
 		private void inventarioToolStripMenuItem2_Click(object sender, EventArgs e)

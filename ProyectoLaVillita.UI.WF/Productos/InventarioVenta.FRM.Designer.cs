@@ -285,7 +285,7 @@
 			this.txtNombre.Name = "txtNombre";
 			this.txtNombre.ReadOnly = true;
 			this.txtNombre.Size = new System.Drawing.Size(100, 23);
-			this.txtNombre.TabIndex = 3;
+			this.txtNombre.TabIndex = 5;
 			// 
 			// label4
 			// 
@@ -320,7 +320,7 @@
 			this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.btnEliminar.Name = "btnEliminar";
 			this.btnEliminar.Size = new System.Drawing.Size(127, 39);
-			this.btnEliminar.TabIndex = 14;
+			this.btnEliminar.TabIndex = 4;
 			this.btnEliminar.Text = "Eliminar";
 			this.btnEliminar.UseVisualStyleBackColor = true;
 			this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
@@ -332,7 +332,7 @@
 			this.btnModificar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.btnModificar.Name = "btnModificar";
 			this.btnModificar.Size = new System.Drawing.Size(127, 39);
-			this.btnModificar.TabIndex = 13;
+			this.btnModificar.TabIndex = 3;
 			this.btnModificar.Text = "Modificar";
 			this.btnModificar.UseVisualStyleBackColor = true;
 			this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
@@ -532,7 +532,7 @@
 			this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.btnSalir.Name = "btnSalir";
 			this.btnSalir.Size = new System.Drawing.Size(127, 39);
-			this.btnSalir.TabIndex = 8;
+			this.btnSalir.TabIndex = 5;
 			this.btnSalir.Text = "Salir";
 			this.btnSalir.UseVisualStyleBackColor = true;
 			this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -566,7 +566,7 @@
 			this.txtIngresarNombre.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.txtIngresarNombre.Name = "txtIngresarNombre";
 			this.txtIngresarNombre.Size = new System.Drawing.Size(162, 23);
-			this.txtIngresarNombre.TabIndex = 4;
+			this.txtIngresarNombre.TabIndex = 1;
 			// 
 			// btnBuscar
 			// 
@@ -574,7 +574,7 @@
 			this.btnBuscar.Location = new System.Drawing.Point(310, 15);
 			this.btnBuscar.Name = "btnBuscar";
 			this.btnBuscar.Size = new System.Drawing.Size(105, 35);
-			this.btnBuscar.TabIndex = 5;
+			this.btnBuscar.TabIndex = 2;
 			this.btnBuscar.Text = "Buscar";
 			this.btnBuscar.UseVisualStyleBackColor = true;
 			// 

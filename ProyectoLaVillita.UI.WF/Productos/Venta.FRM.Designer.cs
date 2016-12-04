@@ -75,7 +75,7 @@
 			// btnSalir
 			// 
 			this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnSalir.Location = new System.Drawing.Point(139, 244);
+			this.btnSalir.Location = new System.Drawing.Point(596, 400);
 			this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.btnSalir.Name = "btnSalir";
 			this.btnSalir.Size = new System.Drawing.Size(118, 39);
@@ -87,7 +87,7 @@
 			// btnAgregar
 			// 
 			this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnAgregar.Location = new System.Drawing.Point(6, 244);
+			this.btnAgregar.Location = new System.Drawing.Point(62, 400);
 			this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.btnAgregar.Name = "btnAgregar";
 			this.btnAgregar.Size = new System.Drawing.Size(111, 39);
@@ -109,7 +109,7 @@
 			// label4
 			// 
 			this.label4.AutoSize = true;
-			this.label4.Location = new System.Drawing.Point(12, 95);
+			this.label4.Location = new System.Drawing.Point(30, 87);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(65, 16);
 			this.label4.TabIndex = 15;
@@ -117,7 +117,7 @@
 			// 
 			// txtCantidad
 			// 
-			this.txtCantidad.Location = new System.Drawing.Point(88, 123);
+			this.txtCantidad.Location = new System.Drawing.Point(106, 115);
 			this.txtCantidad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.txtCantidad.Name = "txtCantidad";
 			this.txtCantidad.Size = new System.Drawing.Size(169, 23);
@@ -126,7 +126,7 @@
 			// cmbProductos
 			// 
 			this.cmbProductos.FormattingEnabled = true;
-			this.cmbProductos.Location = new System.Drawing.Point(88, 92);
+			this.cmbProductos.Location = new System.Drawing.Point(106, 84);
 			this.cmbProductos.Name = "cmbProductos";
 			this.cmbProductos.Size = new System.Drawing.Size(169, 24);
 			this.cmbProductos.TabIndex = 26;
@@ -135,7 +135,7 @@
 			// Cantidad
 			// 
 			this.Cantidad.AutoSize = true;
-			this.Cantidad.Location = new System.Drawing.Point(12, 126);
+			this.Cantidad.Location = new System.Drawing.Point(30, 118);
 			this.Cantidad.Name = "Cantidad";
 			this.Cantidad.Size = new System.Drawing.Size(70, 16);
 			this.Cantidad.TabIndex = 27;
@@ -150,9 +150,9 @@
             this.colCantidad,
             this.colSubtotal,
             this.colEliminar});
-			this.dgvDetalleVenta.Location = new System.Drawing.Point(263, 75);
+			this.dgvDetalleVenta.Location = new System.Drawing.Point(296, 75);
 			this.dgvDetalleVenta.Name = "dgvDetalleVenta";
-			this.dgvDetalleVenta.Size = new System.Drawing.Size(387, 256);
+			this.dgvDetalleVenta.Size = new System.Drawing.Size(447, 318);
 			this.dgvDetalleVenta.TabIndex = 28;
 			// 
 			// colProducto
@@ -189,7 +189,7 @@
 			// btnGuardar
 			// 
 			this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnGuardar.Location = new System.Drawing.Point(73, 291);
+			this.btnGuardar.Location = new System.Drawing.Point(329, 400);
 			this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.btnGuardar.Name = "btnGuardar";
 			this.btnGuardar.Size = new System.Drawing.Size(111, 39);
@@ -216,7 +216,7 @@
 			this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.groupBox1.Location = new System.Drawing.Point(0, 0);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(664, 343);
+			this.groupBox1.Size = new System.Drawing.Size(757, 453);
 			this.groupBox1.TabIndex = 5;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Ventas";
@@ -232,7 +232,7 @@
             this.cerrarSesiónToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(3, 19);
 			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new System.Drawing.Size(658, 25);
+			this.menuStrip1.Size = new System.Drawing.Size(751, 25);
 			this.menuStrip1.TabIndex = 32;
 			this.menuStrip1.Text = "menuStrip1";
 			// 
@@ -402,7 +402,7 @@
 			// 
 			// txtNotas
 			// 
-			this.txtNotas.Location = new System.Drawing.Point(88, 151);
+			this.txtNotas.Location = new System.Drawing.Point(106, 143);
 			this.txtNotas.Multiline = true;
 			this.txtNotas.Name = "txtNotas";
 			this.txtNotas.Size = new System.Drawing.Size(169, 86);
@@ -411,7 +411,7 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(12, 154);
+			this.label1.Location = new System.Drawing.Point(30, 146);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(45, 16);
 			this.label1.TabIndex = 30;
@@ -421,7 +421,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(662, 343);
+			this.ClientSize = new System.Drawing.Size(755, 452);
 			this.Controls.Add(this.groupBox1);
 			this.Name = "Venta";
 			this.Text = "Sistema de inventario \"La Villita\"";

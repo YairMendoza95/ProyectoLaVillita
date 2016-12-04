@@ -155,10 +155,10 @@ namespace ProyectoLaVillita.UI.WF.Productos
                 if (_dv == null)
                 {
                     _ventaManager.InsertarVenta(_venta);
-                    _dv = new DetalleVentaDTO()
-                    {
-                        idProducto = cmbProductos.SelectedIndex,
-                        //idProveedor
+					_dv = new DetalleVentaDTO()
+					{
+						idProducto = Convert.ToInt32(cmbProductos.SelectedValue),
+						idProveedor = Convert.ToInt32(_prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).idProveedor),
                         idVenta = _venta.idVenta,
                         fechaVenta = DateTime.Today,
                         cantidad = cant,
