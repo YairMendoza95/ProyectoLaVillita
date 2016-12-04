@@ -385,7 +385,6 @@
 			this.cmbProductos.Size = new System.Drawing.Size(121, 24);
 			this.cmbProductos.TabIndex = 6;
 			this.cmbProductos.SelectionChangeCommitted += new System.EventHandler(this.cmbProductos_SelectionChangeCommitted);
-			this.cmbProductos.Click += new System.EventHandler(this.cmbProductos_Click);
 			// 
 			// label3
 			// 

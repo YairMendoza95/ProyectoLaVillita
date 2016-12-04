@@ -51,7 +51,6 @@ namespace ProyectoLaVillita.UI.WF.Productos
 				cmbProductos.DisplayMember = "nombre";
 				cmbProductos.ValueMember = "idProducto";
 			}
-			txtProveedor.Text = _provManager.BuscarProveedorPorId(_prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).idProveedor).nombreProveedor;
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -65,7 +64,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
 			string fecha = dtpFecheEntrada.Value.Day + "/" + dtpFecheEntrada.Value.Month + "/" + dtpFecheEntrada.Value.Year;
 			try
             {
-				if (txtProveedor.Text != "" && txtCantidad.Text != "" && txtTotal.Text != "")
+				if (/*txtProveedor.Text != "" && */txtCantidad.Text != "" && txtTotal.Text != "")
 				{
 					if (_ent == null)
 					{
@@ -81,12 +80,6 @@ namespace ProyectoLaVillita.UI.WF.Productos
 						if (_entManager.InsertarEntrada(_ent))
 						{
 							MessageBox.Show("Entrada registrada satisfactariamente", titulo, MessageBoxButtons.OK, MessageBoxIcon.Information);
-							cmbProductos.ResetText();
-							txtProveedor.Clear();
-							dtpFecheEntrada.ResetText();
-							txtCantidad.Clear();
-							txtTotal.Clear();
-							cmbProductos.Focus();
 							int stock = _prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).stockActual;
 							stock += Convert.ToInt32(txtCantidad.Text);
 							double compra = Convert.ToDouble(txtTotal.Text) / Convert.ToInt32(txtCantidad.Text);
@@ -105,6 +98,12 @@ namespace ProyectoLaVillita.UI.WF.Productos
 									stockMin = _prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).stockMin
 								};
 								_prodManager.ModificarProducto(_prod);
+								cmbProductos.ResetText();
+								txtProveedor.Clear();
+								dtpFecheEntrada.ResetText();
+								txtCantidad.Clear();
+								txtTotal.Clear();
+								cmbProductos.Focus();
 							}
 						}
 						else
@@ -208,11 +207,6 @@ namespace ProyectoLaVillita.UI.WF.Productos
 				Program.idUsuario = 0;
 				new Inicio().Show();
 			}
-		}
-
-		private void cmbProductos_Click(object sender, EventArgs e)
-		{
-			
 		}
 
 		private void cmbProductos_SelectionChangeCommitted(object sender, EventArgs e)
