@@ -39,11 +39,10 @@ namespace ProyectoLaVillita.UI.WF
 			{
 				Program.idUsuario = _userManage.BuscarUsuarioPorNombre(txtUsuario.Text).idUsuario;
 				Program.nombreUsuario = txtUsuario.Text;
-				if (MessageBox.Show("¡Bienvenido! " + txtUsuario.Text, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk) == DialogResult.OK)
-				{
-					new Venta().Show();
-					this.Hide();
-				}
+				new Venta().Show();
+				this.Hide();
+
+				MessageBox.Show("¡Bienvenido! " + txtUsuario.Text, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 			}
 			else
 			{

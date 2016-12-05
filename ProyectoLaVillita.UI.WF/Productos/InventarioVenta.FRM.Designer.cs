@@ -31,6 +31,7 @@
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.label11 = new System.Windows.Forms.Label();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.cmbProveedores = new System.Windows.Forms.ComboBox();
 			this.txtMaximo = new System.Windows.Forms.TextBox();
 			this.label12 = new System.Windows.Forms.Label();
 			this.btnGuardar = new System.Windows.Forms.Button();
@@ -81,7 +82,7 @@
 			this.txtIngresarNombre = new System.Windows.Forms.TextBox();
 			this.btnBuscar = new System.Windows.Forms.Button();
 			this.dgvProductos = new System.Windows.Forms.DataGridView();
-			this.cmbProveedores = new System.Windows.Forms.ComboBox();
+			this.label13 = new System.Windows.Forms.Label();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
@@ -92,6 +93,7 @@
 			// groupBox1
 			// 
 			this.groupBox1.BackColor = System.Drawing.Color.SkyBlue;
+			this.groupBox1.Controls.Add(this.label13);
 			this.groupBox1.Controls.Add(this.label11);
 			this.groupBox1.Controls.Add(this.groupBox2);
 			this.groupBox1.Controls.Add(this.btnEliminar);
@@ -147,6 +149,17 @@
 			this.groupBox2.TabIndex = 15;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Información";
+			// 
+			// cmbProveedores
+			// 
+			this.cmbProveedores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cmbProveedores.FormattingEnabled = true;
+			this.cmbProveedores.ItemHeight = 16;
+			this.cmbProveedores.Location = new System.Drawing.Point(145, 88);
+			this.cmbProveedores.Name = "cmbProveedores";
+			this.cmbProveedores.Size = new System.Drawing.Size(100, 24);
+			this.cmbProveedores.TabIndex = 19;
+			this.cmbProveedores.Visible = false;
 			// 
 			// txtMaximo
 			// 
@@ -587,16 +600,14 @@
 			this.dgvProductos.TabIndex = 1;
 			this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
 			// 
-			// cmbProveedores
+			// label13
 			// 
-			this.cmbProveedores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.cmbProveedores.FormattingEnabled = true;
-			this.cmbProveedores.ItemHeight = 16;
-			this.cmbProveedores.Location = new System.Drawing.Point(145, 88);
-			this.cmbProveedores.Name = "cmbProveedores";
-			this.cmbProveedores.Size = new System.Drawing.Size(100, 24);
-			this.cmbProveedores.TabIndex = 19;
-			this.cmbProveedores.Visible = false;
+			this.label13.AutoSize = true;
+			this.label13.BackColor = System.Drawing.Color.Silver;
+			this.label13.Location = new System.Drawing.Point(719, 28);
+			this.label13.Name = "label13";
+			this.label13.Size = new System.Drawing.Size(0, 16);
+			this.label13.TabIndex = 17;
 			// 
 			// InventarioVenta
 			// 
@@ -675,5 +686,6 @@
 		private System.Windows.Forms.Label label12;
 		private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
 		public System.Windows.Forms.ComboBox cmbProveedores;
+		private System.Windows.Forms.Label label13;
 	}
 }

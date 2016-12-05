@@ -47,8 +47,9 @@ namespace ProyectoLaVillita.UI.WF.Rentas
 			var lista = _prodManager.Productos.ToList();
 			if (lista.Count > 0)
 			{
-				txtMesas.Text = _prodManager.BuscarProductoPorNombre("Mesa").stockActual.ToString();
-				txtSillas.Text = _prodManager.BuscarProductoPorNombre("Silla").stockActual.ToString();
+				//txtMesas.Text = _prodManager.BuscarProductoPorNombre("Mesa").stockActual.ToString();
+
+				txtSillas.Text = _prodManager.BuscarProductoPorNombre("sillas").stockActual.ToString();
 			}
 			else
 			{

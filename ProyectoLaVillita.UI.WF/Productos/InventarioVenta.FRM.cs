@@ -65,6 +65,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
 			}
 			else
 				label11.Visible = true;
+			label13.Text = Program.nombreUsuario;
 		}
 
 		private void btnBuscar_Click(object sender, EventArgs e)
@@ -275,6 +276,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
 			{
 				this.Hide();
 				Program.idUsuario = 0;
+				Program.nombreUsuario = "";
 				new Inicio().Show();
 			}
 		}
@@ -285,6 +287,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
 			{
 				this.Hide();
 				Program.idUsuario = 0;
+				Program.nombreUsuario = "";
 				new Inicio().Show();
 			}
 		}

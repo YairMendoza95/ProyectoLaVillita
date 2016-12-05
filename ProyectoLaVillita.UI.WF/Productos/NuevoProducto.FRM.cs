@@ -93,8 +93,8 @@ namespace ProyectoLaVillita.UI.WF.Productos
 			var datos = _provManager.Proveedores.ToList();
 			if (datos.Count > 0)
 			{
-				cmbProveedor.DisplayMember = "nombreProveedor";
 				cmbProveedor.DataSource = datos;
+				cmbProveedor.DisplayMember = "nombreProveedor";
 				cmbProveedor.ValueMember = "idProveedor";
 			}
 			

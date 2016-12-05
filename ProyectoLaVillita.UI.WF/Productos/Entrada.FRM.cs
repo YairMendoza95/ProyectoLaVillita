@@ -83,7 +83,6 @@ namespace ProyectoLaVillita.UI.WF.Productos
 							int stock = _prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).stockActual;
 							stock += Convert.ToInt32(txtCantidad.Text);
 							double compra = Convert.ToDouble(txtTotal.Text) / Convert.ToInt32(txtCantidad.Text);
-							_prod = null;
 							if (_prod == null)
 							{
 								_prod = new ProductoDTO()
@@ -211,8 +210,8 @@ namespace ProyectoLaVillita.UI.WF.Productos
 
 		private void cmbProductos_SelectionChangeCommitted(object sender, EventArgs e)
 		{
-			int idProveedor = _prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).idProveedor;
-			txtProveedor.Text = _provManager.BuscarProveedorPorId(idProveedor).nombreProveedor;
+			//int proveedor = _prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).idProveedor;
+			txtProveedor.Text = _provManager.BuscarProveedorPorId(_prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).idProveedor).nombreProveedor.ToString();
 		}
 	}
 }
