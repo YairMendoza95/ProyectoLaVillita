@@ -67,6 +67,8 @@
 			this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.txtNotas = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
+			this.label2 = new System.Windows.Forms.Label();
+			this.txtProveedor = new System.Windows.Forms.TextBox();
 			((System.ComponentModel.ISupportInitialize)(this.dgvDetalleVenta)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
@@ -117,7 +119,7 @@
 			// 
 			// txtCantidad
 			// 
-			this.txtCantidad.Location = new System.Drawing.Point(106, 115);
+			this.txtCantidad.Location = new System.Drawing.Point(106, 146);
 			this.txtCantidad.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.txtCantidad.Name = "txtCantidad";
 			this.txtCantidad.Size = new System.Drawing.Size(169, 23);
@@ -125,17 +127,18 @@
 			// 
 			// cmbProductos
 			// 
+			this.cmbProductos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbProductos.FormattingEnabled = true;
 			this.cmbProductos.Location = new System.Drawing.Point(106, 84);
 			this.cmbProductos.Name = "cmbProductos";
 			this.cmbProductos.Size = new System.Drawing.Size(169, 24);
 			this.cmbProductos.TabIndex = 26;
-			this.cmbProductos.Text = "--Elige un producto--";
+			this.cmbProductos.SelectionChangeCommitted += new System.EventHandler(this.cmbProductos_SelectionChangeCommitted);
 			// 
 			// Cantidad
 			// 
 			this.Cantidad.AutoSize = true;
-			this.Cantidad.Location = new System.Drawing.Point(30, 118);
+			this.Cantidad.Location = new System.Drawing.Point(30, 149);
 			this.Cantidad.Name = "Cantidad";
 			this.Cantidad.Size = new System.Drawing.Size(70, 16);
 			this.Cantidad.TabIndex = 27;
@@ -201,6 +204,8 @@
 			// groupBox1
 			// 
 			this.groupBox1.BackColor = System.Drawing.Color.SkyBlue;
+			this.groupBox1.Controls.Add(this.label2);
+			this.groupBox1.Controls.Add(this.txtProveedor);
 			this.groupBox1.Controls.Add(this.menuStrip1);
 			this.groupBox1.Controls.Add(this.txtNotas);
 			this.groupBox1.Controls.Add(this.label1);
@@ -402,7 +407,7 @@
 			// 
 			// txtNotas
 			// 
-			this.txtNotas.Location = new System.Drawing.Point(106, 143);
+			this.txtNotas.Location = new System.Drawing.Point(106, 176);
 			this.txtNotas.Multiline = true;
 			this.txtNotas.Name = "txtNotas";
 			this.txtNotas.Size = new System.Drawing.Size(169, 86);
@@ -411,11 +416,29 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(30, 146);
+			this.label1.Location = new System.Drawing.Point(30, 179);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(45, 16);
 			this.label1.TabIndex = 30;
 			this.label1.Text = "Notas";
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(30, 118);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(73, 16);
+			this.label2.TabIndex = 34;
+			this.label2.Text = "Proveedor";
+			// 
+			// txtProveedor
+			// 
+			this.txtProveedor.Location = new System.Drawing.Point(106, 115);
+			this.txtProveedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.txtProveedor.Name = "txtProveedor";
+			this.txtProveedor.ReadOnly = true;
+			this.txtProveedor.Size = new System.Drawing.Size(169, 23);
+			this.txtProveedor.TabIndex = 33;
 			// 
 			// Venta
 			// 
@@ -476,5 +499,7 @@
 		private System.Windows.Forms.ToolStripMenuItem modificarUsuarioToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem cambiarDeUsuariioToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
+		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.TextBox txtProveedor;
 	}
 }

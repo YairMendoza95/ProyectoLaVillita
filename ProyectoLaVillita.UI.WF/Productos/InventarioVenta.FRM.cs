@@ -221,8 +221,13 @@ namespace ProyectoLaVillita.UI.WF.Productos
 							cmbProveedores.Visible = false;
 							btnGuardar.Visible = false;
 						}
+						else
+						{
+							MessageBox.Show("Error al actualizar el producto", titulo, MessageBoxButtons.OK, MessageBoxIcon.Error);
+						}
 					}
 				}
+				_prod = null;
 			}
 			catch (Exception ex)
 			{

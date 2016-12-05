@@ -61,10 +61,9 @@ namespace ProyectoLaVillita.UI.WF.Productos
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-			string fecha = dtpFecheEntrada.Value.Day + "/" + dtpFecheEntrada.Value.Month + "/" + dtpFecheEntrada.Value.Year;
 			try
             {
-				if (/*txtProveedor.Text != "" && */txtCantidad.Text != "" && txtTotal.Text != "")
+				if (txtProveedor.Text != "" && txtCantidad.Text != "" && txtTotal.Text != "")
 				{
 					if (_ent == null)
 					{
@@ -72,7 +71,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
 						{
 							idProducto = Convert.ToInt32(cmbProductos.SelectedValue),
 							idProveedor = Convert.ToInt32(_prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).idProveedor),
-							fechaEntrada = fecha,
+							fechaEntrada = dtpFecheEntrada.Text,
 							cantidad = Convert.ToInt32(txtCantidad.Text),
 							montoPagar = Convert.ToInt32(txtTotal.Text)
 						};
@@ -210,7 +209,6 @@ namespace ProyectoLaVillita.UI.WF.Productos
 
 		private void cmbProductos_SelectionChangeCommitted(object sender, EventArgs e)
 		{
-			//int proveedor = _prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).idProveedor;
 			txtProveedor.Text = _provManager.BuscarProveedorPorId(_prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).idProveedor).nombreProveedor.ToString();
 		}
 	}

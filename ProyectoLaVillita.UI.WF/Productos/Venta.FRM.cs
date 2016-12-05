@@ -23,6 +23,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
         private DetalleVentaManger _dvManager;
         private VentaDTO _venta;
         private VentaManager _ventaManager;
+		private ProveedorManager _provManager;
         public string titulo="Sistema de inventario \"La Villita\"";
         public double cant, sub, total = 0;
         //private 
@@ -33,6 +34,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
             _prodManager = new ProductoManager();
             _dvManager = new DetalleVentaManger();
             _ventaManager = new VentaManager();
+			_provManager = new ProveedorManager();
         }
 
 		private void Venta_Load(object sender, EventArgs e)
@@ -51,8 +53,8 @@ namespace ProyectoLaVillita.UI.WF.Productos
 			var datos = _prodManager.Productos.ToList();
 			if (datos.Count > 0)
 			{
-				cmbProductos.DisplayMember = "nombre";
 				cmbProductos.DataSource = datos;
+				cmbProductos.DisplayMember = "nombre";
 				cmbProductos.ValueMember = "idProducto";
 			}
 		}
@@ -144,37 +146,16 @@ namespace ProyectoLaVillita.UI.WF.Productos
 			}
 		}
 
+		private void cmbProductos_SelectionChangeCommitted(object sender, EventArgs e)
+		{
+			txtProveedor.Text = _provManager.BuscarProveedorPorId(_prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).idProveedor).nombreProveedor;
+		}
+
 		private void btnAgregar_Click(object sender, EventArgs e)
         {
            
             cant = Convert.ToDouble(txtCantidad.Text);
             sub = cant * _prod.precioVenta;
-            //if(this.WindowState==FormClosed)
-            try
-            {
-                if (_dv == null)
-                {
-                    _ventaManager.InsertarVenta(_venta);
-					_dv = new DetalleVentaDTO()
-					{
-						idProducto = Convert.ToInt32(cmbProductos.SelectedValue),
-						idProveedor = Convert.ToInt32(_prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).idProveedor),
-                        idVenta = _venta.idVenta,
-                        fechaVenta = DateTime.Today,
-                        cantidad = cant,
-                        total = sub,
-                    };
-                    _dvManager.InsertarDetalleVenta(_dv);
-                    dgvDetalleVenta.Rows.Add(_dv.idProducto, _dv.idProveedor, _dv.cantidad, _dv.total);
-                }
-                cmbProductos.ResetText();
-                txtCantidad.Clear();
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
