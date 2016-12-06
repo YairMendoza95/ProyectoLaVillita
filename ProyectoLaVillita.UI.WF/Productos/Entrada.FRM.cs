@@ -45,7 +45,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
 				cerrarSesiónToolStripMenuItem.Visible = false;
 			}
 			List<ProductoDTO> productos = _prodManager.Productos.ToList();
-			if(productos.Count>0)
+			if (productos.Count > 0)
 			{
 				cmbProductos.DataSource = productos;
 				cmbProductos.DisplayMember = "nombre";
