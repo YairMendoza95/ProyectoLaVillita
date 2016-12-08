@@ -19,14 +19,11 @@ namespace ProyectoLaVillita.UI.WF.Productos
     {
         private ProductoDTO _prod;
         private ProductoManager _prodManager;
-        private DetalleVentaDTO _dv;
         private DetalleVentaManger _dvManager;
         private VentaDTO _venta;
         private VentaManager _ventaManager;
 		private ProveedorManager _provManager;
         public string titulo="Sistema de inventario \"La Villita\"";
-        public double cant, sub, total = 0;
-        //private 
         public Venta()
         {
             InitializeComponent();
@@ -39,7 +36,6 @@ namespace ProyectoLaVillita.UI.WF.Productos
 
 		private void Venta_Load(object sender, EventArgs e)
 		{
-			//cmbProductos.GetItemText(_prodManager.Nombre);
 			if (Program.idUsuario != 1)
 			{
 				usuariosToolStripMenuItem.Visible = false;
@@ -153,19 +149,32 @@ namespace ProyectoLaVillita.UI.WF.Productos
 
 		private void btnAgregar_Click(object sender, EventArgs e)
         {
-           
-            cant = Convert.ToDouble(txtCantidad.Text);
-            sub = cant * _prod.precioVenta;
+			string producto = _prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).nombre;
+			string proveedor = _provManager.BuscarProveedorPorId(_prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).idProveedor).nombreProveedor;
+			double subtotal = _prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).precioVenta * Convert.ToDouble(txtCantidad.Text);
+			if (txtProveedor.Text != "" && txtCantidad.Text != "")
+			{
+				dgvDetalleVenta.Rows.Add(producto, proveedor, txtCantidad.Text, subtotal);
+				double total = 0; total += subtotal;
+				txtSubtotal.Text = total.ToString();
+			}
+			
+			
+			txtCantidad.Clear();
+			txtProveedor.Clear();
+			//txtNotas.Clear();
+			cmbProductos.ResetText();
+
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            total += sub;
+            //total += sub;
             try
             {
                 _venta = new VentaDTO()
                 {
-                    total = total,
+                    //total = total,
                     notas = txtNotas.Text,
                 };
                 _ventaManager.InsertarVenta(_venta);

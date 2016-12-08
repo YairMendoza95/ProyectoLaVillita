@@ -20,12 +20,11 @@ namespace ProyectoLaVillita.UI.WF
         {
             InitializeComponent();
             _userManage = new UsuarioManager();
-            txtUsuario.Focus();
         }
         private void Inicio_Load(object sender, EventArgs e)
         {
-            
-        }
+			txtUsuario.Focus();
+		}
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -35,10 +34,9 @@ namespace ProyectoLaVillita.UI.WF
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-			if (_userManage.Login(txtUsuario.Text, txtContraseña.Text) && Program.idUsuario == 0 && Program.nombreUsuario == "")
+			if (_userManage.Login(txtUsuario.Text, txtContraseña.Text) && Program.idUsuario == 0)
 			{
 				Program.idUsuario = _userManage.BuscarUsuarioPorNombre(txtUsuario.Text).idUsuario;
-				Program.nombreUsuario = txtUsuario.Text;
 				new Venta().Show();
 				this.Hide();
 

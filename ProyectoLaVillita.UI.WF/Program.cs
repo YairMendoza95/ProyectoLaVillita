@@ -13,7 +13,6 @@ namespace ProyectoLaVillita.UI.WF
 		/// </summary>
 		///
 		public static int idUsuario = 0;
-		public static string nombreUsuario = "";
         [STAThread]
         static void Main()
         {

@@ -30,23 +30,28 @@ namespace ProyectoLaVillita.UI.WF.Productos
 
 		private void InventarioVenta_Load(object sender, EventArgs e)
 		{
-			if (Program.idUsuario != 1)
+			// Permisos
+
+			if (Program.idUsuario != 1) // si idUsuario es diferente de 1 (administrador) oculta el menu de usuarios y hace visible el boton de Cerrar sesión
 			{
 				usuariosToolStripMenuItem.Visible = false;
 				cerrarSesiónToolStripMenuItem.Visible = true;
 			}
-			else
+			else // si idUsuario es igual a 1 oculta el boton de cerrar sesión y hace visible el menu de usuarios
 			{
 				usuariosToolStripMenuItem.Visible = true;
 				cerrarSesiónToolStripMenuItem.Visible = false;
 			}
+			// se crea una variable la cual almacena una lista con todos los registros de la tabla productos en la base de datos
 			var productos = _prodManager.Productos.ToList();
+			// si la cantidad de registro en la tabla es mayor a 0 
 			if (productos.Count > 0)
 			{
+				// se asigna la fuente de donde se van a tomar los datos para llenar la tabla
 				dgvProductos.DataSource = productos;
+				// se asignan las columnas con su nombre y el respectivo campo con el cual va a ser llenado
 				dgvProductos.Columns[0].HeaderText = "Id";
 				dgvProductos.Columns[0].DataPropertyName = "idProducto";
-				//dgvProductos.Columns[0].AutoSizeMode;
 				dgvProductos.Columns[1].HeaderText = "Nombre";
 				dgvProductos.Columns[1].DataPropertyName = "nombre";
 				dgvProductos.Columns[2].HeaderText = "Proveedor";
@@ -64,8 +69,8 @@ namespace ProyectoLaVillita.UI.WF.Productos
 				label11.Visible = false;
 			}
 			else
+				// de lo contrario muestra una etiqueta de advertencia
 				label11.Visible = true;
-			label13.Text = Program.nombreUsuario;
 		}
 
 		private void btnBuscar_Click(object sender, EventArgs e)
@@ -143,6 +148,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
 
 		private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
+			// Cuando se selecciona una fia en la tabla los cuadros de textos se llenan con su información
 			txtId.Text = dgvProductos.SelectedRows[0].Cells[0].Value.ToString();
 			txtNombre.Text = dgvProductos.SelectedRows[0].Cells[1].Value.ToString();
 			txtProveedor.Text = _provManager.BuscarProveedorPorId(Convert.ToInt32(dgvProductos.SelectedRows[0].Cells[2].Value)).nombreProveedor;
@@ -281,18 +287,17 @@ namespace ProyectoLaVillita.UI.WF.Productos
 			{
 				this.Hide();
 				Program.idUsuario = 0;
-				Program.nombreUsuario = "";
 				new Inicio().Show();
 			}
 		}
 
 		private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
 		{
+			// Cierre de sesión si el boton presionado en el cuadro de dialogo es OK se cierra la ventana actual la variable idUsuario se regresa a 0 y se muestra el formulario del login
 			if (MessageBox.Show("¿Está seguro quq quiere cerrar sesión?", titulo, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
 			{
 				this.Hide();
 				Program.idUsuario = 0;
-				Program.nombreUsuario = "";
 				new Inicio().Show();
 			}
 		}

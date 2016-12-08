@@ -43,6 +43,8 @@
 			this.colEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
 			this.btnGuardar = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.label2 = new System.Windows.Forms.Label();
+			this.txtProveedor = new System.Windows.Forms.TextBox();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
 			this.tiendaDeAbarrotesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,10 +67,10 @@
 			this.modificarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.cambiarDeUsuariioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.txtNotas = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.label2 = new System.Windows.Forms.Label();
-			this.txtProveedor = new System.Windows.Forms.TextBox();
+			this.txtNotas = new System.Windows.Forms.TextBox();
+			this.label3 = new System.Windows.Forms.Label();
+			this.txtSubtotal = new System.Windows.Forms.TextBox();
 			((System.ComponentModel.ISupportInitialize)(this.dgvDetalleVenta)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
@@ -204,6 +206,8 @@
 			// groupBox1
 			// 
 			this.groupBox1.BackColor = System.Drawing.Color.SkyBlue;
+			this.groupBox1.Controls.Add(this.txtSubtotal);
+			this.groupBox1.Controls.Add(this.label3);
 			this.groupBox1.Controls.Add(this.label2);
 			this.groupBox1.Controls.Add(this.txtProveedor);
 			this.groupBox1.Controls.Add(this.menuStrip1);
@@ -225,6 +229,24 @@
 			this.groupBox1.TabIndex = 5;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Ventas";
+			// 
+			// label2
+			// 
+			this.label2.AutoSize = true;
+			this.label2.Location = new System.Drawing.Point(30, 118);
+			this.label2.Name = "label2";
+			this.label2.Size = new System.Drawing.Size(73, 16);
+			this.label2.TabIndex = 34;
+			this.label2.Text = "Proveedor";
+			// 
+			// txtProveedor
+			// 
+			this.txtProveedor.Location = new System.Drawing.Point(106, 115);
+			this.txtProveedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+			this.txtProveedor.Name = "txtProveedor";
+			this.txtProveedor.ReadOnly = true;
+			this.txtProveedor.Size = new System.Drawing.Size(169, 23);
+			this.txtProveedor.TabIndex = 33;
 			// 
 			// menuStrip1
 			// 
@@ -405,14 +427,6 @@
 			this.cerrarSesiónToolStripMenuItem.Text = "Cerrar sesión";
 			this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
 			// 
-			// txtNotas
-			// 
-			this.txtNotas.Location = new System.Drawing.Point(106, 176);
-			this.txtNotas.Multiline = true;
-			this.txtNotas.Name = "txtNotas";
-			this.txtNotas.Size = new System.Drawing.Size(169, 86);
-			this.txtNotas.TabIndex = 31;
-			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
@@ -422,23 +436,30 @@
 			this.label1.TabIndex = 30;
 			this.label1.Text = "Notas";
 			// 
-			// label2
+			// txtNotas
 			// 
-			this.label2.AutoSize = true;
-			this.label2.Location = new System.Drawing.Point(30, 118);
-			this.label2.Name = "label2";
-			this.label2.Size = new System.Drawing.Size(73, 16);
-			this.label2.TabIndex = 34;
-			this.label2.Text = "Proveedor";
+			this.txtNotas.Location = new System.Drawing.Point(106, 176);
+			this.txtNotas.Multiline = true;
+			this.txtNotas.Name = "txtNotas";
+			this.txtNotas.Size = new System.Drawing.Size(169, 86);
+			this.txtNotas.TabIndex = 31;
 			// 
-			// txtProveedor
+			// label3
 			// 
-			this.txtProveedor.Location = new System.Drawing.Point(106, 115);
-			this.txtProveedor.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.txtProveedor.Name = "txtProveedor";
-			this.txtProveedor.ReadOnly = true;
-			this.txtProveedor.Size = new System.Drawing.Size(169, 23);
-			this.txtProveedor.TabIndex = 33;
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(13, 354);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(61, 16);
+			this.label3.TabIndex = 35;
+			this.label3.Text = "Subtotal";
+			// 
+			// txtSubtotal
+			// 
+			this.txtSubtotal.Location = new System.Drawing.Point(106, 351);
+			this.txtSubtotal.Name = "txtSubtotal";
+			this.txtSubtotal.ReadOnly = true;
+			this.txtSubtotal.Size = new System.Drawing.Size(169, 23);
+			this.txtSubtotal.TabIndex = 36;
 			// 
 			// Venta
 			// 
@@ -470,8 +491,6 @@
         private System.Windows.Forms.DataGridView dgvDetalleVenta;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.TextBox txtNotas;
-        private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colProducto;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colProveedor;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
@@ -501,5 +520,9 @@
 		private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.TextBox txtProveedor;
+		private System.Windows.Forms.TextBox txtNotas;
+		private System.Windows.Forms.Label label1;
+		private System.Windows.Forms.TextBox txtSubtotal;
+		private System.Windows.Forms.Label label3;
 	}
 }
