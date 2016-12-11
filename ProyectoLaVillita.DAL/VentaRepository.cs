@@ -34,12 +34,13 @@ namespace ProyectoLaVillita.DAL
                     List<VentaDTO> ventas = new List<VentaDTO>();
                     for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
                     {
-                        VentaDTO ven = new VentaDTO()
-                        {
-                            idVenta = Convert.ToInt32(ds.Tables[0].Rows[i]["idVenta"]),
-                            total = Convert.ToInt32(ds.Tables[0].Rows[i]["total"]),
-                            notas = ds.Tables[0].Rows[i]["notas"].ToString()
-                        };
+						VentaDTO ven = new VentaDTO()
+						{
+							idVenta = Convert.ToInt32(ds.Tables[0].Rows[i]["idVenta"]),
+							idUsuario = Convert.ToInt32(ds.Tables[0].Rows[i]["idUsuario"]),
+							total = Convert.ToInt32(ds.Tables[0].Rows[i]["total"]),
+							notas = ds.Tables[0].Rows[i]["notas"].ToString()
+						};
                         ventas.Add(ven);
                     }
                     return ventas.AsQueryable();

@@ -23,6 +23,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
         private VentaDTO _venta;
         private VentaManager _ventaManager;
 		private ProveedorManager _provManager;
+		double total = 0;
         public string titulo="Sistema de inventario \"La Villita\"";
         public Venta()
         {
@@ -161,7 +162,10 @@ namespace ProyectoLaVillita.UI.WF.Productos
 			if (txtProveedor.Text != "" && txtCantidad.Text != "")
 			{
 				dgvDetalleVenta.Rows.Add(producto, proveedor, txtCantidad.Text, subtotal);
-				double total = 0; total += subtotal;
+				for (int i = 0; i < dgvDetalleVenta.Rows.Count - 1; i++)
+				{
+					total += subtotal;
+				} 
 				txtSubtotal.Text = total.ToString();
 			}
 			
@@ -197,6 +201,11 @@ namespace ProyectoLaVillita.UI.WF.Productos
 			{
 				dgvDetalleVenta.Rows.Remove(dgvDetalleVenta.CurrentRow);
 			}
+		}
+
+		private void txtSubtotal_TextChanged(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

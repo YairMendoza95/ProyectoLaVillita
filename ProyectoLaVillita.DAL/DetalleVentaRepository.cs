@@ -40,7 +40,6 @@ namespace ProyectoLaVillita.DAL
                             idVenta = Convert.ToInt32(ds.Tables[0].Rows[i]["IdVenta"]),
                             idProducto = Convert.ToInt32(ds.Tables[0].Rows[i]["idProducto"]),
                             idProveedor = Convert.ToInt32(ds.Tables[0].Rows[i]["idProveedor"]),
-                            fechaVenta = Convert.ToDateTime(ds.Tables[0].Rows[i]["fechaVenta"]).Date,
                             cantidad = Convert.ToInt32(ds.Tables[0].Rows[i]["cantidad"]),
                             total = Convert.ToInt32(ds.Tables[0].Rows[i]["total"])
                         };
@@ -83,7 +82,7 @@ namespace ProyectoLaVillita.DAL
             try
             {
                 conexion.Open();
-                da.InsertCommand = new MySqlCommand("Insert into detalleventa (idVenta, idProducto, idProveedor, fechaVenta, centidad, total) values (" + entidad.idVenta + ", " + entidad.idProducto + ", " + entidad.idProveedor + ", '" + entidad.fechaVenta + "', " + entidad.cantidad + ", " + entidad.total + ")", conexion);
+                da.InsertCommand = new MySqlCommand("Insert into detalleventa (idVenta, idProducto, idProveedor, cantidad, total) values (" + entidad.idVenta + ", " + entidad.idProducto + ", " + entidad.idProveedor + ", " + entidad.cantidad + ", " + entidad.total + ")", conexion);
                 int afectados = da.InsertCommand.ExecuteNonQuery();
                 conexion.Close();
                 if (afectados > 0)
@@ -104,7 +103,7 @@ namespace ProyectoLaVillita.DAL
             try
             {
                 conexion.Open();
-                da.UpdateCommand = new MySqlCommand("Update detalleventa set idVenta = " + entidad.idVenta + ", idProducto = " + entidad.idProducto + ", idProveedor = " + entidad.idProveedor + ", fechaVenta = '" + entidad.fechaVenta + ", cantidad = " + entidad.cantidad + ", total = " + entidad.total + " where idDetalleVenta =" + entidad.idDetalleVenta, conexion);
+                da.UpdateCommand = new MySqlCommand("Update detalleventa set idVenta = " + entidad.idVenta + ", idProducto = " + entidad.idProducto + ", idProveedor = " + entidad.idProveedor + ", cantidad = " + entidad.cantidad + ", total = " + entidad.total + " where idDetalleVenta =" + entidad.idDetalleVenta, conexion);
                 int afectados = da.UpdateCommand.ExecuteNonQuery();
                 conexion.Close();
                 if (afectados > 0)

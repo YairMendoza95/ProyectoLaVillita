@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.btnSalir = new System.Windows.Forms.Button();
 			this.btnAgregar = new System.Windows.Forms.Button();
 			this.label6 = new System.Windows.Forms.Label();
@@ -208,6 +208,7 @@
 			this.txtSubtotal.ReadOnly = true;
 			this.txtSubtotal.Size = new System.Drawing.Size(169, 23);
 			this.txtSubtotal.TabIndex = 36;
+			this.txtSubtotal.TextChanged += new System.EventHandler(this.txtSubtotal_TextChanged);
 			// 
 			// label3
 			// 
@@ -453,9 +454,9 @@
 			// colSubtotal
 			// 
 			this.colSubtotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			dataGridViewCellStyle2.Format = "C2";
-			dataGridViewCellStyle2.NullValue = null;
-			this.colSubtotal.DefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle3.Format = "C2";
+			dataGridViewCellStyle3.NullValue = null;
+			this.colSubtotal.DefaultCellStyle = dataGridViewCellStyle3;
 			this.colSubtotal.HeaderText = "Subtotal";
 			this.colSubtotal.Name = "colSubtotal";
 			// 
