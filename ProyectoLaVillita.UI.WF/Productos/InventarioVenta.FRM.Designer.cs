@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.label13 = new System.Windows.Forms.Label();
 			this.label11 = new System.Windows.Forms.Label();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
 			this.cmbProveedores = new System.Windows.Forms.ComboBox();
@@ -82,7 +83,6 @@
 			this.txtIngresarNombre = new System.Windows.Forms.TextBox();
 			this.btnBuscar = new System.Windows.Forms.Button();
 			this.dgvProductos = new System.Windows.Forms.DataGridView();
-			this.label13 = new System.Windows.Forms.Label();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
@@ -110,6 +110,15 @@
 			this.groupBox1.TabIndex = 6;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Inventario de la tienda";
+			// 
+			// label13
+			// 
+			this.label13.AutoSize = true;
+			this.label13.BackColor = System.Drawing.Color.Silver;
+			this.label13.Location = new System.Drawing.Point(719, 28);
+			this.label13.Name = "label13";
+			this.label13.Size = new System.Drawing.Size(0, 16);
+			this.label13.TabIndex = 17;
 			// 
 			// label11
 			// 
@@ -600,15 +609,6 @@
 			this.dgvProductos.TabIndex = 1;
 			this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
 			// 
-			// label13
-			// 
-			this.label13.AutoSize = true;
-			this.label13.BackColor = System.Drawing.Color.Silver;
-			this.label13.Location = new System.Drawing.Point(719, 28);
-			this.label13.Name = "label13";
-			this.label13.Size = new System.Drawing.Size(0, 16);
-			this.label13.TabIndex = 17;
-			// 
 			// InventarioVenta
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -616,6 +616,7 @@
 			this.ClientSize = new System.Drawing.Size(992, 488);
 			this.Controls.Add(this.groupBox1);
 			this.Name = "InventarioVenta";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Sistema de inventario \"La Villita\"";
 			this.Load += new System.EventHandler(this.InventarioVenta_Load);
 			this.groupBox1.ResumeLayout(false);

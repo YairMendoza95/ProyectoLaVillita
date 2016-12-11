@@ -47,9 +47,15 @@ namespace ProyectoLaVillita.UI.WF.Productos
 				cerrarSesiónToolStripMenuItem.Visible = false;
 			}
 			var datos = _prodManager.Productos.ToList();
-			if (datos.Count > 0)
+			List<ProductoDTO> abarrotes = new List<ProductoDTO>();
+			for (int i = 0; i < datos.Count; i++)
 			{
-				cmbProductos.DataSource = datos;
+				if (datos[i].idTipoProducto == 2)
+					abarrotes.Add(datos[i]);
+			}
+			if (abarrotes.Count > 0)
+			{
+				cmbProductos.DataSource = abarrotes;
 				cmbProductos.DisplayMember = "nombre";
 				cmbProductos.ValueMember = "idProducto";
 			}

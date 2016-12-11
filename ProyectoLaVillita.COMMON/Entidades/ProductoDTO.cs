@@ -11,6 +11,7 @@ namespace ProyectoLaVillita.COMMON.Entidades
         public int idProducto { get; set; }
         public string nombre { get; set; }
         public int idProveedor { get; set; }
+		public int idTipoProducto { get; set; }
         public double precioCompra { get; set; }
 		public double precioVenta { get; set; }
         public int stockMax { get; set; }

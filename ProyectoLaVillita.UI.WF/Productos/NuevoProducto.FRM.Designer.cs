@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.cmbTipo = new System.Windows.Forms.ComboBox();
+			this.label4 = new System.Windows.Forms.Label();
 			this.txtVenta = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -73,6 +75,8 @@
 			// groupBox1
 			// 
 			this.groupBox1.BackColor = System.Drawing.Color.SkyBlue;
+			this.groupBox1.Controls.Add(this.cmbTipo);
+			this.groupBox1.Controls.Add(this.label4);
 			this.groupBox1.Controls.Add(this.txtVenta);
 			this.groupBox1.Controls.Add(this.label1);
 			this.groupBox1.Controls.Add(this.menuStrip1);
@@ -92,14 +96,36 @@
 			this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.groupBox1.Location = new System.Drawing.Point(0, 0);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(664, 354);
+			this.groupBox1.Size = new System.Drawing.Size(664, 370);
 			this.groupBox1.TabIndex = 2;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Nuevo producto";
 			// 
+			// cmbTipo
+			// 
+			this.cmbTipo.DisplayMember = "idProveedor";
+			this.cmbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cmbTipo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.cmbTipo.FormattingEnabled = true;
+			this.cmbTipo.ItemHeight = 17;
+			this.cmbTipo.Location = new System.Drawing.Point(313, 148);
+			this.cmbTipo.Name = "cmbTipo";
+			this.cmbTipo.Size = new System.Drawing.Size(162, 25);
+			this.cmbTipo.TabIndex = 26;
+			this.cmbTipo.ValueMember = "idProveedor";
+			// 
+			// label4
+			// 
+			this.label4.AutoSize = true;
+			this.label4.Location = new System.Drawing.Point(184, 150);
+			this.label4.Name = "label4";
+			this.label4.Size = new System.Drawing.Size(35, 16);
+			this.label4.TabIndex = 25;
+			this.label4.Text = "Tipo";
+			// 
 			// txtVenta
 			// 
-			this.txtVenta.Location = new System.Drawing.Point(313, 178);
+			this.txtVenta.Location = new System.Drawing.Point(313, 211);
 			this.txtVenta.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.txtVenta.Name = "txtVenta";
 			this.txtVenta.Size = new System.Drawing.Size(162, 23);
@@ -108,7 +134,7 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.Location = new System.Drawing.Point(184, 181);
+			this.label1.Location = new System.Drawing.Point(184, 214);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(111, 16);
 			this.label1.TabIndex = 23;
@@ -295,7 +321,7 @@
 			// 
 			// txtMinimo
 			// 
-			this.txtMinimo.Location = new System.Drawing.Point(313, 240);
+			this.txtMinimo.Location = new System.Drawing.Point(313, 273);
 			this.txtMinimo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.txtMinimo.Name = "txtMinimo";
 			this.txtMinimo.Size = new System.Drawing.Size(162, 23);
@@ -304,7 +330,7 @@
 			// label8
 			// 
 			this.label8.AutoSize = true;
-			this.label8.Location = new System.Drawing.Point(184, 243);
+			this.label8.Location = new System.Drawing.Point(184, 276);
 			this.label8.Name = "label8";
 			this.label8.Size = new System.Drawing.Size(94, 16);
 			this.label8.TabIndex = 20;
@@ -312,7 +338,7 @@
 			// 
 			// txtMaximo
 			// 
-			this.txtMaximo.Location = new System.Drawing.Point(313, 209);
+			this.txtMaximo.Location = new System.Drawing.Point(313, 242);
 			this.txtMaximo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.txtMaximo.Name = "txtMaximo";
 			this.txtMaximo.Size = new System.Drawing.Size(162, 23);
@@ -321,7 +347,7 @@
 			// label7
 			// 
 			this.label7.AutoSize = true;
-			this.label7.Location = new System.Drawing.Point(184, 212);
+			this.label7.Location = new System.Drawing.Point(184, 245);
 			this.label7.Name = "label7";
 			this.label7.Size = new System.Drawing.Size(99, 16);
 			this.label7.TabIndex = 18;
@@ -340,7 +366,7 @@
 			// btnGuardar
 			// 
 			this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnGuardar.Location = new System.Drawing.Point(156, 294);
+			this.btnGuardar.Location = new System.Drawing.Point(156, 317);
 			this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.btnGuardar.Name = "btnGuardar";
 			this.btnGuardar.Size = new System.Drawing.Size(127, 39);
@@ -352,7 +378,7 @@
 			// btnSalir
 			// 
 			this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnSalir.Location = new System.Drawing.Point(420, 294);
+			this.btnSalir.Location = new System.Drawing.Point(418, 317);
 			this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.btnSalir.Name = "btnSalir";
 			this.btnSalir.Size = new System.Drawing.Size(127, 39);
@@ -385,7 +411,7 @@
 			// 
 			// txtCompra
 			// 
-			this.txtCompra.Location = new System.Drawing.Point(313, 147);
+			this.txtCompra.Location = new System.Drawing.Point(313, 180);
 			this.txtCompra.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.txtCompra.Name = "txtCompra";
 			this.txtCompra.Size = new System.Drawing.Size(162, 23);
@@ -394,7 +420,7 @@
 			// label3
 			// 
 			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(184, 150);
+			this.label3.Location = new System.Drawing.Point(184, 183);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(126, 16);
 			this.label3.TabIndex = 6;
@@ -421,9 +447,10 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(664, 353);
+			this.ClientSize = new System.Drawing.Size(664, 370);
 			this.Controls.Add(this.groupBox1);
 			this.Name = "NuevoProducto";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Sistema de inventario \"La Villita\"";
 			this.Load += new System.EventHandler(this.NuevoProducto_Load);
 			this.groupBox1.ResumeLayout(false);
@@ -474,5 +501,7 @@
 		private System.Windows.Forms.Label label1;
 		public System.Windows.Forms.ComboBox cmbProveedor;
 		private System.Windows.Forms.ToolStripMenuItem cerrarSesiónToolStripMenuItem;
+		public System.Windows.Forms.ComboBox cmbTipo;
+		private System.Windows.Forms.Label label4;
 	}
 }

@@ -43,6 +43,8 @@
 			this.colEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
 			this.btnGuardar = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.txtSubtotal = new System.Windows.Forms.TextBox();
+			this.label3 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.txtProveedor = new System.Windows.Forms.TextBox();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -67,10 +69,8 @@
 			this.modificarUsuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.cambiarDeUsuariioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-			this.label1 = new System.Windows.Forms.Label();
 			this.txtNotas = new System.Windows.Forms.TextBox();
-			this.label3 = new System.Windows.Forms.Label();
-			this.txtSubtotal = new System.Windows.Forms.TextBox();
+			this.label1 = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.dgvDetalleVenta)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
@@ -229,6 +229,23 @@
 			this.groupBox1.TabIndex = 5;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Ventas";
+			// 
+			// txtSubtotal
+			// 
+			this.txtSubtotal.Location = new System.Drawing.Point(106, 351);
+			this.txtSubtotal.Name = "txtSubtotal";
+			this.txtSubtotal.ReadOnly = true;
+			this.txtSubtotal.Size = new System.Drawing.Size(169, 23);
+			this.txtSubtotal.TabIndex = 36;
+			// 
+			// label3
+			// 
+			this.label3.AutoSize = true;
+			this.label3.Location = new System.Drawing.Point(13, 354);
+			this.label3.Name = "label3";
+			this.label3.Size = new System.Drawing.Size(61, 16);
+			this.label3.TabIndex = 35;
+			this.label3.Text = "Subtotal";
 			// 
 			// label2
 			// 
@@ -427,6 +444,14 @@
 			this.cerrarSesiónToolStripMenuItem.Text = "Cerrar sesión";
 			this.cerrarSesiónToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesiónToolStripMenuItem_Click);
 			// 
+			// txtNotas
+			// 
+			this.txtNotas.Location = new System.Drawing.Point(106, 176);
+			this.txtNotas.Multiline = true;
+			this.txtNotas.Name = "txtNotas";
+			this.txtNotas.Size = new System.Drawing.Size(169, 86);
+			this.txtNotas.TabIndex = 31;
+			// 
 			// label1
 			// 
 			this.label1.AutoSize = true;
@@ -436,31 +461,6 @@
 			this.label1.TabIndex = 30;
 			this.label1.Text = "Notas";
 			// 
-			// txtNotas
-			// 
-			this.txtNotas.Location = new System.Drawing.Point(106, 176);
-			this.txtNotas.Multiline = true;
-			this.txtNotas.Name = "txtNotas";
-			this.txtNotas.Size = new System.Drawing.Size(169, 86);
-			this.txtNotas.TabIndex = 31;
-			// 
-			// label3
-			// 
-			this.label3.AutoSize = true;
-			this.label3.Location = new System.Drawing.Point(13, 354);
-			this.label3.Name = "label3";
-			this.label3.Size = new System.Drawing.Size(61, 16);
-			this.label3.TabIndex = 35;
-			this.label3.Text = "Subtotal";
-			// 
-			// txtSubtotal
-			// 
-			this.txtSubtotal.Location = new System.Drawing.Point(106, 351);
-			this.txtSubtotal.Name = "txtSubtotal";
-			this.txtSubtotal.ReadOnly = true;
-			this.txtSubtotal.Size = new System.Drawing.Size(169, 23);
-			this.txtSubtotal.TabIndex = 36;
-			// 
 			// Venta
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -468,6 +468,7 @@
 			this.ClientSize = new System.Drawing.Size(755, 452);
 			this.Controls.Add(this.groupBox1);
 			this.Name = "Venta";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Sistema de inventario \"La Villita\"";
 			this.Load += new System.EventHandler(this.Venta_Load);
 			((System.ComponentModel.ISupportInitialize)(this.dgvDetalleVenta)).EndInit();

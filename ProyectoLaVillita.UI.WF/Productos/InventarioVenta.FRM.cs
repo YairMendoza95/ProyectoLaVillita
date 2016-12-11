@@ -43,12 +43,18 @@ namespace ProyectoLaVillita.UI.WF.Productos
 				cerrarSesiónToolStripMenuItem.Visible = false;
 			}
 			// se crea una variable la cual almacena una lista con todos los registros de la tabla productos en la base de datos
-			var productos = _prodManager.Productos.ToList();
+			List<ProductoDTO> productos = _prodManager.Productos.ToList();
+			List<ProductoDTO> abarrotes = new List<ProductoDTO>();
+			for (int i = 0; i < productos.Count; i++)
+			{
+				if (productos[i].idTipoProducto == 2)
+					abarrotes.Add(productos[i]);
+			}
 			// si la cantidad de registro en la tabla es mayor a 0 
-			if (productos.Count > 0)
+			if (abarrotes.Count > 0)
 			{
 				// se asigna la fuente de donde se van a tomar los datos para llenar la tabla
-				dgvProductos.DataSource = productos;
+				dgvProductos.DataSource = abarrotes;
 				// se asignan las columnas con su nombre y el respectivo campo con el cual va a ser llenado
 				dgvProductos.Columns[0].HeaderText = "Id";
 				dgvProductos.Columns[0].DataPropertyName = "idProducto";
@@ -161,9 +167,13 @@ namespace ProyectoLaVillita.UI.WF.Productos
 
 		private void btnModificar_Click(object sender, EventArgs e)
 		{
+			// se crea una variable tipo lista que almacene los registros de la tabla proveedores
 			List<ProveedorDTO> proveedores = _provManager.Proveedores.ToList();
 			txtProveedor.Visible = false;
+			// se ocultan los botones
+			btnModificar.Visible = false;
 			btnGuardar.Visible = true;
+			//
 			txtNombre.ReadOnly = false;
 			txtProveedor.ReadOnly = false;
 			txtCompra.ReadOnly = false;

@@ -467,6 +467,7 @@
 			this.ClientSize = new System.Drawing.Size(700, 474);
 			this.Controls.Add(this.groupBox1);
 			this.Name = "ModificarUsuario";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Sistema de inventario \"La Villita\"";
 			this.Load += new System.EventHandler(this.ModificarUsuario_Load);
 			this.groupBox1.ResumeLayout(false);

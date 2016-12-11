@@ -21,7 +21,8 @@ namespace ProyectoLaVillita.UI.WF.Productos
         private ProductoManager _prodManager;
         private ProveedorManager _provManager;
         private EntradaDTO _ent;
-		private ProveedorDTO _pro = new ProveedorDTO();
+		private ProveedorDTO _pro;
+		private TipoProductoManager _tipoManager;
         public string titulo = "Sistema de inventario \"La Villita\"";
         public NuevoProducto()
         {
@@ -29,7 +30,9 @@ namespace ProyectoLaVillita.UI.WF.Productos
             _prodManager = new ProductoManager();
             _provManager = new ProveedorManager();
             _ent = new EntradaDTO();
-        }
+			_pro = new ProveedorDTO();
+			_tipoManager = new TipoProductoManager();
+		}
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -50,6 +53,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
 						{
 							nombre = txtNombre.Text,
 							idProveedor = Convert.ToInt32(cmbProveedor.SelectedValue),
+							idTipoProducto = Convert.ToInt32(cmbTipo.SelectedValue),
 							precioCompra = Convert.ToDouble(txtCompra.Text),
 							precioVenta = Convert.ToDouble(txtVenta.Text),
 							stockActual = sta,
@@ -61,6 +65,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
 							txtNombre.Clear();
 							txtCompra.Clear();
 							cmbProveedor.ResetText();
+							cmbTipo.ResetText();
 							txtMaximo.Clear();
 							txtVenta.Clear();
 							txtMinimo.Clear();
@@ -97,7 +102,13 @@ namespace ProyectoLaVillita.UI.WF.Productos
 				cmbProveedor.DisplayMember = "nombreProveedor";
 				cmbProveedor.ValueMember = "idProveedor";
 			}
-			
+			List<TipoProductoDTO> tipo = _tipoManager.Tipos.ToList();
+			if(datos.Count>0)
+			{
+				cmbTipo.DataSource = tipo;
+				cmbTipo.DisplayMember = "nombre";
+				cmbTipo.ValueMember = "idTipoProducto";
+			}
 		}
 
 		private void inventarioToolStripMenuItem2_Click(object sender, EventArgs e)

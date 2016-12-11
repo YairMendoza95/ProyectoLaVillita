@@ -387,6 +387,7 @@
 			this.ClientSize = new System.Drawing.Size(701, 472);
 			this.Controls.Add(this.groupBox1);
 			this.Name = "ModificarRenta";
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Sistema de inventario \"La Villita\"";
 			this.Load += new System.EventHandler(this.ModificarRenta_Load);
 			this.groupBox1.ResumeLayout(false);
