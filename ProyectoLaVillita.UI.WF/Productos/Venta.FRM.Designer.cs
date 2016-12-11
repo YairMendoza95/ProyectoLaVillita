@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.btnSalir = new System.Windows.Forms.Button();
 			this.btnAgregar = new System.Windows.Forms.Button();
 			this.label6 = new System.Windows.Forms.Label();
@@ -453,9 +453,9 @@
 			// colSubtotal
 			// 
 			this.colSubtotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			dataGridViewCellStyle3.Format = "C2";
-			dataGridViewCellStyle3.NullValue = null;
-			this.colSubtotal.DefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle2.Format = "C2";
+			dataGridViewCellStyle2.NullValue = null;
+			this.colSubtotal.DefaultCellStyle = dataGridViewCellStyle2;
 			this.colSubtotal.HeaderText = "Subtotal";
 			this.colSubtotal.Name = "colSubtotal";
 			// 
@@ -465,6 +465,7 @@
 			this.colEliminar.HeaderText = "";
 			this.colEliminar.Name = "colEliminar";
 			this.colEliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.colEliminar.Text = "Eliminar";
 			this.colEliminar.UseColumnTextForButtonValue = true;
 			// 
 			// Venta
