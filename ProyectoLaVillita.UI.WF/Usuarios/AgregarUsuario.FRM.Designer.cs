@@ -277,6 +277,7 @@
 			this.txtConfirmarContraseña.PasswordChar = '*';
 			this.txtConfirmarContraseña.Size = new System.Drawing.Size(170, 23);
 			this.txtConfirmarContraseña.TabIndex = 5;
+			this.txtConfirmarContraseña.UseSystemPasswordChar = true;
 			// 
 			// label4
 			// 
@@ -315,9 +316,9 @@
 			this.txtContraseña.Location = new System.Drawing.Point(313, 159);
 			this.txtContraseña.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.txtContraseña.Name = "txtContraseña";
-			this.txtContraseña.PasswordChar = '*';
 			this.txtContraseña.Size = new System.Drawing.Size(170, 23);
 			this.txtContraseña.TabIndex = 3;
+			this.txtContraseña.UseSystemPasswordChar = true;
 			// 
 			// txtUsuario
 			// 

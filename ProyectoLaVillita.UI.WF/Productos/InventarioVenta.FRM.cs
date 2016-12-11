@@ -21,6 +21,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
 		private ProveedorManager _provManager;
 		private ProductoDTO _prod;
 		public string titulo = "Sistema de inventario \"La VIllita\"";
+		List<ProductoDTO> abarrotes = new List<ProductoDTO>();
 		public InventarioVenta()
 		{
 			InitializeComponent();
@@ -44,7 +45,6 @@ namespace ProyectoLaVillita.UI.WF.Productos
 			}
 			// se crea una variable la cual almacena una lista con todos los registros de la tabla productos en la base de datos
 			List<ProductoDTO> productos = _prodManager.Productos.ToList();
-			List<ProductoDTO> abarrotes = new List<ProductoDTO>();
 			for (int i = 0; i < productos.Count; i++)
 			{
 				if (productos[i].idTipoProducto == 2)
@@ -215,7 +215,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
 							{
 								MessageBox.Show("Producto actualizado satisfactoriamente", titulo, MessageBoxButtons.OK, MessageBoxIcon.Information);
 							}
-							dgvProductos.DataSource = _prodManager.Productos.ToList();
+							dgvProductos.DataSource = abarrotes;
 							btnEliminar.Visible = true;
 							txtActual.Clear();
 							txtCompra.Clear();
@@ -310,6 +310,14 @@ namespace ProyectoLaVillita.UI.WF.Productos
 				Program.idUsuario = 0;
 				new Inicio().Show();
 			}
+		}
+
+		private void txtActual_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (Char.IsControl(e.KeyChar) || Char.IsControl(e.KeyChar))
+				e.Handled = false;
+			else
+				e.Handled = true;
 		}
 	}
 }

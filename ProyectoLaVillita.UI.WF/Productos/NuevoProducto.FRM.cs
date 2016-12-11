@@ -190,5 +190,36 @@ namespace ProyectoLaVillita.UI.WF.Productos
 				new Inicio().Show();
 			}
 		}
+		bool bandera = true;
+		private void txtCompra_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != 46)
+			{
+				e.Handled = true;
+			}
+			else if (e.KeyChar == 46)
+			{
+				if (bandera)
+				{
+					bandera = false;
+				}
+				else
+				{
+					e.Handled = true;
+				}
+			}
+		}
+
+		private void txtMinimo_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if(Char.IsDigit(e.KeyChar)&&Char.IsControl(e.KeyChar))
+			{
+				e.Handled = false;
+			}
+			else
+			{
+				e.Handled = true;
+			}
+		}
 	}
 }

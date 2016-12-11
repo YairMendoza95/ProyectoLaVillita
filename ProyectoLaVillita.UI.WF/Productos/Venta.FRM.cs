@@ -190,5 +190,14 @@ namespace ProyectoLaVillita.UI.WF.Productos
                 throw;
             }
         }
-    }
+
+		private void dgvDetalleVenta_CellClick(object sender, DataGridViewCellEventArgs e)
+		{
+			if (e.ColumnIndex == 4)
+			{
+				cmbProductos.SelectedValue = dgvDetalleVenta.SelectedRows[0].Cells[0].Value.ToString();
+				txtProveedor.Text = _provManager.BuscarProveedorPorId(_prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).idProveedor).nombreProveedor.ToString();
+			}
+		}
+	}
 }

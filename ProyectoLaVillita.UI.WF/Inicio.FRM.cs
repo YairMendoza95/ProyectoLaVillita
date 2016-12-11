@@ -49,5 +49,26 @@ namespace ProyectoLaVillita.UI.WF
 				txtContraseña.Focus();
 			}
         }
+
+		private void txtContraseña_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if(e.KeyChar==Convert.ToChar(Keys.Enter))
+			{
+				if (_userManage.Login(txtUsuario.Text, txtContraseña.Text) && Program.idUsuario == 0)
+				{
+					Program.idUsuario = _userManage.BuscarUsuarioPorNombre(txtUsuario.Text).idUsuario;
+					new Venta().Show();
+					this.Hide();
+
+					MessageBox.Show("¡Bienvenido! " + txtUsuario.Text, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+				}
+				else
+				{
+					MessageBox.Show("El usuario no existe", titulo, MessageBoxButtons.OK, MessageBoxIcon.Error);
+					txtContraseña.Clear();
+					txtContraseña.Focus();
+				}
+			}
+		}
 	}
 }

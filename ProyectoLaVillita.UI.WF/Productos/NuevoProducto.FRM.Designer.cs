@@ -130,6 +130,7 @@
 			this.txtVenta.Name = "txtVenta";
 			this.txtVenta.Size = new System.Drawing.Size(162, 23);
 			this.txtVenta.TabIndex = 24;
+			this.txtVenta.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCompra_KeyPress);
 			// 
 			// label1
 			// 
@@ -326,6 +327,7 @@
 			this.txtMinimo.Name = "txtMinimo";
 			this.txtMinimo.Size = new System.Drawing.Size(162, 23);
 			this.txtMinimo.TabIndex = 21;
+			this.txtMinimo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMinimo_KeyPress);
 			// 
 			// label8
 			// 
@@ -343,6 +345,7 @@
 			this.txtMaximo.Name = "txtMaximo";
 			this.txtMaximo.Size = new System.Drawing.Size(162, 23);
 			this.txtMaximo.TabIndex = 19;
+			this.txtMaximo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMinimo_KeyPress);
 			// 
 			// label7
 			// 
@@ -416,6 +419,7 @@
 			this.txtCompra.Name = "txtCompra";
 			this.txtCompra.Size = new System.Drawing.Size(162, 23);
 			this.txtCompra.TabIndex = 7;
+			this.txtCompra.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCompra_KeyPress);
 			// 
 			// label3
 			// 

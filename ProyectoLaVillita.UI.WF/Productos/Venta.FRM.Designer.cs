@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.btnSalir = new System.Windows.Forms.Button();
 			this.btnAgregar = new System.Windows.Forms.Button();
 			this.label6 = new System.Windows.Forms.Label();
@@ -36,11 +37,6 @@
 			this.cmbProductos = new System.Windows.Forms.ComboBox();
 			this.Cantidad = new System.Windows.Forms.Label();
 			this.dgvDetalleVenta = new System.Windows.Forms.DataGridView();
-			this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
 			this.btnGuardar = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.txtSubtotal = new System.Windows.Forms.TextBox();
@@ -71,6 +67,11 @@
 			this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.txtNotas = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
+			this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dgvDetalleVenta)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
@@ -159,37 +160,7 @@
 			this.dgvDetalleVenta.Name = "dgvDetalleVenta";
 			this.dgvDetalleVenta.Size = new System.Drawing.Size(447, 318);
 			this.dgvDetalleVenta.TabIndex = 28;
-			// 
-			// colProducto
-			// 
-			this.colProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.colProducto.HeaderText = "Producto";
-			this.colProducto.Name = "colProducto";
-			// 
-			// colProveedor
-			// 
-			this.colProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.colProveedor.HeaderText = "Proveedor";
-			this.colProveedor.Name = "colProveedor";
-			// 
-			// colCantidad
-			// 
-			this.colCantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.colCantidad.HeaderText = "Cantidad";
-			this.colCantidad.Name = "colCantidad";
-			// 
-			// colSubtotal
-			// 
-			this.colSubtotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.colSubtotal.HeaderText = "Subtotal";
-			this.colSubtotal.Name = "colSubtotal";
-			// 
-			// colEliminar
-			// 
-			this.colEliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.colEliminar.HeaderText = "";
-			this.colEliminar.Name = "colEliminar";
-			this.colEliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.dgvDetalleVenta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalleVenta_CellClick);
 			// 
 			// btnGuardar
 			// 
@@ -461,6 +432,41 @@
 			this.label1.TabIndex = 30;
 			this.label1.Text = "Notas";
 			// 
+			// colProducto
+			// 
+			this.colProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.colProducto.HeaderText = "Producto";
+			this.colProducto.Name = "colProducto";
+			// 
+			// colProveedor
+			// 
+			this.colProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.colProveedor.HeaderText = "Proveedor";
+			this.colProveedor.Name = "colProveedor";
+			// 
+			// colCantidad
+			// 
+			this.colCantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.colCantidad.HeaderText = "Cantidad";
+			this.colCantidad.Name = "colCantidad";
+			// 
+			// colSubtotal
+			// 
+			this.colSubtotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			dataGridViewCellStyle3.Format = "C2";
+			dataGridViewCellStyle3.NullValue = null;
+			this.colSubtotal.DefaultCellStyle = dataGridViewCellStyle3;
+			this.colSubtotal.HeaderText = "Subtotal";
+			this.colSubtotal.Name = "colSubtotal";
+			// 
+			// colEliminar
+			// 
+			this.colEliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.colEliminar.HeaderText = "";
+			this.colEliminar.Name = "colEliminar";
+			this.colEliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.colEliminar.UseColumnTextForButtonValue = true;
+			// 
 			// Venta
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -492,11 +498,6 @@
         private System.Windows.Forms.DataGridView dgvDetalleVenta;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.GroupBox groupBox1;
-		private System.Windows.Forms.DataGridViewTextBoxColumn colProducto;
-		private System.Windows.Forms.DataGridViewTextBoxColumn colProveedor;
-		private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
-		private System.Windows.Forms.DataGridViewTextBoxColumn colSubtotal;
-		private System.Windows.Forms.DataGridViewButtonColumn colEliminar;
 		private System.Windows.Forms.MenuStrip menuStrip1;
 		private System.Windows.Forms.ToolStripMenuItem tiendaDeAbarrotesToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;
@@ -525,5 +526,10 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.TextBox txtSubtotal;
 		private System.Windows.Forms.Label label3;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colProducto;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colProveedor;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colSubtotal;
+		private System.Windows.Forms.DataGridViewButtonColumn colEliminar;
 	}
 }

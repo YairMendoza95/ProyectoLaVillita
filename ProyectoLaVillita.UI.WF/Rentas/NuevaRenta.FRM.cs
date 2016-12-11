@@ -20,10 +20,12 @@ namespace ProyectoLaVillita.UI.WF.Rentas
         public string titulo = "Sistema de inventario \"La Villita\"";
         private RentaDTO _renta;
         private RentaManager _rentaManager;
+		private ProductoManager _prodManager;
         public NuevaRenta()
         {
             InitializeComponent();
             _rentaManager = new RentaManager();
+			_prodManager = new ProductoManager();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -113,6 +115,19 @@ namespace ProyectoLaVillita.UI.WF.Rentas
 			{
 				usuariosToolStripMenuItem.Visible = true;
 				cerrarSesiónToolStripMenuItem.Visible = false;
+			}
+			List<ProductoDTO> productos = _prodManager.Productos.ToList();
+			List<ProductoDTO> alquiler = new List<ProductoDTO>();
+			for (int i = 0; i < productos.Count; i++)
+			{
+				if (productos[i].idTipoProducto == 1)
+					alquiler.Add(productos[i]);
+			}
+			if(alquiler.Count>0)
+			{
+				cmbProductos.DataSource = alquiler;
+				cmbProductos.DisplayMember = "nombre";
+				cmbProductos.ValueMember = "idProducto";
 			}
 		}
 

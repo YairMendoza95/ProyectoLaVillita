@@ -98,9 +98,10 @@
 			this.txtContraseña.Location = new System.Drawing.Point(211, 148);
 			this.txtContraseña.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.txtContraseña.Name = "txtContraseña";
-			this.txtContraseña.PasswordChar = '*';
 			this.txtContraseña.Size = new System.Drawing.Size(170, 23);
 			this.txtContraseña.TabIndex = 2;
+			this.txtContraseña.UseSystemPasswordChar = true;
+			this.txtContraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContraseña_KeyPress);
 			// 
 			// txtUsuario
 			// 

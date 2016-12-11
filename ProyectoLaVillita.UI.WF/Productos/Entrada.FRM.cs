@@ -211,5 +211,36 @@ namespace ProyectoLaVillita.UI.WF.Productos
 		{
 			txtProveedor.Text = _provManager.BuscarProveedorPorId(_prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).idProveedor).nombreProveedor.ToString();
 		}
+
+		private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar))
+			{
+				e.Handled = false;
+			}
+			else
+			{
+				e.Handled = true;
+			}
+		}
+		bool bandera = true;
+		private void txtTotal_KeyPress_1(object sender, KeyPressEventArgs e)
+		{
+			if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != 46)
+			{
+				e.Handled = true;
+			}
+			else if (e.KeyChar == 46)
+			{
+				if (bandera)
+				{
+					bandera = false;
+				}
+				else
+				{
+					e.Handled = true;
+				}
+			}
+		}
 	}
 }

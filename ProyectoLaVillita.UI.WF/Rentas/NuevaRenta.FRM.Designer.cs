@@ -177,14 +177,14 @@
 			// entradasToolStripMenuItem
 			// 
 			this.entradasToolStripMenuItem.Name = "entradasToolStripMenuItem";
-			this.entradasToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+			this.entradasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.entradasToolStripMenuItem.Text = "Entradas";
 			this.entradasToolStripMenuItem.Click += new System.EventHandler(this.entradasToolStripMenuItem_Click);
 			// 
 			// ventasToolStripMenuItem
 			// 
 			this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-			this.ventasToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
+			this.ventasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.ventasToolStripMenuItem.Text = "Ventas";
 			this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
 			// 
@@ -203,7 +203,7 @@
             this.datosDelClienteToolStripMenuItem,
             this.modificarRentaToolStripMenuItem});
 			this.nuevaRentaToolStripMenuItem.Name = "nuevaRentaToolStripMenuItem";
-			this.nuevaRentaToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+			this.nuevaRentaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
 			this.nuevaRentaToolStripMenuItem.Text = "Renta";
 			// 
 			// datosDelClienteToolStripMenuItem
@@ -223,7 +223,7 @@
 			// inventarioToolStripMenuItem1
 			// 
 			this.inventarioToolStripMenuItem1.Name = "inventarioToolStripMenuItem1";
-			this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(137, 22);
+			this.inventarioToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
 			this.inventarioToolStripMenuItem1.Text = "Inventario";
 			this.inventarioToolStripMenuItem1.Click += new System.EventHandler(this.inventarioToolStripMenuItem1_Click);
 			// 
@@ -294,7 +294,7 @@
 			// btnGuardar
 			// 
 			this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnGuardar.Location = new System.Drawing.Point(66, 297);
+			this.btnGuardar.Location = new System.Drawing.Point(71, 297);
 			this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.btnGuardar.Name = "btnGuardar";
 			this.btnGuardar.Size = new System.Drawing.Size(111, 39);
@@ -353,12 +353,12 @@
 			// 
 			// cmbProductos
 			// 
+			this.cmbProductos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.cmbProductos.FormattingEnabled = true;
 			this.cmbProductos.Location = new System.Drawing.Point(88, 92);
 			this.cmbProductos.Name = "cmbProductos";
 			this.cmbProductos.Size = new System.Drawing.Size(169, 24);
 			this.cmbProductos.TabIndex = 26;
-			this.cmbProductos.Text = "--Elige un producto--";
 			// 
 			// txtCantidad
 			// 
@@ -390,7 +390,7 @@
 			// btnAgregar
 			// 
 			this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnAgregar.Location = new System.Drawing.Point(0, 250);
+			this.btnAgregar.Location = new System.Drawing.Point(6, 250);
 			this.btnAgregar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.btnAgregar.Name = "btnAgregar";
 			this.btnAgregar.Size = new System.Drawing.Size(111, 39);

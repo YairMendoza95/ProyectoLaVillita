@@ -349,6 +349,7 @@
 			this.txtTotal.Name = "txtTotal";
 			this.txtTotal.Size = new System.Drawing.Size(121, 23);
 			this.txtTotal.TabIndex = 10;
+			this.txtTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTotal_KeyPress_1);
 			// 
 			// txtCantidad
 			// 
@@ -357,6 +358,7 @@
 			this.txtCantidad.Name = "txtCantidad";
 			this.txtCantidad.Size = new System.Drawing.Size(121, 23);
 			this.txtCantidad.TabIndex = 9;
+			this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
 			// 
 			// dtpFecheEntrada
 			// 

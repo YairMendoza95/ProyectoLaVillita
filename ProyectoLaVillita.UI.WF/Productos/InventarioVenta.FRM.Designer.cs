@@ -177,6 +177,7 @@
 			this.txtMaximo.ReadOnly = true;
 			this.txtMaximo.Size = new System.Drawing.Size(100, 23);
 			this.txtMaximo.TabIndex = 18;
+			this.txtMaximo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtActual_KeyPress);
 			// 
 			// label12
 			// 
@@ -207,6 +208,7 @@
 			this.txtMinimo.ReadOnly = true;
 			this.txtMinimo.Size = new System.Drawing.Size(100, 23);
 			this.txtMinimo.TabIndex = 15;
+			this.txtMinimo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtActual_KeyPress);
 			// 
 			// label10
 			// 
@@ -240,6 +242,7 @@
 			this.txtActual.ReadOnly = true;
 			this.txtActual.Size = new System.Drawing.Size(100, 23);
 			this.txtActual.TabIndex = 11;
+			this.txtActual.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtActual_KeyPress);
 			// 
 			// label8
 			// 
