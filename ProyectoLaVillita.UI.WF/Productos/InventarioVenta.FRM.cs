@@ -33,7 +33,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
 		{
 			// Permisos
 
-			if (Program.idUsuario != 1) // si idUsuario es diferente de 1 (administrador) oculta el menu de usuarios y hace visible el boton de Cerrar sesión
+			if (Program.idTipoUsuario != 1) // si idUsuario es diferente de 1 (administrador) oculta el menu de usuarios y hace visible el boton de Cerrar sesión
 			{
 				usuariosToolStripMenuItem.Visible = false;
 				cerrarSesiónToolStripMenuItem.Visible = true;
@@ -296,7 +296,8 @@ namespace ProyectoLaVillita.UI.WF.Productos
 			if (MessageBox.Show("¿Está seguro quq quiere cerrar sesión?", titulo, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
 			{
 				this.Hide();
-				Program.idUsuario = 0;
+				Program.idTipoUsuario = 0;
+				Program.usuario = 0;
 				new Inicio().Show();
 			}
 		}
@@ -307,7 +308,8 @@ namespace ProyectoLaVillita.UI.WF.Productos
 			if (MessageBox.Show("¿Está seguro quq quiere cerrar sesión?", titulo, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
 			{
 				this.Hide();
-				Program.idUsuario = 0;
+				Program.idTipoUsuario = 0;
+				Program.usuario = 0;
 				new Inicio().Show();
 			}
 		}

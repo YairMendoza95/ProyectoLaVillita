@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProyectoLaVillita.BIZ;
 using ProyectoLaVillita.UI.WF.Productos;
+using ProyectoLaVillita.COMMON.Entidades;
 
 namespace ProyectoLaVillita.UI.WF
 {
     public partial class Inicio : Form
     {
         private readonly UsuarioManager _userManage;
+
         public string titulo = "Sistema de inventario \"La VIllita\"";
         public Inicio()
         {
@@ -23,7 +25,13 @@ namespace ProyectoLaVillita.UI.WF
         }
         private void Inicio_Load(object sender, EventArgs e)
         {
-			txtUsuario.Focus();
+			List<UsuarioDTO> usuario = _userManage.Usuarios.ToList();
+			if (usuario.Count > 0)
+			{
+				cmbUsuarios.DataSource = usuario;
+				cmbUsuarios.DisplayMember = "nombreUsuario";
+				cmbUsuarios.ValueMember = "idUsuario";
+			}
 		}
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -34,13 +42,14 @@ namespace ProyectoLaVillita.UI.WF
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-			if (_userManage.Login(txtUsuario.Text, txtContraseña.Text) && Program.idUsuario == 0)
+			if (_userManage.Login(cmbUsuarios.Text, txtContraseña.Text) && Program.idTipoUsuario == 0)
 			{
-				Program.idUsuario = _userManage.BuscarUsuarioPorNombre(txtUsuario.Text).idUsuario;
+				Program.idTipoUsuario = _userManage.BuscarUsuarioPorId(Convert.ToInt32(cmbUsuarios.SelectedValue)).idTipoUsuario;
+				Program.usuario = Convert.ToInt32(cmbUsuarios.SelectedValue);
 				new Venta().Show();
 				this.Hide();
 
-				MessageBox.Show("¡Bienvenido! " + txtUsuario.Text, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+				MessageBox.Show("¡Bienvenido! " + cmbUsuarios.Text, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 			}
 			else
 			{
@@ -54,9 +63,9 @@ namespace ProyectoLaVillita.UI.WF
 		{
 			if(e.KeyChar==Convert.ToChar(Keys.Enter))
 			{
-				if (_userManage.Login(txtUsuario.Text, txtContraseña.Text) && Program.idUsuario == 0)
+				if (_userManage.Login(txtUsuario.Text, txtContraseña.Text) && Program.idTipoUsuario == 0)
 				{
-					Program.idUsuario = _userManage.BuscarUsuarioPorNombre(txtUsuario.Text).idUsuario;
+					Program.idTipoUsuario = _userManage.BuscarUsuarioPorNombre(txtUsuario.Text).idUsuario;
 					new Venta().Show();
 					this.Hide();
 

@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace ProyectoLaVillita.COMMON.Entidades
 {
-    public class UsuarioDTO : BaseDTO
-    {
-        public int idUsuario { get; set; }
-        public string nombreUsuario { get; set; }
-        public string contraseña { get; set; }
+	public class TipoUsuarioDTO : BaseDTO
+	{
 		public int idTipoUsuario { get; set; }
-    }
+		public string nombre { get; set; }
+	}
 }

@@ -20,10 +20,12 @@ namespace ProyectoLaVillita.UI.WF.Usuarios
         public string titulo = "Sistema de inventario \"La Villita\"";
         private UsuarioDTO _user;
         private UsuarioManager _userManager;
+		private TipoUsuarioManager _tiposManager;
         public AgregarUsuario()
         {
             InitializeComponent();
             _userManager = new UsuarioManager();
+			_tiposManager = new TipoUsuarioManager();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -33,11 +35,12 @@ namespace ProyectoLaVillita.UI.WF.Usuarios
                 
                 if (_user == null)
                 {
-                    _user = new UsuarioDTO()
-                    {
-                        nombreUsuario = txtUsuario.Text.ToString(),
-                        contraseña = txtContraseña.Text.ToString()
-                    };
+					_user = new UsuarioDTO()
+					{
+						nombreUsuario = txtUsuario.Text.ToString(),
+						contraseña = txtContraseña.Text.ToString(),
+						idTipoUsuario = Convert.ToInt32(cmbTiposUsuarios.SelectedValue)
+					};
                     if (!txtConfirmarContraseña.Text.Equals(txtContraseña.Text))
                     {
                         MessageBox.Show("Las contraseñas no coinciden", titulo, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -52,10 +55,12 @@ namespace ProyectoLaVillita.UI.WF.Usuarios
                         txtConfirmarContraseña.Clear();
                         txtContraseña.Clear();
                         txtUsuario.Clear();
+						cmbTiposUsuarios.ResetText();
                         if (MessageBox.Show("¿Desea iniciar sesión con el nuevo usuario?", titulo, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
 							this.Hide();
-							Program.idUsuario = 0;
+							Program.idTipoUsuario = 0;
+							Program.usuario = 0; 
 							new Inicio().Show();
                         }
                     }
@@ -138,8 +143,20 @@ namespace ProyectoLaVillita.UI.WF.Usuarios
 			if (MessageBox.Show("¿Está seguro quq quiere cerrar sesión?", titulo, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
 			{
 				this.Hide();
-				Program.idUsuario = 0;
+				Program.idTipoUsuario = 0;
+				Program.usuario = 0;
 				new Inicio().Show();
+			}
+		}
+
+		private void AgregarUsuario_Load(object sender, EventArgs e)
+		{
+			List<TipoUsuarioDTO> tipoU = _tiposManager.TiposUsuario.ToList();
+			if (tipoU.Count > 0)
+			{
+				cmbTiposUsuarios.DataSource = tipoU;
+				cmbTiposUsuarios.DisplayMember = "nombre";
+				cmbTiposUsuarios.ValueMember = "idTipoUsuario";
 			}
 		}
 	}

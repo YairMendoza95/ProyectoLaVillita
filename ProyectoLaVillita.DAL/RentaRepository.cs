@@ -37,6 +37,8 @@ namespace ProyectoLaVillita.DAL
 						RentaDTO ren = new RentaDTO()
 						{
 							idRenta = Convert.ToInt32(ds.Tables[0].Rows[i]["idRenta"]),
+							idUsuario = Convert.ToInt32(ds.Tables[0].Rows[i]["idUsuario"]),
+							idTipoUsuario = Convert.ToInt32(ds.Tables[0].Rows[i]["idTipoUsuario"]),
 							idCliente = Convert.ToInt32(ds.Tables[0].Rows[i]["idCliente"]),
 							fechaInicio = ds.Tables[0].Rows[i]["fechaInicio"].ToString(),
 							fechaVencimiento = ds.Tables[0].Rows[i]["fechaVencimiento"].ToString(),
@@ -81,7 +83,7 @@ namespace ProyectoLaVillita.DAL
             try
             {
                 conexion.Open();
-				da.InsertCommand = new MySqlCommand("Insert into renta (idCliente, fechaInicio, fechaVencimiento, total, notas) values (" + entidad.idCliente + ", '" + entidad.fechaInicio + "', '" + entidad.fechaVencimiento + "', " + entidad.total + ", '" + entidad.notas + "')", conexion);
+				da.InsertCommand = new MySqlCommand("Insert into renta (idUsuario, idTipoUsuario, idCliente, fechaInicio, fechaVencimiento, total, notas) values (" + entidad.idUsuario + ", " + entidad.idTipoUsuario + ", " + entidad.idCliente + ", '" + entidad.fechaInicio + "', '" + entidad.fechaVencimiento + "', " + entidad.total + ", '" + entidad.notas + "')", conexion);
                 int afectados = da.InsertCommand.ExecuteNonQuery();
                 conexion.Close();
                 if (afectados > 0)
@@ -102,7 +104,7 @@ namespace ProyectoLaVillita.DAL
             try
             {
                 conexion.Open();
-				da.UpdateCommand = new MySqlCommand("Update renta set idCliente = " + entidad.idCliente + ", fechaInicio = '" + entidad.fechaInicio + "', fechaVencimiento = '" + entidad.fechaVencimiento + "', total = " + entidad.total + ", notas = '" + entidad.notas + "' where idRenta = " + entidad.idRenta, conexion);
+				da.UpdateCommand = new MySqlCommand("Update renta set idUsuario = " + entidad.idUsuario + ", idTipoUsuario = " + entidad.idTipoUsuario + ", idCliente = " + entidad.idCliente + ", fechaInicio = '" + entidad.fechaInicio + "', fechaVencimiento = '" + entidad.fechaVencimiento + "', total = " + entidad.total + ", notas = '" + entidad.notas + "' where idRenta = " + entidad.idRenta, conexion);
                 int afectados = da.UpdateCommand.ExecuteNonQuery();
                 conexion.Close();
                 if (afectados > 0)

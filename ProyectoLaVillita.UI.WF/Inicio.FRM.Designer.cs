@@ -33,21 +33,21 @@
 			this.label3 = new System.Windows.Forms.Label();
 			this.btnIngresar = new System.Windows.Forms.Button();
 			this.txtContraseña = new System.Windows.Forms.TextBox();
-			this.txtUsuario = new System.Windows.Forms.TextBox();
 			this.btnSalir = new System.Windows.Forms.Button();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
+			this.cmbUsuarios = new System.Windows.Forms.ComboBox();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.cmbUsuarios);
 			this.groupBox1.Controls.Add(this.pictureBox1);
 			this.groupBox1.Controls.Add(this.label3);
 			this.groupBox1.Controls.Add(this.btnIngresar);
 			this.groupBox1.Controls.Add(this.txtContraseña);
-			this.groupBox1.Controls.Add(this.txtUsuario);
 			this.groupBox1.Controls.Add(this.btnSalir);
 			this.groupBox1.Controls.Add(this.label2);
 			this.groupBox1.Controls.Add(this.label1);
@@ -103,15 +103,6 @@
 			this.txtContraseña.UseSystemPasswordChar = true;
 			this.txtContraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContraseña_KeyPress);
 			// 
-			// txtUsuario
-			// 
-			this.txtUsuario.Location = new System.Drawing.Point(212, 103);
-			this.txtUsuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.txtUsuario.Name = "txtUsuario";
-			this.txtUsuario.Size = new System.Drawing.Size(170, 23);
-			this.txtUsuario.TabIndex = 1;
-			this.txtUsuario.Enter += new System.EventHandler(this.Inicio_Load);
-			// 
 			// btnSalir
 			// 
 			this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -144,6 +135,15 @@
 			this.label1.TabIndex = 0;
 			this.label1.Text = "Usuario";
 			// 
+			// cmbUsuarios
+			// 
+			this.cmbUsuarios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cmbUsuarios.FormattingEnabled = true;
+			this.cmbUsuarios.Location = new System.Drawing.Point(211, 106);
+			this.cmbUsuarios.Name = "cmbUsuarios";
+			this.cmbUsuarios.Size = new System.Drawing.Size(170, 24);
+			this.cmbUsuarios.TabIndex = 46;
+			// 
 			// Inicio
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -168,9 +168,9 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnIngresar;
         private System.Windows.Forms.TextBox txtContraseña;
-        private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-    }
+		private System.Windows.Forms.ComboBox cmbUsuarios;
+	}
 }

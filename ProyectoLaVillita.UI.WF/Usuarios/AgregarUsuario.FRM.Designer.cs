@@ -60,6 +60,8 @@
 			this.btnSalir = new System.Windows.Forms.Button();
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
+			this.label5 = new System.Windows.Forms.Label();
+			this.cmbTiposUsuarios = new System.Windows.Forms.ComboBox();
 			this.groupBox1.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -67,6 +69,8 @@
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.cmbTiposUsuarios);
+			this.groupBox1.Controls.Add(this.label5);
 			this.groupBox1.Controls.Add(this.menuStrip1);
 			this.groupBox1.Controls.Add(this.pictureBox1);
 			this.groupBox1.Controls.Add(this.txtConfirmarContraseña);
@@ -83,7 +87,7 @@
 			this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-			this.groupBox1.Size = new System.Drawing.Size(495, 346);
+			this.groupBox1.Size = new System.Drawing.Size(498, 373);
 			this.groupBox1.TabIndex = 4;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Agregar Usuario";
@@ -98,7 +102,7 @@
             this.usuariosToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(3, 20);
 			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new System.Drawing.Size(489, 25);
+			this.menuStrip1.Size = new System.Drawing.Size(492, 25);
 			this.menuStrip1.TabIndex = 12;
 			this.menuStrip1.Text = "menuStrip1";
 			// 
@@ -271,7 +275,7 @@
 			// 
 			// txtConfirmarContraseña
 			// 
-			this.txtConfirmarContraseña.Location = new System.Drawing.Point(313, 201);
+			this.txtConfirmarContraseña.Location = new System.Drawing.Point(315, 239);
 			this.txtConfirmarContraseña.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.txtConfirmarContraseña.Name = "txtConfirmarContraseña";
 			this.txtConfirmarContraseña.PasswordChar = '*';
@@ -283,7 +287,7 @@
 			// 
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label4.Location = new System.Drawing.Point(140, 201);
+			this.label4.Location = new System.Drawing.Point(142, 239);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(171, 20);
 			this.label4.TabIndex = 4;
@@ -302,7 +306,7 @@
 			// btnGuardar
 			// 
 			this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnGuardar.Location = new System.Drawing.Point(108, 273);
+			this.btnGuardar.Location = new System.Drawing.Point(108, 308);
 			this.btnGuardar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.btnGuardar.Name = "btnGuardar";
 			this.btnGuardar.Size = new System.Drawing.Size(127, 39);
@@ -313,7 +317,7 @@
 			// 
 			// txtContraseña
 			// 
-			this.txtContraseña.Location = new System.Drawing.Point(313, 159);
+			this.txtContraseña.Location = new System.Drawing.Point(315, 197);
 			this.txtContraseña.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.txtContraseña.Name = "txtContraseña";
 			this.txtContraseña.Size = new System.Drawing.Size(170, 23);
@@ -322,7 +326,7 @@
 			// 
 			// txtUsuario
 			// 
-			this.txtUsuario.Location = new System.Drawing.Point(313, 116);
+			this.txtUsuario.Location = new System.Drawing.Point(315, 154);
 			this.txtUsuario.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.txtUsuario.Name = "txtUsuario";
 			this.txtUsuario.Size = new System.Drawing.Size(170, 23);
@@ -331,7 +335,7 @@
 			// btnSalir
 			// 
 			this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnSalir.Location = new System.Drawing.Point(284, 273);
+			this.btnSalir.Location = new System.Drawing.Point(284, 308);
 			this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.btnSalir.Name = "btnSalir";
 			this.btnSalir.Size = new System.Drawing.Size(127, 39);
@@ -344,7 +348,7 @@
 			// 
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label2.Location = new System.Drawing.Point(140, 161);
+			this.label2.Location = new System.Drawing.Point(142, 199);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(95, 20);
 			this.label2.TabIndex = 1;
@@ -354,21 +358,41 @@
 			// 
 			this.label1.AutoSize = true;
 			this.label1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.label1.Location = new System.Drawing.Point(139, 118);
+			this.label1.Location = new System.Drawing.Point(141, 156);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(63, 20);
 			this.label1.TabIndex = 0;
 			this.label1.Text = "Usuario";
 			// 
+			// label5
+			// 
+			this.label5.AutoSize = true;
+			this.label5.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.label5.Location = new System.Drawing.Point(142, 117);
+			this.label5.Name = "label5";
+			this.label5.Size = new System.Drawing.Size(119, 20);
+			this.label5.TabIndex = 13;
+			this.label5.Text = "Tipo de Usuario";
+			// 
+			// cmbTiposUsuarios
+			// 
+			this.cmbTiposUsuarios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cmbTiposUsuarios.FormattingEnabled = true;
+			this.cmbTiposUsuarios.Location = new System.Drawing.Point(315, 117);
+			this.cmbTiposUsuarios.Name = "cmbTiposUsuarios";
+			this.cmbTiposUsuarios.Size = new System.Drawing.Size(170, 24);
+			this.cmbTiposUsuarios.TabIndex = 14;
+			// 
 			// AgregarUsuario
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(500, 346);
+			this.ClientSize = new System.Drawing.Size(500, 372);
 			this.Controls.Add(this.groupBox1);
 			this.Name = "AgregarUsuario";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Sistema de inventario \"La Villita\"";
+			this.Load += new System.EventHandler(this.AgregarUsuario_Load);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			this.menuStrip1.ResumeLayout(false);
@@ -412,5 +436,7 @@
 		private System.Windows.Forms.ToolStripMenuItem nuevoUsuarioToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem modificarUsuarioToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem cambiarDeUsuariioToolStripMenuItem;
+		private System.Windows.Forms.ComboBox cmbTiposUsuarios;
+		private System.Windows.Forms.Label label5;
 	}
 }

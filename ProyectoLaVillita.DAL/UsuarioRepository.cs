@@ -34,13 +34,14 @@ namespace ProyectoLaVillita.DAL
                     List<UsuarioDTO> usuarios = new List<UsuarioDTO>();
                     for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
                     {
-                        UsuarioDTO usua = new UsuarioDTO()
-                        {
-                            idUsuario = Convert.ToInt32(ds.Tables[0].Rows[i]["idUsuario"]),
-                            nombreUsuario = ds.Tables[0].Rows[i]["nombreUsuario"].ToString(),
-                            contraseña = ds.Tables[0].Rows[i]["contraseña"].ToString()
-                        };
-                        usuarios.Add(usua);
+						UsuarioDTO usua = new UsuarioDTO()
+						{
+							idUsuario = Convert.ToInt32(ds.Tables[0].Rows[i]["idUsuario"]),
+							nombreUsuario = ds.Tables[0].Rows[i]["nombreUsuario"].ToString(),
+							contraseña = ds.Tables[0].Rows[i]["contraseña"].ToString(),
+							idTipoUsuario = Convert.ToInt32(ds.Tables[0].Rows[i]["idTipoUsuario"])
+						};
+						usuarios.Add(usua);
                     }
                     return usuarios.AsQueryable();
                 }
@@ -79,7 +80,7 @@ namespace ProyectoLaVillita.DAL
             try
             {
                 conexion.Open();
-                da.InsertCommand = new MySqlCommand("Insert into usuario (nombreUsuario, contraseña) values ('" + entidad.nombreUsuario + "', '" + entidad.contraseña + "')", conexion);
+				da.InsertCommand = new MySqlCommand("Insert into usuario (nombreUsuario, contraseña, idTipoUsuario) values ('" + entidad.nombreUsuario + "', '" + entidad.contraseña + "', " + entidad.idTipoUsuario + ")", conexion);
                 int afectados = da.InsertCommand.ExecuteNonQuery();
                 conexion.Close();
                 if (afectados > 0)
@@ -100,7 +101,7 @@ namespace ProyectoLaVillita.DAL
             try
             {
                 conexion.Open();
-                da.UpdateCommand = new MySqlCommand("Update usuario set nombreUsuario = '" + entidad.nombreUsuario + "', contraseña = '" + entidad.contraseña + "' where idusuario = " + entidad.idUsuario, conexion);
+				da.UpdateCommand = new MySqlCommand("Update usuario set nombreUsuario = '" + entidad.nombreUsuario + "', contraseña = '" + entidad.contraseña + "' idTipoUsuario = " + entidad.idTipoUsuario + "where idusuario = " + entidad.idUsuario, conexion);
                 int afectados = da.UpdateCommand.ExecuteNonQuery();
                 conexion.Close();
                 if (afectados > 0)

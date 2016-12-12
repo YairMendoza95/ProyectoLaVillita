@@ -48,6 +48,7 @@
     <Compile Include="ProveedorManager.cs" />
     <Compile Include="RentaManager.cs" />
     <Compile Include="TipoProductoManager.cs" />
+    <Compile Include="TipoUsuarioManager.cs" />
     <Compile Include="UsuarioManager.cs" />
     <Compile Include="VentaManager.cs" />
   </ItemGroup>

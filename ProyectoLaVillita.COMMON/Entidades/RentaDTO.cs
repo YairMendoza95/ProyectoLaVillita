@@ -9,6 +9,8 @@ namespace ProyectoLaVillita.COMMON.Entidades
     public class RentaDTO : BaseDTO
     {
         public int idRenta { get; set; }
+		public int idUsuario { get; set; }
+		public int idTipoUsuario { get; set; }
         public int idCliente { get; set; }
 		public string fechaInicio { get; set; }
 		public string fechaVencimiento { get; set; }

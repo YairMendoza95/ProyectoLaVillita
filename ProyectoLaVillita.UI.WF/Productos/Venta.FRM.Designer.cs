@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.btnSalir = new System.Windows.Forms.Button();
 			this.btnAgregar = new System.Windows.Forms.Button();
 			this.label6 = new System.Windows.Forms.Label();
@@ -37,6 +37,12 @@
 			this.cmbProductos = new System.Windows.Forms.ComboBox();
 			this.Cantidad = new System.Windows.Forms.Label();
 			this.dgvDetalleVenta = new System.Windows.Forms.DataGridView();
+			this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colNotas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
 			this.btnGuardar = new System.Windows.Forms.Button();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.txtSubtotal = new System.Windows.Forms.TextBox();
@@ -67,12 +73,6 @@
 			this.cerrarSesiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
 			this.txtNotas = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
-			this.colProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colNotas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.colEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dgvDetalleVenta)).BeginInit();
 			this.groupBox1.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
@@ -164,6 +164,47 @@
 			this.dgvDetalleVenta.TabIndex = 28;
 			this.dgvDetalleVenta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalleVenta_CellClick);
 			// 
+			// colProducto
+			// 
+			this.colProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.colProducto.HeaderText = "Producto";
+			this.colProducto.Name = "colProducto";
+			// 
+			// colProveedor
+			// 
+			this.colProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.colProveedor.HeaderText = "Proveedor";
+			this.colProveedor.Name = "colProveedor";
+			// 
+			// colCantidad
+			// 
+			this.colCantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.colCantidad.HeaderText = "Cantidad";
+			this.colCantidad.Name = "colCantidad";
+			// 
+			// colSubtotal
+			// 
+			this.colSubtotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			dataGridViewCellStyle2.Format = "C2";
+			dataGridViewCellStyle2.NullValue = null;
+			this.colSubtotal.DefaultCellStyle = dataGridViewCellStyle2;
+			this.colSubtotal.HeaderText = "Subtotal";
+			this.colSubtotal.Name = "colSubtotal";
+			// 
+			// colNotas
+			// 
+			this.colNotas.HeaderText = "Notas";
+			this.colNotas.Name = "colNotas";
+			// 
+			// colEliminar
+			// 
+			this.colEliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+			this.colEliminar.HeaderText = "";
+			this.colEliminar.Name = "colEliminar";
+			this.colEliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+			this.colEliminar.Text = "Eliminar";
+			this.colEliminar.UseColumnTextForButtonValue = true;
+			// 
 			// btnGuardar
 			// 
 			this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -210,7 +251,6 @@
 			this.txtSubtotal.ReadOnly = true;
 			this.txtSubtotal.Size = new System.Drawing.Size(169, 23);
 			this.txtSubtotal.TabIndex = 36;
-			this.txtSubtotal.TextChanged += new System.EventHandler(this.txtSubtotal_TextChanged);
 			// 
 			// label3
 			// 
@@ -434,47 +474,6 @@
 			this.label1.Size = new System.Drawing.Size(45, 16);
 			this.label1.TabIndex = 30;
 			this.label1.Text = "Notas";
-			// 
-			// colProducto
-			// 
-			this.colProducto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.colProducto.HeaderText = "Producto";
-			this.colProducto.Name = "colProducto";
-			// 
-			// colProveedor
-			// 
-			this.colProveedor.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.colProveedor.HeaderText = "Proveedor";
-			this.colProveedor.Name = "colProveedor";
-			// 
-			// colCantidad
-			// 
-			this.colCantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.colCantidad.HeaderText = "Cantidad";
-			this.colCantidad.Name = "colCantidad";
-			// 
-			// colSubtotal
-			// 
-			this.colSubtotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			dataGridViewCellStyle1.Format = "C2";
-			dataGridViewCellStyle1.NullValue = null;
-			this.colSubtotal.DefaultCellStyle = dataGridViewCellStyle1;
-			this.colSubtotal.HeaderText = "Subtotal";
-			this.colSubtotal.Name = "colSubtotal";
-			// 
-			// colNotas
-			// 
-			this.colNotas.HeaderText = "Notas";
-			this.colNotas.Name = "colNotas";
-			// 
-			// colEliminar
-			// 
-			this.colEliminar.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.colEliminar.HeaderText = "";
-			this.colEliminar.Name = "colEliminar";
-			this.colEliminar.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-			this.colEliminar.Text = "Eliminar";
-			this.colEliminar.UseColumnTextForButtonValue = true;
 			// 
 			// Venta
 			// 
