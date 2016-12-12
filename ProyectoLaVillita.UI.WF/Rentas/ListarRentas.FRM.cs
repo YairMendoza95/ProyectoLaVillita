@@ -104,7 +104,7 @@ namespace ProyectoLaVillita.UI.WF.Rentas
 
 		private void ModificarRenta_Load(object sender, EventArgs e)
 		{
-			if (Program.idUsuario != 1)
+			if (Program.idTipoUsuario != 1)
 			{
 				usuariosToolStripMenuItem.Visible = false;
 				cerrarSesiónToolStripMenuItem.Visible = true;
@@ -138,7 +138,8 @@ namespace ProyectoLaVillita.UI.WF.Rentas
 			if (MessageBox.Show("¿Está seguro quq quiere cerrar sesión?", titulo, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
 			{
 				this.Hide();
-				Program.idUsuario = 0;
+				Program.idTipoUsuario = 0;
+				Program.usuario = 0;
 				new Inicio().Show();
 			}
 		}
@@ -148,7 +149,8 @@ namespace ProyectoLaVillita.UI.WF.Rentas
 			if (MessageBox.Show("¿Está seguro quq quiere cerrar sesión?", titulo, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
 			{
 				this.Hide();
-				Program.idUsuario = 0;
+				Program.idTipoUsuario = 0;
+				Program.usuario = 0;
 				new Inicio().Show();
 			}
 		}

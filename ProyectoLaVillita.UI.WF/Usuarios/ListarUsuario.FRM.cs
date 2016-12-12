@@ -214,7 +214,8 @@ namespace ProyectoLaVillita.UI.WF.Usuarios
 			if (MessageBox.Show("¿Está seguro quq quiere cerrar sesión?", titulo, MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
 			{
 				this.Hide();
-				Program.idUsuario = 0;
+				Program.idTipoUsuario = 0;
+				Program.usuario = 0;
 				new Inicio().Show();
 			}
 		}

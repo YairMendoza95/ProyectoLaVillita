@@ -42,7 +42,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
 				productosToolStripMenuItem.Visible = false;
 				proveedoresToolStripMenuItem.Visible = false;
 				inventarioToolStripMenuItem1.Visible = false;
-				modificarRentaToolStripMenuItem.Visible = false;	
+				modificarRentaToolStripMenuItem.Visible = false;
 			}
 			else
 			{

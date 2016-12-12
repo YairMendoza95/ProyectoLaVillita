@@ -63,13 +63,14 @@ namespace ProyectoLaVillita.UI.WF
 		{
 			if(e.KeyChar==Convert.ToChar(Keys.Enter))
 			{
-				if (_userManage.Login(txtUsuario.Text, txtContraseña.Text) && Program.idTipoUsuario == 0)
+				if (_userManage.Login(cmbUsuarios.Text, txtContraseña.Text) && Program.idTipoUsuario == 0)
 				{
-					Program.idTipoUsuario = _userManage.BuscarUsuarioPorNombre(txtUsuario.Text).idUsuario;
+					Program.idTipoUsuario = _userManage.BuscarUsuarioPorId(Convert.ToInt32(cmbUsuarios.SelectedValue)).idTipoUsuario;
+					Program.usuario = Convert.ToInt32(cmbUsuarios.SelectedValue);
 					new Venta().Show();
 					this.Hide();
 
-					MessageBox.Show("¡Bienvenido! " + txtUsuario.Text, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+					MessageBox.Show("¡Bienvenido! " + cmbUsuarios.Text, titulo, MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 				}
 				else
 				{
