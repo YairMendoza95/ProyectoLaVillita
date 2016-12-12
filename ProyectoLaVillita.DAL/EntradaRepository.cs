@@ -39,7 +39,7 @@ namespace ProyectoLaVillita.DAL
                             idEntrada = Convert.ToInt32(ds.Tables[0].Rows[i]["idEntrada"]),
                             idProducto = Convert.ToInt32(ds.Tables[0].Rows[i]["idProducto"]),
                             idProveedor = Convert.ToInt32(ds.Tables[0].Rows[i]["idProveedor"]),
-                            fechaEntrada = ds.Tables[0].Rows[i]["fechaEntrada"].ToString(),
+                            fechaEntrada = Convert.ToDateTime(ds.Tables[0].Rows[i]["fechaEntrada"]).Date,
                             cantidad = Convert.ToInt32(ds.Tables[0].Rows[i]["cantidad"]),
                             montoPagar = Convert.ToInt32(ds.Tables[0].Rows[i]["montóPagar"])
                         };

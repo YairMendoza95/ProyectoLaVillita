@@ -71,7 +71,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
 						{
 							idProducto = Convert.ToInt32(cmbProductos.SelectedValue),
 							idProveedor = Convert.ToInt32(_prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).idProveedor),
-							fechaEntrada = dtpFecheEntrada.Text,
+							fechaEntrada = Convert.ToDateTime(dtpFecheEntrada.Text),
 							cantidad = Convert.ToInt32(txtCantidad.Text),
 							montoPagar = Convert.ToInt32(txtTotal.Text)
 						};

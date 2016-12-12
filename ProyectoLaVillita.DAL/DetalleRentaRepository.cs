@@ -41,9 +41,7 @@ namespace ProyectoLaVillita.DAL
                             idProducto = Convert.ToInt32(ds.Tables[0].Rows[i]["idProducto"]),
                             idProveedor = Convert.ToInt32(ds.Tables[0].Rows[i]["idProveedor"]),
                             cantidad = Convert.ToInt32(ds.Tables[0].Rows[i]["cantidad"]),
-                            total = Convert.ToInt32(ds.Tables[0].Rows[i]["total"]),
-                            fechaInicio = Convert.ToDateTime(ds.Tables[0].Rows[i]["fechaInicio"]).Date,
-                            fechaVencimiento = Convert.ToDateTime(ds.Tables[0].Rows[i]["fechaVencimiento"]).Date
+                            total = Convert.ToInt32(ds.Tables[0].Rows[i]["total"])
                         };
                         detallesRentas.Add(dr);
                     }
@@ -84,7 +82,7 @@ namespace ProyectoLaVillita.DAL
             try
             {
                 conexion.Open();
-                da.InsertCommand = new MySqlCommand("Insert into detallerenta (idRenta, idProdcucto, idProveedor, cantidad, total, fechaInicio, FehcaVencimiento) values (" + entidad.idRenta + ", " + entidad.idProducto + ", " + entidad.idProveedor + ", " + entidad.cantidad + ", " + entidad.total + ", '" + entidad.fechaInicio + "', '" + entidad.fechaVencimiento + "')", conexion);
+                da.InsertCommand = new MySqlCommand("Insert into detallerenta (idRenta, idProducto, idProveedor, cantidad, total) values (" + entidad.idRenta + ", " + entidad.idProducto + ", " + entidad.idProveedor + ", " + entidad.cantidad + ", " + entidad.total + "')", conexion);
                 int afectados = da.InsertCommand.ExecuteNonQuery();
                 conexion.Close();
                 if (afectados > 0)
@@ -105,7 +103,7 @@ namespace ProyectoLaVillita.DAL
             try
             {
                 conexion.Open();
-                da.UpdateCommand = new MySqlCommand("Update detallerenta set idRenta = " + entidad.idRenta + ", idProducto = " + entidad.idProducto + ", idProveedor = " + entidad.idProveedor + ", cantidad = " + entidad.cantidad + ", total = " + entidad.total + ", fechaInicio = '" + entidad.fechaInicio + "' fechaVencimiento = '" + entidad.fechaVencimiento + "' where idDetalleRenta = " + entidad.idDetalleRenta, conexion);
+                da.UpdateCommand = new MySqlCommand("Update detallerenta set idRenta = " + entidad.idRenta + ", idProducto = " + entidad.idProducto + ", idProveedor = " + entidad.idProveedor + ", cantidad = " + entidad.cantidad + ", total = " + entidad.total + " where idDetalleRenta = " + entidad.idDetalleRenta, conexion);
                 int afectados = da.UpdateCommand.ExecuteNonQuery();
                 conexion.Close();
                 if (afectados > 0)

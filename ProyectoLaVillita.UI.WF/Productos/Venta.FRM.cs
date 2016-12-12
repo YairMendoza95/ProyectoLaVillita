@@ -24,6 +24,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
         private VentaManager _ventaManager;
 		private ProveedorManager _provManager;
 		double total = 0;
+		private DetalleVentaDTO _dv;
         public string titulo="Sistema de inventario \"La Villita\"";
         public Venta()
         {
@@ -179,15 +180,18 @@ namespace ProyectoLaVillita.UI.WF.Productos
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
-            //total += sub;
             try
             {
-                _venta = new VentaDTO()
-                {
-                    //total = total,
-                    notas = txtNotas.Text,
-                };
+				_venta = new VentaDTO()
+				{
+					idUsuario = Program.idUsuario,
+					fechaVenta = DateTime.Today,
+					total = total,
+					notas = txtNotas.Text,
+				};
                 _ventaManager.InsertarVenta(_venta);
+
+
             }
             catch(Exception)
             {
@@ -203,6 +207,18 @@ namespace ProyectoLaVillita.UI.WF.Productos
 			}
 		}
 
+		public void GuardarDetalleVenta(int idProducto, int idVenta, int idProveedor, double cantidad, double subtotal)
+		{
+			_dv = new DetalleVentaDTO()
+			{
+				idProducto = idProducto,
+				idVenta = idVenta,
+				idProveedor = idProveedor,
+				cantidad = cantidad,
+				total = subtotal
+			};
+			_dvManager.InsertarDetalleVenta(_dv);
+		}
 		private void txtSubtotal_TextChanged(object sender, EventArgs e)
 		{
 

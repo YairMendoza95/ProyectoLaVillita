@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.btnSalir = new System.Windows.Forms.Button();
 			this.btnAgregar = new System.Windows.Forms.Button();
 			this.label6 = new System.Windows.Forms.Label();
@@ -71,6 +71,7 @@
 			this.colProveedor = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colSubtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.colNotas = new System.Windows.Forms.DataGridViewTextBoxColumn();
 			this.colEliminar = new System.Windows.Forms.DataGridViewButtonColumn();
 			((System.ComponentModel.ISupportInitialize)(this.dgvDetalleVenta)).BeginInit();
 			this.groupBox1.SuspendLayout();
@@ -155,10 +156,11 @@
             this.colProveedor,
             this.colCantidad,
             this.colSubtotal,
+            this.colNotas,
             this.colEliminar});
 			this.dgvDetalleVenta.Location = new System.Drawing.Point(296, 75);
 			this.dgvDetalleVenta.Name = "dgvDetalleVenta";
-			this.dgvDetalleVenta.Size = new System.Drawing.Size(447, 318);
+			this.dgvDetalleVenta.Size = new System.Drawing.Size(524, 318);
 			this.dgvDetalleVenta.TabIndex = 28;
 			this.dgvDetalleVenta.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalleVenta_CellClick);
 			// 
@@ -196,7 +198,7 @@
 			this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.groupBox1.Location = new System.Drawing.Point(0, 0);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(757, 453);
+			this.groupBox1.Size = new System.Drawing.Size(832, 459);
 			this.groupBox1.TabIndex = 5;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Ventas";
@@ -248,7 +250,7 @@
             this.cerrarSesiónToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(3, 19);
 			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new System.Drawing.Size(751, 25);
+			this.menuStrip1.Size = new System.Drawing.Size(826, 25);
 			this.menuStrip1.TabIndex = 32;
 			this.menuStrip1.Text = "menuStrip1";
 			// 
@@ -454,11 +456,16 @@
 			// colSubtotal
 			// 
 			this.colSubtotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			dataGridViewCellStyle3.Format = "C2";
-			dataGridViewCellStyle3.NullValue = null;
-			this.colSubtotal.DefaultCellStyle = dataGridViewCellStyle3;
+			dataGridViewCellStyle1.Format = "C2";
+			dataGridViewCellStyle1.NullValue = null;
+			this.colSubtotal.DefaultCellStyle = dataGridViewCellStyle1;
 			this.colSubtotal.HeaderText = "Subtotal";
 			this.colSubtotal.Name = "colSubtotal";
+			// 
+			// colNotas
+			// 
+			this.colNotas.HeaderText = "Notas";
+			this.colNotas.Name = "colNotas";
 			// 
 			// colEliminar
 			// 
@@ -473,7 +480,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(755, 452);
+			this.ClientSize = new System.Drawing.Size(832, 452);
 			this.Controls.Add(this.groupBox1);
 			this.Name = "Venta";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -532,6 +539,7 @@
 		private System.Windows.Forms.DataGridViewTextBoxColumn colProveedor;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colCantidad;
 		private System.Windows.Forms.DataGridViewTextBoxColumn colSubtotal;
+		private System.Windows.Forms.DataGridViewTextBoxColumn colNotas;
 		private System.Windows.Forms.DataGridViewButtonColumn colEliminar;
 	}
 }

@@ -38,6 +38,7 @@ namespace ProyectoLaVillita.DAL
 						{
 							idVenta = Convert.ToInt32(ds.Tables[0].Rows[i]["idVenta"]),
 							idUsuario = Convert.ToInt32(ds.Tables[0].Rows[i]["idUsuario"]),
+							fechaVenta = Convert.ToDateTime(ds.Tables[0].Rows[i]["fechaVenta"]).Date,
 							total = Convert.ToInt32(ds.Tables[0].Rows[i]["total"]),
 							notas = ds.Tables[0].Rows[i]["notas"].ToString()
 						};
@@ -80,7 +81,7 @@ namespace ProyectoLaVillita.DAL
             try
             {
                 conexion.Open();
-                da.InsertCommand = new MySqlCommand("Insert into venta (total, notas) values (" + entidad.total + ", '" + entidad.notas + "')", conexion);
+				da.InsertCommand = new MySqlCommand("Insert into venta (idUsuario, fechaVenta, total, notas) values (" + entidad.idUsuario + ", '" + entidad.fechaVenta + "', " + entidad.total + ", '" + entidad.notas + "')", conexion);
                 int afectados = da.InsertCommand.ExecuteNonQuery();
                 conexion.Close();
                 if (afectados > 0)
@@ -101,7 +102,7 @@ namespace ProyectoLaVillita.DAL
             try
             {
                 conexion.Open();
-                da.UpdateCommand = new MySqlCommand("Update venta set total = " + entidad.total + ", notas = '" + entidad.notas + "' where idVenta = " + entidad.idVenta, conexion);
+				da.UpdateCommand = new MySqlCommand("Update venta set idUsuario = " + entidad.idUsuario + ", fechaVenta = '" + entidad.fechaVenta + "', total = " + entidad.total + ", notas = '" + entidad.notas + "' where idVenta = " + entidad.idVenta, conexion);
                 int afectados = da.UpdateCommand.ExecuteNonQuery();
                 conexion.Close();
                 if (afectados > 0)

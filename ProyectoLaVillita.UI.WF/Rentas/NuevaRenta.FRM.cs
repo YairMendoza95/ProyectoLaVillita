@@ -39,9 +39,20 @@ namespace ProyectoLaVillita.UI.WF.Rentas
 				Application.Exit();	
         }
 
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-           
+		private void btnGuardar_Click(object sender, EventArgs e)
+		{
+			if (txtCliente.Text != "" && 
+				txtApPaterno.Text != "" && 
+				txtApMaterno.Text != "" && 
+				txtTelefono.Text != "" && 
+				txtCantidad.Text != "")
+			{
+				_renta=new RentaDTO()
+				{
+					//idCliente=
+					
+				}
+			}
         }
 
 		private void modificarRentaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -123,7 +134,7 @@ namespace ProyectoLaVillita.UI.WF.Rentas
 				if (productos[i].idTipoProducto == 1)
 					alquiler.Add(productos[i]);
 			}
-			if(alquiler.Count>0)
+			if (alquiler.Count > 0)
 			{
 				cmbProductos.DataSource = alquiler;
 				cmbProductos.DisplayMember = "nombre";
@@ -148,6 +159,30 @@ namespace ProyectoLaVillita.UI.WF.Rentas
 				this.Hide();
 				Program.idUsuario = 0;
 				new Inicio().Show();
+			}
+		}
+
+		private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (Char.IsDigit(e.KeyChar) && Char.IsControl(e.KeyChar))
+			{
+				e.Handled = false;
+			}
+			else
+			{
+				e.Handled = true;
+			}
+		}
+
+		private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (Char.IsDigit(e.KeyChar) && Char.IsControl(e.KeyChar))
+			{
+				e.Handled = false;
+			}
+			else
+			{
+				e.Handled = true;
 			}
 		}
 	}

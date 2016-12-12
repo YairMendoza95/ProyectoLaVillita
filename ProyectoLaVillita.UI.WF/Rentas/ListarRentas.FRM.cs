@@ -114,6 +114,23 @@ namespace ProyectoLaVillita.UI.WF.Rentas
 				usuariosToolStripMenuItem.Visible = true;
 				cerrarSesiónToolStripMenuItem.Visible = false;
 			}
+			List<RentaDTO> rentas = _rentaManager.Rentas.ToList();
+			if (rentas.Count > 0)
+			{
+				dgvRentas.DataSource = rentas;
+				dgvRentas.Columns[0].HeaderText = "Id";
+				dgvRentas.Columns[0].DataPropertyName = "idRenta";
+				dgvRentas.Columns[0].HeaderText = "Cliente";
+				dgvRentas.Columns[0].DataPropertyName = "idCliente";
+				dgvRentas.Columns[0].HeaderText = "Total";
+				dgvRentas.Columns[0].DataPropertyName = "total";
+				dgvRentas.Columns[0].HeaderText = "Incio";
+				dgvRentas.Columns[0].DataPropertyName = "fechaInicio";
+				dgvRentas.Columns[0].HeaderText = "Vencimiento";
+				dgvRentas.Columns[0].DataPropertyName = "fechaVencimiento";
+				dgvRentas.Columns[0].HeaderText = "Notas";
+				dgvRentas.Columns[0].DataPropertyName = "notas";
+			}
 		}
 
 		private void cambiarDeUsuariioToolStripMenuItem_Click(object sender, EventArgs e)
@@ -134,6 +151,11 @@ namespace ProyectoLaVillita.UI.WF.Rentas
 				Program.idUsuario = 0;
 				new Inicio().Show();
 			}
+		}
+
+		private void dgvProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+		{
+			
 		}
 	}
 }

@@ -58,15 +58,11 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.txtIngresarNombre = new System.Windows.Forms.TextBox();
 			this.btnBuscar = new System.Windows.Forms.Button();
-			this.dgvProductos = new System.Windows.Forms.DataGridView();
-			this.idRenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
-			this.notas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+			this.dgvRentas = new System.Windows.Forms.DataGridView();
 			this.groupBox1.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
 			this.groupBox3.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgvRentas)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// groupBox1
@@ -77,7 +73,7 @@
 			this.groupBox1.Controls.Add(this.label3);
 			this.groupBox1.Controls.Add(this.btnSalir);
 			this.groupBox1.Controls.Add(this.groupBox3);
-			this.groupBox1.Controls.Add(this.dgvProductos);
+			this.groupBox1.Controls.Add(this.dgvRentas);
 			this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.groupBox1.Location = new System.Drawing.Point(0, 0);
 			this.groupBox1.Name = "groupBox1";
@@ -341,44 +337,14 @@
 			this.btnBuscar.UseVisualStyleBackColor = true;
 			this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
 			// 
-			// dgvProductos
+			// dgvRentas
 			// 
-			this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-			this.dgvProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idRenta,
-            this.idCliente,
-            this.total,
-            this.notas});
-			this.dgvProductos.Location = new System.Drawing.Point(10, 150);
-			this.dgvProductos.Name = "dgvProductos";
-			this.dgvProductos.Size = new System.Drawing.Size(676, 255);
-			this.dgvProductos.TabIndex = 1;
-			// 
-			// idRenta
-			// 
-			this.idRenta.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-			this.idRenta.HeaderText = "Id";
-			this.idRenta.Name = "idRenta";
-			this.idRenta.Width = 46;
-			// 
-			// idCliente
-			// 
-			this.idCliente.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.idCliente.HeaderText = "Cliente";
-			this.idCliente.Name = "idCliente";
-			// 
-			// total
-			// 
-			this.total.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-			this.total.HeaderText = "Total";
-			this.total.Name = "total";
-			this.total.Width = 64;
-			// 
-			// notas
-			// 
-			this.notas.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			this.notas.HeaderText = "Notas";
-			this.notas.Name = "notas";
+			this.dgvRentas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dgvRentas.Location = new System.Drawing.Point(10, 150);
+			this.dgvRentas.Name = "dgvRentas";
+			this.dgvRentas.Size = new System.Drawing.Size(676, 255);
+			this.dgvRentas.TabIndex = 1;
+			this.dgvRentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellContentClick);
 			// 
 			// ModificarRenta
 			// 
@@ -396,7 +362,7 @@
 			this.menuStrip1.PerformLayout();
 			this.groupBox3.ResumeLayout(false);
 			this.groupBox3.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.dgvRentas)).EndInit();
 			this.ResumeLayout(false);
 
         }
@@ -411,11 +377,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtIngresarNombre;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.DataGridView dgvProductos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idRenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn total;
-        private System.Windows.Forms.DataGridViewTextBoxColumn notas;
+        private System.Windows.Forms.DataGridView dgvRentas;
 		private System.Windows.Forms.MenuStrip menuStrip1;
 		private System.Windows.Forms.ToolStripMenuItem tiendaDeAbarrotesToolStripMenuItem;
 		private System.Windows.Forms.ToolStripMenuItem productosToolStripMenuItem;

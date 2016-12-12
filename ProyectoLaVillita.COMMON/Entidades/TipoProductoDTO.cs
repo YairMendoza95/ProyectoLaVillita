@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProyectoLaVillita.COMMON.Entidades
 {
-	public class TipoProductoDTO
+	public class TipoProductoDTO : BaseDTO
 	{
 		public int idTIpoProducto { get; set; }
 		public string nombre { get; set; }
