@@ -34,12 +34,12 @@ namespace ProyectoLaVillita.DAL
                     List<EntradaDTO> entradas = new List<EntradaDTO>();
                     for (int i = 0; i < ds.Tables[0].Rows.Count; i++)
                     {
-                        EntradaDTO ent = new EntradaDTO()
-                        {
-                            idEntrada = Convert.ToInt32(ds.Tables[0].Rows[i]["idEntrada"]),
-                            idProducto = Convert.ToInt32(ds.Tables[0].Rows[i]["idProducto"]),
-                            idProveedor = Convert.ToInt32(ds.Tables[0].Rows[i]["idProveedor"]),
-                            fechaEntrada = Convert.ToDateTime(ds.Tables[0].Rows[i]["fechaEntrada"]).Date,
+						EntradaDTO ent = new EntradaDTO()
+						{
+							idEntrada = Convert.ToInt32(ds.Tables[0].Rows[i]["idEntrada"]),
+							idProducto = Convert.ToInt32(ds.Tables[0].Rows[i]["idProducto"]),
+							idProveedor = Convert.ToInt32(ds.Tables[0].Rows[i]["idProveedor"]),
+							fechaEntrada = ds.Tables[0].Rows[i]["fechaEntrada"].ToString(),
                             cantidad = Convert.ToInt32(ds.Tables[0].Rows[i]["cantidad"]),
                             montoPagar = Convert.ToInt32(ds.Tables[0].Rows[i]["montóPagar"])
                         };

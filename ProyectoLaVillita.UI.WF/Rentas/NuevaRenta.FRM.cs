@@ -47,11 +47,11 @@ namespace ProyectoLaVillita.UI.WF.Rentas
 				txtTelefono.Text != "" && 
 				txtCantidad.Text != "")
 			{
-				_renta=new RentaDTO()
+				_renta = new RentaDTO()
 				{
 					//idCliente=
-					
-				}
+
+				};
 			}
         }
 

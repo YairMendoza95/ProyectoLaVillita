@@ -185,7 +185,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
 				_venta = new VentaDTO()
 				{
 					idUsuario = Program.idUsuario,
-					fechaVenta = DateTime.Today,
+					fechaVenta = DateTime.Today.ToString(),
 					total = total,
 					notas = txtNotas.Text,
 				};

@@ -71,7 +71,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
 						{
 							idProducto = Convert.ToInt32(cmbProductos.SelectedValue),
 							idProveedor = Convert.ToInt32(_prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).idProveedor),
-							fechaEntrada = Convert.ToDateTime(dtpFecheEntrada.Text),
+							fechaEntrada = dtpFecheEntrada.Text,
 							cantidad = Convert.ToInt32(txtCantidad.Text),
 							montoPagar = Convert.ToInt32(txtTotal.Text)
 						};
@@ -89,6 +89,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
 									idProducto = Convert.ToInt32(cmbProductos.SelectedValue),
 									nombre = _prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).nombre,
 									idProveedor = _prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).idProveedor,
+									idTipoProducto=_prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).idTipoProducto,
 									precioVenta = _prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).precioVenta,
 									precioCompra = compra,
 									stockActual = stock,

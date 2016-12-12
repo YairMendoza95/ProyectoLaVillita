@@ -38,8 +38,8 @@ namespace ProyectoLaVillita.DAL
 						{
 							idRenta = Convert.ToInt32(ds.Tables[0].Rows[i]["idRenta"]),
 							idCliente = Convert.ToInt32(ds.Tables[0].Rows[i]["idCliente"]),
-							fechaInicio = Convert.ToDateTime(ds.Tables[0].Rows[i]["fechaInicio"]).Date,
-							fechaVencimiento = Convert.ToDateTime(ds.Tables[0].Rows[i]["fechaVencimiento"]).Date,
+							fechaInicio = ds.Tables[0].Rows[i]["fechaInicio"].ToString(),
+							fechaVencimiento = ds.Tables[0].Rows[i]["fechaVencimiento"].ToString(),
 							total = Convert.ToInt32(ds.Tables[0].Rows[i]["total"]),
 							notas = ds.Tables[0].Rows[i]["notas"].ToString()
 						};
