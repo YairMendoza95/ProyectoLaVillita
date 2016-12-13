@@ -43,6 +43,9 @@ namespace ProyectoLaVillita.UI.WF.Productos
 				cerrarSesiónToolStripMenuItem.Visible = true;
 				entradasToolStripMenuItem.Visible = false;
 				proveedoresToolStripMenuItem.Visible = false;
+				productosToolStripMenuItem.Visible = false;
+				inventarioToolStripMenuItem1.Visible = false;
+				modificarRentaToolStripMenuItem.Visible = false;
 			}
 			else
 			{
@@ -159,10 +162,10 @@ namespace ProyectoLaVillita.UI.WF.Productos
 		}
 
 		private void btnAgregar_Click(object sender, EventArgs e)
-        {
+		{
 			if ((Convert.ToDouble(txtCantidad.Text) <= _prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).stockActual) &&
-				(Convert.ToDouble(txtCantidad.Text) >= _prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).stockMin) &&
-				(Convert.ToDouble(txtCantidad.Text) > 0))
+			(_prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).stockActual >= _prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).stockMin) &&
+			(Convert.ToDouble(txtCantidad.Text) > 0))
 			{
 				int producto = Convert.ToInt32(cmbProductos.SelectedValue);
 				int proveedor = _prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).idProveedor;
@@ -173,99 +176,112 @@ namespace ProyectoLaVillita.UI.WF.Productos
 					total += subtotal;
 					txtSubtotal.Text = total.ToString();
 				}
-				txtCantidad.Clear();
-				txtProveedor.Clear();
-				//txtNotas.Clear();
-				cmbProductos.ResetText();
 			}
 			else
 			{
 				MessageBox.Show("No se puede asignar el producto", titulo, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 			}
-        }
+			txtCantidad.Clear();
+			txtProveedor.Clear();
+			//txtNotas.Clear();
+			cmbProductos.ResetText();
+		}
 
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-				_venta = new VentaDTO()
+		private void btnGuardar_Click(object sender, EventArgs e)
+		{
+			if (dgvDetalleVenta.RowCount > 0)
+			{
+				try
 				{
-					idUsuario = Program.usuario,
-					idTipoUsuario = Program.idTipoUsuario,
-					fechaVenta = DateTime.Today.ToString(),
-					total = total,
-					notas = txtNotas.Text,
-				};
-                if(_ventaManager.InsertarVenta(_venta))
-				{
-					for (int i = 0; i < dgvDetalleVenta.RowCount; i++)
+					_venta = new VentaDTO()
 					{
-						try
+						idUsuario = Program.usuario,
+						idTipoUsuario = Program.idTipoUsuario,
+						fechaVenta = DateTime.Today.ToString(),
+						total = total,
+						notas = txtNotas.Text,
+					};
+					if (_ventaManager.InsertarVenta(_venta))
+					{
+						for (int i = 0; i < dgvDetalleVenta.RowCount - 1; i++)
 						{
-							_dv = new DetalleVentaDTO()
+							try
 							{
-								idVenta = _ventaManager.Ventas.Last().idVenta,
-								idProducto = Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value.ToString()),
-								idProveedor = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).idProveedor,
-								cantidad = Convert.ToDouble(dgvDetalleVenta.Rows[i].Cells[2].Value),
-								total = Convert.ToDouble(dgvDetalleVenta.Rows[i].Cells[3].Value)
-							};
-							if(_dvManager.InsertarDetalleVenta(_dv))
-							{
-								int stock = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).stockActual;
-
-								stock -= Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[2].Value);
-
-								if (_prod == null)
+								_dv = new DetalleVentaDTO()
 								{
-									_prod = new ProductoDTO()
+									idVenta = _ventaManager.Ventas.Last().idVenta,
+
+									idProducto = Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value.ToString()),
+
+									idProveedor = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).idProveedor,
+
+									cantidad = Convert.ToDouble(dgvDetalleVenta.Rows[i].Cells[2].Value),
+
+									total = Convert.ToDouble(dgvDetalleVenta.Rows[i].Cells[3].Value)
+								};
+								if (_dvManager.InsertarDetalleVenta(_dv))
+								{
+									int stock = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).stockActual;
+
+									stock -= Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[2].Value);
+
+									if (_prod == null)
 									{
-										idProducto = Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value),
+										_prod = new ProductoDTO()
+										{
+											idProducto = Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value),
 
-										nombre = dgvDetalleVenta.Rows[i].Cells[0].Value.ToString(),
+											nombre = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).nombre,
 
-										idProveedor = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).idProveedor,
+											idProveedor = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).idProveedor,
 
-										idTipoProducto = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).idTipoProducto,
+											idTipoProducto = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).idTipoProducto,
 
-										precioVenta = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).precioVenta,
+											precioVenta = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).precioVenta,
 
-										precioCompra = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).precioCompra,
+											precioCompra = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).precioCompra,
 
-										stockActual = stock,
+											stockActual = stock,
 
-										stockMax = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).stockMax,
+											stockMax = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).stockMax,
 
-										stockMin = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).stockMin
-									};
-									_prodManager.ModificarProducto(_prod);
-									cmbProductos.ResetText();
-									txtProveedor.Clear();
-									txtCantidad.Clear();
-									txtSubtotal.Clear();
-									txtNotas.Clear();
-									cmbProductos.Focus();
+											stockMin = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).stockMin
+										};
+										_prodManager.ModificarProducto(_prod);
+										cmbProductos.ResetText();
+										txtProveedor.Clear();
+										txtCantidad.Clear();
+										txtSubtotal.Clear();
+										txtNotas.Clear();
+										cmbProductos.Focus();
+									}
 								}
+								_prod = null;
+
+							}
+							catch (Exception)
+							{
+								MessageBox.Show("Error", titulo, MessageBoxButtons.OK, MessageBoxIcon.Error);
 							}
 						}
-						catch (Exception)
-						{
-
-							throw;
-						}
+						MessageBox.Show("Venta registrada", titulo, MessageBoxButtons.OK, MessageBoxIcon.Information);
+						dgvDetalleVenta.Rows.Clear();
+					}
+					else
+					{
+						MessageBox.Show("Venta no registrada", titulo, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 					}
 				}
-
-            }
-            catch(Exception)
-            {
-                throw;
-            }
-        }
+				catch (Exception)
+				{
+					MessageBox.Show("Error", titulo, MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
+			}
+		}
 
 		private void dgvDetalleVenta_CellClick(object sender, DataGridViewCellEventArgs e)
 		{
-			if (e.ColumnIndex == 4)
+			if (e.ColumnIndex == 5)
 			{
 				dgvDetalleVenta.Rows.Remove(dgvDetalleVenta.CurrentRow);
 			}
@@ -282,6 +298,26 @@ namespace ProyectoLaVillita.UI.WF.Productos
 				total = subtotal
 			};
 			_dvManager.InsertarDetalleVenta(_dv);
+		}
+
+		bool bandera = true;
+		private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+		{
+			if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back && e.KeyChar != 46)
+			{
+				e.Handled = true;
+			}
+			else if (e.KeyChar == 46)
+			{
+				if (bandera)
+				{
+					bandera = false;
+				}
+				else
+				{
+					e.Handled = true;
+				}
+			}
 		}
 	}
 }

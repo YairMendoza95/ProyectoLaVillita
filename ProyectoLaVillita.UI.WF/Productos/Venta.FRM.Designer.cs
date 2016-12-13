@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+			System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
 			this.btnSalir = new System.Windows.Forms.Button();
 			this.btnAgregar = new System.Windows.Forms.Button();
 			this.label6 = new System.Windows.Forms.Label();
@@ -128,6 +128,7 @@
 			this.txtCantidad.Name = "txtCantidad";
 			this.txtCantidad.Size = new System.Drawing.Size(169, 23);
 			this.txtCantidad.TabIndex = 16;
+			this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
 			// 
 			// cmbProductos
 			// 
@@ -185,9 +186,9 @@
 			// colSubtotal
 			// 
 			this.colSubtotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-			dataGridViewCellStyle2.Format = "C2";
-			dataGridViewCellStyle2.NullValue = null;
-			this.colSubtotal.DefaultCellStyle = dataGridViewCellStyle2;
+			dataGridViewCellStyle1.Format = "C2";
+			dataGridViewCellStyle1.NullValue = null;
+			this.colSubtotal.DefaultCellStyle = dataGridViewCellStyle1;
 			this.colSubtotal.HeaderText = "Subtotal";
 			this.colSubtotal.Name = "colSubtotal";
 			// 

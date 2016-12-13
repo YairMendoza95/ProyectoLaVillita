@@ -21,16 +21,25 @@ namespace ProyectoLaVillita.UI.WF.Rentas
         private RentaDTO _renta;
         private RentaManager _rentaManager;
 		private ProductoManager _prodManager;
+		private ClienteManager _clienteManager;
+		private ClienteDTO _cliente;
         public NuevaRenta()
         {
             InitializeComponent();
             _rentaManager = new RentaManager();
 			_prodManager = new ProductoManager();
+			_clienteManager = new ClienteManager();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-
+			if (txtCantidad.Text != "")
+			{
+				int producto = Convert.ToInt32(cmbProductos.SelectedValue);
+				int cantidad = Convert.ToInt32(txtCantidad.Text);
+				double subtotal = cantidad * _prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).precioVenta;
+				dgvDetalleVenta.Rows.Add(producto, cantidad, subtotal);
+			}
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -41,16 +50,37 @@ namespace ProyectoLaVillita.UI.WF.Rentas
 
 		private void btnGuardar_Click(object sender, EventArgs e)
 		{
-			if (txtCliente.Text != "" && 
-				txtApPaterno.Text != "" && 
-				txtApMaterno.Text != "" && 
-				txtTelefono.Text != "" && 
-				txtCantidad.Text != "")
+			int cliente = 0;
+			if (rbtAgregar.Checked)
+			{
+				if (txtCliente.Text != "" && txtApPaterno.Text != "" && txtApMaterno.Text != "" && txtTelefono.Text != "")
+				{
+					_cliente = new ClienteDTO()
+					{
+						nombre = txtCliente.Text,
+						apPaterno = txtApPaterno.Text,
+						apMaterno = txtApMaterno.Text,
+						telefono = txtTelefono.Text
+					};
+					_clienteManager.InsertarCliente(_cliente);
+					cliente = _clienteManager.Clientes.Last().idCliente;
+				}
+			}
+			else if (rbtBuscar.Checked)
+			{
+				cliente = Convert.ToInt32(cmbCliente.SelectedValue);
+			}
+			if (txtCantidad.Text != "" && dateTimePicker1.Text != "" && dateTimePicker2.Text != "")
 			{
 				_renta = new RentaDTO()
 				{
-					//idCliente=
-
+					idUsuario = Program.usuario,
+					idTipoUsuario = Program.idTipoUsuario,
+					idCliente = cliente,
+					total = Convert.ToDouble(txtTotal.Text),
+					fechaInicio = dateTimePicker1.Value.ToString(),
+					fechaVencimiento = dateTimePicker2.Value.ToString()
+					notas = txtNotas.Text
 				};
 			}
         }
@@ -121,6 +151,11 @@ namespace ProyectoLaVillita.UI.WF.Rentas
 			{
 				usuariosToolStripMenuItem.Visible = false;
 				cerrarSesiónToolStripMenuItem.Visible = true;
+				entradasToolStripMenuItem.Visible = false;
+				proveedoresToolStripMenuItem.Visible = false;
+				productosToolStripMenuItem.Visible = false;
+				inventarioToolStripMenuItem1.Visible = false;
+				modificarRentaToolStripMenuItem.Visible = false;
 			}
 			else
 			{
@@ -139,6 +174,13 @@ namespace ProyectoLaVillita.UI.WF.Rentas
 				cmbProductos.DataSource = alquiler;
 				cmbProductos.DisplayMember = "nombre";
 				cmbProductos.ValueMember = "idProducto";
+			}
+			List<ClienteDTO> clientes = _clienteManager.Clientes.ToList();
+			if (clientes.Count > 0)
+			{
+				cmbCliente.DataSource = clientes;
+				cmbCliente.DisplayMember = "nombre";
+				cmbCliente.ValueMember = "idCliente";
 			}
 		}
 
@@ -164,9 +206,9 @@ namespace ProyectoLaVillita.UI.WF.Rentas
 			}
 		}
 
-		private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
+		private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
 		{
-			if (Char.IsDigit(e.KeyChar) && Char.IsControl(e.KeyChar))
+			if (Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar))
 			{
 				e.Handled = false;
 			}
@@ -176,9 +218,9 @@ namespace ProyectoLaVillita.UI.WF.Rentas
 			}
 		}
 
-		private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+		private void txtCantidad_KeyPress(object sender, KeyPressEventArgs e)
 		{
-			if (Char.IsDigit(e.KeyChar) && Char.IsControl(e.KeyChar))
+			if (Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar))
 			{
 				e.Handled = false;
 			}
@@ -186,6 +228,18 @@ namespace ProyectoLaVillita.UI.WF.Rentas
 			{
 				e.Handled = true;
 			}
+		}
+
+		private void rbtBuscar_CheckedChanged(object sender, EventArgs e)
+		{
+			gpbBuscar.Visible = true;
+			gpbAgregar.Visible = false;
+		}
+
+		private void rbtAgregar_CheckedChanged(object sender, EventArgs e)
+		{
+			gpbAgregar.Visible = true;
+			gpbBuscar.Visible = false;
 		}
 	}
 }
