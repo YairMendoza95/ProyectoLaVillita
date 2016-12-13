@@ -120,6 +120,10 @@ namespace ProyectoLaVillita.UI.WF.Rentas
 				dgvRentas.DataSource = rentas;
 				dgvRentas.Columns[0].HeaderText = "Id";
 				dgvRentas.Columns[0].DataPropertyName = "idRenta";
+				dgvRentas.Columns[0].HeaderText = "Usuario";
+				dgvRentas.Columns[0].DataPropertyName = "idUsuario";
+				dgvRentas.Columns[0].HeaderText = "Tipo de usuario";
+				dgvRentas.Columns[0].DataPropertyName = "idTipoUsuario";
 				dgvRentas.Columns[0].HeaderText = "Cliente";
 				dgvRentas.Columns[0].DataPropertyName = "idCliente";
 				dgvRentas.Columns[0].HeaderText = "Total";

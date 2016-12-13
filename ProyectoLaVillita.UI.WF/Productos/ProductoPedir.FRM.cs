@@ -23,10 +23,20 @@ namespace ProyectoLaVillita.UI.WF.Productos
 
 		private void ProductoPedir_Load(object sender, EventArgs e)
 		{
-			List<ProductoDTO> productos = new List<ProductoDTO>();
+			if (Program.idTipoUsuario == 1)
+			{
+				cerrarSesiónToolStripMenuItem.Visible = false;
+			}
+			List<ProductoDTO> abarrotes = new List<ProductoDTO>();
 			for (int i = 0; i < _prodManager.Productos.ToList().Count; i++)
 			{
-				if (_prodManager.Productos.ToList()[i].stockActual <= _prodManager.Productos.ToList()[i].stockMin)
+				if (_prodManager.Productos.ToList()[i].idTipoProducto == 2)
+					abarrotes.Add(_prodManager.Productos.ToList()[i]);
+			}
+			List<ProductoDTO> productos = new List<ProductoDTO>();
+			for (int i = 0; i < abarrotes.Count; i++)
+			{
+				if (abarrotes[i].stockActual <= abarrotes[i].stockMin)
 				{
 					productos.Add(_prodManager.Productos.ToList()[i]);
 				}
@@ -34,6 +44,11 @@ namespace ProyectoLaVillita.UI.WF.Productos
 			if(productos.Count>0)
 			{
 				dgvProductos.DataSource = productos;
+				lblMensaje.Visible = false;
+			}
+			else
+			{
+				lblMensaje.Visible = true;
 			}
 		}
 	}

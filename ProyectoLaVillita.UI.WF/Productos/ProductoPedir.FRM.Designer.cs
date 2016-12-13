@@ -30,7 +30,7 @@
 		{
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.label13 = new System.Windows.Forms.Label();
-			this.label11 = new System.Windows.Forms.Label();
+			this.lblMensaje = new System.Windows.Forms.Label();
 			this.btnEliminar = new System.Windows.Forms.Button();
 			this.btnModificar = new System.Windows.Forms.Button();
 			this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -67,7 +67,7 @@
 			// 
 			this.groupBox1.BackColor = System.Drawing.Color.SkyBlue;
 			this.groupBox1.Controls.Add(this.label13);
-			this.groupBox1.Controls.Add(this.label11);
+			this.groupBox1.Controls.Add(this.lblMensaje);
 			this.groupBox1.Controls.Add(this.btnEliminar);
 			this.groupBox1.Controls.Add(this.btnModificar);
 			this.groupBox1.Controls.Add(this.menuStrip1);
@@ -77,7 +77,7 @@
 			this.groupBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.groupBox1.Location = new System.Drawing.Point(0, 0);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(698, 489);
+			this.groupBox1.Size = new System.Drawing.Size(911, 489);
 			this.groupBox1.TabIndex = 7;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Inventario de la tienda";
@@ -91,20 +91,20 @@
 			this.label13.Size = new System.Drawing.Size(0, 16);
 			this.label13.TabIndex = 17;
 			// 
-			// label11
+			// lblMensaje
 			// 
-			this.label11.AutoSize = true;
-			this.label11.ForeColor = System.Drawing.Color.Red;
-			this.label11.Location = new System.Drawing.Point(17, 417);
-			this.label11.Name = "label11";
-			this.label11.Size = new System.Drawing.Size(221, 16);
-			this.label11.TabIndex = 16;
-			this.label11.Text = "No existen productos registrados";
+			this.lblMensaje.AutoSize = true;
+			this.lblMensaje.ForeColor = System.Drawing.Color.Red;
+			this.lblMensaje.Location = new System.Drawing.Point(17, 417);
+			this.lblMensaje.Name = "lblMensaje";
+			this.lblMensaje.Size = new System.Drawing.Size(221, 16);
+			this.lblMensaje.TabIndex = 16;
+			this.lblMensaje.Text = "No existen productos registrados";
 			// 
 			// btnEliminar
 			// 
 			this.btnEliminar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnEliminar.Location = new System.Drawing.Point(63, 443);
+			this.btnEliminar.Location = new System.Drawing.Point(209, 443);
 			this.btnEliminar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.btnEliminar.Name = "btnEliminar";
 			this.btnEliminar.Size = new System.Drawing.Size(127, 39);
@@ -115,7 +115,7 @@
 			// btnModificar
 			// 
 			this.btnModificar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnModificar.Location = new System.Drawing.Point(264, 443);
+			this.btnModificar.Location = new System.Drawing.Point(410, 443);
 			this.btnModificar.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.btnModificar.Name = "btnModificar";
 			this.btnModificar.Size = new System.Drawing.Size(127, 39);
@@ -134,7 +134,7 @@
             this.cerrarSesiónToolStripMenuItem});
 			this.menuStrip1.Location = new System.Drawing.Point(3, 19);
 			this.menuStrip1.Name = "menuStrip1";
-			this.menuStrip1.Size = new System.Drawing.Size(692, 25);
+			this.menuStrip1.Size = new System.Drawing.Size(905, 25);
 			this.menuStrip1.TabIndex = 12;
 			this.menuStrip1.Text = "menuStrip1";
 			// 
@@ -303,7 +303,7 @@
 			// btnSalir
 			// 
 			this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.btnSalir.Location = new System.Drawing.Point(456, 443);
+			this.btnSalir.Location = new System.Drawing.Point(602, 443);
 			this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.btnSalir.Name = "btnSalir";
 			this.btnSalir.Size = new System.Drawing.Size(127, 39);
@@ -316,14 +316,14 @@
 			this.dgvProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
 			this.dgvProductos.Location = new System.Drawing.Point(10, 75);
 			this.dgvProductos.Name = "dgvProductos";
-			this.dgvProductos.Size = new System.Drawing.Size(676, 330);
+			this.dgvProductos.Size = new System.Drawing.Size(890, 330);
 			this.dgvProductos.TabIndex = 1;
 			// 
 			// ProductoPedir
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(697, 487);
+			this.ClientSize = new System.Drawing.Size(912, 487);
 			this.Controls.Add(this.groupBox1);
 			this.Name = "ProductoPedir";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -342,7 +342,7 @@
 
 		private System.Windows.Forms.GroupBox groupBox1;
 		private System.Windows.Forms.Label label13;
-		private System.Windows.Forms.Label label11;
+		private System.Windows.Forms.Label lblMensaje;
 		private System.Windows.Forms.Button btnEliminar;
 		private System.Windows.Forms.Button btnModificar;
 		private System.Windows.Forms.MenuStrip menuStrip1;

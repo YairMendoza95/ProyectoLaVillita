@@ -336,5 +336,11 @@ namespace ProyectoLaVillita.UI.WF.Productos
 			new Venta().Show();
 			this.Hide();
 		}
+
+		private void btnPedidos_Click(object sender, EventArgs e)
+		{
+			new ProductoPedir().Show();
+			this.Hide();
+		}
 	}
 }

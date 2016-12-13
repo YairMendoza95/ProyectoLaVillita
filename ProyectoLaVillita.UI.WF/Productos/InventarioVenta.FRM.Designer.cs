@@ -32,6 +32,8 @@
 			this.label13 = new System.Windows.Forms.Label();
 			this.label11 = new System.Windows.Forms.Label();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.txtTipo = new System.Windows.Forms.TextBox();
+			this.label14 = new System.Windows.Forms.Label();
 			this.cmbProveedores = new System.Windows.Forms.ComboBox();
 			this.txtMaximo = new System.Windows.Forms.TextBox();
 			this.label12 = new System.Windows.Forms.Label();
@@ -83,8 +85,7 @@
 			this.txtIngresarNombre = new System.Windows.Forms.TextBox();
 			this.btnBuscar = new System.Windows.Forms.Button();
 			this.dgvProductos = new System.Windows.Forms.DataGridView();
-			this.txtTipo = new System.Windows.Forms.TextBox();
-			this.label14 = new System.Windows.Forms.Label();
+			this.btnPedidos = new System.Windows.Forms.Button();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
@@ -95,6 +96,7 @@
 			// groupBox1
 			// 
 			this.groupBox1.BackColor = System.Drawing.Color.SkyBlue;
+			this.groupBox1.Controls.Add(this.btnPedidos);
 			this.groupBox1.Controls.Add(this.label13);
 			this.groupBox1.Controls.Add(this.label11);
 			this.groupBox1.Controls.Add(this.groupBox2);
@@ -162,6 +164,23 @@
 			this.groupBox2.TabIndex = 15;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Información";
+			// 
+			// txtTipo
+			// 
+			this.txtTipo.Location = new System.Drawing.Point(145, 117);
+			this.txtTipo.Name = "txtTipo";
+			this.txtTipo.ReadOnly = true;
+			this.txtTipo.Size = new System.Drawing.Size(100, 23);
+			this.txtTipo.TabIndex = 21;
+			// 
+			// label14
+			// 
+			this.label14.AutoSize = true;
+			this.label14.Location = new System.Drawing.Point(15, 120);
+			this.label14.Name = "label14";
+			this.label14.Size = new System.Drawing.Size(117, 16);
+			this.label14.TabIndex = 20;
+			this.label14.Text = "Tipo de Producto";
 			// 
 			// cmbProveedores
 			// 
@@ -456,7 +475,7 @@
 			// ventasToolStripMenuItem
 			// 
 			this.ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-			this.ventasToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+			this.ventasToolStripMenuItem.Size = new System.Drawing.Size(127, 22);
 			this.ventasToolStripMenuItem.Text = "Ventas";
 			this.ventasToolStripMenuItem.Click += new System.EventHandler(this.ventasToolStripMenuItem_Click);
 			// 
@@ -617,22 +636,16 @@
 			this.dgvProductos.TabIndex = 1;
 			this.dgvProductos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProductos_CellClick);
 			// 
-			// txtTipo
+			// btnPedidos
 			// 
-			this.txtTipo.Location = new System.Drawing.Point(145, 117);
-			this.txtTipo.Name = "txtTipo";
-			this.txtTipo.ReadOnly = true;
-			this.txtTipo.Size = new System.Drawing.Size(100, 23);
-			this.txtTipo.TabIndex = 21;
-			// 
-			// label14
-			// 
-			this.label14.AutoSize = true;
-			this.label14.Location = new System.Drawing.Point(15, 120);
-			this.label14.Name = "label14";
-			this.label14.Size = new System.Drawing.Size(117, 16);
-			this.label14.TabIndex = 20;
-			this.label14.Text = "Tipo de Producto";
+			this.btnPedidos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.btnPedidos.Location = new System.Drawing.Point(488, 100);
+			this.btnPedidos.Name = "btnPedidos";
+			this.btnPedidos.Size = new System.Drawing.Size(105, 35);
+			this.btnPedidos.TabIndex = 4;
+			this.btnPedidos.Text = "Pedir";
+			this.btnPedidos.UseVisualStyleBackColor = true;
+			this.btnPedidos.Click += new System.EventHandler(this.btnPedidos_Click);
 			// 
 			// InventarioVenta
 			// 
@@ -715,5 +728,6 @@
 		private System.Windows.Forms.Label label13;
 		private System.Windows.Forms.TextBox txtTipo;
 		private System.Windows.Forms.Label label14;
+		private System.Windows.Forms.Button btnPedidos;
 	}
 }

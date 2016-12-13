@@ -51,6 +51,8 @@ namespace ProyectoLaVillita.UI.WF.Rentas
 					total += subtotal;
 					txtTotal.Text = total.ToString();
 				}
+				txtCantidad.Clear();
+				cmbProductos.ResetText();
 			}
 			else
 			{
@@ -79,8 +81,8 @@ namespace ProyectoLaVillita.UI.WF.Rentas
 						telefono = txtTelefono.Text
 					};
 					_clienteManager.InsertarCliente(_cliente);
-					cliente = _clienteManager.Clientes.Last().idCliente;
 				}
+				cliente = _clienteManager.Clientes.Last().idCliente;
 			}
 			else if (rbtBuscar.Checked)
 			{
@@ -162,7 +164,6 @@ namespace ProyectoLaVillita.UI.WF.Rentas
 				}
 			}
 		}
-
 		private void modificarRentaToolStripMenuItem_Click(object sender, EventArgs e)
 		{
 			new ModificarRenta().Show();
