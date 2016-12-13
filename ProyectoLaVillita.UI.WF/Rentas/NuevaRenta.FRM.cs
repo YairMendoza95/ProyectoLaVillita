@@ -23,22 +23,38 @@ namespace ProyectoLaVillita.UI.WF.Rentas
 		private ProductoManager _prodManager;
 		private ClienteManager _clienteManager;
 		private ClienteDTO _cliente;
+		private DetalleRentaDTO _dr;
+		private DetalleRentaManager _drManager;
+		private ProductoDTO _prod;
+		double total = 0;
         public NuevaRenta()
         {
             InitializeComponent();
             _rentaManager = new RentaManager();
 			_prodManager = new ProductoManager();
 			_clienteManager = new ClienteManager();
+			_drManager = new DetalleRentaManager();
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-			if (txtCantidad.Text != "")
+			if ((Convert.ToDouble(txtCantidad.Text) <= _prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).stockActual) &&
+			   (_prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).stockActual >= _prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).stockMin) &&
+			   (Convert.ToDouble(txtCantidad.Text) > 0))
 			{
 				int producto = Convert.ToInt32(cmbProductos.SelectedValue);
 				int cantidad = Convert.ToInt32(txtCantidad.Text);
 				double subtotal = cantidad * _prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).precioVenta;
-				dgvDetalleVenta.Rows.Add(producto, cantidad, subtotal);
+				if (txtCantidad.Text != "")
+				{
+					dgvDetalleVenta.Rows.Add(producto, cantidad, subtotal);
+					total += subtotal;
+					txtTotal.Text = total.ToString();
+				}
+			}
+			else
+			{
+				MessageBox.Show("No se puede asignar el producto", titulo, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 			}
         }
 
@@ -79,11 +95,73 @@ namespace ProyectoLaVillita.UI.WF.Rentas
 					idCliente = cliente,
 					total = Convert.ToDouble(txtTotal.Text),
 					fechaInicio = dateTimePicker1.Value.ToString(),
-					fechaVencimiento = dateTimePicker2.Value.ToString()
+					fechaVencimiento = dateTimePicker2.Value.ToString(),
 					notas = txtNotas.Text
 				};
+				if (_rentaManager.InsertarRenta(_renta))
+				{
+					for (int i = 0; i < dgvDetalleVenta.RowCount - 1; i++)
+					{
+						try
+						{
+							_dr = new DetalleRentaDTO()
+							{
+								idRenta = _rentaManager.Rentas.Last().idRenta,
+								idProducto = Convert.ToInt32(cmbProductos.SelectedValue),
+								idProveedor = _prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).idProveedor,
+								cantidad = Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[1].Value),
+								total = Convert.ToDouble(dgvDetalleVenta.Rows[i].Cells[2].Value),
+							};
+							if (_drManager.InsertarDetalleRenta(_dr))
+							{
+								int stock = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).stockActual;
+
+								stock -= Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[2].Value);
+
+								if (_prod == null)
+								{
+									_prod = new ProductoDTO()
+									{
+										idProducto = Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value),
+
+										nombre = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).nombre,
+
+										idProveedor = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).idProveedor,
+
+										idTipoProducto = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).idTipoProducto,
+
+										precioVenta = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).precioVenta,
+
+										precioCompra = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).precioCompra,
+
+										stockActual = stock,
+
+										stockMax = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).stockMax,
+
+										stockMin = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).stockMin
+									};
+									_prodManager.ModificarProducto(_prod);
+									cmbProductos.ResetText();
+									txtCantidad.Clear();
+									txtTotal.Clear();
+									txtNotas.Clear();
+									cmbProductos.Focus();
+								}
+							}
+						}
+						catch (Exception ex)
+						{
+							MessageBox.Show("Error: " + ex.Message, titulo, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+						}
+					}
+					MessageBox.Show("Renta registrada", titulo, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				}
+				else
+				{
+					MessageBox.Show("Renta no registrada", titulo, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+				}
 			}
-        }
+		}
 
 		private void modificarRentaToolStripMenuItem_Click(object sender, EventArgs e)
 		{
