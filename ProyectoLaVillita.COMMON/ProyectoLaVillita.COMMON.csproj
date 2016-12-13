@@ -55,6 +55,7 @@
     <Compile Include="Herremientas\RecolectorDeErrorescs.cs" />
     <Compile Include="Interfaces\IClienteManager.cs" />
     <Compile Include="Interfaces\IConsultaManager.cs" />
+    <Compile Include="Interfaces\IDetalleRentaManager.cs" />
     <Compile Include="Interfaces\IDetalleVentaManager.cs" />
     <Compile Include="Interfaces\IEntradaManager.cs" />
     <Compile Include="Interfaces\IProductoManager.cs" />
