@@ -29,7 +29,6 @@ namespace ProyectoLaVillita.UI.WF.Productos
         public Venta()
         {
             InitializeComponent();
-            _prod = new ProductoDTO();
             _prodManager = new ProductoManager();
             _dvManager = new DetalleVentaManger();
             _ventaManager = new VentaManager();
@@ -161,19 +160,28 @@ namespace ProyectoLaVillita.UI.WF.Productos
 
 		private void btnAgregar_Click(object sender, EventArgs e)
         {
-			int producto = Convert.ToInt32(cmbProductos.SelectedValue);
-			int proveedor = _prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).idProveedor;
-			double subtotal = _prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).precioVenta * Convert.ToDouble(txtCantidad.Text);
-			if (txtProveedor.Text != "" && txtCantidad.Text != "")
+			if ((Convert.ToDouble(txtCantidad.Text) <= _prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).stockActual) &&
+				(Convert.ToDouble(txtCantidad.Text) >= _prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).stockMin) &&
+				(Convert.ToDouble(txtCantidad.Text) > 0))
 			{
-				dgvDetalleVenta.Rows.Add(producto, proveedor, txtCantidad.Text, subtotal);
-				total += subtotal;
-				txtSubtotal.Text = total.ToString();
-			}			
-			txtCantidad.Clear();
-			txtProveedor.Clear();
-			//txtNotas.Clear();
-			cmbProductos.ResetText();
+				int producto = Convert.ToInt32(cmbProductos.SelectedValue);
+				int proveedor = _prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).idProveedor;
+				double subtotal = _prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).precioVenta * Convert.ToDouble(txtCantidad.Text);
+				if (txtProveedor.Text != "" && txtCantidad.Text != "")
+				{
+					dgvDetalleVenta.Rows.Add(producto, proveedor, txtCantidad.Text, subtotal);
+					total += subtotal;
+					txtSubtotal.Text = total.ToString();
+				}
+				txtCantidad.Clear();
+				txtProveedor.Clear();
+				//txtNotas.Clear();
+				cmbProductos.ResetText();
+			}
+			else
+			{
+				MessageBox.Show("No se puede asignar el producto", titulo, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+			}
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -183,6 +191,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
 				_venta = new VentaDTO()
 				{
 					idUsuario = Program.usuario,
+					idTipoUsuario = Program.idTipoUsuario,
 					fechaVenta = DateTime.Today.ToString(),
 					total = total,
 					notas = txtNotas.Text,
@@ -195,7 +204,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
 						{
 							_dv = new DetalleVentaDTO()
 							{
-								idVenta = _venta.idVenta,
+								idVenta = _ventaManager.Ventas.Last().idVenta,
 								idProducto = Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value.ToString()),
 								idProveedor = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).idProveedor,
 								cantidad = Convert.ToDouble(dgvDetalleVenta.Rows[i].Cells[2].Value),
@@ -203,21 +212,31 @@ namespace ProyectoLaVillita.UI.WF.Productos
 							};
 							if(_dvManager.InsertarDetalleVenta(_dv))
 							{
-								int stock = _prodManager.BuscarProductoPorNombre(dgvDetalleVenta.Rows[i].Cells[0].Value.ToString()).stockActual;
-								stock -= Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[2]);
+								int stock = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).stockActual;
+
+								stock -= Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[2].Value);
+
 								if (_prod == null)
 								{
 									_prod = new ProductoDTO()
 									{
 										idProducto = Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value),
+
 										nombre = dgvDetalleVenta.Rows[i].Cells[0].Value.ToString(),
-										idProveedor = _prodManager.BuscarProductoPorNombre(dgvDetalleVenta.Rows[i].Cells[0].Value.ToString()).idProveedor,
-										idTipoProducto = _prodManager.BuscarProductoPorNombre(dgvDetalleVenta.Rows[i].Cells[0].Value.ToString()).idTipoProducto,
-										precioVenta = _prodManager.BuscarProductoPorNombre(dgvDetalleVenta.Rows[i].Cells[0].Value.ToString()).precioVenta,
-										precioCompra = _prodManager.BuscarProductoPorNombre(dgvDetalleVenta.Rows[i].Cells[0].Value.ToString()).precioCompra,
+
+										idProveedor = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).idProveedor,
+
+										idTipoProducto = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).idTipoProducto,
+
+										precioVenta = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).precioVenta,
+
+										precioCompra = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).precioCompra,
+
 										stockActual = stock,
-										stockMax = _prodManager.BuscarProductoPorNombre(dgvDetalleVenta.Rows[i].Cells[0].Value.ToString()).stockMax,
-										stockMin = _prodManager.BuscarProductoPorNombre(dgvDetalleVenta.Rows[i].Cells[0].Value.ToString()).stockMin
+
+										stockMax = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).stockMax,
+
+										stockMin = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).stockMin
 									};
 									_prodManager.ModificarProducto(_prod);
 									cmbProductos.ResetText();
@@ -228,7 +247,6 @@ namespace ProyectoLaVillita.UI.WF.Productos
 									cmbProductos.Focus();
 								}
 							}
-
 						}
 						catch (Exception)
 						{

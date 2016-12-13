@@ -101,7 +101,7 @@ namespace ProyectoLaVillita.DAL
             try
             {
                 conexion.Open();
-				da.UpdateCommand = new MySqlCommand("Update usuario set nombreUsuario = '" + entidad.nombreUsuario + "', contraseña = '" + entidad.contraseña + "' idTipoUsuario = " + entidad.idTipoUsuario + "where idusuario = " + entidad.idUsuario, conexion);
+				da.UpdateCommand = new MySqlCommand("Update usuario set nombreUsuario = '" + entidad.nombreUsuario + "', contraseña = '" + entidad.contraseña + "', idTipoUsuario = " + entidad.idTipoUsuario + " where idUsuario = " + entidad.idUsuario, conexion);
                 int afectados = da.UpdateCommand.ExecuteNonQuery();
                 conexion.Close();
                 if (afectados > 0)

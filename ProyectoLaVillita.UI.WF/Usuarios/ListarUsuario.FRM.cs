@@ -20,10 +20,12 @@ namespace ProyectoLaVillita.UI.WF.Usuarios
         public string titulo = "Sistema de inventario \"La Villita\"";
         private UsuarioDTO _user;
         private UsuarioManager _userManager;
+		private TipoUsuarioManager _tuManager;
         public ModificarUsuario()
         {
             InitializeComponent();
             _userManager = new UsuarioManager();
+			_tuManager = new TipoUsuarioManager();
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -46,7 +48,8 @@ namespace ProyectoLaVillita.UI.WF.Usuarios
 							{
 								idUsuario = Convert.ToInt32(txtId.Text),
 								nombreUsuario = txtNombre.Text,
-								contraseña = txtContraseña.Text
+								contraseña = txtContraseña.Text,
+								idTipoUsuario = Convert.ToInt32(cmbTipos.SelectedValue)
 							};
 							if (!txtConfirmarContraseña.Text.Equals(txtContraseña.Text))
 							{
@@ -64,6 +67,10 @@ namespace ProyectoLaVillita.UI.WF.Usuarios
 								txtConfirmarContraseña.Clear();
 								txtConfirmarContraseña.Visible = false;
 								label6.Visible = false;
+								cmbTipos.Visible = false;
+								btnSalir.Visible = true;
+								btnGuardar.Visible = false;
+								btnModificar.Visible = true;
 							}
 						}
 					}
@@ -74,7 +81,7 @@ namespace ProyectoLaVillita.UI.WF.Usuarios
 					MessageBox.Show("Error: " + ex.Message, titulo, MessageBoxButtons.OK, MessageBoxIcon.Error);
 					bandera = false;
 				}
-			} while (bandera);
+			} while (!bandera);
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -146,24 +153,26 @@ namespace ProyectoLaVillita.UI.WF.Usuarios
 		private void ModificarUsuario_Load(object sender, EventArgs e)
 		{
 			List<UsuarioDTO> usuarios = _userManager.Usuarios.ToList();
-			if(usuarios.Count>0)
+			if (usuarios.Count > 0)
 			{
 				dgvUsuarios.DataSource = usuarios;
 				dgvUsuarios.Columns[0].HeaderText = "Id";
 				dgvUsuarios.Columns[1].HeaderText = "Nombre de usuario";
 				dgvUsuarios.Columns[2].HeaderText = "Contraseña";
+				dgvUsuarios.Columns[3].HeaderText = "Tipo de usuario";
 			}
 			else
 			{
 				StringBuilder strb = new StringBuilder();
 				strb.Append("No existen registros");
 			}
-			btnGuardar.Visible = false;
-			txtId.ReadOnly = true;
-			txtNombre.ReadOnly = true;
-			txtContraseña.ReadOnly = true;
-			label6.Visible = false;
-			txtConfirmarContraseña.Visible = false;
+			List<TipoUsuarioDTO> tipos = _tuManager.TiposUsuario.ToList(); 
+			if(tipos.Count>0)
+			{
+				cmbTipos.DataSource = tipos;
+				cmbTipos.DisplayMember = "nombre";
+				cmbTipos.ValueMember = "idTipoUsuario";
+			}
 		}
 
 		private void dgvUsuarios_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -171,15 +180,20 @@ namespace ProyectoLaVillita.UI.WF.Usuarios
 			txtId.Text = dgvUsuarios.SelectedRows[0].Cells[0].Value.ToString();
 			txtNombre.Text = dgvUsuarios.SelectedRows[0].Cells[1].Value.ToString();
 			txtContraseña.Text = dgvUsuarios.SelectedRows[0].Cells[2].Value.ToString();
+			txtTipo.Text = _tuManager.BuscarTipoPorId(Convert.ToInt32(dgvUsuarios.SelectedRows[0].Cells[3].Value)).nombre;
 		}
 
 		private void btnModificar_Click(object sender, EventArgs e)
 		{
 			btnGuardar.Visible = true;
-			btnEliminar.Visible = true;
+			btnEliminar.Visible = false;
 			txtConfirmarContraseña.Visible = true;
 			label6.Visible = true;
-			txtConfirmarContraseña.Visible = true;
+			btnSalir.Visible = false;
+			btnModificar.Visible = false;
+			txtConfirmarContraseña.ReadOnly = false; 
+			txtTipo.Visible = false;
+			cmbTipos.Visible = true;
 			txtContraseña.ReadOnly = false;
 			txtNombre.ReadOnly = false;
 			txtConfirmarContraseña.Text = dgvUsuarios.SelectedRows[0].Cells[2].Value.ToString();
@@ -199,6 +213,7 @@ namespace ProyectoLaVillita.UI.WF.Usuarios
 						txtId.Clear();
 						txtNombre.Clear();
 						txtContraseña.Clear();
+						txtTipo.Clear();
 						dgvUsuarios.DataSource = _userManager.Usuarios.ToList();
 					}
 				}

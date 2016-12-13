@@ -22,21 +22,27 @@ namespace ProyectoLaVillita.UI.WF.Productos
 		private ProductoDTO _prod;
 		public string titulo = "Sistema de inventario \"La VIllita\"";
 		List<ProductoDTO> abarrotes = new List<ProductoDTO>();
+		private TipoProductoManager _tuManager;
 		public InventarioVenta()
 		{
 			InitializeComponent();
 			_prodManager = new ProductoManager();
 			_provManager = new ProveedorManager();
+			_tuManager = new TipoProductoManager();
 		}
 
 		private void InventarioVenta_Load(object sender, EventArgs e)
 		{
-			// Permisos
-
 			if (Program.idTipoUsuario != 1) // si idUsuario es diferente de 1 (administrador) oculta el menu de usuarios y hace visible el boton de Cerrar sesión
 			{
 				usuariosToolStripMenuItem.Visible = false;
 				cerrarSesiónToolStripMenuItem.Visible = true;
+				productosToolStripMenuItem.Visible = false;
+				proveedoresToolStripMenuItem.Visible = false;
+				entradasToolStripMenuItem.Visible = false;
+				inventarioToolStripMenuItem1.Visible = false;
+				modificarRentaToolStripMenuItem.Visible = false;
+
 			}
 			else // si idUsuario es igual a 1 oculta el boton de cerrar sesión y hace visible el menu de usuarios
 			{
@@ -62,16 +68,18 @@ namespace ProyectoLaVillita.UI.WF.Productos
 				dgvProductos.Columns[1].DataPropertyName = "nombre";
 				dgvProductos.Columns[2].HeaderText = "Proveedor";
 				dgvProductos.Columns[2].DataPropertyName = "idProveedor";
-				dgvProductos.Columns[3].HeaderText = "Precio Compra";
-				dgvProductos.Columns[3].DataPropertyName = "precioCompra";
-				dgvProductos.Columns[4].HeaderText = "Precio Venta";
-				dgvProductos.Columns[4].DataPropertyName = "precioVenta";
-				dgvProductos.Columns[5].HeaderText = "Stock Actual";
-				dgvProductos.Columns[5].DataPropertyName = "stockActual";
-				dgvProductos.Columns[6].HeaderText = "Stock Máximo";
-				dgvProductos.Columns[6].DataPropertyName = "stockMax";
-				dgvProductos.Columns[7].HeaderText = "Stock Mínimo";
-				dgvProductos.Columns[7].DataPropertyName = "stockMin";
+				dgvProductos.Columns[3].HeaderText = "Tipo de producto";
+				dgvProductos.Columns[3].DataPropertyName = "idTipoProducto";
+				dgvProductos.Columns[4].HeaderText = "Precio Compra";
+				dgvProductos.Columns[4].DataPropertyName = "precioCompra";
+				dgvProductos.Columns[5].HeaderText = "Precio Venta";
+				dgvProductos.Columns[5].DataPropertyName = "precioVenta";
+				dgvProductos.Columns[6].HeaderText = "Stock Actual";
+				dgvProductos.Columns[6].DataPropertyName = "stockActual";
+				dgvProductos.Columns[7].HeaderText = "Stock Máximo";
+				dgvProductos.Columns[7].DataPropertyName = "stockMax";
+				dgvProductos.Columns[8].HeaderText = "Stock Mínimo";
+				dgvProductos.Columns[8].DataPropertyName = "stockMin";
 				label11.Visible = false;
 			}
 			else
@@ -158,11 +166,12 @@ namespace ProyectoLaVillita.UI.WF.Productos
 			txtId.Text = dgvProductos.SelectedRows[0].Cells[0].Value.ToString();
 			txtNombre.Text = dgvProductos.SelectedRows[0].Cells[1].Value.ToString();
 			txtProveedor.Text = _provManager.BuscarProveedorPorId(Convert.ToInt32(dgvProductos.SelectedRows[0].Cells[2].Value)).nombreProveedor;
-			txtCompra.Text = dgvProductos.SelectedRows[0].Cells[3].Value.ToString();
-			txtVenta.Text = dgvProductos.SelectedRows[0].Cells[4].Value.ToString();
-			txtActual.Text = dgvProductos.SelectedRows[0].Cells[5].Value.ToString();
-			txtMaximo.Text = dgvProductos.SelectedRows[0].Cells[6].Value.ToString();
-			txtMinimo.Text = dgvProductos.SelectedRows[0].Cells[7].Value.ToString();
+			txtTipo.Text = _tuManager.BuscarTipoPorId(Convert.ToInt32(dgvProductos.SelectedRows[0].Cells[3].Value)).nombre;
+			txtCompra.Text = dgvProductos.SelectedRows[0].Cells[4].Value.ToString();
+			txtVenta.Text = dgvProductos.SelectedRows[0].Cells[5].Value.ToString();
+			txtActual.Text = dgvProductos.SelectedRows[0].Cells[6].Value.ToString();
+			txtMaximo.Text = dgvProductos.SelectedRows[0].Cells[7].Value.ToString();
+			txtMinimo.Text = dgvProductos.SelectedRows[0].Cells[8].Value.ToString();
 		}
 
 		private void btnModificar_Click(object sender, EventArgs e)
@@ -320,6 +329,12 @@ namespace ProyectoLaVillita.UI.WF.Productos
 				e.Handled = false;
 			else
 				e.Handled = true;
+		}
+
+		private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
+		{
+			new Venta().Show();
+			this.Hide();
 		}
 	}
 }

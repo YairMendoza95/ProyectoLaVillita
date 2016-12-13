@@ -108,7 +108,9 @@ namespace ProyectoLaVillita.UI.WF.Productos
 								txtCantidad.Clear();
 								txtTotal.Clear();
 								cmbProductos.Focus();
+								_prod = null;
 							}
+							_ent = null;
 						}
 						else
 						{
