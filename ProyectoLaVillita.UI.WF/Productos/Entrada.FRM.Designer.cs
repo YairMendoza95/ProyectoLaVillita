@@ -347,6 +347,7 @@
 			this.txtTotal.Location = new System.Drawing.Point(267, 210);
 			this.txtTotal.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
 			this.txtTotal.Name = "txtTotal";
+			this.txtTotal.ReadOnly = true;
 			this.txtTotal.Size = new System.Drawing.Size(121, 23);
 			this.txtTotal.TabIndex = 10;
 			this.txtTotal.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTotal_KeyPress_1);
@@ -358,6 +359,7 @@
 			this.txtCantidad.Name = "txtCantidad";
 			this.txtCantidad.Size = new System.Drawing.Size(121, 23);
 			this.txtCantidad.TabIndex = 9;
+			this.txtCantidad.TextChanged += new System.EventHandler(this.txtCantidad_TextChanged);
 			this.txtCantidad.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCantidad_KeyPress);
 			// 
 			// dtpFecheEntrada

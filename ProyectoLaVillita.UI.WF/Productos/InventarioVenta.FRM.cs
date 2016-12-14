@@ -185,9 +185,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
 			//
 			txtNombre.ReadOnly = false;
 			txtProveedor.ReadOnly = false;
-			txtCompra.ReadOnly = false;
 			txtVenta.ReadOnly = false;
-			txtActual.ReadOnly = false;
 			txtMaximo.ReadOnly = false;
 			txtMinimo.ReadOnly = false;
 			cmbProveedores.Visible = true;
@@ -201,62 +199,63 @@ namespace ProyectoLaVillita.UI.WF.Productos
 
 		private void btnGuardar_Click(object sender, EventArgs e)
 		{
-			try
+			if ((Convert.ToDouble(txtVenta.Text) > Convert.ToDouble(txtCompra.Text)) && (Convert.ToInt32(txtMaximo.Text) > Convert.ToInt32(txtMinimo.Text)))
 			{
-				if (txtId.Text != "" && txtNombre.Text != "" && txtProveedor.Text != "" && txtCompra.Text != "" && txtVenta.Text != "" && txtMaximo.Text != "" && txtMinimo.Text != "")
+				try
 				{
-					if (_prod == null)
+					if (txtId.Text != "" && txtNombre.Text != "" && txtProveedor.Text != "" && txtCompra.Text != "" && txtVenta.Text != "" && txtMaximo.Text != "" && txtMinimo.Text != "")
 					{
-						_prod = new ProductoDTO()
+						if (_prod == null)
 						{
-							idProducto = Convert.ToInt32(txtId.Text),
-							nombre = txtNombre.Text,
-							idProveedor = Convert.ToInt32(cmbProveedores.SelectedValue),
-							precioCompra = Convert.ToDouble(txtCompra.Text),
-							precioVenta = Convert.ToDouble(txtVenta.Text),
-							stockActual = Convert.ToInt32(txtActual.Text),
-							stockMax = Convert.ToInt32(txtMaximo.Text),
-							stockMin = Convert.ToInt32(txtMinimo.Text)
-						};
-						if (MessageBox.Show("¿Desea guardar cambios?", titulo, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-						{
-							if (_prodManager.ModificarProducto(_prod))
+							_prod = new ProductoDTO()
 							{
-								MessageBox.Show("Producto actualizado satisfactoriamente", titulo, MessageBoxButtons.OK, MessageBoxIcon.Information);
+								idProducto = Convert.ToInt32(txtId.Text),
+								nombre = txtNombre.Text,
+								idProveedor = Convert.ToInt32(cmbProveedores.SelectedValue),
+								precioCompra = Convert.ToDouble(txtCompra.Text),
+								precioVenta = Convert.ToDouble(txtVenta.Text),
+								stockActual = Convert.ToInt32(txtActual.Text),
+								stockMax = Convert.ToInt32(txtMaximo.Text),
+								stockMin = Convert.ToInt32(txtMinimo.Text)
+							};
+							if (MessageBox.Show("¿Desea guardar cambios?", titulo, MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+							{
+								if (_prodManager.ModificarProducto(_prod))
+								{
+									MessageBox.Show("Producto actualizado satisfactoriamente", titulo, MessageBoxButtons.OK, MessageBoxIcon.Information);
+								}
+								dgvProductos.DataSource = abarrotes;
+								btnEliminar.Visible = true;
+								txtActual.Clear();
+								txtCompra.Clear();
+								txtId.Clear();
+								txtMaximo.Clear();
+								txtMinimo.Clear();
+								txtNombre.Clear();
+								txtVenta.Clear();
+								txtProveedor.Clear();
+								txtNombre.ReadOnly = true;
+								txtProveedor.ReadOnly = true;
+								txtVenta.ReadOnly = true;
+								txtMaximo.ReadOnly = true;
+								txtMinimo.ReadOnly = true;
+								txtProveedor.Visible = true;
+								cmbProveedores.ResetText();
+								cmbProveedores.Visible = false;
+								btnGuardar.Visible = false;
 							}
-							dgvProductos.DataSource = abarrotes;
-							btnEliminar.Visible = true;
-							txtActual.Clear();
-							txtCompra.Clear();
-							txtId.Clear();
-							txtMaximo.Clear();
-							txtMinimo.Clear();
-							txtNombre.Clear();
-							txtVenta.Clear();
-							txtProveedor.Clear();
-							txtNombre.ReadOnly = true;
-							txtProveedor.ReadOnly = true;
-							txtCompra.ReadOnly = true;
-							txtVenta.ReadOnly = true;
-							txtActual.ReadOnly = true;
-							txtMaximo.ReadOnly = true;
-							txtMinimo.ReadOnly = true;
-							txtProveedor.Visible = true;
-							cmbProveedores.ResetText();
-							cmbProveedores.Visible = false;
-							btnGuardar.Visible = false;
-						}
-						else
-						{
-							MessageBox.Show("Error al actualizar el producto", titulo, MessageBoxButtons.OK, MessageBoxIcon.Error);
+							else
+							{
+								MessageBox.Show("Error al actualizar el producto", titulo, MessageBoxButtons.OK, MessageBoxIcon.Error);
+							}
 						}
 					}
+					_prod = null;
 				}
-				_prod = null;
-			}
-			catch (Exception ex)
-			{
-				MessageBox.Show("Error: " + ex.Message, titulo, MessageBoxButtons.OK, MessageBoxIcon.Error);
+				catch (Exception ex)
+				{
+					MessageBox.Show("Error: " + ex.Message, titulo, MessageBoxButtons.OK, MessageBoxIcon.Error);
+				}
 			}
 		}
 

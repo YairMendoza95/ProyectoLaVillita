@@ -68,7 +68,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
         {
 			try
             {
-				if (txtProveedor.Text != "" && txtCantidad.Text != "" && txtTotal.Text != "")
+				if ((txtProveedor.Text != "" && txtCantidad.Text != "" && txtTotal.Text != "") && (Convert.ToInt32(txtCantidad.Text) < _prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).stockActual))
 				{
 					if (_ent == null)
 					{
@@ -78,7 +78,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
 							idProveedor = Convert.ToInt32(_prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).idProveedor),
 							fechaEntrada = dtpFecheEntrada.Text,
 							cantidad = Convert.ToInt32(txtCantidad.Text),
-							montoPagar = Convert.ToInt32(txtTotal.Text)
+							montoPagar = Convert.ToDouble(txtTotal.Text)
 						};
 
 						if (_entManager.InsertarEntrada(_ent))
@@ -94,7 +94,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
 									idProducto = Convert.ToInt32(cmbProductos.SelectedValue),
 									nombre = _prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).nombre,
 									idProveedor = _prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).idProveedor,
-									idTipoProducto=_prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).idTipoProducto,
+									idTipoProducto = _prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).idTipoProducto,
 									precioVenta = _prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).precioVenta,
 									precioCompra = compra,
 									stockActual = stock,
@@ -226,6 +226,8 @@ namespace ProyectoLaVillita.UI.WF.Productos
 		{
 			if (Char.IsDigit(e.KeyChar) || Char.IsControl(e.KeyChar))
 			{
+				//double monto = Convert.ToInt32(txtCantidad.Text) * _prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).precioCompra;
+				//txtTotal.Text = monto.ToString();
 				e.Handled = false;
 			}
 			else
@@ -233,6 +235,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
 				e.Handled = true;
 			}
 		}
+
 		bool bandera = true;
 		private void txtTotal_KeyPress_1(object sender, KeyPressEventArgs e)
 		{
@@ -250,6 +253,19 @@ namespace ProyectoLaVillita.UI.WF.Productos
 				{
 					e.Handled = true;
 				}
+			}
+		}
+
+		private void txtCantidad_TextChanged(object sender, EventArgs e)
+		{
+			if (txtCantidad.Text != "")
+			{
+				double monto = Convert.ToInt32(txtCantidad.Text) * _prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).precioCompra;
+				txtTotal.Text = monto.ToString();
+			}
+			else
+			{
+				txtTotal.Clear();
 			}
 		}
 	}

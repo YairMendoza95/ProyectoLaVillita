@@ -88,80 +88,74 @@ namespace ProyectoLaVillita.UI.WF.Rentas
 			{
 				cliente = Convert.ToInt32(cmbCliente.SelectedValue);
 			}
-			if (txtCantidad.Text != "" && dateTimePicker1.Text != "" && dateTimePicker2.Text != "")
+			_renta = new RentaDTO()
 			{
-				_renta = new RentaDTO()
+				idUsuario = Program.usuario,
+				idTipoUsuario = Program.idTipoUsuario,
+				idCliente = cliente,
+				total = Convert.ToDouble(txtTotal.Text),
+				fechaInicio = dateTimePicker1.Value.ToString(),
+				fechaVencimiento = dateTimePicker2.Value.ToString(),
+				notas = txtNotas.Text
+			};
+			if (_rentaManager.InsertarRenta(_renta))
+			{
+				for (int i = 0; i < dgvDetalleVenta.RowCount - 1; i++)
 				{
-					idUsuario = Program.usuario,
-					idTipoUsuario = Program.idTipoUsuario,
-					idCliente = cliente,
-					total = Convert.ToDouble(txtTotal.Text),
-					fechaInicio = dateTimePicker1.Value.ToString(),
-					fechaVencimiento = dateTimePicker2.Value.ToString(),
-					notas = txtNotas.Text
-				};
-				if (_rentaManager.InsertarRenta(_renta))
-				{
-					for (int i = 0; i < dgvDetalleVenta.RowCount - 1; i++)
+					try
 					{
-						try
+						_dr = new DetalleRentaDTO()
 						{
-							_dr = new DetalleRentaDTO()
-							{
-								idRenta = _rentaManager.Rentas.Last().idRenta,
-								idProducto = Convert.ToInt32(cmbProductos.SelectedValue),
-								idProveedor = _prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).idProveedor,
-								cantidad = Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[1].Value),
-								total = Convert.ToDouble(dgvDetalleVenta.Rows[i].Cells[2].Value),
-							};
-							if (_drManager.InsertarDetalleRenta(_dr))
-							{
-								int stock = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).stockActual;
+							idRenta = _rentaManager.Rentas.Last().idRenta,
+							idProducto = Convert.ToInt32(cmbProductos.SelectedValue),
+							idProveedor = _prodManager.BuscarProductosPorId(Convert.ToInt32(cmbProductos.SelectedValue)).idProveedor,
+							cantidad = Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[1].Value),
+							total = Convert.ToDouble(dgvDetalleVenta.Rows[i].Cells[2].Value),
+						};
+						if (_drManager.InsertarDetalleRenta(_dr))
+						{
+							int stock = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).stockActual;
 
-								stock -= Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[2].Value);
+							stock -= Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[2].Value);
 
-								if (_prod == null)
+							if (_prod == null)
+							{
+								_prod = new ProductoDTO()
 								{
-									_prod = new ProductoDTO()
-									{
-										idProducto = Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value),
+									idProducto = Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value),
 
-										nombre = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).nombre,
+									nombre = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).nombre,
 
-										idProveedor = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).idProveedor,
+									idProveedor = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).idProveedor,
 
-										idTipoProducto = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).idTipoProducto,
+									idTipoProducto = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).idTipoProducto,
 
-										precioVenta = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).precioVenta,
+									precioVenta = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).precioVenta,
 
-										precioCompra = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).precioCompra,
+									precioCompra = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).precioCompra,
 
-										stockActual = stock,
+									stockActual = stock,
 
-										stockMax = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).stockMax,
+									stockMax = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).stockMax,
 
-										stockMin = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).stockMin
-									};
-									_prodManager.ModificarProducto(_prod);
-									cmbProductos.ResetText();
-									txtCantidad.Clear();
-									txtTotal.Clear();
-									txtNotas.Clear();
-									cmbProductos.Focus();
-								}
+									stockMin = _prodManager.BuscarProductosPorId(Convert.ToInt32(dgvDetalleVenta.Rows[i].Cells[0].Value)).stockMin
+								};
+								_prodManager.ModificarProducto(_prod);
+								cmbProductos.ResetText();
+								txtCantidad.Clear();
+								txtTotal.Clear();
+								txtNotas.Clear();
+								cmbProductos.Focus();
 							}
-						}
-						catch (Exception ex)
-						{
-							MessageBox.Show("Error: " + ex.Message, titulo, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+							_prod = null;
 						}
 					}
-					MessageBox.Show("Renta registrada", titulo, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+					catch (Exception ex)
+					{
+						MessageBox.Show("Error: " + ex.Message, titulo, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+					}
 				}
-				else
-				{
-					MessageBox.Show("Renta no registrada", titulo, MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-				}
+				MessageBox.Show("Renta registrada", titulo, MessageBoxButtons.OK, MessageBoxIcon.Information);
 			}
 		}
 		private void modificarRentaToolStripMenuItem_Click(object sender, EventArgs e)

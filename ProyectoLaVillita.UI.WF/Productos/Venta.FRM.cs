@@ -283,7 +283,10 @@ namespace ProyectoLaVillita.UI.WF.Productos
 		{
 			if (e.ColumnIndex == 5)
 			{
+				double subtotal = Convert.ToDouble(txtSubtotal.Text);
+				subtotal -= Convert.ToDouble(dgvDetalleVenta.CurrentRow.Cells[3].Value);
 				dgvDetalleVenta.Rows.Remove(dgvDetalleVenta.CurrentRow);
+				txtSubtotal.Text = subtotal.ToString();
 			}
 		}
 
