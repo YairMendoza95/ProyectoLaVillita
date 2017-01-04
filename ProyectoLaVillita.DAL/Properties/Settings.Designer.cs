@@ -26,7 +26,8 @@ namespace ProyectoLaVillita.DAL.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=root;password=jymz.13021109;database=lavillita")]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=LaVillitaDB;password=laVillita12345;database=lavillita;p" +
+            "ersistsecurityinfo=True")]
         public string CadenaDeConexion {
             get {
                 return ((string)(this["CadenaDeConexion"]));

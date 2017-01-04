@@ -10,7 +10,7 @@ namespace ProyectoLaVillita.COMMON.Entidades
     {
         public int idUsuario { get; set; }
         public string nombreUsuario { get; set; }
-        public string contraseña { get; set; }
+        public string password { get; set; }
 		public int idTipoUsuario { get; set; }
     }
 }

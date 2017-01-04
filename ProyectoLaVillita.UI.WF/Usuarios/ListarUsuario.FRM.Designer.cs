@@ -30,6 +30,9 @@
         {
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.grpInformacion = new System.Windows.Forms.GroupBox();
+			this.txtTipo = new System.Windows.Forms.TextBox();
+			this.cmbTipos = new System.Windows.Forms.ComboBox();
+			this.label7 = new System.Windows.Forms.Label();
 			this.txtConfirmarContraseña = new System.Windows.Forms.TextBox();
 			this.label6 = new System.Windows.Forms.Label();
 			this.txtContraseña = new System.Windows.Forms.TextBox();
@@ -69,9 +72,6 @@
 			this.txtIngresarNombre = new System.Windows.Forms.TextBox();
 			this.btnBuscar = new System.Windows.Forms.Button();
 			this.dgvUsuarios = new System.Windows.Forms.DataGridView();
-			this.label7 = new System.Windows.Forms.Label();
-			this.cmbTipos = new System.Windows.Forms.ComboBox();
-			this.txtTipo = new System.Windows.Forms.TextBox();
 			this.groupBox1.SuspendLayout();
 			this.grpInformacion.SuspendLayout();
 			this.menuStrip1.SuspendLayout();
@@ -98,6 +98,7 @@
 			this.groupBox1.TabIndex = 10;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "Modificar usuario";
+			this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
 			// 
 			// grpInformacion
 			// 
@@ -118,6 +119,33 @@
 			this.grpInformacion.TabIndex = 24;
 			this.grpInformacion.TabStop = false;
 			this.grpInformacion.Text = "Información";
+			// 
+			// txtTipo
+			// 
+			this.txtTipo.Location = new System.Drawing.Point(174, 85);
+			this.txtTipo.Name = "txtTipo";
+			this.txtTipo.ReadOnly = true;
+			this.txtTipo.Size = new System.Drawing.Size(131, 23);
+			this.txtTipo.TabIndex = 26;
+			// 
+			// cmbTipos
+			// 
+			this.cmbTipos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.cmbTipos.FormattingEnabled = true;
+			this.cmbTipos.Location = new System.Drawing.Point(174, 85);
+			this.cmbTipos.Name = "cmbTipos";
+			this.cmbTipos.Size = new System.Drawing.Size(131, 24);
+			this.cmbTipos.TabIndex = 25;
+			this.cmbTipos.Visible = false;
+			// 
+			// label7
+			// 
+			this.label7.AutoSize = true;
+			this.label7.Location = new System.Drawing.Point(9, 88);
+			this.label7.Name = "label7";
+			this.label7.Size = new System.Drawing.Size(108, 16);
+			this.label7.TabIndex = 24;
+			this.label7.Text = "Tipo de usuario";
 			// 
 			// txtConfirmarContraseña
 			// 
@@ -469,33 +497,6 @@
 			this.dgvUsuarios.Size = new System.Drawing.Size(440, 255);
 			this.dgvUsuarios.TabIndex = 1;
 			this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
-			// 
-			// label7
-			// 
-			this.label7.AutoSize = true;
-			this.label7.Location = new System.Drawing.Point(9, 88);
-			this.label7.Name = "label7";
-			this.label7.Size = new System.Drawing.Size(108, 16);
-			this.label7.TabIndex = 24;
-			this.label7.Text = "Tipo de usuario";
-			// 
-			// cmbTipos
-			// 
-			this.cmbTipos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.cmbTipos.FormattingEnabled = true;
-			this.cmbTipos.Location = new System.Drawing.Point(174, 85);
-			this.cmbTipos.Name = "cmbTipos";
-			this.cmbTipos.Size = new System.Drawing.Size(131, 24);
-			this.cmbTipos.TabIndex = 25;
-			this.cmbTipos.Visible = false;
-			// 
-			// txtTipo
-			// 
-			this.txtTipo.Location = new System.Drawing.Point(174, 85);
-			this.txtTipo.Name = "txtTipo";
-			this.txtTipo.ReadOnly = true;
-			this.txtTipo.Size = new System.Drawing.Size(131, 23);
-			this.txtTipo.TabIndex = 26;
 			// 
 			// ModificarUsuario
 			// 

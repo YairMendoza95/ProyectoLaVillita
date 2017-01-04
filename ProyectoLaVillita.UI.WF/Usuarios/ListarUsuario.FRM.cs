@@ -48,7 +48,7 @@ namespace ProyectoLaVillita.UI.WF.Usuarios
 							{
 								idUsuario = Convert.ToInt32(txtId.Text),
 								nombreUsuario = txtNombre.Text,
-								contraseña = txtContraseña.Text,
+								password = txtContraseña.Text,
 								idTipoUsuario = Convert.ToInt32(cmbTipos.SelectedValue)
 							};
 							if (!txtConfirmarContraseña.Text.Equals(txtContraseña.Text))
@@ -233,6 +233,11 @@ namespace ProyectoLaVillita.UI.WF.Usuarios
 				Program.usuario = 0;
 				new Inicio().Show();
 			}
+		}
+
+		private void groupBox1_Enter(object sender, EventArgs e)
+		{
+
 		}
 	}
 }

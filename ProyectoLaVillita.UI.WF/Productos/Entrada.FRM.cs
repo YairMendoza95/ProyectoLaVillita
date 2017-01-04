@@ -12,7 +12,7 @@ using ProyectoLaVillita.BIZ;
 using ProyectoLaVillita.UI.WF.Proveedores;
 using ProyectoLaVillita.UI.WF.Rentas;
 using ProyectoLaVillita.UI.WF.Usuarios;
-using DevComponents.DotNetBar;
+//using DevComponents.DotNetBar;
 
 namespace ProyectoLaVillita.UI.WF.Productos
 {

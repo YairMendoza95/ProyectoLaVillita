@@ -38,7 +38,7 @@ namespace ProyectoLaVillita.UI.WF.Usuarios
 					_user = new UsuarioDTO()
 					{
 						nombreUsuario = txtUsuario.Text.ToString(),
-						contraseña = txtContraseña.Text.ToString(),
+						password = txtContraseña.Text.ToString(),
 						idTipoUsuario = Convert.ToInt32(cmbTiposUsuarios.SelectedValue)
 					};
                     if (!txtConfirmarContraseña.Text.Equals(txtContraseña.Text))

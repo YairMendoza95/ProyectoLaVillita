@@ -44,9 +44,9 @@ namespace ProyectoLaVillita.BIZ
             return usuarioRepository.Modificar(usuario);
         }
 
-        public bool Login(string nombreUsuario, string contraseña)
+        public bool Login(string nombreUsuario, string password)
         {
-            return consultaRepository.Login(nombreUsuario, contraseña);
+            return consultaRepository.Login(nombreUsuario, password);
         }
 
 		public UsuarioDTO BuscarUsuarioPorNombre(string nombre)
