@@ -56,7 +56,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
 			List<ProductoDTO> abarrotes = new List<ProductoDTO>();
 			for (int i = 0; i < datos.Count; i++)
 			{
-				if (datos[i].idTipoProducto == 2)
+				if (datos[i].idTipoProducto == 1)
 					abarrotes.Add(datos[i]);
 			}
 			if (abarrotes.Count > 0)

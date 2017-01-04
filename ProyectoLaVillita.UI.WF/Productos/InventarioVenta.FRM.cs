@@ -53,7 +53,7 @@ namespace ProyectoLaVillita.UI.WF.Productos
 			List<ProductoDTO> productos = _prodManager.Productos.ToList();
 			for (int i = 0; i < productos.Count; i++)
 			{
-				if (productos[i].idTipoProducto == 2)
+				if (productos[i].idTipoProducto == 1)
 					abarrotes.Add(productos[i]);
 			}
 			// si la cantidad de registro en la tabla es mayor a 0 
@@ -182,7 +182,6 @@ namespace ProyectoLaVillita.UI.WF.Productos
 			// se ocultan los botones
 			btnModificar.Visible = false;
 			btnGuardar.Visible = true;
-			//
 			txtNombre.ReadOnly = false;
 			txtProveedor.ReadOnly = false;
 			txtVenta.ReadOnly = false;
